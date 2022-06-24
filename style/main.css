@@ -8,20 +8,15 @@
     --dark-shade-clr: hsl(0, 0%, 25%);
     --medieval-font: "MedievalSharp";
     --normal-font: "Quattrocento";
+    --left-margin-primary: 7vw; 
+    --left-margin-secondary: 9vw; 
+    --left-margin-tertiary: 11vw; 
+    --bottom-margin: 15vh; 
 }
-
-* { 
-    outline: 1px solid red;
-    outline-offset: -1px;
-}  
 
 /* GENERAL */
 html { 
     scroll-behavior: smooth; 
-}
-
-ul li {
-    list-style-type: none;
 }
 
 a {
@@ -56,21 +51,39 @@ h1 {
 /* HEADER */
 header {
     z-index: 1;
-    display: flex; 
-    justify-content: space-between;
-    width: auto;
+    display: grid; 
+    grid-template-columns: 12fr 3fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "nav-bar roll20"; 
 }
 
 header img {
     background-color: var(--light-clr);
     width: 8vh;
-    margin-left: 5vw;
+    border-radius: 10px;
+}
+
+.roll20 {
+    grid-area: roll20; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    grid-area: nav-bar; 
+    margin-left: var(--left-margin-primary);
 }
 
 header img:hover {
     background-color: var(--light-shade-clr);
 }
 
+header ul li {
+    list-style-type: none;
+}
 
 /* Dropdown */
 nav ul {
@@ -125,7 +138,14 @@ nav ul {
 }
 
 /* MAIN */
+
+br {
+    background-color: var(--light-clr);
+    height: var(--bottom-margin);
+}
+
 /* Landing page */
+
 .landing-page {
     padding-top: 5vh;
     padding-bottom: 5vh; 
@@ -162,12 +182,45 @@ nav ul {
     }
 }
 
+/* Content page */
 
+.content-page h2 {
+    margin-left: var(--left-margin-primary); 
+}
+
+.content-page p {
+    margin-left: var(--left-margin-secondary); 
+}
+
+.content-page ul {
+    margin-left: var(--left-margin-tertiary);
+}
+
+.content-page section {
+    max-width: min-content;
+    min-width: 75vw; 
+}
+
+/* Menus */
+menu {
+    background-color: var(--light-shade-clr);
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    padding: 1vh 3vh 3vh 3vh;
+    width: 15vw; 
+    margin-left: var(--left-margin-primary);
+}
+
+menu a {
+    margin-top: 1vh; 
+}
 
 /* FOOTER */
 
 footer {
-    margin-top: 3vh;
+    margin-top: 5vh;
+    height: 10vh; 
 }
 
 footer .container {

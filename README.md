@@ -14,14 +14,9 @@ HTML and CSS website with few JS (JQuery).
 
 ## TODO
 
-- Github
 - Pages (do them like this: https://oldschoolessentials.necroticgnome.com/srd/index.php/Main_Page):
   (also need to make "templates" as I go, and just load them with jquery. like stats sheet, etc.
   all put my data in a huge json object that i'll put in an empty "data.js" where I'll only have "data = {json}")
-  - Generalities & Logistics
-    - What is an RPG (and what its not)
-    - How we play
-    - 'west marches' & logistics
   - Character rules
   - Equipement rules
   - Combat rules
@@ -55,7 +50,9 @@ HTML and CSS website with few JS (JQuery).
 - Put it on world anvil
 - Gygax challenge
 - Landing page fluff
+- Enlever les lignes rouges
 - Gitpage
+- Envoyer aux joueurs
 
 ## TIPS
 
