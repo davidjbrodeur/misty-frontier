@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/main.css" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>Les Frontières Brumeuses</title>
+  </head>
+  <body>
+    <header id="header"></header>
+    <main class="content-page">
+      <br />
+      <menu>
+        <h3>Menu</h3>
+        <a href="#intro">Généralités</a>
+        <a href="#attributes">Attributs</a>
+        <a href="#injury">Blessure et mort</a>
+        <a href="#chargen">Création de personnage</a>
+        <a href="#training">Progression du personnage</a>
+      </menu>
+      <section id="intro">
+        <h2>Généralités</h2>
+        <p>
+          Un personnage est une entité fictive que le joueur contrôle et
+          "incarne" dans le jeu. C'est l'avatar du joueur dans le monde. C'est
+          par le biais du personnage que le joueur va effectuer ses actions: il
+          dicte au maître de jeu ce que le personnage qu'il contrôle effectue
+          comme action.
+        </p>
+        <p>
+          C'est ici que le joueur va "jouer un rôle" (d'où le "jeu de rôle"). Il
+          va faire "comme si" il était son personnage: par exemple, si celui est
+          courageux, alors il restera au combat. De plus, le personnage possède
+          un rôle au sein de son équipe de personnages (et de joueurs!): il faut
+          qu'il travaille en équipe et qu'il s'assure d'aider les autres. Il
+          faut faire la distinction donc entre le personnage qui pourrait ne pas
+          vouloir aider un autre personnage, et le joueur lui-même. Le joueur
+          veut tout faire pour aider les autres: c'est à lui de trouver comment,
+          dans le jeu, il peut le faire avec son personnage (ou avec un autre!).
+        </p>
+        <p>
+          Un personnage est créé avec un petit historique de vie (souvent appelé
+          "background"), des attributs et de l'équipement. Les attributs,
+          décrits ci-bas, servent à déterminer "à quel point" est-ce qu'un
+          personnage est X (où "X" peut être: "fort", "courageux", "rapide",
+          etc.). Ce sont des statistiques quantitatives qui déterminent les
+          habiletés du personnage. Il est important de comprendre que ces
+          statistiques n'épuisent pas la description du personnage: un
+          personnage est plus que ses attributs, et un personnage doit être joué
+          sans toujours se référer à la
+          <dfn
+            title="Un document servant à prendre en notes tous les attributs, habiletés et équipements d'un personnage."
+            >feuille de personnage</dfn
+          >
+          !
+        </p>
+        <p>
+          Voici une exemple de feuille de personnage qui décrit un personnage. Vous pouvez avoir accès à une version vide de cette fiche <a href="https://docs.google.com/spreadsheets/d/1Z77U4nFWYTj_brbXkaZzkosMeXFO1gd8GFXjiZB9pko/edit?usp=sharing"><strong>ici</strong></a>. 
+        </p>
+        <div id="example-charsheet"></div>
+      </section>
+      <section id="attributes">
+        <h2>Attributs</h2>
+        <p>Voici la liste des attributs et de leur descriptif:</p>
+        <div id="stats-table"></div>
+        <p>
+          Les attributs normaux (<strong>F, S, T, Mv, A, W, C</strong>) sont
+          possédés par tous les personnages, joueurs ou non. Un paysan comme un
+          dragon les possède. Les attributs héroïques sont seulement possédés
+          par des héros, des gens d'un certains calibres et les personnages
+          joueurs. Les attributs normaux sont utilisés comme "repère"
+          quantitatif: on les utilise pour déterminer autre chose, par exemple
+          le nombre de dés d'attaque en combat pour <strong>A</strong>. Les
+          attributs héroïques sont quant à eux une "ressource": on en a une
+          quantité maximum et une quantité courante. On peut en dépenser pour
+          effectuer des actions spéciales tant qu'on en a, mais on doit attendre
+          pour en récupérer (voir le
+          <a href="downtime.html#downtime">Repos</a>).
+        </p>
+      </section>
+      <section id="injury">
+        <h2>Blessure et mort</h2>
+        <p>Lorsqu'un personnage subit une W en combat ou hors d'un combat, il retire une W de sa fiche. Si un personnage a 0 W, il devient "blessé". Dans un tel cas, il devra rouler sur la table suivante. Pour chaque blessure non-guérie, un personnage perd 1 W maximum. À 0 W maximum, le personnage est considéré mort.</p>
+        <div id="injury-table"></div>
+    </section>
+      <section id="chargen">
+        <h2>Création de personnage</h2>
+        <p>Text</p>
+        </ul>
+      </section>
+      <section id="training">
+        <h2>Progression du personnage</h2>
+        <p>Text</p>
+      </section>
+      <br />
+    </main>
+    <footer id="footer"></footer>
+    <script src="script\main.js"></script>
+  </body>
+</html>

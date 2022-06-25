@@ -2,43 +2,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap');
 
 :root {
-    --dark-clr: hsl(0, 0%, 10%); 
-    --light-clr: hsl(0, 0%, 90%); 
-    --light-shade-clr: hsl(0, 0%, 75%); 
+    --dark-clr: hsl(0, 0%, 10%);
+    --light-clr: hsl(0, 0%, 90%);
+    --light-shade-clr: hsl(0, 0%, 75%);
     --dark-shade-clr: hsl(0, 0%, 25%);
     --medieval-font: "MedievalSharp";
     --normal-font: "Quattrocento";
-    --left-margin-primary: 7vw; 
-    --left-margin-secondary: 9vw; 
-    --left-margin-tertiary: 11vw; 
-    --bottom-margin: 15vh; 
+    --left-margin-primary: 7vw;
+    --left-margin-secondary: 9vw;
+    --left-margin-tertiary: 11vw;
+    --bottom-margin: 15vh;
 }
 
 /* GENERAL */
-html { 
-    scroll-behavior: smooth; 
+html {
+    scroll-behavior: smooth;
 }
 
 a {
     text-decoration: none;
-    color: inherit; 
+    color: inherit;
 }
 
 body {
     background-color: var(--dark-clr);
     padding: 0;
-    margin: 0; 
+    margin: 0;
     font-family: var(--normal-font);
 }
 
 main {
     background-color: var(--light-clr);
     color: var(--dark-clr);
-    min-width: 100%; 
+    min-width: 100%;
     z-index: -1;
 }
 
-footer, header {
+footer,
+header {
     background-color: var(--dark-clr);
     color: var(--light-clr);
 }
@@ -51,12 +52,12 @@ h1 {
 /* HEADER */
 header {
     z-index: 1;
-    display: grid; 
-    grid-template-columns: 12fr 3fr; 
-    grid-template-rows: 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "nav-bar roll20"; 
+    display: grid;
+    grid-template-columns: 12fr 3fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "nav-bar roll20";
 }
 
 header img {
@@ -66,14 +67,14 @@ header img {
 }
 
 .roll20 {
-    grid-area: roll20; 
-    display: flex; 
+    grid-area: roll20;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 nav {
-    grid-area: nav-bar; 
+    grid-area: nav-bar;
     margin-left: var(--left-margin-primary);
 }
 
@@ -99,40 +100,40 @@ nav ul {
     font-size: 16px;
     font-weight: bolder;
     border: none;
-  }
-  
-  .dropdown {
+}
+
+.dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--dark-shade-clr);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px var(--dark-clr);
     z-index: 1;
-  }
-  
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: var(--light-shade-clr);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  .dropdown-content a:hover {
+}
+
+.dropdown-content a:hover {
     background-color: var(--light-shade-clr);
     color: var(--dark-clr);
-    font-weight: bolder; 
+    font-weight: bolder;
 }
-  
-  .dropdown:hover .dropdown-content {
+
+.dropdown:hover .dropdown-content {
     display: block;
 }
-  
-  .dropdown:hover .dropbtn {
+
+.dropdown:hover .dropbtn {
     background-color: var(--light-shade-clr);
     color: var(--dark-clr);
 }
@@ -148,7 +149,7 @@ br {
 
 .landing-page {
     padding-top: 5vh;
-    padding-bottom: 5vh; 
+    padding-bottom: 5vh;
 }
 
 .landing-page h1 {
@@ -160,7 +161,7 @@ br {
 }
 
 .intro-logistics a {
-    font-weight: bolder; 
+    font-weight: bolder;
 }
 
 .intro-logistics a:hover {
@@ -174,31 +175,38 @@ br {
         grid-template-areas: "sl left sc right sr";
         grid-template-columns: 1fr 4fr 1fr 4fr 1fr;
     }
+
     .intro-lore {
         grid-area: left;
     }
+
     .intro-logistics {
-        grid-area: right; 
+        grid-area: right;
     }
 }
 
 /* Content page */
 
 .content-page h2 {
-    margin-left: var(--left-margin-primary); 
+    margin-left: var(--left-margin-primary);
+    margin-top: 5vh; 
 }
 
 .content-page p {
-    margin-left: var(--left-margin-secondary); 
+    margin-left: var(--left-margin-secondary);
 }
 
 .content-page ul {
     margin-left: var(--left-margin-tertiary);
 }
 
+.content-page ol {
+    margin-left: var(--left-margin-tertiary);
+}
+
 .content-page section {
     max-width: min-content;
-    min-width: 75vw; 
+    min-width: 75vw;
 }
 
 /* Menus */
@@ -208,40 +216,145 @@ menu {
     display: flex;
     flex-direction: column;
     padding: 1vh 3vh 3vh 3vh;
-    width: 15vw; 
+    width: 15vw;
     margin-left: var(--left-margin-primary);
 }
 
 menu a {
-    margin-top: 1vh; 
+    margin-top: 1vh;
+}
+
+/* Tables */
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 35vw;
+    margin-left: 25vw;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-baqh {
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-amwm {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-0lax {
+    text-align: center;
+    vertical-align: top
+}
+
+.charsheet col {
+    width: 3.5vw; 
+}
+
+.charsheet .tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 35vw; 
+    table-layout: fixed; 
+}
+
+.charsheet .tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.charsheet .tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.charsheet .tg .tg-1wig {
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top
+}
+
+.charsheet .tg .tg-baqh {
+    text-align: center;
+    vertical-align: top
+}
+
+.charsheet .tg .tg-0lax {
+    text-align: left;
+    vertical-align: top
+}
+
+.charsheet .tg .tg-amwm {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top
 }
 
 /* FOOTER */
 
 footer {
     margin-top: 5vh;
-    height: 10vh; 
+    height: 10vh;
 }
 
 footer .container {
-    width: 90%; 
-    display: grid; 
-    grid-template-columns: 1fr 1.5fr 1fr; 
-    grid-template-rows: 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "info-corner void dm-corner"; 
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "info-corner void dm-corner";
 }
 
-.info-corner { 
-    grid-area: info-corner; 
+.info-corner {
+    grid-area: info-corner;
     position: relative;
 }
 
-.void { grid-area: void; }
+.void {
+    grid-area: void;
+}
 
-.dm-corner { 
-    grid-area: dm-corner; 
+.dm-corner {
+    grid-area: dm-corner;
     position: relative;
 }
 
