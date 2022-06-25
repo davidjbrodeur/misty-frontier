@@ -8,9 +8,12 @@
     --dark-shade-clr: hsl(0, 0%, 25%);
     --medieval-font: "MedievalSharp";
     --normal-font: "Quattrocento";
+    --left-margin-increment: 2vw; 
     --left-margin-primary: 7vw;
-    --left-margin-secondary: 9vw;
-    --left-margin-tertiary: 11vw;
+    --left-margin-secondary: calc(var(--left-margin-primary) + var(--left-margin-increment));
+    --left-margin-tertiary: calc(var(--left-margin-secondary) + var(--left-margin-increment));
+    --left-margin-quarternary: calc(var(--left-margin-tertiary) + var(--left-margin-increment));
+    --left-margin-quinary: calc(var(--left-margin-quarternary) + var(--left-margin-increment)); 
     --bottom-margin: 15vh;
 }
 
@@ -191,6 +194,14 @@ br {
 .content-page h2 {
     margin-left: var(--left-margin-primary);
     margin-top: 5vh; 
+}
+
+.subtitle {
+    margin-left: var(--left-margin-quarternary)
+}
+
+.content-page h3 + p {
+    margin-left: var(--left-margin-quinary);
 }
 
 .content-page p {

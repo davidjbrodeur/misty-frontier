@@ -22,23 +22,138 @@
       </menu>
       <section id="carry">
         <h2>Transport d'équipement</h2>
-        <p>text</p>
+        <h3 class="subtitle">Transport de base</h3>
+        <p class="subpara">
+          Un personnage peut porter en tout temps une armure. De plus, il est
+          considéré comme transportant toujours: des vêtements, quelque chose
+          pour dormir (couverture, etc.), de l'eau, des rations et une source de
+          lumière pour la nuit/les endroits sous-terrains (par exemple, une
+          crypte).
+        </p>
+        <h3 class="subtitle">Armes</h3>
+        <p class="subpara">
+          Un personnage peut porter sur lui une arme par
+          <a href="character.html#attributes">Strength</a> qu'il possède. Un
+          bouclier est aussi considéré comme une arme. Un carquois pour des
+          flèches ou des carreaux d'arbalètes comptent aussi comme une arme. Par
+          exemple, un personnage avec 4 S pourrait transporter une épée longue,
+          un bouclier, un poignard et une hachette. En combatant, il pourrait
+          utiliser toutes ces armes car elles sont prêtes à être utilisées (en
+          ceinture, par exemple).
+        </p>
+        <h3 class="subtitle">Équipement</h3>
+        <p class="subpara">
+          Un personnage peut porter sur lui, dans son sac, un nombre d'objets
+          divers équivalent à sa <strong>Toughness</strong> non-modifiée. Par
+          exemple, un personnage avec 4 T et une armure qui lui donne +1 (donc 5
+          T) pourrait transporter quatre objets. Un objet est tout ce qui est
+          plus gros qu'une main. Les objets plus petits que la main (ex: un
+          anneau) ne sont pas considérés, tandis qu'ils sont bien inscrits sur
+          la fiche de personnage et que leur nombre reste logique. On ne peut
+          dire qu'on transporte 1000 pièces d'or qui sont d'une taille plus
+          petite que la main: rendu là, on transporte un sac d'or qui est bel et
+          bien plus gros que la main. Il est possible aussi de trouver des
+          animaux et les équiper de sac pour du rangement supplémentaire ou les
+          équiper d’armure pour les amener au combat. Il est possible d’engager
+          des troupes supplémentaires, incluant pour transporter du matériel
+          supplémentaire.
+        </p>
       </section>
       <section id="weapon-desc">
         <h2>Armes</h2>
-        <p>text</p>
+        <p>
+          Les armes sont utilisées en combat pour modifier les attributs du
+          personnage, par exemple la <strong>S</strong> ou les
+          <strong>A</strong>. Les armes fonctionnent avec des “tags”. Chaque
+          “tag” donne une habileté spéciale (mais facultative) à l’arme, sauf
+          exception.
+        </p>
+        <ul>
+          <li>
+            <strong>Polearm</strong> : Si le personnage utilise l’action de
+            combat HOLD et qu’il est chargé, il frappe en premier avec un bonus
+            de +1 F/S. Si la cible est de la cavalerie, elle doit faire un jet
+            de maintien en sel.
+          </li>
+          <li>
+            <strong>Two-Handed</strong> : Il est possible de réduire le nombre
+            d’attaque de moitié (arrondi inférieur) pour avoir +1d3 S lors du
+            To-Wound. On ne peut avoir rien dans la seconde main (torche,
+            bouclier, etc.).
+          </li>
+          <li>
+            <strong>Quick</strong>: Il est possible d’avoir +1d2 A en diminuant
+            le S de 1.
+          </li>
+          <li>
+            <strong>Impact</strong> : Il est possible de volontairement frapper
+            en dernier pour diminuer de 1 la T de l’attaquant et du défendant.
+            Si la cible est plus petite que l’attaquant, elle doit faire un jet
+            de S ou être jeté Prone.
+          </li>
+          <li>
+            <strong>Reload(X)</strong>: L’arme ne peut tirer qu’une fois par
+            tour et ne peut tirer en se déplaçant. Le X indique la force avec
+            laquelle cette arme attaque.
+          </li>
+          <li>
+            <strong>Improvised</strong>: Les armes improvisées/roturières ne
+            peuvent attaquer qu'une fois par tour.
+          </li>
+          <li>
+            <strong>Thrown</strong>: Ces armes peuvent être aussi utilisées au
+            tir mais sont lancées et retirées du personnage jusqu’à la fin du
+            combat.
+          </li>
+          <li>
+            <strong>Heavy</strong>: +1 S en mêlée avec cette arme si le
+            personnage possède 4 ou plus en S.
+          </li>
+          <li>
+            <strong>Small</strong>: Peut être dissimulé sans problème et ne
+            compte pas dans le nombre total d’armes possédées sur le personnage.
+          </li>
+          <li>
+            <strong>Feint</strong>: On réduit le F de 1d3, mais les jets
+            To-Wound ratés peuvent être reroll
+          </li>
+          <li>
+            <strong>Shield</strong> : Améliore l'armure (<strong>T</strong>)
+          </li>
+        </ul>
       </section>
       <section id="armor-desc">
         <h2>Armures</h2>
-        <p>text</p>
+        <p>
+          Les armures modifient la <strong>T</strong> et rendent donc plus
+          difficile à blesser en combat. Les armures plus lourdes modifient
+          aussi le <strong>Mv</strong>.
+        </p>
       </section>
       <section id="economy">
         <h2>Économie</h2>
-        <p>text</p>
+        <p>
+          L'économie locale fonctionne avec des pièces frappées par l'effigie du
+          Roi local. Ceci étant dit, les marchands acceptent toutes les pièces,
+          peu importe l'époque ou l'effigie. Il existe deux types de pièces:
+        </p>
+        <ul>
+          <li><strong>Silver Piece (SP)</strong> : Pièces d'argent</li>
+          <li><strong>Gold Piece (GP)</strong> : Pièces d'or</li>
+        </ul>
+        <p>
+          Une pièce d'argent équivaut environ à une journée de travail. Voici le
+          taux de change des pièces : 100 SP = 1 GP
+        </p>
       </section>
       <section id="equip-list">
         <h2>Liste d'équipements</h2>
-        <p>text</p>
+        <h3 class="subtitle">Liste d'armures</h3>
+        <div id="armor-list"></div>
+        <h3 class="subtitle">Liste d'armes</h3>
+        <div id="weapon-list"></div>
+        <h3 class="subtitle">Liste d'équipements</h3>
+        <div id="equipment-list"></div>
       </section>
       <br />
     </main>

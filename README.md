@@ -17,11 +17,10 @@ HTML and CSS website with few JS (JQuery).
 - Pages (do them like this: https://oldschoolessentials.necroticgnome.com/srd/index.php/Main_Page):
   (also need to make "templates" as I go, and just load them with jquery. like stats sheet, etc.
   all put my data in a huge json object that i'll put in an empty "data.js" where I'll only have "data = {json}")
-  - Character rules
-  - Equipement rules
+  - Exploration rules
   - Combat rules
   - Downtime and character progression
-- Make sure everything is hyperlinked
+- Make sure everything is hyperlinked and with definitions
 - Hidden pages (DM pages for now):
   - Create the "hidden page" tricks (aka a small invisible button + password to get access)
   - Additional rules:
