@@ -8,12 +8,12 @@
     --dark-shade-clr: hsl(0, 0%, 25%);
     --medieval-font: "MedievalSharp";
     --normal-font: "Quattrocento";
-    --left-margin-increment: 2vw; 
+    --left-margin-increment: 2vw;
     --left-margin-primary: 7vw;
     --left-margin-secondary: calc(var(--left-margin-primary) + var(--left-margin-increment));
     --left-margin-tertiary: calc(var(--left-margin-secondary) + var(--left-margin-increment));
     --left-margin-quarternary: calc(var(--left-margin-tertiary) + var(--left-margin-increment));
-    --left-margin-quinary: calc(var(--left-margin-quarternary) + var(--left-margin-increment)); 
+    --left-margin-quinary: calc(var(--left-margin-quarternary) + var(--left-margin-increment));
     --bottom-margin: 15vh;
 }
 
@@ -157,7 +157,7 @@ br {
 
 .landing-page h1 {
     text-align: center;
-    margin-right: 15vw; 
+    margin-right: 15vw;
 }
 
 .intro-lore {
@@ -191,16 +191,21 @@ br {
 
 /* Content page */
 
+.content-page a {
+    font-weight: bolder;
+    font-style: italic;
+}
+
 .content-page h2 {
     margin-left: var(--left-margin-primary);
-    margin-top: 5vh; 
+    margin-top: 5vh;
 }
 
 .subtitle {
     margin-left: var(--left-margin-quarternary)
 }
 
-.content-page h3 + p {
+.content-page h3+p {
     margin-left: var(--left-margin-quinary);
 }
 
@@ -284,14 +289,14 @@ menu a {
 }
 
 .charsheet col {
-    width: 3.5vw; 
+    width: 3.5vw;
 }
 
 .charsheet .tg {
     border-collapse: collapse;
     border-spacing: 0;
-    width: 35vw; 
-    table-layout: fixed; 
+    width: 35vw;
+    table-layout: fixed;
 }
 
 .charsheet .tg td {
@@ -377,4 +382,10 @@ footer .container {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+/* OTHER */
+
+.hidden {
+    display: none; 
 }

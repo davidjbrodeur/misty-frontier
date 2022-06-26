@@ -7,4 +7,7 @@ $(document).ready(function () {
     $("#armor-list").load("pages/armor_list.html");
     $("#weapon-list").load("pages/weapon_list.html");
     $("#equipment-list").load("pages/equipment_list.html");
+    $("#wilderness-travel-table").load("pages/wilderness_travel_table.html");
+    $("#combat-action-table").load("pages/combat_action_table.html");
+    $("#to-wound").load("pages/to_wound.html");
 });

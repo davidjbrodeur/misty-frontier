@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/main.css" />
   </head>
   <body>
-    <div class="armor-table">
+    <div class="combat-action-table">
       <style type="text/css">
         .tg {
           border-collapse: collapse;
@@ -32,58 +32,56 @@
           padding: 10px 5px;
           word-break: normal;
         }
-        .tg .tg-1wig {
+        .tg .tg-baqh {
+          text-align: center;
+          vertical-align: top;
+        }
+        .tg .tg-amwm {
           font-weight: bold;
           text-align: center;
           vertical-align: top;
         }
         .tg .tg-0lax {
-          text-align: center;
+          text-align: left;
           vertical-align: top;
         }
       </style>
       <table class="tg">
         <thead>
           <tr>
-            <th class="tg-1wig">Type</th>
-            <th class="tg-1wig">Exemple</th>
-            <th class="tg-1wig">Bonus T</th>
-            <th class="tg-1wig">Malus Mv</th>
-            <th class="tg-1wig">Prix</th>
+            <th class="tg-amwm">Action</th>
+            <th class="tg-amwm">Movement alloué</th>
+            <th class="tg-amwm">Détails</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="tg-0lax">Light</td>
-            <td class="tg-0lax">Fourrure, gambison, armure de cuir spécial</td>
-            <td class="tg-0lax">+1</td>
-            <td class="tg-0lax">0</td>
-            <td class="tg-0lax">50 SP</td>
-          </tr>
-          <tr>
-            <td class="tg-0lax">Medium</td>
-            <td class="tg-0lax">Cote de maille, armure d'écaille</td>
-            <td class="tg-0lax">+2</td>
-            <td class="tg-0lax">-1</td>
-            <td class="tg-0lax">2 GP</td>
-          </tr>
-          <tr>
-            <td class="tg-0lax">Heavy</td>
+            <td class="tg-baqh">Hold</td>
+            <td class="tg-baqh">0</td>
             <td class="tg-0lax">
-              Cote de maille ou armure d'écaille + bouclier
+              Peut effectuer une attaque de tir/distance avec un bonus de +1
             </td>
-            <td class="tg-0lax">+3</td>
-            <td class="tg-0lax">-2</td>
-            <td class="tg-0lax">2.5 GP</td>
           </tr>
           <tr>
-            <td class="tg-0lax">Heavy</td>
+            <td class="tg-baqh">Advance</td>
+            <td class="tg-baqh">Mv</td>
             <td class="tg-0lax">
-              Armure de plaque (ne peut avoir de bouclier)
+              Peut effectuer une attaque de tir/distance ou toute autre action
+              "normale" (par exemple, lancer un objet, essayer de se cacher,
+              intéragir avec une manivelle, etc. etc.). Une unité
+              <strong>Routed</strong> peut essayer de refaire un
+              <a href="combat.html#morale">jet de morale</a>.
             </td>
-            <td class="tg-0lax">+3</td>
-            <td class="tg-0lax">-2</td>
-            <td class="tg-0lax">10 GP</td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">Sprint</td>
+            <td class="tg-baqh">Mv * 2</td>
+            <td class="tg-0lax">Ne peut tirer</td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">Charge</td>
+            <td class="tg-baqh">Mv + 1d6 (max 2x)</td>
+            <td class="tg-0lax">Peut combattre en mêlée</td>
           </tr>
         </tbody>
       </table>

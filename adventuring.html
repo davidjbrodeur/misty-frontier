@@ -14,26 +14,349 @@
       <br />
       <menu>
         <h3>Menu</h3>
-        <a href="#logistics">Logistique d'exploration</a>
+        <a href="#introduction">Généralités sur l'exploration</a>
         <a href="#underground">Exploration sous-terraine</a>
         <a href="#wilderness">Exploration des régions sauvages</a>
-        <a href="#downtime">Repos</a>
+        <a href="#encounter-and-reaction">Intéraction dans les aventures</a>
+        <a href="#adventuring-resolution"
+          >Résolutions des actions génériques lors de l'exploration</a
+        >
+        <a href="#downtime">Downtime Activities</a>
       </menu>
-      <section id="logistics">
-        <h2>Logistique d'exploration</h2>
-        <p>text</p>
+      <section id="introduction">
+        <h2>Généralités sur l'exploration</h2>
+        <p>
+          Les personnages commencent en tant qu'aventuriers: des mercenaires,
+          des chevaliers errants, des marginaux, etc. À long terme, ils peuvent
+          devenir des héros, des champions, des légendes, ou, tel Conan, ils
+          peuvent devenir seigneur et posséder leur propre territoire! Les
+          règles suivantes expliquent comment gérer la partie "aventure" de leur
+          carrière, c'est-à-dire la partie principale des règles du jeu.
+        </p>
+        <p>
+          L'exploration se fait sous différents modes, selon le type de
+          mouvement. Lorsque les joueurs se promènent dans des ruines, en temps
+          réel, discutent entre eux, etc., on parle d'exploration "normale" ou
+          <a href="#underground"
+            >sous-terraine (appelée <strong>Underground Exploration</strong>)</a
+          >. Lorsque les joueurs se promènent de territoire en territoire, sur
+          plusieurs jours, on parle d'<a href="#wilderness"
+            >exploration des régions sauvages (appelée
+            <strong>Wilderness Exploration</strong>).</a
+          >
+        </p>
+        <p>
+          Chacune d'entre elles utilisent ses propres règles et ses propres
+          outils. Ils ont aussi chacune des métriques différentes: en pieds et
+          en minutes, vs en miles et en heures. Lorsqu'une exploration des
+          régions sauvages mène à une découverte intéressante (par exemple, une
+          ruine), on passe en exploration sous-terraine. Lorsque le groupe
+          décide de reprendre la marche vers une destination lointaine, on
+          reprend l'exploration des régions sauvages. Il y a donc un cycle entre
+          celle-ci, généralement entre-coupé de combats, de discussions,
+          d'intéractions, etc.
+        </p>
       </section>
       <section id="underground">
-        <h2>Exploration sous-terraine</h2>
-        <p>text</p>
+        <h2>Underground Exploration</h2>
+        <h3 class="subtitle">Temps</h3>
+        <p>Voici les règles au niveau du temps:</p>
+        <ul>
+          <li>
+            <strong>Tour d'Underground Exploration</strong> : Un tour
+            d'exploration est de 10 minutes. À chaque tour, le maître de jeu
+            vérifie ce qui se produit dans les environs, ce qui inclut des
+            patrouilles d'ennemis potentiels. À chaque tour, le groupe gagne
+            quatre <strong>Exploration Points</strong> (EP).
+          </li>
+        </ul>
+        <h3 class="subtitle">Espace</h3>
+        <p>Voici les règles au niveau de l'espace:</p>
+        <ul>
+          <li>
+            <strong>Métrique spatiale en pieds</strong> : Les personnages se
+            déplacent selon leur Mv ce qui équivaut à environ 5" par Mv. Il
+            n'est pas nécessaire de toujours dire "J'avance de X pieds", mais le
+            maître de jeu va décrire les pièces et les situations en pieds.
+          </li>
+          <li>
+            <strong>Ordre de marche</strong> : Les joueurs doivent dire quel est
+            l'ordre de marche (i.e. qui est en avant, en arrière, etc.) et
+            indiquer qui transportent la ou les lumière(s). Le maître de jeu
+            utilisera ces informations pour décrire les situations.
+          </li>
+          <li>
+            <strong>Lumière</strong> : Un personnage sans lumière ne peut voir
+            dans le noir. Il ne pourra donc que se déplacer à tâton et sera
+            considéré aveugle en combat. Les torches produisent 6 Mv de lumière
+            dans chaque direction. Les personnages utilisent des torches au fil
+            de leur exploration. Ces torches sont considérées dans l'<a
+              href="equipment.html#carry"
+              >équipement de base</a
+            >. La partie se termine parce que les personnages n'ont plus de
+            lumière et doivent retourner en civilisation.
+          </li>
+        </ul>
+        <h3 class="subtitle">Actions</h3>
+        <p>
+          À chaque tour, le groupe peut utiliser ses
+          <strong>Exploration Points</strong> (EP). Chaque EP permet d'effectuer
+          une des actions suivantes:
+        </p>
+        <ul>
+          <li>Fouiller une pièce fond en comble</li>
+          <li>
+            Traverser deux "pièces" (incluant des corridors) de manière
+            sécuritaire
+          </li>
+          <li>
+            Traverser à la course quatre "pièces" (incluant des corridors) de
+            manière non-sécuritaire (c'est-à-dire, s'enfuir)
+          </li>
+          <li>Effectuer un combat</li>
+          <li>Défoncer une porte, désactiver un piège, etc.</li>
+        </ul>
+        <p>
+          De plus, on peut effectuer un certain nombre (logique) d'actions
+          gratuites dans la liste suivante:
+        </p>
+        <ul>
+          <li>Écouter à une porte</li>
+          <li>Alumer/éteindre des torches</li>
+          <li>Discuter</li>
+          <li>Réviser la carte du donjon</li>
+          <li>etc.</li>
+        </ul>
       </section>
       <section id="wilderness">
-        <h2>Exploration des régions sauvages</h2>
-        <p>text</p>
+        <h2>Wilderness Exploration</h2>
+        <h3 class="subtitle">Temps</h3>
+        <p>Voici les règles au niveau du temps:</p>
+        <ul>
+          <li>
+            <strong>Tour de Wilderness Exploration</strong> : Un tour
+            d'exploration dans le Wilderness est d'une journée. À chaque tour,
+            le maître de jeu vérifie ce qui se produit dans les environs, ce qui
+            inclut des patrouilles d'ennemis potentiels. À chaque tour, le
+            groupe gagne quatre <strong>Travel Points</strong> (TP).
+          </li>
+        </ul>
+        <h3 class="subtitle">Espace</h3>
+        <p>Voici les règles au niveau de l'espace:</p>
+        <ul>
+          <li>
+            <strong>Métrique spatiale en hex</strong> : Sur la carte, chaque hex
+            équivaut à environ 6 miles.
+          </li>
+          <li>
+            <strong>Ordre de marche</strong> : Les joueurs doivent dire quel est
+            l'ordre de marche (i.e. qui est en avant, en arrière, etc.) et
+            indiquer qui s'occupe d'être une sentinelle en avant ou en arrière,
+            ainsi de suite. Le maître de jeu utilisera ces informations pour
+            décrire les situations.
+          </li>
+          <li>
+            <strong>Ration</strong> : Les personnages consomment des rations à
+            chaque jour. Ces rations sont considérées dans l'<a
+              href="equipment.html#carry"
+              >équipement de base</a
+            >. La partie se termine parce que les personnages n'ont plus de
+            rations et doivent retourner en civilisation.
+          </li>
+        </ul>
+        <h3 class="subtitle">Actions</h3>
+        <p>
+          À chaque tour, le groupe gagne des
+          <strong>Travel Points</strong> (TP). Chaque TP permet d'effectuer une
+          des actions suivantes:
+        </p>
+        <ul>
+          <li>
+            <strong>Move</strong> : Le groupe se déplace en dépensant les TP
+            selon le type de terrain dans lequel ils veulent arriver. S'ils ont
+            pas assez de TP, alors ils dépensent ce qu'ils ont et devront payer
+            la différence la journée suivante (dans le jeu fictif, ils ont
+            avancés dans leur "hex", mais pas assez pour arriver dans le
+            prochain).
+          </li>
+          <li>
+            <strong>Search</strong> : On peut fouiller une zone afin d'y trouver
+            des secrets (ruines, routes, rivière, habitats, cryptes, etc.). Le
+            coût est équivalent au coût de déplacement du hex.
+          </li>
+          <li>
+            <strong>Forced March</strong> : Le groupe dépense 1 TP et obtient 2
+            TP. Le groupe roule 1d6. S'il obtient un 4+, il est considéré
+            <strong>Fatigued</strong>. Un groupe <strong>Fatigued</strong> n'a
+            que la moitié des TP au prochain tour d'exploration et ne peut
+            utiliser la <strong>Forced Marched</strong> ce tour ci ou le
+            suivant. À chaque utilisation de la
+            <strong>Forced Marched</strong> dans un même tour, ajouter +1 au
+            résultat du dé.
+          </li>
+          <li>
+            <strong>Slow March</strong> : Le groupe dépense 2 TP et obtient 1
+            TP. Le groupe obtient un bonus pour les
+            <a href="#encounter-and-reaction">Random Encounters</a> et l'action
+            <strong>Search</strong>.
+          </li>
+        </ul>
+        <p>
+          Voici la table de traverse/recherche pour les actions correspondantes:
+        </p>
+        <div id="wilderness-travel-table"></div>
+        <p>Certaines considérations supplémentaires:</p>
+        <ul>
+          <li>
+            Les actions qui ne prennent que quelques minutes sont gratuites
+            (tant que c'est logique).
+          </li>
+          <li>
+            Si au moins la moitié du groupe possède des chevaux, le groupe gagne
+            +1 TP. Si tout le groupe possède des chevaux, le groupe gagne +2 TP.
+          </li>
+          <li>
+            Des effets magiques ou météos peuvent diminuer le nombre de TP par
+            tour.
+          </li>
+        </ul>
+      </section>
+      <section id="adventuring-resolution">
+        <h2>Résolutions des actions génériques lors de l'exploration</h2>
+        <p>
+          Voici des actions répétitives de base d'un aventurier-héro qui demande
+          d'être résolu par des règles, lorsque le maître de jeu le demande:
+        </p>
+        <ul>
+          <li>
+            <strong>Grimper</strong> : 2d6 + Mv, le résultat doit être plus haut
+            que 10. Si le personnage prend son temps ou est aider d'un outil, le
+            jet est automatiquement réussi.
+          </li>
+          <li>
+            <strong>Soulever</strong> : 2d6 + S, le résultat doit être plus haut
+            que 10 (ou selon la pesanteur de l'objet). Si le personnage prend
+            son temps ou est aider d'un outil ou d'un autre personnage, le jet
+            est automatiquement réussi.
+          </li>
+          <li>
+            <strong>Sauter</strong> : Le personnage peut sauter 1d6 + Mv en
+            pieds avec un élan. S'il prend son temps, il max le d6 lancé (donc 6
+            + Mv), le résultat doit être plus haut que 10. Si le personnage
+            prend son temps ou est aider d'un outils, le jet est automatiquement
+            réussi.
+          </li>
+          <li>
+            <strong>Tomber</strong> : Un personnage qui tombe subit 1 W par 10
+            pieds. (Un personnage avec plus de W survit mieux à des chutes non
+            pas parce qu'il est invincible mais parce qu'il amorti mieux sa
+            chute.)
+          </li>
+          <li>
+            <strong>Camouflage</strong> : Les personnages ne peuvent se
+            camoufler que s'ils ne font pas de bruit (donc pas d'armure) et sont
+            loin d'une source de lumière/hors d'un champ de vision. Dans le cas
+            d'un jet nécessaire, lancer 2d6 vs 2d6 du personnage adverse qui
+            surveille.
+          </li>
+          <li>
+            <strong>Nager</strong> : 2d6 + T, le résultat doit être de 10 ou
+            plus. Si la personne est en armure lourde, elle ne lance qu'un seul
+            d6. Pour respirer plus longtemps qu'une minute sous lot, c'est le
+            même jet.
+          </li>
+        </ul>
+      </section>
+      <section id="encounter-and-reaction">
+        <h2>Intéraction dans les aventures</h2>
+        <p>
+          Lorsque le groupe aventure Underground ou dans le Wilderness, des
+          rencontres fortuites peuvent arriver avec des alliés, des ennemis ou
+          d'autres créatures. Cette section explique les grandes lignes de ces
+          enjeux.
+        </p>
+        <h3 class="subtitle">Random Encounters</h3>
+        <p>
+          On dit "Random Encounter" des rencontres aléatoires faites par le
+          groupe. Celle-ci peuvent être le fruit de la chance (le maître de jeu
+          détermine, par un jet de dés, qu'une patrouille ennemie trouve les
+          joueurs) ou prédéterminée par les actions des joueurs (par exemple,
+          les joueurs déclenchent une alarme qui attire une patrouille). Il est
+          important de comprendre que les randoms encounters sont justement
+          aléatoires mais influencés par des facteurs que les joueurs peuvent
+          contrôler: le bruit qu'ils font, le temps qu'ils passent dans une
+          pièce/un territoire, les alliés/ennemis qu'ils ont, etc.
+        </p>
+        <h3 class="subtitle">Reaction Roll</h3>
+        <p>
+          Lorsque le groupe rencontre un de ces groupes, voulu ou non, il n'y
+          aura pas nécessaire d'hostilités. Certains éléments prédéterminés (par
+          exemple, si le groupe en question veut se venger des joueurs)
+          pourraient grandement diminuer les chances de ne pas avoir
+          d'hostilités, mais en général ce n'est pas le cas. Pour déterminer
+          comment le groupe adverse réagit, on utilise un
+          <strong>Reaction Roll</strong>. Le joueur qui aborde (ou qui est vu en
+          premier) l'autre groupe lance 1d6 (sa propre disposition) et l'autre
+          groupe (par le biais du maître de jeu) lance 1d6. Plus le résultat est
+          haut, plus ce sera bénéfique pour les joueurs. Il ne faut cependant
+          pas se leurrer: un bon résultat avec un groupe entièrement hostile ne
+          mènera pas à un traité de paix pour autant! Les joueurs doivent savoir
+          faire preuve de diplomatie, de marchandage, de flair, etc.
+        </p>
       </section>
       <section id="downtime">
-        <h2>Repos</h2>
-        <p>text</p>
+        <h2>Downtime Activities</h2>
+        <p>
+          Entre les parties, en dehors des deux modes d'exploration ci-haut, les
+          personnages seront en civilisation et pourront prendre du repos. Ce
+          repos sert à plusieurs éléments, notamment se renflouer en ressources
+          et se guérir des blessures mineures (i.e. la perte de W). Voici les
+          actions possible en civilisation. La plupart ne sont que des exemples
+          et il est possible de parler avec le maître de jeu pour voir si votre
+          plan est réalisable.
+        </p>
+        <ul>
+          <li>
+            <strong>Dépenses personnelles</strong> : Un personnage doit payer
+            pour ses dépenses personnelles. Un personnage doit payer 1 SP par
+            pièce d'armes, d'armure, d'équipement et de W qu'il possède, et ce,
+            à chaque partie. S'il ne paie pas, il ne peut pas utiliser les
+            actions suivantes.
+          </li>
+          <li>
+            <strong>Repos</strong> : Le personnage regagne toutes ses W perdues.
+          </li>
+          <li>
+            <strong>Recherche</strong> : Faire des recherches sur des sujets
+            divers, des découvertes, des langues, des endroits, des objets, etc.
+            Le coût dépend de la rareté de l’information demandée.
+          </li>
+          <li>
+            <strong>Faire la fête</strong> : Participer à des festivités. Le
+            coût dépend du type de communauté avec lequel le PJ veut faire la
+            fête (ex: avec des nobles coûtera plus cher que des paysans). Faire
+            la fête permet d'entendre des rumeurs, de gagner des alliés
+            potentiels, etc.
+          </li>
+          <li>
+            <strong>Engager</strong> : Publier dans les tavernes des offres
+            d'emplois pour des travailleurs et des mercenaires. Ceux-ci peuvent
+            accompagner en aventure pour combattre, transporter du matériel,
+            tenir des torches, protéger des camps, etc. Il est aussi possible de
+            les engager pour qu'ils effectuent une tâche 'entre' les parties
+            (durant le Downtime).
+          </li>
+          <li>
+            <strong>Activités diplomatiques, politiques ou économiques</strong>
+            : Il est possible d'aider à construire des bâtiments, à faire des
+            alliances, à diriger une caravane marchande, d'investir dans un
+            projet, etc.
+          </li>
+          <li>
+            <strong>Entrainement</strong> : L'entrainement permet de faire
+            <a href="character.html#training">progresser son personnage</a>.
+          </li>
+        </ul>
       </section>
       <br />
     </main>
