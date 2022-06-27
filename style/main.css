@@ -191,6 +191,10 @@ br {
 
 /* Content page */
 
+#dm-page section {
+    margin-left: var(--left-margin-primary);
+}
+
 .content-page a {
     font-weight: bolder;
     font-style: italic;

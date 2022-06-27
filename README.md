@@ -14,25 +14,24 @@ HTML and CSS website with few JS (JQuery).
 
 ## TODO
 
-- Pages (do them like this: https://oldschoolessentials.necroticgnome.com/srd/index.php/Main_Page):
-  (also need to make "templates" as I go, and just load them with jquery. like stats sheet, etc.
-  all put my data in a huge json object that i'll put in an empty "data.js" where I'll only have "data = {json}")
-  - Exploration rules
-  - Combat rules
-  - Downtime
-    - What can be recruited, how to recruit, etc.
-- Make sure everything is hyperlinked and with definitions
+- Maybe have a player spot (map, roster, recaps, etc.) and one for the city/world (rumours, events, sigthings, political situation, etc.)
+- Put my worldbuilding into world anvil https://docs.google.com/document/d/1gaVxd5E_YI3avsgblR9XqcqL5VjqgPbwozzCjuJ5XeU/edit#
+- Do a campaign building:
+  - https://psionicblastfromthepast.blogspot.com/2020/05/how-to-create-campaign-in-few-hours.html
+  - Include my best hexes from other campaign + demon souls
+- Finish the City page (including recruitment and so on)
+- Hyperlink and define things
 - Hidden pages (DM pages for now):
   - Create the "hidden page" tricks (aka a small invisible button + password to get access)
   - Additional rules:
+    - What I'm missing from H&C
     - Magic item level-up
     - AER/fiefdom rules
     - Boats/etc. rules
-  - Campaign (Gygax73 challenge + demon souls + all my best hexes and dungeon ideas)
-  - Tables & generators
+  - Tables & generators (see my google sheet)
     - Magic items
     - Monster/Human/Npc reactions
-    - Random encounters per hex type
+    - Random encounters per hex type (roll once per day)
     - Random encounters per dungeon type
     - 5RD generator
     - NPC generator (personality trait x1, physical trait x1, one thing known about him, one goal, one secret)
@@ -40,19 +39,16 @@ HTML and CSS website with few JS (JQuery).
     - Events
     - Echo Resounding tables to generate places, peoples, etc.
     - Downtime rules
-  - Monsters & characters stats (see Middle Earth Strategy)
+    - Hex feature stuff (wilderland of high fantasy)
+  - Monsters & characters stats (see Middle Earth Strategy & Warhammer)
   - Campaign notes
     - Characters
     - Events, timeline, macro info
     - Echo Resounding notes on locations, hexes, etc.
   - DM checklist/prep for games
-- Write down final notes on the world
-- Put it on world anvil
-- Gygax challenge
 - Landing page fluff
-- Enlever les lignes rouges
-- Gitpage
-- Envoyer aux joueurs
+- Hide content
+- Send to players
 
 ## TIPS
 

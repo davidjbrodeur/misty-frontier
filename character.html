@@ -149,10 +149,16 @@
           <li>Payer pour s'entrainer</li>
         </ul>
         <p>
-          Le coût de base (des surcharges peuvent être appliquées) d'un
-          entrainement est simple: 1
-          <dfn title="Gold Piece, une des monnaies de l'économie.">GP</dfn> + 1
-          par entrainement acquis préalablement.
+          <!-- 
+            nombre d'entrainement ^ 4 = 16 SP, 81 SP, 2.56 GP, 6.25 GP, 12.96 GP, 24.01 GP, 40.96 GP, 65.61 GP, 100 GP, 146.41 GP, 207.36 GP, 285.61 GP, etc.
+            ou bien (nombre d'entrainement * 2) ^ 3 = 0.08, 0.64, 2.16, 5.12, 10, 17.28, 27.44, 40.96, 58.32, etc. 
+          -->
+          Le coût des entrainements est exponentiel car plus on apprend, plus il
+          faut maintenir ses anciens acquis pour apprendre plus. De plus, plus
+          on apprend, plus il est difficile de trouver des maitres. Le coût
+          dépend donc en grande partie des ressources joueurs (les entraineurs
+          disponibles) et le nombre d'entrainement préalablement acquis (nombre
+          important à garder en note).
         </p>
         <p>
           Les personnages peuvent s'entrainer dans un des quatres domaines

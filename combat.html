@@ -120,9 +120,10 @@
         <h3 class="subtitle">Tir</h3>
         <ul>
           <li>
-            <strong>To-Hit</strong> : On roule 1d6 par A de l'arme. Un jet
-            équivalent au score de F ou plus est un <strong>Hit</strong>
+            <strong>To-Hit</strong> : Pour chaque A de l'arme, on roule 1d6 + F.
+            Si le résultat est un plus que 6, c'est un <strong>Hit</strong>.
             <ul>
+              <li>Un résultat de 1 est toujours un échec.</li>
               <li>On ne peut tirer dans une mélée ou à partir d'une mêlée</li>
               <li>
                 On ne peut tirer sur la cible est totalement obscurcie/protégée
@@ -130,6 +131,10 @@
               <li>
                 Si on tire sur une cible partiellement obscurcie/protégée (par
                 exemple, derrière une muraille), on a -1 au jet
+              </li>
+              <li>
+                Si on tire sur des grosses cibles (gros monstre ou groupes de
+                cible), on a +1 au jet.
               </li>
             </ul>
           </li>
@@ -142,17 +147,26 @@
         <h3 class="subtitle">Mêlée</h3>
         <p>
           Le côté avec la priorité décide quelle mêlée est faite en premier. On
-          résout une mêlée à la fois. Pour chaque mêlée, chaque côté effectue
-          ses attaques:
+          résout une mêlée à la fois. Pour résoudre une mêlée, on suit les
+          étapes suivantes:
         </p>
         <ul>
           <li>
-            <strong>To-Hit</strong> : Rouler 1d6 par A du personnage. Un jet
-            équivalent au score de F ou plus est un “Hit”. Un personnage
-            “Trapped” ou “Prone” est automatiquement “Hit” en mêlée
+            <strong>Melee Roll</strong> : On détermine qui "gagne" la mêlée.
+            <ul>
+              <li>
+                Chaque côté roule 1d6 par A des personnages en mêlée. Le côté
+                avec le résultat de d6 le plus haut "gagne".
+              </li>
+              <li>
+                En cas d'attaques multiples, on garde le plus haut. Ceci vaut
+                aussi s'il y a plusieurs adversaires contre un seul personnage.
+              </li>
+              <li>En cas de parité, celui avec le plus de F commence.</li>
+            </ul>
           </li>
           <li>
-            Le côté perdant (celui qui a moins de succès d'A que l'autre) est
+            <strong>Push Back</strong> : Le côté perdant est
             <strong>Pushed Back</strong>.
             <ul>
               <li>Le groupe <strong>Pushed Back</strong> recule de 1 Mv</li>
@@ -168,31 +182,35 @@
             </ul>
           </li>
           <li>
-            <strong>To-Wound</strong> : On lance 1d6 par <strong>Hit</strong> et
-            on consulte la charte plus bas. Pour chaque succès, on enlève 1 W à
-            l'opposant. Les attaques effectuées contre des cibles
-            <strong>Trapped</strong> ou <strong>Prone</strong> sont
-            automatiquement des succès. Il est possible de capturer et/ou
-            désarmer des adversaires qui sont <strong>Trapped</strong> ou
-            <strong>Prone</strong>.
+            <strong>Wound</strong> : On lance 1d6 par <strong>A</strong> du
+            gagnant et on consulte la charte plus bas. Pour chaque succès, on
+            enlève 1 W à l'opposant.
+            <ul>
+              <li>
+                Les attaques effectuées contre des cibles
+                <strong>Trapped</strong> ou <strong>Prone</strong> sont
+                doublées.
+              </li>
+              <li>
+                Il est possible de capturer et/ou désarmer des adversaires qui
+                sont <strong>Trapped</strong> ou <strong>Prone</strong>.
+              </li>
+            </ul>
           </li>
         </ul>
         <h3 class="subtitle">To-Wound</h3>
         <p>Pour le <strong>To-Wound</strong>, la formule est la suivante :</p>
         <ul>
           <li>Pour S = T, alors 4+ sur le d6</li>
-          <li>Pour S - 1 = T (donc S supérieur à T), alors 3+ sur le d6</li>
-          <li>
-            Pour S supérieur à ce chiffre, alors 2+ sur le d6 (on ne peut jamais
-            mieux blesser que 2+
-          </li>
-          <li>Pour S + 1 = T (donc S inférieur à T), alors 5+ sur le d6</li>
-          <li>Pour S inférieur à ce nombre, alors 6+</li>
-          <li>
-            Pour S inférieur de 5 par rapport à T, alors impossible de blesser
-          </li>
+          <li>Si le S est 1 ou 2 de moins que la T, alors 5+</li>
+          <li>Si le S est 1 ou 2 de plus que la T, alors 3+</li>
+          <li>Si le S est entre 3 et 5 de moins que la T, alors 6+</li>
+          <li>Si le S est 3 ou plus de plus que la T, alors 2+</li>
+          <li>Si le S est 5 de moins que la T, alors on ne peut pas blesser</li>
         </ul>
-        <p>Indiquer par une matrice, voici le résultat:</p>
+        <p>
+          Afin de rendre plus facile la visualisation, voir la matrice suivante:
+        </p>
         <div id="to-wound"></div>
       </section>
       <section id="duel">
@@ -205,25 +223,13 @@
           <li>
             Pour déclencher un duel, il faut être en mêlée avec un adversaire
             seul. Sinon, on peut utiliser un <strong>Mi</strong> pour forcer un
-            personnage adverse à entrer en duel.
-          </li>
-          <li>
-            Le duel suit les règles normales de combat sauf :
-            <ul>
-              <li>
-                Dans un duel, l'adversaire avec le plus haut F attaque en
-                premier.
-              </li>
-              <li>
-                On ne peut briser un duel ou la mêlée une fois commencée (sauf
-                si les deux parties s'entendent)
-              </li>
-            </ul>
+            personnage adverse à entrer en duel au travers d'une mêlée.
           </li>
           <li>
             Si un des deux côtés abdiquent ou meurt, les autres personnages en
-            mêlée de son côté doivent faire un
-            <a href="morale">jet de Morale</a>
+            mêlée de son groupe doivent faire un
+            <a href="morale">jet de Morale</a> (n'affecte pas les personnages
+            des joueurs).
           </li>
         </ul>
       </section>

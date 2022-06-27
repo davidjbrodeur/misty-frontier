@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/main.css" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript" src="script\main.js"></script>
+    <script type="text/javascript" src="script\generators.js"></script>
+    <script type="text/javascript" src="script\login.js"></script>
+    <title>Les Frontières Brumeuses</title>
+  </head>
+  <body>
+    <header id="header"></header>
+    <main class="content-page" id="dm-page">
+      <br />
+      <section id="dice-roller">
+        <h2>Dice Roller</h2>
+        <input id="diceNum" type="text" value="3" />
+        <button id="diceButton" onclick="rollDice();">Roll Dice</button>
+        <div id="dieContainer" class="dice"></div>
+      </section>
+      <section id="content-roller">
+        <h2>Content Roller</h2>
+        <input id="contentType" type="text" value="underground_turn" />
+        <textarea
+          id="contentOuput"
+          type="text"
+          value="underground_turn"
+          style="width: 25vw; height: 25vh"
+        >
+            general
+        </textarea>
+        <button onclick="generateContent(false);">Generate</button>
+        <button onclick="generateContent(true);">UndergroundTurn</button>
+        <div id="contentContainer" class="content-container"></div>
+      </section>
+      <section>
+        <h2>Procedures</h2>
+        <ul>
+          <li>
+            <strong>Hexcrawling</strong>
+            <ul>
+              <li>
+                Roll <strong>"hex-encounter"</strong> when entering first hex of
+                the day and when searching
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <br />
+      <br />
+    </main>
+    <footer id="footer"></footer>
+    <script type="text/javascript">
+      function rollDice() {
+        var numDice = document.getElementById("diceNum").value;
+        var container = document.getElementById("dieContainer");
+
+        container.innerHTML = "";
+        var sum = 0;
+        for (var i = 0; i < numDice; i++) {
+          var diceRoll = Math.floor(Math.random() * 6) + 1;
+          sum += diceRoll;
+          container.innerHTML += '<div class="dice">' + diceRoll + "</div>";
+        }
+        document.getElementById("diceButton").innerHTML = sum;
+      }
+
+      function generateContent(isUndergroundTurn) {
+        if (isUndergroundTurn) {
+          var contentType = "underground_turn";
+        } else {
+          var contentType = document.getElementById("contentType").value;
+        }
+        contentGenerated = getGeneratedContent(contentType);
+        document.getElementById("contentOuput").value = contentGenerated;
+      }
+      const allPossibleCommands = getCommands("");
+      console.log(allPossibleCommands);
+    </script>
+  </body>
+</html>
