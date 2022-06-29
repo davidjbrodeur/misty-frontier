@@ -8,8 +8,8 @@
     --dark-shade-clr: hsl(0, 0%, 25%);
     --medieval-font: "MedievalSharp";
     --normal-font: "Quattrocento";
-    --left-margin-increment: 2vw;
-    --left-margin-primary: 7vw;
+    --left-margin-increment: 1vw;
+    --left-margin-primary: 6vw;
     --left-margin-secondary: calc(var(--left-margin-primary) + var(--left-margin-increment));
     --left-margin-tertiary: calc(var(--left-margin-secondary) + var(--left-margin-increment));
     --left-margin-quarternary: calc(var(--left-margin-tertiary) + var(--left-margin-increment));
@@ -60,7 +60,7 @@ header {
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas:
-        "nav-bar roll20";
+        "nav-bar vtt-icon";
 }
 
 header img {
@@ -69,8 +69,8 @@ header img {
     border-radius: 10px;
 }
 
-.roll20 {
-    grid-area: roll20;
+.vtt-icon {
+    grid-area: vtt-icon;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,6 +187,31 @@ br {
     .intro-logistics {
         grid-area: right;
     }
+}
+
+/* DM Page */
+
+.content-roller {
+    display: grid;
+    width: 90%;
+    grid-template-areas:" title title title title title " 
+                        "sl left sc right sr";
+    grid-template-columns: 1fr 4fr 1fr 4fr 1fr;
+}
+
+.output {
+    grid-area: left;
+}
+
+.input {
+    grid-area: right;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; 
+}
+
+.title-dm {
+    grid-area: title; 
 }
 
 /* Content page */

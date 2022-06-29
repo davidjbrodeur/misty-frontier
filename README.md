@@ -14,6 +14,8 @@ HTML and CSS website with few JS (JQuery).
 
 ## TODO
 
+- Building stuff, wasting money, etc. will give you extra influence, reaction roll, hirelings, etc. This + equipment (and blacksmithing) is what money is about.
+- There is a thick fog that permeates the air in dark places (and at night). When you breath too much of it, you become ill. It is MUCH more thick in dungeons. All of this explains why players need to leave after 3h of gameplay, whether wilderness or underground.
 - Maybe have a player spot (map, roster, recaps, etc.) and one for the city/world (rumours, events, sigthings, political situation, etc.)
 - Put my worldbuilding into world anvil https://docs.google.com/document/d/1gaVxd5E_YI3avsgblR9XqcqL5VjqgPbwozzCjuJ5XeU/edit#
 - Do a campaign building:

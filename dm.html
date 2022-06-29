@@ -20,21 +20,54 @@
         <input id="diceNum" type="text" value="3" />
         <button id="diceButton" onclick="rollDice();">Roll Dice</button>
         <div id="dieContainer" class="dice"></div>
+        <br />
       </section>
-      <section id="content-roller">
-        <h2>Content Roller</h2>
-        <input id="contentType" type="text" value="underground_turn" />
-        <textarea
-          id="contentOuput"
-          type="text"
-          value="underground_turn"
-          style="width: 25vw; height: 25vh"
-        >
+      <section class="content-roller" id="content-roller">
+        <h2 class="title-dm">Content Roller</h2>
+        <br />
+        <div class="output">
+          <textarea
+            id="contentOuput"
+            type="text"
+            value="underground_turn"
+            style="width: 25vw; height: 25vh"
+          >
+              general
+          </textarea>
+          <textarea
+            id="tableContentOuput"
+            type="text"
+            value="underground_turn"
+            style="width: 25vw; height: 25vh"
+          >
             general
-        </textarea>
-        <button onclick="generateContent(false);">Generate</button>
-        <button onclick="generateContent(true);">UndergroundTurn</button>
-        <div id="contentContainer" class="content-container"></div>
+        </textarea
+          >
+          <br />
+          <label for="args">Args</label>
+          <input type="text" id="args" value="" />
+        </div>
+        <div class="input" id="input-container">
+          <div id="contentContainer" class="content-container"></div>
+        </div>
+      </section>
+      <section class="content-roller" id="monster-shower">
+        <h2 class="title-dm">Monster Shower</h2>
+        <br />
+        <div class="output">
+          <textarea
+            id="monsterOuput"
+            type="text"
+            value="underground_turn"
+            style="width: 25vw; height: 25vh"
+          >
+              general
+          </textarea>
+          <br />
+        </div>
+        <div class="input" id="input-container-monster">
+          <div id="monsterContainer" class="content-container"></div>
+        </div>
       </section>
       <section>
         <h2>Procedures</h2>
@@ -58,7 +91,6 @@
       function rollDice() {
         var numDice = document.getElementById("diceNum").value;
         var container = document.getElementById("dieContainer");
-
         container.innerHTML = "";
         var sum = 0;
         for (var i = 0; i < numDice; i++) {
@@ -78,8 +110,56 @@
         contentGenerated = getGeneratedContent(contentType);
         document.getElementById("contentOuput").value = contentGenerated;
       }
-      const allPossibleCommands = getCommands("");
-      console.log(allPossibleCommands);
+
+      function getTableAsString(tableToSearch) {
+        let allTable = getData();
+        return getStringFromList(allTable, tableToSearch);
+      }
+
+      var createAllButtons = function () {
+        let allPossibleCommands = getCommands("");
+        for (command in allPossibleCommands) {
+          var button = document.createElement("button");
+          button.innerHTML = allPossibleCommands[command];
+          button.setAttribute("id", allPossibleCommands[command]);
+          button.onclick = function () {
+            document.getElementById("contentOuput").value = getGeneratedContent(
+              document.getElementById(this.id).innerHTML
+            );
+            document.getElementById("tableContentOuput").value =
+              getTableAsString(document.getElementById(this.id).innerHTML);
+          };
+          document.getElementById("input-container").appendChild(button);
+        }
+      };
+      createAllButtons();
+
+      function getStringFromList(list, key) {
+        let result = key.toUpperCase();
+        for (content in list[key]) {
+          result += "\n" + content + " : " + list[key][content];
+        }
+        return result;
+      }
+
+      var createAllMonsters = function () {
+        var allMonsters = getMonsters();
+        for (monsterName in allMonsters) {
+          var button = document.createElement("button");
+          button.innerHTML = monsterName;
+          button.setAttribute("id", monsterName);
+          button.onclick = function () {
+            document.getElementById("monsterOuput").value = getStringFromList(
+              allMonsters,
+              monsterName
+            );
+          };
+          document
+            .getElementById("input-container-monster")
+            .appendChild(button);
+        }
+      };
+      createAllMonsters();
     </script>
   </body>
 </html>

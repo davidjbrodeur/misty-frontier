@@ -34,6 +34,13 @@
           carrière, c'est-à-dire la partie principale des règles du jeu.
         </p>
         <p>
+          Dans le monde où le groupe se situe, toute la région est couverte d'un
+          brouillard sombre, épais et dangereux. En effet, ceux qui restent trop
+          longtemps dedans peuvent développer des maladies, des problèmes ou
+          même disparaitre! Ceci limite grandement l'exploration: une partie ne
+          peut jamais durer plus qu'environ 3h.
+        </p>
+        <p>
           L'exploration se fait sous différents modes, selon le type de
           mouvement. Lorsque les joueurs se promènent dans des ruines, en temps
           réel, discutent entre eux, etc., on parle d'exploration "normale" ou
@@ -60,24 +67,22 @@
       <section id="underground">
         <h2>Underground Exploration</h2>
         <h3 class="subtitle">Temps</h3>
-        <p>Voici les règles au niveau du temps:</p>
-        <ul>
-          <li>
-            <strong>Tour d'Underground Exploration</strong> : Un tour
-            d'exploration est d'environ quelques minutes. À chaque tour, le
-            maître de jeu vérifie ce qui se produit dans les environs, ce qui
-            inclut des patrouilles d'ennemis potentiels. À chaque tour, le
-            groupe peut effectuer une action.
-          </li>
-        </ul>
+        <p>
+          Le temps d'exploration est abstrait afin d'être environ égal au temps
+          réel afin de simplifier le calcul. Les donjons sont remplis du
+          Brouillard qui couvre l'extérieur de manière encore plus intense: il
+          n'est pas possible de rester plus que quelques heures sans subir des
+          conséquences graves.
+        </p>
         <h3 class="subtitle">Espace</h3>
         <p>Voici les règles au niveau de l'espace:</p>
         <ul>
           <li>
             <strong>Métrique spatiale en pieds</strong> : Les personnages se
-            déplacent selon leur Mv ce qui équivaut à environ 5" par Mv. Il
-            n'est pas nécessaire de toujours dire "J'avance de X pieds", mais le
-            maître de jeu va décrire les pièces et les situations en pieds.
+            déplacent selon leur Mv ce qui équivaut à environ 5" par Mv (ou sur
+            les webapp, une case). Il n'est pas nécessaire de toujours dire
+            "J'avance de X pieds", mais le maître de jeu va décrire les pièces
+            et les situations en pieds.
           </li>
           <li>
             <strong>Ordre de marche</strong> : Les joueurs doivent dire quel est
@@ -90,35 +95,76 @@
             dans le noir. Il ne pourra donc que se déplacer à tâton et sera
             considéré aveugle en combat. Les torches produisent 6 Mv de lumière
             dans chaque direction. Les personnages utilisent des torches au fil
-            de leur exploration. Ces torches sont considérées dans l'<a
-              href="equipment.html#carry"
-              >équipement de base</a
-            >. La partie se termine parce que les personnages n'ont plus de
-            lumière et doivent retourner en civilisation.
+            de leur exploration:
+            <ul>
+              <li>Torche: 1h</li>
+              <li>Lanterne: 3h (pour une huile)</li>
+            </ul>
           </li>
         </ul>
         <h3 class="subtitle">Actions</h3>
-        <p>
-          À chaque tour, le groupe peut utiliser une action dans la liste
-          suivante:
-        </p>
+        <p>Les joueurs peuvent effectuer toutes les actions qu'ils veulent:</p>
         <ul>
           <li>Fouiller une pièce fond en comble</li>
           <li>Traverser une pièce</li>
           <li>Effectuer un combat</li>
           <li>Défoncer une porte, désactiver un piège, etc.</li>
-        </ul>
-        <p>
-          De plus, on peut effectuer un certain nombre (logique) d'actions
-          gratuites dans la liste suivante:
-        </p>
-        <ul>
           <li>Écouter à une porte</li>
           <li>Alumer/éteindre des torches</li>
           <li>Discuter</li>
           <li>Réviser la carte du donjon</li>
           <li>etc.</li>
         </ul>
+        <h3 class="subtitle">Rôle d'équipe</h3>
+        <p>
+          Il est cependant important de bien décrire au maître de jeu ce qu'on
+          veut faire et de garder les autres en considération. Normalement, si
+          un joueur veut effectuer une action avec son personnage, le maître de
+          jeu demandera aux autres s'ils veulent faire quelque chose en
+          parallèle. Chacune de ces "actions" principales est séquentielle. Pour
+          aider, voici des "rôles" qui peuvent être partagés entre les joueurs
+          afin de faciliter le jeu et la division des tâches:
+        </p>
+        <ul>
+          <li>
+            <strong>Caller</strong> : Le caller (de l'anglais "to call") est
+            celui qui communique l'intention final du groupe au maître de jeu.
+            Le but de se rôle n'est pas tant de 'décider' pour le groupe, mais
+            plutôt de s'assurer que le maître de jeu, au final, n'a qu'une seule
+            réponse. Dans certains cas, il pourra être nécessaire pour le caller
+            de trancher. Dans tous les cas, ce rôle peut être changer entre les
+            parties ou conserver.
+          </li>
+          <li>
+            <strong>Gardien du temps (time keeper)</strong> : Étant donné que le
+            brouillard peut conquérir les meilleurs des aventuriers, il est
+            important de garder le temps en tête. Le rôle du gardien du temps
+            est de s'assurer que les joueurs ne restent pas trop longtemps à la
+            même place (pour éviter les
+            <a href="#dungeon-encounter">Dungeon Encounters</a>) et soient sorti
+            du donjon avant la fin de la partie.
+          </li>
+          <li>
+            <strong>Cartographe (mapper)</strong> : Les joueurs doivent
+            maintenir leur carte eux-mêmes. Ça peut être de dessiner sur papier,
+            sur un fichier paint, etc. Une suggestion est d'utiliser un
+            programme en ligne tel que: https://www.owlbear.rodeo/ (à noter que
+            owlbear rodeo ne fait pas de sauvegarde: si vous aimez votre dessin
+            avec vos notes, vous devez les screenshot-copy-paste ailleurs). Une
+            bonne carte permet de ne pas se perdre et de partager des
+            informations avec les autres joueurs. Le maître de jeu ne va que
+            partager certaines pièges pour clarifier des descriptions mais ne
+            donnera pas une map complète des endroits visités.
+          </li>
+        </ul>
+        <h3 id="dungeon-encounter" class="subtitle">Dungeon Encounters</h3>
+        <p>
+          Chaque fois que les personnages font du bruit (courir, briser une
+          porte, crier, etc.), reste trop longtemps au même endroit, ou à chaque
+          10 minutes (temps réel), il y a une chance que des monstres (ou autre)
+          dans le donjon se rendent comptent de leur présence ou patrouille dans
+          leur zone. Il y a donc des conséquences à ne pas faire attention!
+        </p>
       </section>
       <section id="wilderness">
         <h2>Wilderness Exploration</h2>
@@ -146,14 +192,6 @@
             indiquer qui s'occupe d'être une sentinelle en avant ou en arrière,
             ainsi de suite. Le maître de jeu utilisera ces informations pour
             décrire les situations.
-          </li>
-          <li>
-            <strong>Ration</strong> : Les personnages consomment des rations à
-            chaque jour. Ces rations sont considérées dans l'<a
-              href="equipment.html#carry"
-              >équipement de base</a
-            >. La partie se termine parce que les personnages n'ont plus de
-            rations et doivent retourner en civilisation.
           </li>
         </ul>
         <h3 class="subtitle">Actions</h3>
@@ -200,8 +238,8 @@
         <p>Certaines considérations supplémentaires:</p>
         <ul>
           <li>
-            Les actions qui ne prennent que quelques minutes sont gratuites
-            (tant que c'est logique).
+            Les actions qui ne prennent que quelques minutes/heures sont
+            gratuites (tant que c'est logique).
           </li>
           <li>
             Si au moins la moitié du groupe possède des chevaux, le groupe gagne
@@ -210,6 +248,11 @@
           <li>
             Des effets magiques ou météos peuvent diminuer le nombre de TP par
             tour.
+          </li>
+          <li>
+            Les joueurs doivent maintenir leur carte eux-mêmes. Ça peut être de
+            dessiner sur papier, sur un fichier paint, etc. Une suggestion est
+            d'utiliser un programme en ligne tel que: https://hexfriend.net/.
           </li>
         </ul>
       </section>
