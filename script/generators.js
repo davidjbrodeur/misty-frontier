@@ -3,7 +3,7 @@ let faction_catchphrase = " -> [FACTION] wants [MOTIVATION] but [OBSTACLE]. Ther
 
 let settlement_catchphrase = " -> The dungeon level is home (although not originally) to one species of monsters that uses it as a settlement area. They are more numerous, have places to perform all their things, etc. They use the dungeon layout to their advantage. They don't come from the dungeon, but rather from another settlement they had which connects from the inside to the dungeon (i.e. the level is double: one half is the dungeon proper, the other half is the settlement/cavern systems of the inhabitants of this level). "
 
-const data = 
+const wilderness_exploration = 
 {
     "camp_event": {
         2: "A monster approaches the camp because of the fire/noise.",
@@ -31,84 +31,6 @@ const data =
         11: "The players hear distant, sourceless harp music. When pointed out or mentioned, it stops",
         12: "The fog gets higher, a hireling starts screaming and runs away never to be seen again."
     },
-    "general_roll": {
-        2: "Catastrophic failure (No AND): something bad happen",
-        3: "Catastrophic failure (No AND): something bad happen",
-        4: "Failure (No): The action doesn't work",
-        5: "Failure (No): The action doesn't work",
-        6: "Partial failure (No, but): The action barely fails, UNLESS the character sacrifice something (time, object, etc.)",
-        7: "Partial failure (No, but): The action barely fails, UNLESS the character sacrifice something (time, object, etc.)",
-        8: "Partial failure (No, but): The action barely fails, UNLESS the character sacrifice something (time, object, etc.)",
-        9: "Success (Yes): Work accordingly",
-        10: "Success (Yes): Work accordingly",
-        11: "Great success (Yes AND): Work accordingly with a small extra",
-        12: "Great success (Yes AND): Work accordingly with a small extra"
-    },
-    "reaction_roll": {
-        2: "Hostile, cruelty, destruction // PCs are seen as threat",
-        3: "Hostile, cruelty, destruction // PCs are seen as threat",
-        4: "Needs are more important than PCs // End of negotiations or no negotiations",
-        5: "Needs are more important than PCs // End of negotiations or no negotiations",
-        6: "As per needs or leave // Leave or entertain bargain for needs",
-        7: "As per needs or leave // Leave or entertain bargain for needs",
-        8: "As per needs or leave // Leave or entertain bargain for needs",
-        9: "Favourable, curiosity, evasion // Open to negotiation or exchange",
-        10: "Favourable, curiosity, evasion // Open to negotiation or exchange",
-        11: "Curiosity and help // Service or help",
-        12: "Curiosity and help // Service or help"
-    },
-    "what" : {
-        2: "In a temporary place/camp",
-        3: "In a temporary place/camp",
-        4: "Patrolling",
-        5: "Patrolling",
-        6: "In a small ruin/lair/cavern",
-        7: "In a small ruin/lair/cavern",
-        8: "In a small ruin/lair/cavern",
-        9: "Hunting/eating",
-        10: "Hunting/eating",
-        11: "Settling, living or resting",
-        12: "Settling, living or resting"
-    },
-    "how" : {
-        2: "Combat with another monster (reroll monster_type)",
-        3: "Being greatly injured",
-        4: "Being cursed/magically affected",
-        5: "Being seditious with its own group/race/type",
-        6: "Being related to another monster (looking for, hunting, checking, talking) (reroll monster_type)",
-        7: "Chilling",
-        8: "Being related to another monster (looking for, hunting, checking, talking) (reroll monster_type)",
-        9: "Looking for his own group/race/type",
-        10: "Being diseased",
-        11: "Being dead",
-        12: "Combat with another monster (reroll monster_type)"
-    },
-    "where" : {
-        2: "Fake treasure",
-        3: "Traps",
-        4: "Tricks",
-        5: "Guarded treasure",
-        6: "Nothing of value",
-        7: "Nothing of value",
-        8: "Nothing of value",
-        9: "Guarded treasure",
-        10: "Guarded treasure",
-        11: "Hidden treasure",
-        12: "Open treasure"
-    },
-    "monster_omen" : {
-        2: "Unabandonned lair of",
-        3: "Abandonned lair of",
-        4: "Body of",
-        5: "Sound in the distance of",
-        6: "Markings of",
-        7: "Path of",
-        8: "Hunter looking for",
-        9: "Humanoids running away from",
-        10: "Lair/ruin/house destroyed by",
-        11: "Animal/human bodies left by",
-        12: "Treasure abandonned by"
-    }, 
     "entering_or_searching_hex" : {
         2: "region unique monster",
         3: "hex type monster",
@@ -408,6 +330,146 @@ const data =
         11 : "black knight",
         12 : "lich"
     },
+    "unique_hex_encounters" : {
+        0 : "Far away Wizard-king and his archmage friend arrive in a haste on horses, near death. They ask X of the player (transport something, shelter them, etc.), knowning they are pursued and almost dead. They are pursued by their own population because they dabbled in a forgotten (and forbidden) art of magic. They say that they did it for the good of all, and are unapologitical about it.",
+        1 : "A group of priests burst out of a backalley while a group of thief pursues them. Behind, a evil high priest is lying dead. He's actually an undead and will pursue later the player if they steal anything from them. He made a pact with dark forces.",
+        2 : "A normal man that his wife and daughter have been killed by a (unique) monster. He has been tracking it for a decade. He possess a vast variety of monsters head proving his worth",
+        3 : "A hunter tired of animals will chat will chat with the players and offer to sleep with them at night if they agree. During the night he will flee and will now target the players as his next prey. ",
+        4 : "Group of dwarf/human from afar are looking to prospect mountains and hills for new mines",
+        5 : "A man chained to a rock on top of a hill, let there to die. 1/6 he is evil, otherwise it's just a cruel punishment. ",
+        6 : "Mimic masquerading as floating crates or crates",
+        7 : "A ranger has been tracking something for three days that murdered an entire village. The tracks seem to warp and change every few miles.",
+        8 : "A floating and mobile crystal fields. At night, they dissapear. ",
+        9 : "A renowed elven swordsman in a hidden cabin. He no long takes students.",
+        10 : "A caravan of orcish slaves. If good reaction, they can take new slaves or sell them",
+        11 : "A shifting mirage city",
+        12 : "The animated skeleton of a giant is roaming",
+        13 : "A local lord is patrolling with his retinue and will friendily joust the players",
+        14 : "A local wizard is patrolling and will geas",
+        15 : "A man in a black robe with a great book and a beautiful ring full of red rubies will tell the player he is a great wizard and they need to bow before him and offer him a toll. Otherwise, he will unleash powerful flames (fireball) on them. He is actually a level 1 apprentice that stole a ring from his master. There is one fireball charge left (unknown to him)",
+        16 : "A friendly ogre is injured on the side of the road in a small cave. If healed, he will accompany the players for the rest of this adventure. ",
+        17 : "An ancient ranger has set up a camp and will gladly accept the players and nourish them. He will give them some tips. The next day, he dissapeared. If asked about in the region, people will tell them that he was a legendary ranger and died 25-30 years ago. ",
+        18 : "A group of mercenaries are trying to capture an elemental (as per the land, generally a water elemental in a river) for the local wizard. They have a magical net to capture it. The elemental promises the player a reward if they side with him. The bandits says the wizard will pay a lot of money for the elemental. ",
+        19 : "A roaming giant will help the player if they pay him with fruits. He is less intelligent than normal giants, but more friendly. He doesn't want to kill people so he flew his clan. ",
+        20 : "A roaming blind druid is looking for a rare plant in the area that is without smell. He will help the player if they help him. ",
+        21 : "They find the body of a man with a shovel and a chest with a hole dug. There is no trace of what killed him. In the chest, there are some minor treasure and a couple of books, one of which has been torned down. The book speaks of psionics. ",
+        22 : "A wagon surrounded by decomposing humanoid corpses wearing rainbow colored cloaks. The wagon contains a hidden compartment which holds 4d6 x 100 doses of drugs (each doses sells 2GP) inside.",
+    },
+    "quests" : {
+        0 : "Go explore area X and come back to me with a detailed map",
+        1 : "Go explore dungeon X and come back to me with a detailed map",
+        2 : "Go scout megadungeon X and come back to me with detailed information",
+        3 : "Go find X plant",
+        4 : "Go find X magical item in Y dungeon/megadungeon",
+        5 : "Go find X magical item",
+        6 : "Go clear X dungeon",
+        7 : "Go clear X megadungeon",
+        8 : "Go plant this magical item in X region (/w Y complication)",
+        9 : "Go plant this magical item in X dungeon",
+        10 : "Clear his tower of X, Y, Z monster (ideally resistant to magic)",
+        11 : "Go to another mage tower X to negociate Y from him",
+        12 : "Go to another mage tower X to kill him",
+        13 : "Go to another mage tower X to steal Y from him",
+        14 : "Go defeat Warlord X to teach him a lesson",
+        15 : "Go close the demon portal/undead artefact/faerie circle at X",
+        16 : "Go steal/kill something from the faerie circle at X",
+        17 : "Go clear all of Y creature in the area (infestation)",
+        18 : "Go kill X creature",
+        19 : "Go capture X creature",
+    },
+}
+
+const generalities = 
+{
+    "general_roll": {
+        2: "Catastrophic failure (No AND): something bad happen",
+        3: "Catastrophic failure (No AND): something bad happen",
+        4: "Failure (No): The action doesn't work",
+        5: "Failure (No): The action doesn't work",
+        6: "Partial failure (No, but): The action barely fails, UNLESS the character sacrifice something (time, object, etc.)",
+        7: "Partial failure (No, but): The action barely fails, UNLESS the character sacrifice something (time, object, etc.)",
+        8: "Partial failure (No, but): The action barely fails, UNLESS the character sacrifice something (time, object, etc.)",
+        9: "Success (Yes): Work accordingly",
+        10: "Success (Yes): Work accordingly",
+        11: "Great success (Yes AND): Work accordingly with a small extra",
+        12: "Great success (Yes AND): Work accordingly with a small extra"
+    },
+    "reaction_roll": {
+        2: "Hostile, cruelty, destruction // PCs are seen as threat",
+        3: "Hostile, cruelty, destruction // PCs are seen as threat",
+        4: "Needs are more important than PCs // End of negotiations or no negotiations",
+        5: "Needs are more important than PCs // End of negotiations or no negotiations",
+        6: "As per needs or leave // Leave or entertain bargain for needs",
+        7: "As per needs or leave // Leave or entertain bargain for needs",
+        8: "As per needs or leave // Leave or entertain bargain for needs",
+        9: "Favourable, curiosity, evasion // Open to negotiation or exchange",
+        10: "Favourable, curiosity, evasion // Open to negotiation or exchange",
+        11: "Curiosity and help // Service or help",
+        12: "Curiosity and help // Service or help"
+    },
+    "monster_needs": {
+        0: "Safety: lost, hurt, running away from threat, without light, etc.",
+        1: "Sustenance: hunting, hungry, eating, preparing food",
+        2: "Comfort: link with own species (mating), warming, nap, shelter, relax play",
+        3: "Territory: patrolling, tracking, conquering, exploring",
+        4: "Catharsis: play, sadism, anger, desperation, revenge, corruption",
+        5: "Luxury: looking for gold, items, alcohol, slaves",
+        6: "Knowledge: looking for direction, lore, spying neighbours",
+        7: "Allies or assistance: they need help for (reroll)",
+        8: "Actualisation of the self: ideology, religion, training, cult",
+    },
+    "what" : {
+        2: "In a temporary place/camp",
+        3: "In a temporary place/camp",
+        4: "Patrolling",
+        5: "Patrolling",
+        6: "In a small ruin/lair/cavern",
+        7: "In a small ruin/lair/cavern",
+        8: "In a small ruin/lair/cavern",
+        9: "Hunting/eating",
+        10: "Hunting/eating",
+        11: "Settling, living or resting",
+        12: "Settling, living or resting"
+    },
+    "how" : {
+        2: "Combat with another monster (reroll monster_type)",
+        3: "Being greatly injured",
+        4: "Being cursed/magically affected",
+        5: "Being seditious with its own group/race/type",
+        6: "Being related to another monster (looking for, hunting, checking, talking) (reroll monster_type)",
+        7: "Chilling",
+        8: "Being related to another monster (looking for, hunting, checking, talking) (reroll monster_type)",
+        9: "Looking for his own group/race/type",
+        10: "Being diseased",
+        11: "Being dead",
+        12: "Combat with another monster (reroll monster_type)"
+    },
+    "where" : {
+        2: "Fake treasure",
+        3: "Traps",
+        4: "Tricks",
+        5: "Guarded treasure",
+        6: "Nothing of value",
+        7: "Nothing of value",
+        8: "Nothing of value",
+        9: "Guarded treasure",
+        10: "Guarded treasure",
+        11: "Hidden treasure",
+        12: "Open treasure"
+    },
+    "monster_omen" : {
+        2: "Unabandonned lair of",
+        3: "Abandonned lair of",
+        4: "Body of",
+        5: "Sound in the distance of",
+        6: "Markings of",
+        7: "Path of",
+        8: "Hunter looking for",
+        9: "Humanoids running away from",
+        10: "Lair/ruin/house destroyed by",
+        11: "Animal/human bodies left by",
+        12: "Treasure abandonned by"
+    },
     "disease":{
         2: "Smallpox",
         3: "Yellow Fever",
@@ -447,6 +509,280 @@ const data =
         11: "Petrification",
         12: "Cannibalism (can only eat flesh)"
     },
+    "distance" : {
+
+    },
+    "base_actions" : {
+
+    },
+    "monster_ai":{
+
+    },
+    "oracle_subject" : {
+        0 : "99. Anger",
+        1 : "100. Information",
+        2 : "Goals",
+        3 : "2. Dreams",
+        4 : "3. Environment",
+        5 : "4. Outside",
+        6 : "5. Inside",
+        7 : "6. Reality",
+        8 : "7. Allies",
+        9 : "8. Enemies",
+        10 : "9. Evil",
+        11 : "10. Good",
+        12 : "11. Emotions",
+        13 : "12. Opposition",
+        14 : "13. War",
+        15 : "14. Peace",
+        16 : "15. The innocent",
+        17 : "16. Love",
+        18 : "17. The spiritual",
+        19 : "18. The intellectual",
+        20 : "19. New ideas",
+        21 : "20. Joy",
+        22 : "21. Messages",
+        23 : "22. Energy",
+        24 : "23. Balance",
+        25 : "24. Tension",
+        26 : "25. Friendship",
+        27 : "26. The physical",
+        28 : "27. A project",
+        29 : "28. Pleasures",
+        30 : "29. Pain",
+        31 : "30. Possessions",
+        32 : "31. Benefits",
+        33 : "32. Plans",
+        34 : "33. Lies",
+        35 : "34. Expectations",
+        36 : "35. Legal matters",
+        37 : "36. Bureaucracy",
+        38 : "37. Business",
+        39 : "38. A path",
+        40 : "39. News",
+        41 : "40. Exterior factors",
+        42 : "41. Advice",
+        43 : "42. A plot",
+        44 : "43. Competition",
+        45 : "44. Prison",
+        46 : "45. Illness",
+        47 : "46. Food",
+        48 : "47. Attention",
+        49 : "48. Success",
+        50 : "49. Failure",
+        51 : "50. Travel",
+        52 : "51. Jealousy",
+        53 : "52. Dispute",
+        54 : "53. Home",
+        55 : "54. Investment",
+        56 : "55. Suffering",
+        57 : "56. Wishes",
+        58 : "57. Tactics",
+        59 : "58. Stalemate",
+        60 : "59. Randomness",
+        61 : "60. Misfortune",
+        62 : "61. Death",
+        63 : "62. Disruption",
+        64 : "63. Power",
+        65 : "64. A burden",
+        66 : "65. Intrigues",
+        67 : "66. Fears",
+        68 : "67. Ambush",
+        69 : "68. Rumor",
+        70 : "69. Wounds",
+        71 : "70. Extravagance",
+        72 : "71. A representative",
+        73 : "72. Adversities",
+        74 : "73. Opulence",
+        75 : "74. Liberty",
+        76 : "75. Military",
+        77 : "76. The mundane",
+        78 : "77. Trials",
+        79 : "78. Masses",
+        80 : "79. Vehicle",
+        81 : "80. Art",
+        82 : "81. Victory",
+        83 : "82. Dispute",
+        84 : "83. Riches",
+        85 : "84. Status quo",
+        86 : "85. Technology",
+        87 : "86. Hope",
+        88 : "87. Magic",
+        89 : "88. Illusions",
+        90 : "89. Portals",
+        91 : "90. Danger",
+        92 : "91. Weapons",
+        93 : "92. Animals",
+        94 : "93. Weather",
+        95 : "94. Elements",
+        96 : "95. Nature",
+        97 : "96. The public",
+        98 : "97. Leadership",
+        99 : "98. Fame",
+    },
+    "oracle_action" : {
+        0 : "1. Attainment",
+        1 : "2. Starting",
+        2 : "3. Neglect",
+        3 : "4. Fight",
+        4 : "5. Recruit",
+        5 : "6. Triumph",
+        6 : "7. Violate",
+        7 : "8. Oppose",
+        8 : "9. Malice",
+        9 : "10. Communicate",
+        10 : "11. Persecute",
+        11 : "12. Increase",
+        12 : "13. Decrease",
+        13 : "14. Abandon",
+        14 : "15. Gratify",
+        15 : "16. Inquire",
+        16 : "17. Antagonise",
+        17 : "18. Move",
+        18 : "19. Waste",
+        19 : "20. Truce",
+        20 : "21. Release",
+        21 : "22. Befriend",
+        22 : "23. Judge",
+        23 : "24. Desert",
+        24 : "25. Dominate",
+        25 : "26. Procrastinate",
+        26 : "27. Praise",
+        27 : "28. Separate",
+        28 : "29. Take",
+        29 : "30. Break",
+        30 : "31. Heal",
+        31 : "32. Delay",
+        32 : "33. Stop",
+        33 : "34. Lie",
+        34 : "35. Return",
+        35 : "36. Immitate",
+        36 : "37. Struggle",
+        37 : "38. Inform",
+        38 : "39. Bestow",
+        39 : "40. Postpone",
+        40 : "41. Expose",
+        41 : "42. Haggle",
+        42 : "43. Imprison",
+        43 : "44. Release",
+        44 : "45. Celebrate",
+        45 : "46. Develop",
+        46 : "47. Travel",
+        47 : "48. Block",
+        48 : "49. Harm",
+        49 : "50. Debase",
+        50 : "51. Overindulge",
+        51 : "52. Adjourn",
+        52 : "53. Adversity",
+        53 : "54. Kill",
+        54 : "55. Disrupt",
+        55 : "56. Usurp",
+        56 : "57. Create",
+        57 : "58. Betray",
+        58 : "59. Agree",
+        59 : "60. Abuse",
+        60 : "61. Oppress",
+        61 : "62. Inspect",
+        62 : "63. Ambush",
+        63 : "64. Spy",
+        64 : "65. Attach",
+        65 : "66. Carry",
+        66 : "67. Open",
+        67 : "68. Carelessness",
+        68 : "69. Ruin",
+        69 : "70. Extravagance",
+        70 : "71. Trick",
+        71 : "72. Arrive",
+        72 : "73. Propose",
+        73 : "74. Divide",
+        74 : "75. Refuse",
+        75 : "76. Mistrust",
+        76 : "77. Deceive",
+        77 : "78. Cruelty",
+        78 : "79. Intolerance",
+        79 : "80. Trust",
+        80 : "81. Excitement",
+        81 : "82. Activity",
+        82 : "83. Assist",
+        83 : "84. Care",
+        84 : "85. Negligence",
+        85 : "86. Passion",
+        86 : "87. Work hard",
+        87 : "88. Control",
+        88 : "89. Attract",
+        89 : "90. Failure",
+        90 : "91. Pursue",
+        91 : "92. Vengeance",
+        92 : "93. Proceedings",
+        93 : "94. Dispute",
+        94 : "95. Punish",
+        95 : "96. Guide",
+        96 : "97. Transform",
+        97 : "98. Overthrow",
+        98 : "99. Oppress",
+        99 : "Change"
+    },
+    "general_theme": {
+        2: "Religious.",
+        3: "Ancient/lore/history.",
+        4: "Magic.",
+        5: "Strife.",
+        6: "Art.",
+        7: "Economy.",
+        8: "Survival.",
+        9: "Strife.",
+        10: "Ancient/lore/history.",
+        11: "Magic.",
+        12: "Religious."
+    },
+    "triple_oracle": {}    
+}
+
+const underground_exploration = 
+{
+    "underground_turn":{
+        2: "Enemy patrol ambush.",
+        3: "Enemy patrol closing in.",
+        4: "Enemy patrol in a nearby room.",
+        5: "Noise coming from a random direction.",
+        6: "Nothing.",
+        7: "Nothing.",
+        8: "Nothing.",
+        9: "Noise coming from a random direction.",
+        10: "Enemy patrol in a nearby room.",
+        11: "Enemy patrol closing in.",
+        12: "NPC closing in."
+    },
+    "dungeon_random_encounter" : {
+        2: "alarm",
+        3: "ambush",
+        4: "patrol moving towards player",
+        5: "lights out (wind, fog, roof with water collapse, etc.)",
+        6: "Nothing.",
+        7: "Nothing.",
+        8: "Nothing",
+        9: "Noise from elsewhere (door, rock, roar, voice, etc.)",
+        10: "unique_dungeon_encounter",
+        11: "accidentally reveal secrets in the room, if any",
+        12: "find a friendly npc (prisoner, escape, etc.)"
+    }, 
+    "unique_dungeon_encounter" : {
+        2: "Under a loose bit of cobblestone on the ground, you see what appears to be a small tunnel. If you reach inside or stick around too long, a living crawling hand jumps out of the hole and attacks. This living hand has been hoarding rings and jewelry in this tunnel.",
+        3: "The group finds a long forgotten coin hoard. All is not as it seems, some of the coins are tiny-sized mimics (maybe individuals, maybe swarms), that adhere to and attack those that try to gather the treasure.",
+        4: "A crumbling wall with a small tunnel bore through its base hides the resting room for a peaceful Goblin who knows the dungeon well and will give directions or hints in trade for an interesting item.",
+        5: "The ceiling is completely covered with horrid insects - dark, silent and unseen except for the occasional masonry dust they knock loose.",
+        6: "flying swords that attack party members with swords",
+        7: "old man walking around. if they don't look at him for one moment, he dissapear (ghost)",
+        8: "1 ogre with a displacer beast pet carrying a bag of giant frogs",
+        9: "Two ogres are arguing about food. One wants to eat a human that they captured. The other doesn't want to do it because it's too dangerous to be around humans for too long because they might be rescued by their friends.",
+        10: "A group of 2d6 orcs are celebrating their defeat of a group of humans. They are drunk and attack the players if they get too close.",
+        11: "A hole in the wall, about the height of human shoulders. There is something shiny on the deep end of the hole, however to reach that, you would have to reach inside, and it's deep enough to swallow your arm up he shoulder. If you reach inside, something bites you, causing 1d4 piercing damage. If you reach inside again, nothing bites you and you are free to take the shiny thing. It's a single goldpiece.",
+        12: "The ghost of an adventurer that became lost in the dungeon years ago."
+    }
+}
+
+const downtime_and_domain = 
+{
     "carousing":{
         2: "disease",
         3: "Made an enemy by speaking too much (1-2 an official, 3-4 a merchant, 5-6 a smuggler)",
@@ -473,19 +809,6 @@ const data =
         11: "Gifts: the population gifts the lord",
         12: "Blessings: the gods blesses the domain"
     },   
-    "underground_turn":{
-        2: "Enemy patrol ambush.",
-        3: "Enemy patrol closing in.",
-        4: "Enemy patrol in a nearby room.",
-        5: "Noise coming from a random direction.",
-        6: "Nothing.",
-        7: "Nothing.",
-        8: "Nothing.",
-        9: "Noise coming from a random direction.",
-        10: "Enemy patrol in a nearby room.",
-        11: "Enemy patrol closing in.",
-        12: "NPC closing in."
-    },
     "monster_type":{ // https://docs.google.com/spreadsheets/d/1ET8DTWlVJNWyjvRDrp_uvp8P25QUOQi5QbYnWOvIS4o/edit#gid=1111363162
         2: "dragon_type",
         3: "abheration_type",
@@ -537,7 +860,8 @@ const data =
         10 : "prophecy of doom",
         11 : "internal strife",
         12 : "raid"
-    }, "regional_event":{ // https://docs.google.com/spreadsheets/d/1ET8DTWlVJNWyjvRDrp_uvp8P25QUOQi5QbYnWOvIS4o/edit#gid=2008862648
+    }, 
+    "regional_event": { // https://docs.google.com/spreadsheets/d/1ET8DTWlVJNWyjvRDrp_uvp8P25QUOQi5QbYnWOvIS4o/edit#gid=2008862648
         2: "world_event",
         3: "regional_event_disruption",
         4: "regional_event_discovery",
@@ -679,111 +1003,11 @@ const data =
         10 : "history (Fragments of an ancient map can be used (normal magical item treasure map) or sold for 1 treasure to merchants)",
         11 : "religious fervor (there is a religious fervor and more people give offering and become monk/paladins. +1 for 1d6 turn to your Social if you have a Temple of any level. Also easier to recruit templars and religious specialists)",
         12 : "prophecy (Someone received visions from the gods. 50% true, 50% false 1: A virgin girl in the countryside (2+ true) 2: A Paladin (100% true) 3: A merchant or small noble (6+ true) 4: Someone officiating rituals (i.e. a leader; 4+) 5: An old man/elder (4+) 6: A poor man without house or family (3+ true))"
-    },
-     "general_theme":{
-        2: "Religious.",
-        3: "Ancient/lore/history.",
-        4: "Magic.",
-        5: "Strife.",
-        6: "Art.",
-        7: "Economy.",
-        8: "Survival.",
-        9: "Strife.",
-        10: "Ancient/lore/history.",
-        11: "Magic.",
-        12: "Religious."
-    },
-    "dungeon_random_encounter" : {
-        2: "alarm",
-        3: "ambush",
-        4: "patrol moving towards player",
-        5: "lights out (wind, fog, roof with water collapse, etc.)",
-        6: "Nothing.",
-        7: "Nothing.",
-        8: "Nothing",
-        9: "Noise from elsewhere (door, rock, roar, voice, etc.)",
-        10: "unique_dungeon_encounter",
-        11: "accidentally reveal secrets in the room, if any",
-        12: "find a friendly npc (prisoner, escape, etc.)"
-    }, 
-    "unique_dungeon_encounter" : {
-        2: "Under a loose bit of cobblestone on the ground, you see what appears to be a small tunnel. If you reach inside or stick around too long, a living crawling hand jumps out of the hole and attacks. This living hand has been hoarding rings and jewelry in this tunnel.",
-        3: "The group finds a long forgotten coin hoard. All is not as it seems, some of the coins are tiny-sized mimics (maybe individuals, maybe swarms), that adhere to and attack those that try to gather the treasure.",
-        4: "A crumbling wall with a small tunnel bore through its base hides the resting room for a peaceful Goblin who knows the dungeon well and will give directions or hints in trade for an interesting item.",
-        5: "The ceiling is completely covered with horrid insects - dark, silent and unseen except for the occasional masonry dust they knock loose.",
-        6: "flying swords that attack party members with swords",
-        7: "old man walking around. if they don't look at him for one moment, he dissapear (ghost)",
-        8: "1 ogre with a displacer beast pet carrying a bag of giant frogs",
-        9: "Two ogres are arguing about food. One wants to eat a human that they captured. The other doesn't want to do it because it's too dangerous to be around humans for too long because they might be rescued by their friends.",
-        10: "A group of 2d6 orcs are celebrating their defeat of a group of humans. They are drunk and attack the players if they get too close.",
-        11: "A hole in the wall, about the height of human shoulders. There is something shiny on the deep end of the hole, however to reach that, you would have to reach inside, and it's deep enough to swallow your arm up he shoulder. If you reach inside, something bites you, causing 1d4 piercing damage. If you reach inside again, nothing bites you and you are free to take the shiny thing. It's a single goldpiece.",
-        12: "The ghost of an adventurer that became lost in the dungeon years ago."
-    },
-    "type_of_entrance" : {
-        2: "Castle or tower",
-        3: "Castle or tower",
-        4: "Caves or cavern",
-        5: "Caves or cavern",
-        6: "Ancient temple",
-        7: "Crypt or tomb",
-        8: "Crypt or tomb",
-        9: "Ancient temple",
-        10: "Abandonned mine",
-        11: "Stronghold",
-        12: "Town"
-    },
-    "main_entrance_location" : {
-        2: "beneath a city",
-        3: "beneath a ruin",
-        4: "graveyard",
-        5: "beneath a kurgan",
-        6: "in a chasm",
-        7: "in the normal terrain",
-        8: "in the normal terrain",
-        9: "in a grotto",
-        10: "on a hill",
-        11: "on a mountain",
-        12: "on a small island/coast cave"
-    },
-    "player_purpose" : {
-        2: "someone dug too deep and awakened an ancient evil",
-        3: "a cult re-awakened an ancient evil",
-        4: "an evil outpost that's known in the region and require investigation",
-        5: "prisonners and slaves are brought here",
-        6: "ancient temple that hasn't been in contact for a while",
-        7: "ancient temple that hasn't been in contact for a while",
-        8: "ancient temple that hasn't been in contact for a while",
-        9: "known for its treasure people wants it mapped",
-        10: "lost shrine",
-        11: "escapes from it tells gruesome stories (or the players are the escapees)",
-        12: "the place just appeared (magically appeared, its magical shield was broken, it came from the earth, etc.)"
-    }, 
-    "initial_purpose" : {
-        2: "vault",
-        3: "forgotten god temple",
-        4: "library/research/knowledge/laboratory",
-        5: "stronghold/fortress/hq", 
-        6: "destroyed demon cult",
-        7: "temple",
-        8: "prison",
-        9: "destroyed covenant",
-        10: "crypt/tomb of somewhat recent humans",
-        11: "crypt/tomb of dragons",
-        12: "crypt/tomb of an unknown/ancient empire"
-    },
-    "importance_of_dungeon" : {
-        2: "an artefact is rumored to be there",
-        3: "an ancient king built/used it previously and has a significance for people of the region (also full of treasures)",
-        4: "deep within is supposed to be an answer to something important (gods, doom, problem in the region, etc.)", 
-        5: "a traitor/horrible criminal decided to hide there and now it's his base of operation",
-        6: "a faction (from inside or outside) took residence there and are conducting raids on the region",
-        7: "an ancient evil has been awakened there (or went there)",
-        8: "it is lost but filled with untold riches",
-        9: "A holy site built in ancient times by a religion which still exists today. It was ceremonially sealed to mark the end of some forgotten religious schism. What few pilgrims still visit must be content to make their prayers at the entrance",
-        10: "A defense built by a subterranean civilization. They dug ever upwards, not realizing until too late that eventually the solid earth would give way to a terrifying sky. Believing they had discovered hell, they built this place to prevent any horrible surface creatures from reaching the wholesome lands below.",
-        11: "The death palace of an ancient conqueror queen who demanded that each of her subject people’s build a grand home for her. This particular one was filled with confusing corridors and traps, in the express hope that she might visit someday.", 
-        12: "the dungeon is alive with a will and a mind: it brings people in and moves around the earth",
-    }, 
+    }
+}
+
+const underground_content_creation = 
+{
     "level_theme" : {
         2: "environmental_theme",
         3: "environmental_theme",
@@ -992,6 +1216,991 @@ const data =
         11: "library/study",
         12: "laboratory"
     },
+    "dungeon_lore_what" : {
+        2 : "Castle or tower",
+        3 : "Caves or cavern",
+        4 : "Abandonned mine",
+        5 : "Crypt or tomb",
+        6 : "Ancient temple",
+        7 : "Stronghold or town",
+        8 : "Castle or tower",
+        9 : "Caves or cavern",
+        10 : "Abandonned mine",
+        11 : "Crypt or tomb",
+        12 : "Ancient temple"
+    },
+    "dungeon_lore_where" : {
+        2 : "Beneath a city",
+        3 : "Graveyard",
+        4 : "In a chasm",
+        5 : "In the open",
+        6 : "Mountain",
+        7 : "Island/Coast cave",
+        8 : "Beneath a city",
+        9 : "Graveyard",
+        10 : "In a chasm",
+        11 : "In the open",
+        12 : "Mountain"
+    },
+    "dungeon_lore_hook" : {
+        2 : "Clearing Ruins: Settlers plan to move into an abandoned settlement or stronghold. Before they arrive, the PCs need to scout the area and clear out any monsters or other dangers that are present. The ruins need not be in a remote area—they could even be within (or beneath) a major settlement.",
+        3 : "Contacting a Lost Civilisation: The PCs discover a long-lost race in a fantastic location. They may have once been human, but are now adapted to their strange environment. For example, they may have reverted to bestial behaviour or may be adapted to subterranean life, with pale skin and infravision.",
+        4 : "Destroy an ancient evil (re-awakened because of a cult, someone dug too deep, etc.)",
+        5 : "Investigating/Scouting an outpost (evil/chaos)",
+        6 : "Rescuing prisoners or Escaping (as prisoners)",
+        7 : "Visiting a lost shrine (item, curse, etc.) to recover ruins/artefacts",
+        8 : "Exploring the unknown (hired to map out, given a map as a treasure, etc.)",
+        9 : "Visiting a sacred site: In order to consult with an oracle, remove a curse, or find a holy relic, the PCs must journey to a sacred site (e.g. a shrine or temple). The exact location of the site is usually a matter of conjecture.",
+        10 : "Recently destroyed by an unknown force",
+        11 : "The area had been sealed shut for centuries and now the curse has lifted no one knows what's inside",
+        12 : "escapes from it tells gruesome stories (or the players are the escapees)"
+    },
+    "dungeon_lore_purpose" : {
+        2 : "Vault",
+        3 : "Prison",
+        4 : "Library/Research/Knowledge",
+        5 : "Fortress/Castle/Stronghold/HQ",
+        6 : "Temple/Religion (corrupted temple, forgotten god, destroyed demon cult, demon cult, destroyed legit religion, nature/druid)",
+        7 : "Crypt/Tomb (unknown race, dragons, somewhat recent human, ancient empire, giants, undeads)",
+        8 : "death trap",
+        9 : "mine",
+        10 : "gate(planar)/path to somewhere else/etc.",
+        11 : "Laboratory",
+        12 : "maze"
+    },
+    "dungeon_lore_importance" : {
+        2 : "An artefact is rumoured to be there",
+        3 : "An ancient king built/used it previously and it has a significance for people of the region (and also his treasures)",
+        4 : "An ancient evil has been awakened there (or elsewhere and went there), people are very afraid of what might happen",
+        5 : "A faction (from inside or outside) took residence there and are conducting raids on the region",
+        6 : "A traitor (or someone that comitted an horrible crime) decided to go there to hide and he's using it as a base of operation or something",
+        7 : "Deep within is supposed to be an answer to something important (related to the gods, to an impending doom, to a problem in the region, etc.)",
+        8 : "treasure or resources",
+        9: "A holy site built in ancient times by a religion which still exists today. It was ceremonially sealed to mark the end of some forgotten religious schism. What few pilgrims still visit must be content to make their prayers at the entrance",
+        10: "A defense built by a subterranean civilization. They dug ever upwards, not realizing until too late that eventually the solid earth would give way to a terrifying sky. Believing they had discovered hell, they built this place to prevent any horrible surface creatures from reaching the wholesome lands below.",
+        11: "The death palace of an ancient conqueror queen who demanded that each of her subject people’s build a grand home for her. This particular one was filled with confusing corridors and traps, in the express hope that she might visit someday.", 
+        12: "the dungeon is alive with a will and a mind: it brings people in and moves around the earth",
+    },
+    "dungeon_lore_location" : {
+        2: "beneath a city",
+        3: "beneath a ruin",
+        4: "graveyard",
+        5: "beneath a kurgan",
+        6: "in a chasm",
+        7: "in the normal terrain",
+        8: "under ruins",
+        9: "in a grotto",
+        10: "on a hill",
+        11: "on a mountain",
+        12: "on a small island/coast cave"
+    },
+    "generic_room_dressing" : {
+        0 : "Throne room",
+        1 : "Antechamber",
+        2 : "Amphitheather",
+        3 : "Audience hall",
+        4 : "Courtroom",
+        5 : "Great Hall",
+        6 : "Bestiary/kernel",
+        7 : "Cage",
+        8 : "Cell",
+        9 : "Oubliette",
+        10 : "Prison",
+        11 : "Stockade",
+        12 : "Arena",
+        13 : "Banquet",
+        14 : "Gallery",
+        15 : "Maze",
+        16 : "Museum",
+        17 : "Pool",
+        18 : "Bathroom",
+        19 : "Bedroom",
+        20 : "Dormitory",
+        21 : "Reception",
+        22 : "Foyer",
+        23 : "Salon",
+        24 : "Armory",
+        25 : "Barrack",
+        26 : "Guardroom",
+        27 : "Gymnasium",
+        28 : "Interrogation",
+        29 : "Training",
+        30 : "Chapel",
+        31 : "Crypt",
+        32 : "Embalming Chamber",
+        33 : "Meditation chamber",
+        34 : "Shrine",
+        35 : "Temple",
+        36 : "Classroom",
+        37 : "Divination chamber",
+        38 : "Laboratory",
+        39 : "Library",
+        40 : "Observatory",
+        41 : "Study",
+        42 : "Kitchen",
+        43 : "Forge",
+        44 : "Office",
+        45 : "Garage",
+        46 : "Workshop",
+        47 : "Service room",
+        48 : "Clear and earthy",
+        49 : "Foggy and salty",
+        50 : "Smoky",
+        51 : "Hazy and dank, moldy",
+        52 : "Stale, obscured",
+        53 : "Dusty and dry",
+        54 : "Chlorine and difficult to breath",
+        55 : "Putrid and damp",
+        56 : "Yellow Mold/slime",
+        57 : "Fire/cold",
+        58 : "Activated repeating trap",
+        59 : "Huge gap/hole",
+        60 : "cave-in",
+        61 : "Trick",
+        62 : "bridge",
+        63 : "vermin/fungi",
+        64 : "Toxicity that needs to be purified",
+        65 : "flooding",
+        66 : "altar, statue, etc.",
+        67 : "arch, pillars, etc. (peut cacher la vue)",
+        68 : "oil, stuff inflammable, etc.",
+        69 : "ropes, ladder, etc.",
+        70 : "fireplace, fourneau, etc.",
+        71 : "decoration (fresco, mosaic, etc.)",
+        72 : "food, waste, latrine, etc.",
+        73 : "plants/fungi, animals, etc.",
+        74 : "instruments, tools, etc.",
+        75 : "bath, pool, etc.",
+        76 : "water (fountain, etc.)",
+        77 : "holes in wall/floor",
+        78 : "Stuck/inaccessible door/trap",
+        79 : "barricade",
+        80 : "used trap",
+        81 : "scratch on walls etc.",
+        82 : "furniture with equipements on/in",
+        83 : "writings",
+        84 : "strange substance",
+        85 : "magical",
+        86 : "magical automation (unseen servant, etc.)",
+        87 : "protection (protective shield sur une porte, corridor, coffre)",
+        88 : "physical effect (fire door, items floating, no gravity)",
+        89 : "visual effect (no shadows, etc.)",
+        90 : "visual illusion (illusory door/angles, etc.)",
+        91 : "auditory illusion (sounds, music, etc.)",
+        92 : "magical utility (magical lights, etc.)",
+        93 : "antimagic field (general, or specific like anti-divination, etc.)",
+        94 : "Markings",
+        95 : "Hieroglyph",
+        96 : "Mosaics",
+        97 : "Corpses",
+        98 : "Pile of wood",
+        99: "nothing"
+    },
+    "dungeon_room_challenge" : {
+        0 : "Wraith/Ghost that cannot be hurt by any weapon forged by mortal hands",
+        1 : "Glass sphere full of gems and venomous snakes",
+        2 : "Ladder that climb up through a fog of unconsciousness",
+        3 : "Invincible carbuncle turtle with a gem on its forehead. When it sees someone, it hide its head.",
+        4 : "The chest can only be opened if it falls 1000'",
+        5 : "The chest can only be opened inside a stomach.",
+        6 : "To open the door, you need to fill a bowl of water that's standing in volcanic heat (i.e. all water will evaporate).",
+        7 : "Underground door that only open with sunlight.",
+        8 : "Key for a lock at the bottom of an acid lake.",
+        9 : "A long underwater tunnel",
+        10 : "A huge gem that blocks a volcano from erupting.",
+        11 : "A beast whose back hide is impervious to all weapon",
+        12 : "Diamond dust mixed with normal flour. Nobody will take it if it's still mixed.",
+        13 : "Magical basilisk that will return to flesh all the monsters put to stone previously",
+        14 : "Door that require a live eye to be sacrified on it to open",
+        15 : "Moat full of crocodile",
+        16 : "Completely silent room (even for players). There is a countdown (water is filling).",
+        17 : "Knight and Knave",
+        18 : "Treasure on an alarm",
+        19 : "Everything is an illusion: the treasure chest (invisible), the furniture, the monsters",
+        20 : "Door made of a tree. The more you chop, the more it grows.",
+        21 : "A wind tunnel extinguish all flame and pushes people up to 300 lbs",
+        22 : "A treasure is up the the air (about 50-60 feet). The room is in a cone shape and is dripping with a thick and slimy liquid.",
+        23 : "Alarm",
+        24 : "Animating Object",
+        25 : "Falling Blocks",
+        26 : "Illusions",
+        27 : "Shifting Architecture",
+        28 : "Strange Waters",
+        29 : "Teleports",
+        30 : "Trapdoors",
+        31 : "Voices",
+        32 : "Invisible bridge leading to a treasure",
+        33 : "Appearing/dissapearing bridge at random intervals",
+        34 : "Treasure stuck on a monster (maybe a sword in the mouth)",
+        35 : "A treasure withold a trap from springing",
+        36 : "Demon trapped with a treasure in a pentagram (forcefield) with a lever nearby that open it",
+        37 : "Mislabeled potion",
+        38 : "Vines and ropers limbs the only way of going over a pit of monsters",
+        39 : "Chest with coins that damages others when you pick them up",
+        40 : "A trap that makes the character invisible, silenced and paralyzed",
+        41 : "Maze with invisible wards",
+        42 : "A very visible chest in the middle of the room on a pedestal with a ray of light on it. There is no trap and it's a treasure. Opening it DEACTIVATE the next door trap.",
+        43 : "Tesseract Room",
+        44 : "Altar that reduce anything put on it by 1/3",
+        45 : "A firewall with a lever inside that closes the firewall",
+        46 : "Body (treasure) of an adventurer at the bottom of a poisonned spike trap",
+        47 : "Illusionary fire wall",
+        48 : "A winter monster in here. The room is crazy cold. Frozen particles that sticks to people slow and them down. A treasure is covered in ice.",
+        49 : "A wooden door on the ground all splintered, but there is still another wooden door on the frame... (mimic)",
+        50 : "A room with an unusual light source (like a torch in a tube in the floor or something) with a lot of shadows. One or more of those shadows are living, and hungry.",
+        51 : "A room with a man hanging at the far end, his wrists and ankles in shackles, chained to the wall and over the door. Walking closer to him tightens the chains (like a rack). He screams in pain and begs for mercy every time they tighten. Could be an illusion- you decide how much to mess with your characters' sense of right and wrong.",
+        52 : "In a corridor: a massive, tsumani-style tidal wave immediately rises up to crush the characters. Run away in fear or face it- Turns out to be illusion.",
+        53 : "A room with a hyper-aging field in it (turns 1 minute into one year). Inside the field, the room has given way to a lush forest with flowers that bloom, turn to fruit and drop all in the space of a minute. There's a door on the other side.",
+        54 : "A simple looking room with a locked door and a key on a pedestal. When the characters pick up the key and try to insert it into the lock, it crumbles to dust the instant it touches the keyhole. The real key is still in the room, but it's hidden somewhere, either under the pedestal",
+        55 : "Ghoulish Prisoners http://castletriskelion.blogspot.com/2016/03/upper-dungeons-level-three-28-ghoulish.html",
+        56 : "Door of Shadow (https://www.youtube.com/watch?v=A7i5MdIt4Q8)",
+        57 : "Pacifist Door",
+        58 : "Monsters with different random wands fighting in the room (both between themselves and against the player)",
+        59 : "All weapons are animated in the room",
+        60 : "A machine that switches body but you can't switch reverse (Stargate)",
+        61 : "Antimagic room",
+        62 : "Altar that produces food. 50% it's not edible",
+        63 : "A big mouth monster chained near a huge stone door. If fed, it will open the door",
+        64 : "A goblin under an illusion spell uses his newfound power to appear as a dragon to request (weird and trivial) things of the party.",
+        65 : "All players entering the room will speak one random language for one hour and lose all other language they already had",
+        66 : "One way door (forcefield)",
+        67 : "A altar of the god will QUEST the player that touches it",
+        68 : "One magical orb in the room will attract all metal (super magnet)",
+        69 : "A treasure on an altar behind a forcefield. You need to deactivate it with a lever. However, it will spawn one completely random creature.",
+        70 : "Room filled with smoke and smog. Can't breathe or see. 1/6 there is a monster",
+        71 : "A treasure (ideally a weapon) holds a whole block and stone structure. Taking it will make everything crumble.",
+        72 : "Fake countdown room with useless levers",
+        73 : "The room is full of invisible and illusionary stuff. However, mirrors will present the true state of the room.",
+        74 : "Amaunator style room with a patterns/riddle on the ground on plates",
+        75 : "Two level room. The second level has a treasure or a door. There is a scale (putting weight will put the other side of the scale higher).",
+        76 : "Color creation mirror puzzle (red, blue, yellow and the door is green).",
+        77 : "The Beholder Puzzle",
+        78 : "Match the painting: there is a painting of the room with one small difference (an object at a specific spot). The object need to be found and placed.",
+        79 : "There is a pit with spikes at the bottom with a rope going over it. If you grab the rope, it will activate another trap in the room for the rest of the adventurer.",
+        80 : "A richly decorated door with a lion's face door knocker. However there is no knocking ring: the door only opens when knocked.",
+        81 : "Paint me red to open me (blood works)",
+        82 : "There is a painting of a room. Whoever sleeps or rest in the room will be transported to the room in the picture (somewhere else in the dungeon).",
+        83 : "(Door or treasure) only opens when there is no light",
+        84 : "The Gushing Door, this door opens easily but it's been enchanted so that when it's opened it spews a powerful jet of water that pushes anyone infront of it back. So the players need someway to push against the stream or evade it.",
+        85 : "There are three doors: one green, one blue, one red. Nothing special about them.",
+        86 : "Two gargoyles beside a door. They always look at the people and will extend their claw towards anyone approaching the door. However they don't attack.",
+        87 : "Gives direction (50% its a false giver)",
+        88 : "A flyer gem that gets away from adventurers",
+        89 : "Lock one exit, unlock the other",
+        90 : "Door: Every third time used, it casts a spell on any who pass",
+        91 : "Door: Is rotten",
+        92 : "Door: Is invisible",
+        93 : "Oddities door: is hot",
+        94 : "Oddities door: is magnetized",
+        95 : "Oddities door: door vanishes when closed",
+        96 : "Oddities door: is a mirror",
+        97 : "Oddities door: is a curtain of darkness",
+        98 : "Magic Mouth Riddles (https://docs.google.com/spreadsheets/d/1pfa6ATwSThuScW2wM_k8zJ0uKYyY3ZracoO3By3k_Es/edit#gid=0)",
+        99 : "Magic Mouth Riddles (http://dndspeak.com/2018/11/100-riddles-and-their-answers/)"
+    },
+    "unique_traps" : {
+        0 : "Open pit onto deadly spikes. Both sides of the pit are sloped into it and greased up.",
+        1 : "Concealed pit into piranha-filled water.",
+        2 : "Metal sword audibly humming, hooked up to electric charge.",
+        3 : "Green Devil Face with gaping mouth. Anything going into the mouth is annihilated.",
+        4 : "A fishing rod propped up and cast into a lake. The rod is covered in fast-acting glue and tension on the line triggers a springboard beneath the victim, casting them into the lake.",
+        5 : "A column of light. When a being enters they are frozen, and an evil duplicate of them is conjured. The victim is only freed when the duplicate is killed.",
+        6 : "Walls dotted with arrow-slots. Any movement in front of them fires the arrow, but each hole only has one arrow.",
+        7 : "Upside-down spiked pit on the ceiling. Gravity is reversed under the pit.",
+        8 : "Clusters of bright orange fungus growing on one or more corpses. Any disturbance triggers a deadly spore explosion.",
+        9 : "Glass vials of green slime hung from a ceiling, a guard with a crossbow watching from behind a barricade.",
+        10 : "Two panes of glass blocking passage, filled with deadly bugs.",
+        11 : "Shimmering, thick air that slows all movement down to a quarter of normal. Guards with missile weapons waiting around the corner.",
+        12 : "Glossy, friction-less floor and spiked walls.",
+        13 : "A metal room filled with crushed remains, visible moving parts to floor, and a sealed door leading forward. Two buttons. One opens the door, the other seals all doors and commences the crushing process.",
+        14 : "A peephole blocked up with glass fragments. Breaking the fragments releases a toxic gas.",
+        15 : "Giant chomping blade that must be passed through to progress. Visible pressure plate on either side. Blades are triggered when a pressure plate is released, unless the other plate is also depressed. Going slow poses no risk.",
+        16 : "Stuck door with a gold snake-head handle. The handle will bite and poison anybody putting their hand near, unless they slip a coin into its mouth, allowing safe passage through the door.",
+        17 : "Disguised springboard, launching the victim straight up into the air. There is a hanging bar they can grab to avoid the fall, but weight on the bar triggers the release of giant spiders onto it, and rained down onto anyone below.",
+        18 : "Room dusted with a deadly white powder. Any rapid movement disturbs the powder, sending it into the air and then the lungs of anybody breathing nearby. Hidden pressure plate in the center of the room triggers a loud siren, alerting any nearby threats.",
+        19 : "Locked door, key visible in a stinky fountain. The liquid is fast-acting acid, the key made from a special resistant ceramic.",
+        20 : "Rope bridge primed to split in the middle when the majority of the crossing weight has passed the mid-point. The characters can grab their half of the bridge and climb back up easily enough.",
+        21 : "Damp, underwater tunnel with glowing treasure at a visible dead end. A pressure plate halfway through triggers flooding of the tunnel. A normal human could get back to the tunnel exit with breath to spare, but not if they try to grab the treasure first.",
+        22 : "Two doors in sequence. First sprays anybody passing through with highly flammable liquid. Second spits out a flash of flame, harmless on its own but enough to ignite the liquid.",
+        23 : "Sloped walkway in a freezing cold room. Pressure plate halfway up releases a flood of water down the slope, freezing near instantly.",
+        24 : "Haunted pots, audible screaming within, placed on wobbly plinths on an uneven floor. Any sort of weight on the floor is sure to release at least one angry wraith.",
+        25 : "Pool of lava, a metal idol partially submerged in the center. It's glowing hot, but valuable.",
+        26 : "Big metal skull with a gem in its open, toothy mouth. Obviously it bites anything put inside.",
+        27 : "Quicksand, just like in cartoons.",
+        28 : "Giant spider lair, huge boulders suspended in the highest webs. Too much disturbance might release a boulder, fire will definitely release them all.",
+        29 : "Bear trap.",
+        30 : "Sealed door with two identical handles on the adjacent wall. One releases snakes from above, the other opens the door.",
+        31 : "Hidden jet spraying you with disgusting smelling liquid. Not harmful in itself, but might attract scent-based creatures or warn inhabitants that you've been poking around where you shouldn't have.",
+        32 : "Pressure plate triggers part of the floor to move down, slowly transporting the victim into the now-visible lair of a horrible monster.",
+        33 : "Giant cauldron filled with treasure. Any weight added to the cauldron causes the lid to slam shut and a fire to spark to life underneath it."
+    },
+    "dungeon_room_type" : {
+        2 : "dungeon_room_unique",
+        3 : "dungeon_room_special",
+        4 : "dungeon_room_traps",
+        5 : "dungeon_room_treasures",
+        6 : "dungeon_room_treasures",
+        7 : "EMPTY",
+        8 : "dungeon_room_monsters",
+        9 : "dungeon_room_monsters",
+        10 : "dungeon_room_other",
+        11 : "dungeon_room_traps",
+        12 : "dungeon_room_challenge",
+    },
+    "dungeon_room_other" : {
+        2 : "dungeon_broken_access",
+        3 : "dungeon_markings",
+        4 : "dungeon_camping_spot",
+        5 : "dungeon_clue",
+        6 : "monster_clue",
+        7 : "monster_clue",
+        8 : "monster_clue",
+        9 : "dungeon_clue",
+        10 : "camping_spot",
+        11 : "dungeon_markings",
+        12 : "broken_access",
+    },
+    "dungeon_broken_access" : {
+        2 : "Blocked well/pit",
+        3 : "Cave-in corridor",
+        4 : "Cave-in stairs",
+        5 : "Cave-in door",
+        6 : "Flooded/Lava/Magic/etc. corridor-slope",
+        7 : "Magically sealed door",
+        8 : "Blocked well/pit",
+        9 : "Cave-in corridor",
+        10 : "Cave-in stairs",
+        11 : "Cave-in door",
+        12 : "Flooded/Lava/Magic/etc. corridor-slope",
+    },
+    "dungeon_markings" : {
+        2 : "X was here",
+        3 : "Something insulting about another race from someone of a race",
+        4 : "Message warning against something unexistant (or not existant anymore)",
+        5 : "Message warning against something",
+        6 : "Message warning against something down",
+        7 : "Religious/lore markings",
+        8 : "X was here",
+        9 : "Something insulting about another race from someone of a race",
+        10 : "Message warning against something unexistant (or not existant anymore)",
+        11 : "Message warning against something",
+        12 : "Message warning against something down",
+    },
+    "dungeon_camping_spot" : {
+        2 : "Doors that can be locked from within",
+        3 : "Small abandonned camp with a fire spot in the center",
+        4 : "Fireplace (or equivalent) and bed furnitures",
+        5 : "Some food equipment/fire and leftover food",
+        6 : "Utility room (kitchen, artisan room, etc.) that's self-preserved",
+        7 : "Assembly/meeting room with barricade material",
+        8 : "Doors that can be locked from within",
+        9 : "Small abandonned camp with a fire spot in the center",
+        10 : "Fireplace (or equivalent) and bed furnitures",
+        11 : "Some food equipment/fire and leftover food",
+        12 : "Utility room (kitchen, artisan room, etc.) that's self-preserved",
+    },
+    "dungeon_clue" : {
+        2 : "Slits to see into another room",
+        3 : "Slits/cage to see a level below (or something about it)",
+        4 : "Room with observation points or observation on other room/sector/level",
+        5 : "Journal about layout",
+        6 : "Journal about fluff",
+        7 : "Journal about traps",
+        8 : "Slits to see into another room",
+        9 : "Slits/cage to see a level below (or something about it)",
+        10 : "Room with observation points or observation on other room/sector/level",
+        11 : "Journal about layout",
+        12 : "Journal about fluff",
+    },
+    "dungeon_monster_clue" : {
+        2 : "Markings of random monster",
+        3 : "Parts of a random monster",
+        4 : "Journal telling of a random monster",
+        5 : "Journal telling of a fixed monster",
+        6 : "Equipment used to kill/attack or broken by a random monster",
+        7 : "Corpse(s) of a random monster",
+        8 : "Markings of random monster",
+        9 : "Parts of a random monster",
+        10 : "Journal telling of a random monster",
+        11 : "Journal telling of a fixed monster",
+        12 : "Equipment used to kill/attack or broken by a random monster",
+    },
+    "dungeon_room_monsters" : {
+        2 : "dead", 
+        3 : "dungeon_monster_tactical",
+        4 : "dungeon_monster_environmental_impairement", 
+        5 : "dungeon_environmental_danger",
+        6 : "Resting/Eating",
+        7 : "Normal",
+        8 : "Resting/Eating", 
+        9 : "dungeon_monster_level_design",
+        10 : "Normal",
+        11 : "Prisoner",
+        12 : "Figthing another monster",
+    },
+    "dungeon_monster_level_design" : {
+        2 : "Cluster of rooms combat",
+        3 : "Fithing near/inside a loop (monster can encircle)",
+        4 : "Monsters have high ground",
+        5 : "Layout: wall, statues, pillars, porticulises, arrow slits",
+        6 : "Ongoing traps: swinging axe blades, stinging vines, spike pits, etc.",
+        7 : "Ladders and platforms with monsters",
+        8 : "Cluster of rooms combat",
+        9 : "Fithing near/inside a loop (monster can encircle)",
+        10 : "Monsters have high ground",
+        11 : "Layout: wall, statues, pillars, porticulises, arrow slits",
+        12 : "Ongoing traps: swinging axe blades, stinging vines, spike pits, etc.",
+    },
+    "dungeon_monster_environmental_impairement" : {
+        2 : "Fog/weather/etc. that prevent vision, spell, missile",
+        3 : "Pots of oil, water, beer that can be pushed over or moved easily",
+        4 : "Submerged monster and/or underwater combat",
+        5 : "A boss/leader is out of sight or behind heavy cover/ledge/high ground",
+        6 : "Players are locked with the monsters and the lever is on the other side of the room or behind them (the door to this room should be a portculis with a lever)",
+        7 : "Wind coming from somewhere that shut off torches (or underwater fight with no water)",
+        8 : "Fog/weather/etc. that prevent vision, spell, missile",
+        9 : "Pots of oil, water, beer that can be pushed over or moved easily",
+        10 : "Submerged monster and/or underwater combat",
+        11 : "A boss/leader is out of sight or behind heavy cover/ledge/high ground",
+        12 : "Players are locked with the monsters and the lever is on the other side of the room or behind them (the door to this room should be a portculis with a lever)",
+    },
+    "dungeon_environmental_danger" : {
+        2 : "Roof/ceiling is falling down (icicles, stalagmites, etc.) which causes division and damage",
+        3 : "Fragile floor (cobweb, rotten wood, ladders, etc.)",
+        4 : "Cliffs and ledges (people that fall over can be picked up like in Vermintide)",
+        5 : "The more you stay, the worst it is: closing walls, rising water, falling rocks, earth tremors, creeping lava, acid geysers, gusting winds, lightning surges",
+        6 : "Interact in a stark manner with one element (fire, water, air, earth, etc.) to open a door.",
+        7 : "Yellow mold all over the place. Monster is immune to it or inside of it.",
+        8 : "Roof/ceiling is falling down (icicles, stalagmites, etc.) which causes division and damage",
+        9 : "Fragile floor (cobweb, rotten wood, ladders, etc.)",
+        10 : "Interact with levers to open door, lift bridges, etc.",
+        11 : "Explosive fungus/statue heads/flasks that causes 1-2 poison 3-4 confusion 5-6 sleep",
+        12 : "Flame engulfed room: (1-3) magical, (4-6) non-magical. Monster is immune to it or inside of it.",
+    },
+    "dungeon_monster_tactical" : {
+        2 : "Ambush",
+        3 : "Reinforcements",
+        4 : "Using a magic item (wands, etc.) or traps",
+        5 : "Altered terrain (grease, oil, spell, etc.)",
+        6 : "Players have to intervene to: stop a ritual, get a treasure that's being lowered into destruction/acid/lava/etc., stopping an execution, etc. ",
+        7 : "A third party is upset about the fight and attack both sides",
+        8 : "Ambush",
+        9 : "Reinforcements",
+        10 : "Using a magic item (wands, etc.) or traps",
+        11 : "Altered terrain (grease, oil, spell, etc.)",
+        12 : "Players have to intervene to: stop a ritual, get a treasure that's being lowered into destruction/acid/lava/etc., stopping an execution, etc. ",
+    },
+    "dungeon_room_special": {
+        2 : "dungeon_room_npc",
+        3 : "dungeon_room_adventurers",
+        4 : "dungeon_monsters_interactive",
+        5 : "dungeon_monsters_interaction",
+        6 : "dungeon_monster_native",
+        7 : "dungeon_weird",
+        8 : "dungeon_environmental_danger",
+        9 : "dungeon_room_slowdown",
+        10 : "dungeon_room_challenge",
+        11 : "dungeon_room_leveldesign",
+        12 : "dungeon_room_magical",
+    },
+    "dungeon_weird" : {
+        2 : "Moaning walls",
+        3 : "Altar of sacrifice",
+        4 : "Blindness/darkness/anti-magic room",
+        5 : "Shapechanging or shapealtering magic. (e.g. The more you walk into this room, the smaller you get. The more you walk out, the more you regain your form).",
+        6 : "Room full of blood/bones/etc.",
+        7 : "Droning noise and/or special visions",
+        8 : "Moaning walls",
+        9 : "Altar of sacrifice",
+        10 : "Blindness/darkness/anti-magic room",
+        11 : "Shapechanging or shapealtering magic. (e.g. The more you walk into this room, the smaller you get. The more you walk out, the more you regain your form).",
+        12 : "Room full of blood/bones/etc.",
+    },
+    "dungeon_room_leveldesign" : {
+        2 : "Door shifting mechanism",
+        3 : "Hourglass pit with corridors aka FF7",
+        4 : "Room rotate",
+        5 : "Trapdoor to hidden area or another level",
+        6 : "One way teleport/door",
+        7 : "Walking in means you walk backward in the dungeon",
+        8 : "Door shifting mechanism",
+        9 : "Hourglass pit with corridors aka FF7",
+        10 : "Room rotate",
+        11 : "Trapdoor to hidden area or another level",
+        12 : "One way teleport/door",
+    },
+    "dungeon_room_npc" : {
+        2 : "Talking wall/statue",
+        3 : "Ghost",
+        4 : "Dying adventurer with information",
+        5 : "Non-treathening monster exchanging information",
+        6 : "Random monsters guarding prisoner(s)",
+        7 : "NPC figthing off a random monster",
+        8 : "Talking wall/statue",
+        9 : "Ghost",
+        10 : "Dying adventurer with information",
+        11 : "Non-treathening monster exchanging information",
+        12 : "Random monsters guarding prisoner(s)",
+    },
+    "dungeon_room_adventurers" : {
+        2 : "Injured, coming from below",
+        3 : "Uninjured, coming from below",
+        4 : "Stuck in a trap/special",
+        5 : "Prisoners",
+        6 : "In combat with monsters",
+        7 : "Possessed, parasited, spies, etc.",
+        8 : "Injured, coming from below",
+        9 : "Uninjured, coming from below",
+        10 : "Stuck in a trap/special",
+        11 : "Prisoners",
+        12 : "In combat with monsters",
+    },
+    "dungeon_monsters_interactive" : {
+        2 : "Riddle monster (ghoul, sphinx, living statue, etc.)",
+        3 : "Golem guarding a door/treasure",
+        4 : "Monster prisoners",
+        5 : "Monster merchant",
+        6 : "Monster trying to solve a dungeon puzzle",
+        7 : "Gauth protecting a corridor or Beholder protecting a treasure",
+        8 : "Riddle monster (ghoul, sphinx, living statue, etc.)",
+        9 : "Golem guarding a door/treasure",
+        10 : "Monster prisoners",
+        11 : "Monster merchant",
+        12 : "Monster trying to solve a dungeon puzzle",
+    },
+    "dungeon_monsters_interaction" : {
+        2 : "Dealing",
+        3 : "Slaving/herding",
+        4 : "Post-fight",
+        5 : "Faction fight",
+        6 : "Working together to defend/find",
+        7 : "Two groups trying to get out of the dungeon and/or opening a new way",
+        8 : "Dealing",
+        9 : "Slaving/herding",
+        10 : "Post-fight",
+        11 : "Faction fight",
+        12 : "Working together to defend/find",
+    },
+    "dungeon_monster_native" : {
+        2 : "Roper/Piercer",
+        3 : "Slime/Pudding",
+        4 : "Gelatinous Cube",
+        5 : "Insects/Crawler eating at corpses/leftovers",
+        6 : "Giant rats/animals wandering around or stuck in something",
+        7 : "Crypt with skeletons/ghous/mummy",
+        8 : "Roper/Piercer",
+        9 : "Slime/Pudding",
+        10 : "Gelatinous Cube",
+        11 : "Insects/Crawler eating at corpses/leftovers",
+        12 : "Giant rats/animals wandering around or stuck in something",
+    },
+    "dungeon_room_slowdown" : {
+        2 : "Animating objects",
+        3 : "Wind tunnel (slows down and cost torches)",
+        4 : "Illusionary walls, doors, etc. that creates a small maze/lost of time",
+        5 : "A illusonary (strong) monster projected through a crystal",
+        6 : "Treasure that is clearly trapped/hidden behind something dangerous/etc. so that by not taking in the danger, you also don't take in the treasure",
+        7 : "Swampy corridor that takes time (1/6 there is a hidden monster in it)",
+        8 : "Animating objects",
+        9 : "Wind tunnel (slows down and cost torches)",
+        10 : "Illusionary walls, doors, etc. that creates a small maze/lost of time",
+        11 : "A illusonary (strong) monster projected through a crystal",
+        12 : "Treasure that is clearly trapped/hidden behind something dangerous/etc. so that by not taking in the danger, you also don't take in the treasure",
+    },
+    "dungeon_room_magical" : {
+        2 : "Talking statues",
+        3 : "Strange waters with (1-3) beneficial or (4-6) detrimental effects",
+        4 : "Teleport",
+        5 : "A treasure/lever/something to be filled with water is inside/amidst molten lava/flame/ice",
+        6 : "Door locked and require sunlight/special blood/thing to be opened",
+        7 : "Beneficial pool of refreshing water",
+        8 : "Talking statues",
+        9 : "Strange waters with (1-3) beneficial or (4-6) detrimental effects",
+        10 : "Teleport",
+        11 : "A treasure/lever/something to be filled with water is inside/amidst molten lava/flame/ice",
+        12 : "Door locked and require sunlight/special blood/thing to be opened",
+    },
+    "dungeon_traps" : {
+        2 : "dungeon_room_traps",
+        3 : "dungeon_corridor_traps",
+        4 : "dungeon_door_traps",
+        5 : "dungeon_feature_traps",
+        6 : "dungeon_false_treasure_traps",
+        7 : "dungeon_door_traps",
+        8 : "dungeon_room_traps",
+        9 : "dungeon_corridor_traps",
+        10 : "dungeon_special_traps",
+        11 : "dungeon_feature_traps",
+        12 : "dungeon_false_treasure_traps",
+    },
+    "dungeon_room_traps" : {
+        2 : "Falling blocks",
+        3 : "Gas: (1-3) poisonous, (4-6) sleeping",
+        4 : "Harmless mist with door closing and locking",
+        5 : "Pit: (1-3) snakes, (4-6) spike",
+        6 : "Scything blade from the ceiling",
+        7 : "Slides",
+        8 : "Falling blocks",
+        9 : "Gas: (1-3) poisonous, (4-6) sleeping",
+        10 : "Harmless mist with door closing and locking",
+        11 : "Pit: (1-3) snakes, (4-6) spike",
+        12 : "Scything blade from the ceiling",
+    },
+    "dungeon_corridor_traps" : {
+        2 : "Wall/Statue spear/halberd",
+        3 : "Sandwich wall or ceiling",
+        4 : "Spiked floor",
+        5 : "Wall-long scythes",
+        6 : "Wall-long darts",
+        7 : "Slides",
+        8 : "Wall/Statue spear/halberd",
+        9 : "Sandwich wall or ceiling",
+        10 : "Spiked floor",
+        11 : "Wall-long scythes",
+        12 : "Wall-long darts",
+    },
+    "dungeon_door_traps" : {
+        2 : "Electrified door",
+        3 : "Spike pit underneath doormat",
+        4 : "Handle needle",
+        5 : "Spear through ceiling",
+        6 : "Spear through door",
+        7 : "Handle chopper",
+        8 : "Handle needle",
+        9 : "Spike pit underneath doormat",
+        10 : "Spear through door",
+        11 : "Spear through ceiling",
+        12 : "Electrified door",
+    },
+    "dungeon_feature_traps" : {
+        2 : "Poisonous plants on touch",
+        3 : "Statue spear/halberd in the center of the room",
+        4 : "Wall statue that you put your hand in the mouth (chopper or needle)",
+        5 : "False door with alarm",
+        6 : "Touch a (something) to become invisible, mute, paralyzed",
+        7 : "Something animate and attack when touched",
+        8 : "Poisonous plants on touch",
+        9 : "Statue spear/halberd in the center of the room",
+        10 : "Wall statue that you put your hand in the mouth (chopper or needle)",
+        11 : "False door with alarm",
+        12 : "Touch a (something) to become invisible, mute, paralyzed",
+    },
+    "dungeon_false_treasure_traps" : {
+        2 : "Darts (1d6)",
+        3 : "Flask inside that shatter and explode (1), poison gas (2), blind (3-4), sleeping gas (5-6)",
+        4 : "Poison (1-3) or paralysis (4-6) needle",
+        5 : "Spray of (1-3) poison, (4-6) attractiveness-to-monsters",
+        6 : "Hidden snake/scorpion/rot grub",
+        7 : "Ceiling/floor/wall spikes on activation",
+        8 : "Darts (1d6)",
+        9 : "Flask inside that shatter and explode (1), poison gas (2), blind (3-4), sleeping gas (5-6)",
+        10 : "Poison (1-3) or paralysis (4-6) needle",
+        11 : "Spray of (1-3) poison, (4-6) attractiveness-to-monsters",
+        12 : "Hidden snake/scorpion/rot grub",
+    },
+    "dungeon_special_traps" : {
+        2 : "Water getting inside",
+        3 : "Sand getting inside",
+        4 : "Equipment destroy (rust powder, rust monster pit trap)",
+        5 : "Fatigue (gas)",
+        6 : "Spoil food (insects, liquid, rot grub, etc.)",
+        7 : "Wind tunnel",
+        8 : "Water getting inside",
+        9 : "Sand getting inside",
+        10 : "Equipment destroy (rust powder, rust monster pit trap)",
+        11 : "Fatigue (gas)",
+        12 : "Spoil food (insects, liquid, rot grub, etc.)",
+    },
+    "dungeon_treasure_room" : {
+        2 : "dungeon_guarded_treasure",
+        3 : "dungeon_special_chest",
+        4 : "dungeon_hidden_treasure",
+        5 : "dungeon_unguarded_treasure",
+        6 : "dungeon_trapped_treasure",
+        7 : "dungeon_guarded_treasure",
+        8 : "dungeon_trapped_treasure",
+        9 : "dungeon_unguarded_treasure",
+        10 : "dungeon_hidden_treasure",
+        11 : "Normal unguarded chest",
+        12 : "dungeon_guarded_treasure",
+    },
+    "dungeon_treasure_guarded" : {
+        2 : "Monsters protect the treasure",
+        3 : "Monsters protect the door to a treasure room",
+        4 : "Monsters unaware of the treasure",
+        5 : "Monsters are the treasure",
+        6 : "Monsters put there specifically to protect the treasure",
+        7 : "Hidden monster (mimic, gargoyle, living statue, elemental of coins, etc.)",
+        8 : "Monsters protect the treasure",
+        9 : "Monsters protect the door to a treasure room",
+        10 : "Monsters unaware of the treasure",
+        11 : "Monsters are the treasure",
+        12 : "Monsters put there specifically to protect the treasure",
+    },
+    "dungeon_treasure_hidden" : {
+        2 : "Hidden under floor",
+        3 : "Hidden over ceiling",
+        4 : "Hidden in a double treasure bottom",
+        5 : "Hidden behind moving wall/furniture",
+        6 : "Hidden behind illusory wall",
+        7 : "Hidden under water",
+        8 : "Hidden under floor",
+        9 : "Hidden over ceiling",
+        10 : "Hidden in a double treasure bottom",
+        11 : "Hidden behind moving wall/furniture",
+        12 : "Hidden behind puzzle",
+    },
+    "dungeon_treasure_trapped" : {
+        2 : "Darts (1d6)",
+        3 : "Flask inside that shatter and explode (1), poison gas (2), blind (3-4), sleeping gas (5-6)",
+        4 : "Poison (1-3) or paralysis (4-6) needle",
+        5 : "Spray of (1-3) poison, (4-6) attractiveness-to-monsters",
+        6 : "Hidden snake/scorpion/rot grub",
+        7 : "Ceiling/floor/wall spikes on activation",
+        8 : "Darts (1d6)",
+        9 : "Flask inside that shatter and explode (1), poison gas (2), blind (3-4), sleeping gas (5-6)",
+        10 : "Poison (1-3) or paralysis (4-6) needle",
+        11 : "Spray of (1-3) poison, (4-6) attractiveness-to-monsters",
+        12 : "Hidden snake/scorpion/rot grub",
+    },
+    "dungeon_treasure_unguarded" : {
+        2 : "Difficult to reach under rocks/cave-in/behind bars/etc.",
+        3 : "In the middle of a pool of acid/lava/blood",
+        4 : "Must sacrifice an item to get it",
+        5 : "When you take the treasure, all doors closes and locks",
+        6 : "You can see but cannot reach",
+        7 : "Choice treausre (i.e. you pick one treasure and the other one sink)",
+        8 : "Difficult to reach under rocks/cave-in/behind bars/etc.",
+        9 : "In the middle of a pool of acid/lava/blood",
+        10 : "Must sacrifice an item to get it",
+        11 : "When you take the treasure, all doors closes and locks",
+        12 : "You can see but cannot reach",
+    },
+    "dungeon_treasure_special" : {
+        2 : "Cursed chest and/or if you take this, you get marked and will get haunted/pursued/etc.",
+        3 : "What you take is taken from someone else",
+        4 : "What you take does damage to someone else",
+        5 : "Require smething unique or special to be opened (e.g. full moon light, blood of a particular creature, etc.)",
+        6 : "Whatever you take is also dangerous to you (e.g. a glass sphere filled with snakes and treasures)",
+        7 : "Summon monster (ghosts, spirits, raise skeletons, etc.)",
+        8 : "Cursed chest and/or if you take this, you get marked and will get haunted/pursued/etc.",
+        9 : "What you take is taken from someone else",
+        10 : "What you take does damage to someone else",
+        11 : "Require smething unique or special to be opened (e.g. full moon light, blood of a particular creature, etc.)",
+        12 : "Whatever you take is also dangerous to you (e.g. a glass sphere filled with snakes and treasures)",
+    },
+    "dungeon_room_salt" : {
+
+    },
+    "dungeon_room_unique" : {
+        2 : "UNDERWATER SWORD: Sword stuck in a pound/lake/fountain in a rock. It's underwater, the water is clear. There is a skeleton hand stuck on the pommel. If players try to take it out, it sticks to the hand. It requires a total of 30 strength to be lifted out. ",
+        3 : "For more details see: https://www.prismaticwasteland.com/blog/my-favorite-trap",
+        4 : "SLEEPY WALL: A wall that needs to be climbed that's full of mushrooms that when touched, liberate spores that put you asleep. ",
+        5 : "SKELETON AMBUSH: It's basically just a skeleton whistling and walking through the woods while holding a scythe and a bag of coins. The twist is that there's an evil adventuring party using the skeleton as bait to attack and rob people. The skeleton isn't undead but is actually animated through a series of minor illusion",
+        6 : "SKELETAL PORTCULLUS: A door drop on the party separating it in two. Each side gets attacked by xd6 skeletons. ",
+        7 : "The players find an important door they have to go through, but a massive pillar has fallen directly into it, jamming it and blocking the way.",
+        8 : "There's a simple-looking room with a locked door and a key on a pedestal. When the characters pick up the key and try to insert it into the lock, it crumbles to dust the instant it touches the keyhole. The real key is still in the room, but it's hidden somewhere—under the pedestal, under a brick in the floor, etc. The options are endless.",
+        9 : "Two electrified handles are attached to opposite sides of a 30-foot chamber. This works like the chains in #21, except the characters need to form a conductive link to power the door and get it to open.",
+        10 : "The dungeon features a room with an unusual light source (like a torch in a tube in the floor) with a lot of shadows. One or more of those shadows are living—and hungry.",
+        11 : "The characters reach a tricky junction: In one room is a trap/challenge and a locked, unbreakable door but no key. In the other is the key, but it's set on a pedestal in the middle of a cluster of ominous-looking statues of armed warriors who are all staring at it. Whether or not the statues come to life when the key is taken is up to you.",
+        12 : "a seemingly-normal hall with a pressure plate half-way down. When activated, the floor is covered in a Grease spell and the entire hall tilts at a 45 degree downward angle. Cue PC's sliding into whatever room or nasty thing you want at the bottom. ",
+    },
+    "dungeon_room_salt" : {
+        2 : "interactible levers and such that can close/open a nearby door",
+        3 : "magical comfort (clear water, fireplace, etc.)",
+        4 : "very elaborate objects (furnitures, weapons, etc.)",
+        5 : "an unpowered shrine",
+        6 : "Fountain (50% it has an effect)",
+        7 : "Frescoes/mosaic in good conditions",
+        8 : "Library with books",
+        9 : "collapsed wall/ceiling/etc.",
+        10 : "artistry (ancient rug, painting, statues, etc.)",
+        11 : "useful equipment, items, weapons",
+        12 : "dead bodies of a recent fight with items on them",
+    },
+    "dungeon_effects" : {
+        2 : "Ages (1d10 year)",
+        3 : "Reverse Gender",
+        4 : "Animate user weapon",
+        5 : "Appear/Disappear",
+        6 : "Antimagic (in the room)",
+        7 : "Directs towards...",
+        8 : "Enlarges/Reduces user",
+        9 : "Gaseous",
+        10 : "Greases",
+        11 : "Release coins/gems",
+        12 : "Teleports",
+    },
+    "dungeon_monster_levelone" : {
+        2 : "Group of adventurers",
+        3 : "Demon (Manes)",
+        4 : "Berserkers",
+        5 : "Orcish",
+        6 : "Giant Ants",
+        7 : "Giant Beetles (fire)",
+        8 : "Bandits",
+        9 : "Skeleton",
+        10 : "Giant Rats",
+        11 : "Giant Rats",
+        12 : "Zombie",
+    },
+    "dungeon_monster_leveltwo" : {
+        2 : "Group of adventurers",
+        3 : "Demon (Lemures)",
+        4 : "Troglodyte",
+        5 : "Orcish",
+        6 : "Giant Toads",
+        7 : "Giant Centipede",
+        8 : "Ogre",
+        9 : "Orcish",
+        10 : "Giant Rats",
+        11 : "Giant Badgers",
+        12 : "Ochre Jelly",
+    },
+    "dungeon_monster_levelthree" : {
+        2 : "Group of adventurers",
+        3 : "Demon (Lemures)",
+        4 : "Troglodyte",
+        5 : "Orcs",
+        6 : "Large Spiders",
+        7 : "Giant Spiders",
+        8 : "Gelatinous Cube",
+        9 : "Wererats",
+        10 : "Giant Weasel",
+        11 : "Giant Lizard",
+        12 : "Ochre Jelly",
+    },
+    "dungeon_monster_levelfour" : {
+        2 : "Group of adventurers",
+        3 : "Demon (Hellhound)",
+        4 : "Werewolf",
+        5 : "Ogres",
+        6 : "Giant insect",
+        7 : "Giant insect",
+        8 : "Gargoyle",
+        9 : "Blink Dog",
+        10 : "Giant Constrictor Snake",
+        11 : "Carnivorous Ape",
+        12 : "Gelatinous Cube",
+    },
+    "dungeon_monster_levelfive" : {
+        2 : "Group of adventurers",
+        3 : "Demon (Imp)",
+        4 : "Doppleganger",
+        5 : "Orcish/ogre-ish/giant-ish",
+        6 : "Giant Spider",
+        7 : "Cockatrice",
+        8 : "Displacer Beast",
+        9 : "Minotaur",
+        10 : "Giant Lizard",
+        11 : "Giant Poisonnous Snake",
+        12 : "Gelatinous Cube",
+    },
+    "dungeon_monster_levelsix" : {
+        2 : "Group of adventurers",
+        3 : "Djinni",
+        4 : "Weretiger",
+        5 : "Ogre-Magi / Ogre",
+        6 : "Phase Spider",
+        7 : "Carrion Crawler",
+        8 : "Medusa",
+        9 : "Werebear",
+        10 : "Wight",
+        11 : "Basilisk",
+        12 : "Green Slime",
+    },
+    "dungeon_room_wall_oddities" : {
+        2 : "surface act like water",
+        3 : "unstable surface",
+        4 : "covered (vegetation, skin, etc.)",
+        5 : "trampoline",
+        6 : "molten",
+        7 : "absorbs sound",
+        8 : "rebound spell",
+        9 : "strange material (metal, block of ice, etc.)",
+        10 : "strange mosaic",
+        11 : "caltrops (invisible)",
+        12 : "electrified",
+    },
+    "dungeon_room_unique_salt" : {
+        0 : "A much-worn digging tool made of a sharpened human femur. In a pinch it would also serve as a light club or short sword.",
+        1 : "An image of the attractive mate of the gaoler. It might be a photograph, an engraving or cameo, even a magical image trapped in a small gem. It has become valuable as gaol currency, but the gaoler suspects its existence, so whoever is caught with it will suffer.",
+        2 : " A set of three matching cups and a ball, very worn. The ball is the receptacle of a con man's soul, who used to run the game.",
+        3 : " A section of rope 2d6x feet long, made from woven hair (if you roll a 6 on either of the dice, roll again and add the result to the length. Continue until you roll something other than a 6).",
+        4 : " Hiding in the straw ticking of a dungeon bed is the mad spider familiar of a deceased former prisoner, desperate to escape to it can resurrect its former master. It appears to have a cunning plan.",
+        5 : " Tied to the leg of a dungeon bed is a length of twine, hidden by being covered by dirt from the floor. It leads beyond the cell, and is attached to one of the following (roll 1d6) 1-2: The leg of another prisoner's bed; 3-4: a small bell in the guard's quarters; 5: a small bell in the Warden's quarters; 6: the collar of a trained rat that belongs to the one whose bed the string is attached to.",
+        6 : " An iron maiden, a terrible torture device that the gaolers call Lucinda, supposedly after the spirit of the one who haunts the device.",
+        7 : " A small but wickedly sharp knife that once belonged to the torturer or surgeon who works for the dungeon. It is easily hidden, but not particularly effective as a weapon.",
+        8 : "9. A torn fold of parchment bearing the last will and testament of a former inhabitant of the cell. leaving all their worldly belongings to the bearer of the document. That person is identified only by a set of initials. Curiously, the parchment is notarized and witnessed by a lawyer, and could well be a legitimate document.",
+        9 : "0. A shiv made from one of the wooden spoons allowed to prisoners at meal times.",
+        10 : "11. A loose brick is actually a trigger to open a passage in the wall, which eads down a winding, crumble of staricase, to a glowing pentacle on the floor of a small chamber that stinks of brimstone.",
+        11 : "12. A satin ribbon, still smelling faintly of perfume, in a color known to be favored by the gaoler's wife.",
+        12 : "13. A section of brick wall slightly different from its surroundings. Rumor abounds as to what, if anything is behind it (roll 1d4): 1:Nothing; 2: A way to freedom; 3: A corpse (animate or not) walled in while alive; 4: A secret cell for the King's forgotten twin brother.",
+        13 : "14. A coin of the realm, struck with the name and semblance of a ruler never known to have taken the throne.",
+        14 : "15. A broken set of manacles in a pool of blood. The lie where they fell (some incongruous place like the middle of a room, the end of a hallway, etc.). No one touches them after what happened last time.",
+        15 : "16. The roots of a massive tree, the Hanging Oak, run just behind the walls and beneath the floor here, projecting a knobbly knuckle through the surface on occasion. Some say that the Hanging Oak speaks to those who caress the root in just the right way.",
+        16 : "17. A terrible scream of agony occasionally resounds, coming from beyond a particular wall. Everyone knows that that wall is backed only by hundreds of feet of uncut stone and earth. There is a 3 in 6 chance that the scream can only be heard by a select few.",
+        17 : "18. A flap of bloody cloth, folded around three severed fingers, relatively fresh. The bloody ends have gnaw marks.",
+        18 : "19. A simple copper ring, green with corrosion. If cleaned, it has an inscribed code that, if deciphered, reveals an escape route. There is a 2 in 6 chance that this ring is an elaborate trap to secure secret sacrifices for a cult of demonologists.",
+        19 : "20. Spots of blood appear mysteriously on a wall or floor. If they are not cleaned off, over the course of several days they spell out a message from something from the beyond (roll 1d6): 1: The ghost of a slain torture victim; 2: A mystic attempting to send a message to his former lover, who once inhabited this cell; 3: A demon drawn by the incredible suffering of the dungeon; 4: A guard, who uses the spot as a place to administer secret punishments to deserving prisoners; 5: The offering of a mad guard to his devilish master; 6: A vampire who has recently been incarcerated, or hired as one of the guards;",
+        20 : "21. A set of manacles bound to the wall, instill a persistent vision of the sacred sword of a holy warrior tortured to death there.",
+        21 : "22. 1d6x bricks scattered throughout the dungeon have imprints of footsteps embossed into their surface. If they are collected and laid out in the correct pattern, they lead somewhere else entirely.",
+        22 : "23. A leather thong, on which there is a token made of wolf hair and a fang, bound with the sinew of an elk. When held or worn, the token causes an intense longing to run with the pack under the moonlight, to hunt prey and savage it with fang and claw.",
+        23 : "24. Hidden in a waste bucket (it might be a prisoner's latrine or the receptacle for amputations), is a demon's binding stone.",
+        24 : "25. A massive and ponderous executioner's axe, black and bloodied, drips fresh blood on the morning of an execution.",
+        25 : "26. A tall brazier made of brass and iron standing on sturdy tripod legs. The brazier is full of unlit coals, with 1d4 implements of torture (e.g. pokers, tongs, etc.) trust within waiting to be heated. If the coals are lit, the brazier animates, skittering on its iron legs and always staying at the side of whoever started the blaze.",
+        26 : "27. A rat with a small parchment note tied to its body with a simple leather thong. The rat is either a trained rat running messages between prisoners, an intelligent rat gathering paper with which to line its nest, or a messenger from from the were-rat king who rules the sewers under the dungeon.",
+        27 : "28. All the bars in this section of the dungeon, be they the bars of a cadge, cell, or window, resonate like perfectly tuned chimes when strike. Prisoners with musical skill play tunes upon them from time to time. Others have leaned to use specific pitches and rhythms to send coded messages through the dungeon and to listeners creeping in the alley outside.",
+        28 : "29. A crude graffiti likeness of one of the party members is sketched onto the wall of the dungeon. Throughout the dungeon there are 1d4x other likenesses of the party member, each one drawn being killed in a different way.",
+        29 : "30. A cell sits empty, its only contents a moldy straw mattress, overturned bucket, locked restraints hanging from the wall, pile of rags that were once clothes, and a mound of human skin sloughed off like a snake's.",
+        30 : "31. A platter of the finest food rests on a clean linen cloth. Mouth-watering aroma makes it almost impossible to resist. There is a tradition in this dungeon: If a noble prisoner is to be executed, he can have his last meal delivered to his fellow inmates. If one of them eats of the repast, that one is executed in the noble's place. Of course, newer prisoners are unlikely to know about the tradition.",
+        31 : "32. There is a hallway in the dungeon in which the shadows of those who pass act out the crimes for which their owners are incarcerated.",
+        32 : "33. A key of elaborate design, with a strange glyph inscribed on the gem that is its fob. It appears at random intervals (usually remaining in a single spot for 1d6 minutes) before disappearing and appearing somewhere else, possibly miles distant. It can open a single door of the bearer's choosing, but will never again respond to that person. Alas, there are nearly always at least two locked doors between the dungeon and freedom.",
+        33 : "34. A set of leg chains that has a severed foot in one manacle, with the other manacle appearing to have been chewed open by something than can bite through iron.",
+        34 : "35. A version of a local Inquistor's holy symbol, perverted to the worship of its most dire demonic foe.",
+        35 : "36. A horse stands alone in an empty cell, a chain around its neck bolted firmly to the cell wall. The horse is blindfolded and muzzled, but otherwise appears mundane in every way.",
+        36 : "37. Whenever someone dies within the dungeon for any reason, all light sources flicker and dim for the briefest of moments, normal illumination returning just before the dungeon is plunged into total darkness.",
+        37 : "38. A cake sits unattended. There is a file baked inside containing a floor plan of the dungeon and an elaborate escape plan. (I plan to expand this oddity to include results for every meaning of file and phial)",
+        38 : "39. A torturer is asleep on the job, stretched out on a rack for a nap. A brazier normally used to heat implements of torture burns nearby, keeping him toasty and warm in the otherwise dank dungeon.",
+        39 : "40. A live peacock struts through the dungeon. The peacock is either the cherished pet of an eccentric warden, the avatar of a goddess of mercy sent to bless worthy prisoners with freedom or an end to their suffering, the animal companion of a mentalist employed as an interrogator, or a mundane peacock who supplies feathers for the dreaded tickle torture.",
+        40 : "Bloody rivulets on the floor",
+        41 : "Leering skulls embedded in the wall",
+        42 : "A petrified hand reaching up from the floor",
+        43 : "Burning violet braziers",
+        44 : "A huge draconic skull",
+        45 : "rotted floorboards covered in yellow mold",
+        46 : "A gemstone eye that always seems to follow someone",
+        47 : "A pile of dismembered hands",
+        48 : "Bubbling vats of thick liquid",
+        49 : "Statue of the Red Lady",
+        50 : "The heart of a chicken floats suspended in a briny solution, beating lazily. If the heart if removed from its vat and begins to grow like a monstrous tumor, (gibbering mouther).",
+        51 : "A shimmering, irregular stone rests in what appears to be a golden box. The stone is a flawed philosophers stone. Anything touching the stone turns to iron pyrite, commonly known as fool's gold. Even casual contact triggers this transformation.",
+        52 : "pièce rempli de cadavre encore en état",
+    },
+    "dungeon_riddles" : {
+        0 : "Time existed before me, but history can only begin after my creation (Writing)",
+        1 : "Some are cherished, some are hated, and even if lost they remain with you [memories",
+        2 : "They arrive every night whether invited or not. They can be seen, but not heard or touched. If one falls the rest keep moving [stars]",
+        3 : "I have towns without people, forests without trees, and rivers without water [map]",
+        4 : "Passed from parent to child, and shared between siblings, though it is used more by others [name]",
+        5 : "What always runs but never walks. Often murmurs, never talks. Has a bed but never sleeps. An open mouth that never eats? [river]",
+        6 : "My life can be measured in hours, I only serve to be devoured. Slim, I am quick. Fat, I am slow. Wind is my foe [candel]",
+        7 : "What goes through a door but never goes in or comes out? [keyhole]",
+        8 : "Man walks over, man walks under, in times of war he burns asunder [bridge]",
+        9 : "One by one we fall from heaven down into the depths of past, And our world is ever upturned so that yet some time we’ll last. [hourglass]",
+        10 : "Alive without breath, As cold as death, Clad in mail never clinking, Never thirsty, ever drinking",
+        11 : "I go around in circles, But always straight ahead Never complain, No matter where I am led.",
+        12 : "If you feed me, I will live, but if you make me drink, I will die. What am I? [Fire.]",
+        13 : "What can you keep when not needed and throw when it is needed? [An anchor.]",
+        14 : "I can fly but not in the sky. I bid adieu at night and say hello in the morning. I am a part of you, and I follow as you lead. I dress in black and flee the light. But without it, I wouldn't exist. What am I? [A shadow.]",
+        15 : "What breaks by naming it? [Silence.]",
+        16 : "A flat stone wall stands in their path. On it is inscribed: I run smoother than most any rhyme; I love to fall but cannot climb. The wall cannot be destroyed by most attacks, but splashing water on it causes it to crumble into wet sand.",
+        17 : "one dungeon corridor leads to a dead end. There's no traps in this dead end. It's just the wrong way, and the other way leads to where they need to go. But inscribed on the wall of this dead end, in giant letters, is 'OVERTHINKING'.",
+    }
+}
+
+const npc = 
+{
     "npc_who_role": { 
         2: "cultist",
         3: "thief",
@@ -1044,6 +2253,68 @@ const data =
         11: "sleeping",
         12: "finding a treasure"
     },
+    "people_values" : {
+        0 : "Domination",
+        1 : "Envy",
+        2 : "Fanaticism",
+        3 : "Greed",
+        4 : "Hatred",
+        5 : "Hedonism",
+        6 : "Ignorance",
+        7 : "Obedience",
+        8 : "Treachery",
+        9 : "Violence",
+        10 : "Beauty",
+        11 : "Compassion",
+        12 : "Courage",
+        13 : "Excellence",
+        14 : "Honesty",
+        15 : "Honor",
+        16 : "Justice",
+        17 : "Knowledge",
+        18 : "Loyalty",
+        19 : "Selflessness"
+    },
+    "people_desire" : {
+        0 : "Creation",
+        1 : "Expansion",
+        2 : "Knowledge",
+        3 : "Peace",
+        4 : "Reform",
+        5 : "Rescue",
+        6 : "Restoration",
+        7 : "Stasis",
+        8 : "Unity",
+        9 : "War",
+        10 : "Wealth",
+        11 : "Worship",
+    },
+    "people_attitude_strangers" : {
+        0 : "Oblivious",
+        1 : "Frightened",
+        2 : "Hateful",
+        3 : "Exploitative",
+        4 : "Indifferent",
+        5 : "Hospitable",
+        6 : "Welcoming",
+        7 : "Reverent",
+    },
+    "npc_gifts" : {
+        2 : "A special and unique weapon that's super beautiful and well-made (not magical, but +1 or something equivalent)",
+        3 : "A pet (1-2 hawk, 3-4 attack dog, 5-6 messenger owl)",
+        4 : "Unique warhorse",
+        5 : "A special chariot or boat (as per climate and location)",
+        6 : "A small piece of land",
+        7 : "A group of exceptionally trained hirelings",
+        8 : "A special and unique weapon that's super beautiful and well-made (not magical, but +1 or something equivalent)",
+        9 : "A pet (1-2 hawk, 3-4 attack dog, 5-6 messenger owl)",
+        10 : "Unique warhorse",
+        11 : "A special chariot or boat (as per climate and location)",
+        12 : "A small piece of land",
+    },
+}
+
+const wilderness_content_creation = {
     "region_settling": {
         2 : "Nomads that became sedentary",
         3 : "Peaceful migration into a wilderness",
@@ -1069,267 +2340,1055 @@ const data =
         10 : "A plague almost wiped out everyone",
         11 : "A great hero was born here and did mythical stuff that changed the world",
         12 : "Something divine happened here (a prophecy, a prophet, a sign of the gods, a relic was forged here, etc.)"
-    }
-    
+    },
+    "region_culture_inspiration" : {
+        0 : "Ancient Greco-Roman",
+        1 : "Ancient Cambodia/Southeast Asia (i.e. Lost Izalith)",
+        2 : "Historical China",
+        3 : "Historical India",
+        4 : "Historical Japan",
+        5 : "Middle East",
+        6 : "Medieval Africa",
+        7 : "Medieval Continental Europe (i.e. Astora)",
+        8 : "Medieval Constantinople (i.e. Anor Londo)",
+        9 : "Pre-Columbian New-World",
+        10 : "Pre-modern tribal",
+        11 : "Roll twice and stitch together",
+    },
+    "region_culture_authority" : {
+        0 : "Anarchy",
+        1 : "Caste Leader",
+        2 : "Clan Elders",
+        3 : "Democracy",
+        4 : "Feudal Lordship",
+        5 : "Godly Monarchy / Lordship",
+        6 : "Monarchy",
+        7 : "Dual Kingship",
+        8 : "Magocracy",
+        9 : "Oligarchy",
+        10 : "Tyranny",
+        11 : "Theocracy",
+    },
+    "region_flora_special" : {
+        0 : "Carnivorous",
+        1 : "Colonial or hive-like",
+        2 : "Gelatinous/Tentacular",
+        3 : "Geometric in structure",
+        4 : "Grows in alien matter",
+        5 : "Jewel-colored",
+        6 : "Largely parasitic",
+        7 : "Like prehistoric cycads",
+        8 : "Mobile",
+        9 : "Nauseating in hue",
+        10 : "Sentient to a degree",
+        11 : "Produces strange drugs",
+        12 : "Produces strange music",
+        13 : "Resembles animals",
+        14 : "Spongy and moss-like",
+        15 : "Strangely fragrant",
+        16 : "Symbiotic with animals",
+        17 : "Vine-like and creeping",
+        18 : "Violently invasive",
+        19 : "Corrupted by the Abyss",
+    },
+    "region_fauna_special" : {
+        0 : "Avian or feathered",
+        1 : "Made of strange stuff",
+        2 : "Has human traits, such as voice",
+        3 : "Dead but still moving",
+        4 : "Feeds largely on carrion",
+        5 : "Ghostly or semi-tangible",
+        6 : "Insatiably voracious",
+        7 : "Inscribed with glyphs",
+        8 : "Insecte or arthropodic",
+        9 : "Intelligent as humans",
+        10 : "Made of light or fog",
+        11 : "Metallic or artificial",
+        12 : "Warped and tormented by the Abyss",
+        13 : "Parasitic on each other",
+        14 : "Piscine or crablike",
+        15 : "Plotting against humans",
+        16 : "Reptilian or serpentine",
+        17 : "Ressemble humans",
+        18 : "Warped in its shape",
+        19 : "Warm or hive entities",
+    },
+    "region_oddities" : {
+        0 : "Birthplace of monsters",
+        1 : "Comes from strange sources",
+        2 : "Found where it shouldn’t be",
+        3 : "Ignites in unclean flames",
+        4 : "Induces a great emotion",
+        5 : "Induces madness",
+        6 : "Is a home for dark things",
+        7 : "Is a road to evil places",
+        8 : "Is a slow poison",
+        9 : "Is a strange color",
+        10 : "Is acidic or noxious",
+        11 : "Ancient ruin remnant",
+        12 : "Sentient places",
+        13 : "Issues terrible commands",
+        14 : "Made of something strange",
+        15 : "Murderously dangerous",
+        16 : "Punishes those who offend",
+        17 : "Scours or wounds",
+        18 : "Serves dark powers",
+        19 : "Whispers something",
+    },
+    "region_important_element" : {
+        0 : "Caverns",
+        1 : "Clouds",
+        2 : "Earth",
+        3 : "Earthquakes",
+        4 : "Fog",
+        5 : "Geysers",
+        6 : "Hills",
+        7 : "Lakes",
+        8 : "Lightning",
+        9 : "Rain",
+        10 : "Rivers",
+        11 : "Seas",
+        12 : "Seasons",
+        13 : "Shores",
+        14 : "Sky",
+        15 : "Stars",
+        16 : "Storms",
+        17 : "Thunder",
+        18 : "Tides",
+        19 : "Wind",
+    },
+    "region_special_terrain" : {
+        0 : "Airless Rock",
+        1 : "Arid Badland",
+        2 : "Blasted Waste",
+        3 : "Desert",
+        4 : "Endless Sea",
+        5 : "Forest",
+        6 : "Glassed-over",
+        7 : "Icy waste",
+        8 : "Island Archipelago",
+        9 : "Jungle",
+        10 : "Landless Sky",
+        11 : "Moorland",
+        12 : "Mountains",
+        13 : "Plains",
+        14 : "River",
+        15 : "Savannah",
+        16 : "Swamp",
+        17 : "Tundra",
+        18 : "Underwater",
+        19 : "Volcanic",
+    },
+    "hook": {},
+    "hook_actor": {
+        0: "Knight",
+        1: "Noble",
+        2: "Militia",
+        3: "Adventurer",
+        4: "Blacksmith"
+    },
+    "hook_action": {
+        0: "Settling",
+        1: "Sacrificing",
+        2: "Arresting",
+        3: "Bargaining"
+    },
+    "hook_event": {},
+    "hook_location": {},
+    "hook_salt": {
+        0: "Curse",
+        1: "Disease",
+        2: "Bandits",
+        3: "Dungeon",
+        4: "Magic",
+        5: "Lies"
+    },
+    "overdungeon_map": {},
+    "crawford_method": "1. Placing population centers (1 per region on a strategic location) \n2. Place market towns or hammlets (if necessary). \n3. Place ruins (5) in strategic but abandonned locations. Possible to have them in water areas (sinked, pirate troves on sea caverns, etc.). Ancient and now forgotten/destroyed settlements, temples, etc. \n4. Establish resources. \n5. Lairs \n6. Shortcut, roads and blocked path \n7. Hall of infamy \n8. Create a fictional map of the area for players + the initial blurb",
+    "court": "https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1576217076",
+    "leader_fame_fighter" : {
+        2 : "Reroll, but at sea/coastal",
+        3 : "Held up a collapsing structure (Bridge, Wall, Burning Hut, etc.) as civilians fled",
+        4 : "Helped hunt and slew a dangerous creature (dragon, giant, purple wurm)",
+        5 : "Slew a Gigantic (normal animal: Crab, Boar, etc.) to feed a starving oppressed village",
+        6 : "Rescued a Maiden trapped in a (Tower, Cave, Dungeon, Block of Ice, etc.)",
+        7 : "Fought in the front of a past and bloody conflict against (orcs, ogres, giants)",
+        8 : "Held off (number) men from pursuing a retreating army.",
+        9 : "Entered a burning building to rescue (an important treasure, childrens)",
+        10 : "Wrestled a (minotaur, giant bear, werebear)",
+        11 : "Oversaw the building and protection of bridges and/or homes and was a much efficient ruler",
+        12 : "It is said that he never has been bested in (duel, mounted joust, bow contest, etc.)",
+    },
+    "leader_fame_cleric" : {
+        2 : "Found and used an ancient relic of the gods to slay a demon",
+        3 : "Protected an Abbey from Raiders",
+        4 : "Received visions from the gods.",
+        5 : "Accomplished any amazing feat at a very young age (like before teens). Reroll in the fighter list and downplay it a bit.",
+        6 : "Built a church",
+        7 : "Cured diseases",
+        8 : "Drove away undead",
+        9 : "Killed an evil necromancer",
+        10 : "Rescued and healed a drowning person",
+        11 : "Went on a quest to find some rare item or herb that helped a village through a plague",
+        12 : "Brought down corrupt nobles",
+    },
+    "leader_fame_mage" : {
+        2 : "Found a huge amount of treasure and gave it all away",
+        3 : "Beat an evil wizard in an epic magic duel",
+        4 : "Stepped in front of a innocent bystander to take the impact from a powerful magical spell",
+        5 : "Tricked a group of (Orcs, Bandits, Gnolls, etc.) into going a different direction, thereby saving a town from being razed",
+        6 : "Created a magical barrier that kept out an onslaught of (devils, elementals, demons, [outsiders])",
+        7 : "Banished a demon",
+        8 : "Fought off elementals that attacked a settlement",
+        9 : "Torched a orcish camp to the ground to liberate people",
+        10 : "Discovered long lost knowledge in a dungeon",
+        11 : "One of his creation (golem, living armor, homonculus) saved someone (or a village) from creatures (or a fire)",
+        12 : "Summoned a demon",
+    },
+    "leader_goal_fighter" : {
+        2 : "Occult",
+        3 : "Power",
+        4 : "Social Position",
+        5 : "Family/Tribe",
+        6 : "Riches",
+        7 : "Glory",
+        8 : "Land",
+        9 : "Vengeance",
+        10 : "Duty",
+        11 : "Necessity",
+        12 : "Gods",
+    },
+    "leader_goal_cleric" : {
+        2 : "Riches",
+        3 : "Vengeance",
+        4 : "Social Position",
+        5 : "Occult",
+        6 : "Knowledge",
+        7 : "Gods",
+        8 : "Duty",
+        9 : "Necessity",
+        10 : "Land",
+        11 : "Power",
+        12 : "Family/Tribe",
+    },
+    "leader_goal_mage" : {
+        2 : "Family/Tribe",
+        3 : "Social Position",
+        4 : "Vengeance",
+        5 : "Land",
+        6 : "Occult",
+        7 : "Knowledge",
+        8 : "Power",
+        9 : "Riches",
+        10 : "Glory",
+        11 : "Necessity",
+        12 : "Duty",
+    },
+    "leader_oddities_fighter" : {
+        2 : "Have a flying mount: pegasi if Law, griffon if Neutral or Chaos",
+        3 : "Armour made of a special monster scales (basilisk, dragon, etc.)",
+        4 : "Burnt by a dragon (face and arm)",
+        5 : "Abnormally tall and strong",
+        6 : "Possess a very exotic and strange weapon (1-2 it's mithril or silver, 3-5 it's magical, 6 it's artefact/sentient)",
+        7 : "Unique bloodline with heroes/gods in it",
+        8 : "Possess something (tattoo, banner, throne with skulls, etc.) to note each X he killed (dragons, orcs, humans, etc.) ",
+        9 : "Have a pet animal: 1-2: Lion 3-4: Great Eagle 5-6: Pair of wolves",
+        10 : "Criminal branding on the neck",
+        11 : "Extremely old but still firm",
+        12 : "Head of a big dragon in his throne room",
+    },
+    "leader_oddities_clericmage" : {
+        2 : "Made weird experimentation on flesh, including on oneself, which changed their body composition",
+        3 : "Cursed and physically weak, always coughing, etc.",
+        4 : "Burnt by a magical explosion (acid) on the face",
+        5 : "One eye is a magical jewel",
+        6 : "Classical wizard look (color as per the school, huge cloak, huge hat, etc.)",
+        7 : "Have a pet familiar: Quasit, Owl, Weasel, Pseudo Dragon",
+        8 : "Covered with scars",
+        9 : "Body covered with ceremonial/magical tattoo (see the Mummy)",
+        10 : "Fought with a vampire and still has the mark of the vampire on his neck",
+        11 : "Wears a huge special trinket with a chain on his neck",
+        12 : "Has a cane with the skull of a lich he fought on it",
+    },
+    "leader_bodyguard_fighter" : {
+        2 : "A group of Ogre with an Ogre-Magi captain on great beast (thundertusk)",
+        3 : "A pack of trusted orcish warg-riders",
+        4 : "A handful of giants",
+        5 : "A group of lansquenets",
+        6 : "A group of berserkers",
+        7 : "Elite Trained Knight all with the same special armour that doesn't show their face. That armour has one special feature (resistance to something, made out of a rare metal/animal hide, etc.)",
+        8 : "A group of dedicated elite archer rangers with a special enchanted cloak",
+        9 : "Questing Knights (warhammer)",
+        10 : "A small band of Griffon Riders",
+        11 : "Conan, Guts, etc. (i.e. one very badass bodyguard)",
+        12 : "Reroll on the Cleric table",
+    },
+    "leader_bodyguard_cleric" : {
+        2 : "Roll on the Mage table",
+        3 : "Fanatical cultists with a leader",
+        4 : "A group of death cleric that deal with ancient rituals and maintenance of the dead",
+        5 : "A giant eagle",
+        6 : "Papal swiss guard with polearms",
+        7 : "A group of paladins that survived at least one encounter with a greater demon. They are immune to charm and evil taint. ",
+        8 : "A single powerful paladin with a holy avenger",
+        9 : "A group of gish/elves with an oriental monk attitude (i.e. elvish jedi)",
+        10 : "A small band of Pegasi Riders",
+        11 : "A group of flagellant-type that worship relics",
+        12 : "A unicorn mount",
+    },
+    "leader_bodyguard_mage" : {
+        2 : "An undead death knight",
+        3 : "Two hellhounds",
+        4 : "Ogre-magi twins",
+        5 : "A pack of gargoyles-rider goblins",
+        6 : "A group of eyeball homunculus with small magical laser as a weapon",
+        7 : "A group of enuch nomadic warriors",
+        8 : "A golem",
+        9 : "Group of crazy alchemist that manipulate metal and stuff",
+        10 : "An eldricht knight",
+        11 : "A doppleganger that take the same apperance",
+        12 : "An arcane trickster assassin",
+    },
+    "city_origin" : {
+        2 : "Ancestral Land",
+        3 : "Ancient Industry",
+        4 : "Defensible Site",
+        5 : "Ethnocentrists",
+        6 : "Innovators",
+        7 : "Outcasts",
+        8 : "Rebels",
+        9 : "Religious Community",
+        10 : "Survivors",
+        11 : "Trading Hub",
+        12 : "Roll 2",
+    },
+    "city_activities" : {
+        2 : "Councils",
+        3 : "Destined Conquerors",
+        4 : "Education Tradition",
+        5 : "Expert Artisans",
+        6 : "Martial Traditions",
+        7 : "Missionary Zeal",
+        8 : "Mutual Defense",
+        9 : "Production Center",
+        10 : "Strong Society",
+        11 : "Vigorous Trade",
+        12 : "Roll 2",
+    },
+    "city_obstacles" : {
+        0 : "Bad Reputation",
+        1 : "Class Hatred",
+        2 : "Contaminated Land",
+        3 : "Corrupt Leadership",
+        4 : "Crushed Spirits",
+        5 : "Demagogue",
+        6 : "Destructive Customs",
+        7 : "Disunity",
+        8 : "Ethnic Feuding",
+        9 : "Exception Poverty",
+        10 : "Flooding",
+        11 : "Mercenary Populace",
+        12 : "Monsters",
+        13 : "Perviasive Hunger",
+        14 : "Recurrent Sickness",
+        15 : "Rioutous Thugs",
+        16 : "Secret Society",
+        17 : "Raiders",
+        18 : "Cult",
+        19 : "Xenophobia",
+    },
+    "city_guilds": "https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=516116775",
+    "resources_obstacles" : {
+        2 : "Cursed",
+        3 : "Contaminated Land",
+        4 : "Failed Settlement",
+        5 : "Hazardous Resource",
+        6 : "Monsters",
+        7 : "Raiders",
+        8 : "Recalcitrant Locals",
+        9 : "Recurrent Sickness",
+        10 : "Not Taken Care Of",
+        11 : "Flooding",
+        12 : "Harsh Conditions",
+    },  
+    "resources_type" : {
+        2 : "Fertile Land",
+        3 : "Good Fishing",
+        4 : "Good Hunting",
+        5 : "Good Mine",
+        6 : "Good Timber",
+        7 : "Lush Pasture",
+        8 : "Medicinal Plants",
+        9 : "Defensible Terrain",
+        10 : "Old Monuments",
+        11 : "Sorcerous Materials",
+        12 : "Good stones and marbles",
+    },
+    "ruins_type" : {
+        2 : "Abandonned Town",
+        3 : "Ancient Settlement",
+        4 : "Borken Temple",
+        5 : "Crumbled Fortress",
+        6 : "Dwarven Hold",
+        7 : "Empty Tower",
+        8 : "Failed Colony",
+        9 : "Forsaken Outpost",
+        10 : "Lost Mine",
+        11 : "Plundered City",
+        12 : "Prehuman Ruins",
+    },
+    "ruins_trait" : {
+        2 : "Ancient Armory",
+        3 : "Buried Treasure",
+        4 : "Commanding Location",
+        5 : "Forgotten Sorceries",
+        6 : "Glorious Dead",
+        7 : "Willing recruits",
+        8 : "Lost Techniques",
+        9 : "Pre-Exile Relics",
+        10 : "Rich Resources",
+        11 : "Scattered Heirs",
+        12 : "Seat of Legitimacy",
+    },
+    "ruins_obstacles" : {
+        2 : "Ancient Curse",
+        3 : "Angry Dead",
+        4 : "Dark Wizards",
+        5 : "Disputed Possession",
+        6 : "Exiled Lord",
+        7 : "Human Raiders",
+        8 : "Monsters",
+        9 : "Cult",
+        10 : "Taboo Land",
+        11 : "Things From Below",
+        12 : "Dragon",
+    },
+    "lair_monster" : {
+        2 : "Dragon",
+        3 : "Medusa",
+        4 : "Cyclop",
+        5 : "Lord stronghold (probably evil, like Death Knight)",
+        6 : "Werebear",
+        7 : "Giant spiders",
+        8 : "Minotaur",
+        9 : "Vampire",
+        10 : "Lich",
+        11 : "Sphinx",
+        12 : "Balrog",
+    },
+    "lair_recent_activity" : {
+        2 : "None",
+        3 : "Cult of followers",
+        4 : "Made an alliance with another baddy",
+        5 : "Raid",
+        6 : "Sent a delegation to the region lord asking for things",
+        7 : "Has fought and won over another monster",
+        8 : "None",
+        9 : "Cult of followers",
+        10 : "Made an alliance with another baddy",
+        11 : "Raid",
+        12 : "Sent a delegation to the region lord asking for things",
+    },
+    "lair_end_goal" : {
+        2 : "Greed",
+        3 : "Hatred",
+        4 : "Healing one of its condition (or curse)",
+        5 : "Being left alone",
+        6 : "Protecting an artefact",
+        7 : "Protecting its lair (territorial)",
+        8 : "Greed",
+        9 : "Hatred",
+        10 : "Healing one of its condition (or curse)",
+        11 : "Being left alone",
+        12 : "Protecting an artefact",
+    },
+    "lair_fame" : {
+        2 : "Killed a legendary hero long ago",
+        3 : "Toppled a kingdom",
+        4 : "Stole a powerful artefact",
+        5 : "Possess a grand treasure",
+        6 : "Is very ancient and nobody knows its origin",
+        7 : "Was a great leader previously",
+        8 : "Killed a legendary hero long ago",
+        9 : "Toppled a kingdom",
+        10 : "Stole a powerful artefact",
+        11 : "Possess a grand treasure",
+        12 : "Is very ancient and nobody knows its origin",
+    },
+    "lair_location" : {
+        2 : "Cavern",
+        3 : "Ancient Ruin",
+        4 : "Chasm",
+        5 : "Mountain Camp",
+        6 : "Well Preserved Stronghold",
+        7 : "Dungeon",
+        8 : "Cavern",
+        9 : "Ancient Ruin",
+        10 : "Chasm",
+        11 : "Mountain Camp",
+        12 : "Well Preserved Stronghold",
+    },
+    "faction_method": "[FACTION (name + type)] want(s) [MOTIVATION], but [OBSTACLE]. Therefore, [ACTIVITY TO SURMOUNT OBSTACLE]. [FACTION] has influence over [WHAT], is situated primarly [WHERE] and has a [SYMBOL]. https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=941868129",
+    "hex_type" : {
+        2 : "unique hex/ideas",
+        3 : "hex_sub_element",
+        4 : "hex_natural",
+        5 : "run two encounter and create an aftermath",
+        6 : "Nothing",
+        7 : "Nothing",
+        8 : "Nothing",
+        9 : "hex_landmark",
+        10 : "hex_landmark",
+        11 : "empty place (village, ruin, etc.)",
+        12 : "small hammlet of people surviving",
+    },
+    "hex_natural" : {
+        2 : "Elevation up landmark (peak, mountain, very tall tree, etc.)",
+        3 : "Elevation down landmark (sinkhole, sharp cliffs, caverns, etc.)",
+        4 : "Water landmark (waterfall, huge swamp, small island on a river/lake, completely dried out, an oasis, etc.)",
+        5 : "Passage feature (ancient road, blocked path, magical tree wall, etc.)",
+        6 : "Vegetation (unique tree, magical glade, fruit trees, etc.)",
+        7 : "Corrupted landmark (nature corrupted, radiation, magical explosion, demonic incursion, etc.)",
+        8 : "Elevation up landmark (peak, mountain, very tall tree, etc.)",
+        9 : "Elevation down landmark (sinkhole, sharp cliffs, caverns, etc.)",
+        10 : "Water landmark (waterfall, huge swamp, small island on a river/lake, completely dried out, an oasis, etc.)",
+        11 : "Passage feature (ancient road, blocked path, magical tree wall, etc.)",
+        12 : "Vegetation (unique tree, magical glade, fruit trees, etc.)",
+    },
+    "hex_landmark" : {
+        2 : "Castle that sunk under a swamp or island",
+        3 : "Castle that sunk under the ground",
+        4 : "natural (waterfall, etc.)",
+        5 : "bridge / aqueduct",
+        6 : "pillars / obelisk",
+        7 : "tower",
+        8 : "Monument or vista",
+        9 : "observatory on hill/mountain",
+        10 : "Destroyed or crumbled keep",
+        11 : "Battlefield or graveyard",
+        12 : "magical/weird",
+    },
+    "hex_landmark_content" : {
+        2 : "Disadvantage (trap, trick, disease, monster)",
+        3 : "Advantage (tools, vision around, map, information, a NPC, etc.)",
+        4 : "Hidden Treasure",
+        5 : "Open Treasure",
+        6 : "Guarded Treasure",
+        7 : "Trapped Treasure",
+        8 : "Disadvantage (trap, trick, disease, monster)",
+        9 : "Advantage (tools, vision around, map, information, a NPC, etc.)",
+        10 : "Hidden Treasure",
+        11 : "Open Treasure",
+        12 : "Guarded Treasure",
+    },
+    "hex_monster_subelement" : {
+        2 : "In a camp",
+        3 : "In a lair/ruins",
+        4 : "Hunting (food or reroll another creature)",
+        5 : "Patrolling",
+        6 : "Settling or living (nomadic life)",
+        7 : "Resting very temporarily (1-2 days)",
+        8 : "In a camp",
+        9 : "In a lair/ruins",
+        10 : "Hunting (food or reroll another creature)",
+        11 : "Patrolling",
+        12 : "Settling or living (nomadic life)",
+    },
+    "hex_monster_doingwhat" : {
+        2 : "Combat with another monster",
+        3 : "Being dead",
+        4 : "Being magical or magically affected",
+        5 : "Being seditious with its own group",
+        6 : "Being related to another monster",
+        7 : "Injured",
+        8 : "Combat with another monster",
+        9 : "Being dead",
+        10 : "Being magical or magically affected",
+        11 : "Being seditious with its own group",
+        12 : "Being related to another monster",
+    },
+    "hex_shortcut_type" : {
+        2 : "hex_unique_road_encounter",
+        3 : "ferry",
+        4 : "nest of a huge flying creature (giant eagle, roc, etc.)",
+        5 : "half-broken bridge or pass",
+        6 : "blocked by a huge gate/contraption that needs to be fixed/activated in a nearby dungeon/ruin/lair (can also be magical such as a forcefield)",
+        7 : "Easy to fix, normal shortcut",
+        8 : "blocked by a group of bandits/raiders/orcs",
+        9 : "physically blocked (landslide, sinkhole, etc.)",
+        10 : "blocked by a toll monster (ogre, giant, etc.)",
+        11 : "blocked by a sphinx with riddles",
+        12 : "a creature lives underneath the road",
+    },
+    "hex_unique_road_encounter" : {
+        2 : "crazy guy with fireball ring event",
+        3 : "A wandering cleric begs the heroes to recover a relic for them.",
+        4 : "The road crests a hill, and spread out before the group is a stunning, sweeping vista of the land beyond. A painter sits nearby, capturing the scene, and asks the group to pose for his foreground.",
+        5 : "A bridge is missing. Where it used to be is now a ferry service, for a sizable fee. The ferry looks like it might consist of bridge parts, and only takes a few travelers at a time.",
+        6 : "tons of corpses, destroyed caravans, etc. with no signs of threat",
+        7 : "A row of severed heads on spikes and a warning sign claiming, “Dis Rode Belong Negan”",
+        8 : "A bridle ties a well-groomed speckled horse to a nearby tree. The horse is fitted with an elegant but empty saddle. Who does it belong to? Do the PCs take it?",
+        9 : "A ranger stops by the group and gives them advice on the trail ahead, including places to camp and a tavern where they can get good rates if they mention his name. All his advice is impeccable, but when they mention his name at the tavern, they’re told he died years ago on that very road.",
+        10 : "A traveling minstrel challenges the wisest looking member of the party to a storytelling contest.",
+        11 : "A wizened tinker sells charms from his cart: dried frogs, finger bones, cat skulls, and the like. Leaving him, you turn to find he is eerily out of sight altogether",
+        12 : "A majestic elk sprints past with something golden caught in its antlers.",
+    },
+    "covenant": "Create a covenant using one of the aspect of God in the shrines. Follow this to add info: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1557177057",
+    "region_unique_resource" : {
+        2 : "Magical ember",
+        3 : "Plant",
+        4 : "Mineral",
+        5 : "Incense/tree",
+        6 : "Special type of water (water taken from where a giant died in the last year etc.)",
+        7 : "Ancient species bones/bone powder",
+        8 : "Magical ember",
+        9 : "Plant",
+        10 : "Mineral",
+        11 : "Incense/tree",
+        12 : "Special type of water (water taken from where a giant died in the last year etc.)",
+    },
+    "region_unique_resource_why" : {
+        2 : "It burns under direct sunlight",
+        3 : "Shines under a moonlight and because black under sunlight",
+        4 : "Emits a buzzing sound and irradiate those nearby (cannot be kept for too long)",
+        5 : "It has a strong and purifying smell",
+        6 : "It glimmers under certain angle, and under others it's almost invisible",
+        7 : "So fragile it can break to wind",
+        8 : "It burns under direct sunlight",
+        9 : "Shines under a moonlight and because black under sunlight",
+        10 : "Emits a buzzing sound and irradiate those nearby (cannot be kept for too long)",
+        11 : "It has a strong and purifying smell",
+        12 : "It glimmers under certain angle, and under others it's almost invisible",
+    },
+    "region_unique_resource_what" : {
+        2 : "Enhance magical weapon",
+        3 : "Create some form of divinatory drug",
+        4 : "Create some kind of poison/coating to kill (a mythical or powerful creature like Giants, Dragons, etc.)",
+        5 : "Protect against (1-2 magic, 3 undead, 4 demons, 5 elemental, 6 a random type of monsters that's common (lycanthrope, giants, etc.))",
+        6 : "Can be transformed to heal HP or disease (sniffed, smoked, dranked, etc.)",
+        7 : "Uncurse or protect against curses",
+        8 : "Enhance magical weapon",
+        9 : "Create some form of divinatory drug",
+        10 : "Create some kind of poison/coating to kill (a mythical or powerful creature like Giants, Dragons, etc.)",
+        11 : "Protect against (1-2 magic, 3 undead, 4 demons, 5 elemental, 6 a random type of monsters that's common (lycanthrope, giants, etc.))",
+        12 : "Can be transformed to heal HP or disease (sniffed, smoked, dranked, etc.)",
+    },
+    "region_unique_resource_where" : {
+        2 : "On (or inside) a mythical creature",
+        3 : "Deep within caverns without sunlight where it is plenty dangerous",
+        4 : "Only deep within dungeons where there are weird magic",
+        5 : "Deep in the ocean",
+        6 : "On top of the tallest mountains",
+        7 : "Deep within volcanoes",
+        8 : "On (or inside) a mythical creature",
+        9 : "Deep within caverns without sunlight where it is plenty dangerous",
+        10 : "Only deep within dungeons where there are weird magic",
+        11 : "Deep in the ocean",
+        12 : "On top of the tallest mountains",
+    },
+    "region_unique_resource_how" : {
+        2 : "A gift from the gods",
+        3 : "An elemental plane mix-up",
+        4 : "A magical experiment gone wrong",
+        5 : "Dark energies",
+        6 : "Demons",
+        7 : "Something heroic and mythical from the dawn of time",
+        8 : "A gift from the gods",
+        9 : "An elemental plane mix-up",
+        10 : "A magical experiment gone wrong",
+        11 : "Dark energies",
+        12 : "Demons",
+    },
 }
 
-function getData() {
-    return data; 
-}
-
-const hexEncounterType = getCommands("_hex_encounters"); 
-
-const hexDescription = getCommands("_hex_description");
-
-const hexKeys = getCommands("_hex_key");
-
-function getCommands(searchFor){
-    let tempArray = []
-    for(let key in data){
-        if(key.includes(searchFor)){
-            tempArray.push(key)
-        }
-    }
-    return tempArray; 
-}
-
-function getGeneratedContent(input){
-    let result = ""
-    const args = input.split(" ");
-    switch(args[0]) {
-        case "general":
-            return getDataRoll("general_roll");
-        case "reaction_roll":
-            result = getDataRoll("reaction_roll");
-            if(args.length > 1){
-                result += getNeeds(args[1])
-            } else {
-                result += getNeeds("human")
-            }
-            return result;
-        case "hex_encounter":
-            if(args.length > 1){
-                return getSubFunctionEncounter(args[1] + "_hex_encounters");
-            }
-            return getSubFunctionEncounter(getRandomElementFromArray(hexEncounterType));
-        case "wilderness_monster_encounter":
-            return getSubFunctionEncounter("monster_type") + " -> " + getDataRoll("what") + " / " + getDataRoll("how") + " / " + getDataRoll("where");
-        case "hex_content":
-            if(args.length > 1){
-                result += getSubFunctionEncounter(args[1] + "_hex_description");
-            } else {
-                result += getSubFunctionEncounter(getRandomElementFromArray(hexDescription));
-            }
-            if(args.length > 1){
-                result += getSubFunctionEncounter(args[1] + "_hex_key");
-            } else {
-                result += getSubFunctionEncounter(getRandomElementFromArray(hexKeys));
-            }
-        case "small_landmark_content":
-            return getDataRoll("small_landmark_content") + " - " + getDataRoll("general_theme")
-        default:
-          return getSubFunctionEncounter(args[0]);
-      }
-}
-
-function getRandomElementFromArray(arrayToCheck){
-    return arrayToCheck[Math.floor(Math.random() * arrayToCheck.length)];
-}
-
-function getSubFunctionEncounter(encounterType){
-    result = getDataRoll(encounterType); 
-    if(result.includes("monster_omen")) {
-        return getDataRoll("monster_omen") + " -> " + getDataRoll("monster_type"); 
-    }
-    let allCommands = getCommands("");
-    for(command in allCommands){
-        if(result == allCommands[command]) {
-            return getSubFunctionEncounter(result) + " [ " + encounterType + " ] "; 
-        }
-    }
-    return result; 
-}
-
-function getDataRoll(rollType){
-    let roll = getXd6(2); 
-    console.log("roll " + roll + " on " + rollType)
-    return data[rollType][roll];
-}
-
-function getWildernessEncounter(){
-    let encounterType = get1d6();
-    if(encounterType == 4 || encounterType == 5){
-        return "Nothing."
-    }
-    switch(encounterType){
-        case 1:
-            return getWildernessMonsterEncounter();
-        case 2:
-            return getWildernessMonsterOmen();
-        case 3:
-            return getPartyLoss();
-        case 4:
-        case 5:
-            return "Nothing."
-        case 6:
-            return getPartyFind();
+const shrine = 
+{
+    "shrine_type": {
+        0: "demonic_shrine (too much demonic shrine will result in not being able to use normal shrine)",
+        1: "demonic_shrine (too much demonic shrine will result in not being able to use normal shrine)",
+        2: "broken",
+        3: "shrine",
+        4: "shrine",
+        5: "shrine"
+    },
+    "demonic_shrine_effect" : {
+        0 : "S +2",
+        1 : "T +2",
+        2 : "W +2",
+        3 : "A +2",
+        4 : "C +2",
+        5 : "Mv +2",
+        6 : "weapon boost",
+        7 : "magic item",
+        8 : "roll twice",
+        9 : "unique power",
+        },
+    "demonic_shrine_req" : {
+        0 : "pride",
+        1 : "covetousness/greed",
+        2 : "lust",
+        3 : "anger",
+        4 : "gluttony",
+        5 : "envy",
+        6 : "sloth",
+        7 : "false worship",
+        8 : "require to be in a demonic covenant (any)",
+        9 : "possession",
+    },
+    "shrine": { // first time = free bonus, second time = you need to drop the monster part on the altar. if you do so first time, you get double level up. 
+        0: "S	Combat	red = Galnos, power (Shaddai, mountain)",
+        1: "T	Survival	brown = nmrotijos, immortal (El Olam, everlasting)",
+        2: "W	Survival	brown = ?, healer (Rapha, healer)",
+        3: "A	Combat	red = deksteros, right (tsidkenu, the righteousness)",
+        4: "C	Leadership	white = regh, king (El Elyon, majesty)",
+        5: "Mv Survival	brown = Ameika, friend (Raah, friend)",
+        6: "Mi	Combat	red = weikpotis, leader (Sabaoth, lord of armies)",
+        7: "Fa	Leadership	white = pags, peace (Shalom, peace)",
+        8: "Wi	Leadership	white = domiaghar, giver of fear (Elohim/Eloah, strong/fear)",
+        9: "shrine of saweljos (the sun), which require an item of chaos be broken/sacrified on it (heart of a dragon, eye of a lich, head of a troll, etc.) to receive +1 Mi and another random unique combat/physical power",
+        10: "the shrine of judges. on first use, you can take a vow (Defend the weak and the fatherless; uphold the cause of the poor and the oppressed. (Ps 82)) and you gain paladin powers as long as you follow it (spend Wi for healing touch, reroll Fa against spells and evil, spend Wi to sense chaos, spend Wi to imbue your sword and dispel magic on target). also gain +1 Wi on first use."
+    },
+    "shrine_use" : {
+        2 : "hammer and anvil: destroy something of chaos or sacrifice something of value",
+        3 : "moon: sleep on it",
+        4 : "black tablet: inscribe your name",
+        5 : "candle: light it",
+        6 : "fountain: drink",
+        7 : "crystal of light: touch",
+        8 : "fixed bell: ring it",
+        9 : "words written: recite",
+        10 : "small hole: make a libation with wine",
+        11 : "bird: sing a song or recite a poem",
+        12 : "mouth: make a vow"
+    },
+    "shrine_desc" : {
+        2 : "altough the altar is cleared, everything else in the room screams blasphemy (the altar couldn't be desecrated)",
+        3 : "under a slab of stone, needs to be pulled out",
+        4 : "underwater",
+        5 : "on the ceiling",
+        6 : "on a wall",
+        7 : "dusty but clean, no sign of recent activity",
+        8 : "decorated with flowers",
+        9 : "under a broken statue",
+        10 : "permanent incense and candles in the room",
+        11 : "enclosed in a small dome",
+        12 : "pristine, almost magical; no one seems to have been here ever"
     }
 }
 
-function getNeeds(type){
-    let roll = 0; 
-    if(type === "dumb"){
-        roll = (get1d6() - 2)
-        if (roll < 1) {
-            roll = 1
-        }
-    }
-    if(type === "animal"){
-        roll = get1d6()
-    }
-    if(type === "human"){
-        roll = getXd6(2)
-    }
-    if(type === "high"){
-        roll = get3d6(2)
-    }
-    console.log(roll)
-    let result = " -> "
-    switch(roll){
-        case 1:
-        case 2:
-            return result += "Safety: lost, hurt, running away from threat, without light, etc.";
-        case 3:
-        case 4:
-            return result += "Sustenance: hunting, hungry, eating, preparing food";
-        case 5:
-            return result += "Comfort: link with own species (mating), warming, nap, shelter, relax play";
-        case 6:
-            return result += "Territory: patrolling, tracking, conquering, exploring";
-        case 7:
-            return result += "Catharsis: play, sadism, anger, desperation, revenge, corruption";
-        case 8:
-            return result += "Luxury: looking for gold, items, alcohol, slaves";
-        case 9:
-            return result += "Knowledge: looking for direction, lore, spying neighbours"
-        case 10:
-            return result += "Allies or assistance: they need help for -> " + getNeeds(type);            
-    }
-    return result += "Actualisation of the self: ideology, religion, training, cult"
+const treasure = 
+{
+    "treasure_roll" : { // always come with money, 3d6SP * level of dungeon (exterior = 1, non-megadungeon = 2). double = gems. 
+        2 : "magic_rare_rings",
+        3 : "magic_rings",
+        4 : "map",
+        5 : "ember_type",
+        6 : "meteorite_equipment",
+        7 : "magic_potions",
+        8 : "generic magic item",
+        9 : "magical_heirlooms",
+        10 : "magic_consumable",
+        11 : "fake/curse item (reroll and make it fake/cursed)",
+        12 : "magic_relics",
+    },
+    "ember_type" : {
+        2 : "Divine Ember (lawful, blood) -> diamond",
+        3 : "Dark Ember (occult, darkness) -> dark opal",
+        4 : "Enchanted Ember (magic) -> turquoise",
+        5 : "Crystal Ember (ice) -> blue sapphire",
+        6 : "Flame Ember (fire) -> fire opal",
+        7 : "Chaos Ember (chaotic) -> ruby",
+        8 : "Profaned Ember (abyss, water) -> onyx ",
+        9 : "Giant's Ember (physical and lightning) -> garnet ",
+        10 : "Hollow Ember (undead) -> amethyst",
+        11 : "Rotten ember (poison/rot) -> citrine",
+        12 : "A died out ember (can be used to replace any gems for the purpose of upgrading embers). Looks like a pearl.",
+    },
+    "gems" : {
+        2 : "diamond",
+        3 : "dark opal",
+        4 : "turquoise",
+        5 : "blue sapphire",
+        6 : "fire opal",
+        7 : "ruby",
+        8 : "onyx ",
+        9 : "garnet ",
+        10 : "amethyst",
+        11 : "citrine",
+        12 : "A died out ember (can be used to replace any gems for the purpose of upgrading embers). Looks like a pearl.",
+    },
+    "money": {}, // 3d6 * level SP. Outdoor = lvl 1. If it's a great treasure, x10
+    "generic_magic_item_cost" : {
+        2 : "wi",
+        3 : "fa",
+        4 : "mi",
+        5 : "once per game",
+        6 : "w",
+        7 : "as long as you wear it (comes with a curse)",
+        8 : "busywork (ex: hold in both hand, require concentration or chanting)",
+        9 : "blood",
+        10 : "water",
+        11 : "ritual",
+        12 : "many user at the same time",
+    },
+    "generic_magic_item_effect" : {
+        2 : "invisible",
+        3 : "stronger",
+        4 : "courage",
+        5 : "specific figthing stuff (duel, outnumbered, environment, etc.)",
+        6 : "social",
+        7 : "heal or protection",
+        8 : "elemental",
+        9 : "magic",
+        10 : "knowledge/understanding",
+        11 : "chance/discovery",
+        12 : "evasion",
+    },
+    "generic_magic_item_salt" : {
+        2 : "nature",
+        3 : "darkness",
+        4 : "light",
+        5 : "downtime",
+        6 : "passivity",
+        7 : "explosive",
+        8 : "backlash",
+        9 : "humanity",
+        10 : "team",
+        11 : "fire",
+        12 : "ice",
+    },
+    "generic_magic_item_curse" : {
+        2 : "eat more (require triple rations)",
+        3 : "attract monster (sound, smell, magic)",
+        4 : "slowly gives user a real curse",
+        5 : "blindness",
+        6 : "creates desire (ex: take revenge on the weapons creator enemies)",
+        7 : "draining",
+        8 : "berserker",
+        9 : "can't take it off (or extreme damage if you do)",
+        10 : "backbiting",
+        11 : "summon (darkness, monsters, etc.)",
+        12 : "require to replace a limb (magic hand, magic eye, etc.)",
+    },
+    "generic_magic_item_object" : {
+        2 : "ring",
+        3 : "boots",
+        4 : "cloaks",
+        5 : "belt",
+        6 : "weapon",
+        7 : "armor",
+        8 : "instrument/tool",
+        9 : "amulet",
+        10 : "vial",
+        11 : "banner",
+        12 : "gem/stone",
+    },
+    "magical_heirlooms" : { // more ideas to refill: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=853960712
+        2 : "banner of glorious charge: +2 to A within 12 of this if charge",
+        3 : "banner of the steadfast ox: if no move (or in melee no move), +1 T everyone within 12",
+        4 : "banner of beacon: can produce light, can fight as a spear, in huge battle can transmit message and tactics through signs in the air",
+        5 : "banner of fear: -1C to enemy; if you charge, they automatically must do a morale check",
+        6 : "glory banner: +1C to anyone that sees it; +1A to anyone within 6 Mv",
+        7 : "ring of X protection",
+        8 : "ring of the ambassador: can understand any language (can't speak it), +1 reaction roll",
+        9 : "heroic ring: choose one of the three heroic stats for a game, you have +1",
+        10 : "ring of chance: can reroll Fa",
+        11 : "ring of freefall",
+        12 : "ring of sustenance",
+    },
+    "magic_relics" : { // ideas for replenishing this: https://docs.google.com/spreadsheets/d/1x5GffgPYIvmj58ROZzKevnX4m9P2zo3yTKnBVdML7-8/edit#gid=2102794289
+        2 : "holy avenger",
+        3 : "sun blade",
+        4 : "staff of the magi",
+        5 : "robe of the archmagi",
+        6 : "belt of giant strength",
+        7 : "ring of invisibility",
+        8 : "adamantine armor",
+        9 : "immovable rod",
+        10 : "ring of wishes",
+        11 : "vorpal blade",
+        12 : "deck of tarot",
+    },
+    "magic_potions" : {
+        2 : "Animal Control",
+        3 : "Clairaudience",
+        4 : "Climbing",
+        5 : "Diminution",
+        6 : "Healing",
+        7 : "X resistance",
+        8 : "Healing",
+        9 : "Giant strength",
+        10 : "Heroism (+1 to all heroic stats until used)",
+        11 : "Invisibility",
+        12 : "X-ray",
+    },
+    "meteorite_equipment" : {
+        2 : "meteorite dagger/small/thrown",
+        3 : "meteorite blunt",
+        4 : "meteorite bow",
+        5 : "meteorite chainmail",
+        6 : "meteorite sword",
+        7 : "meteorite sword",
+        8 : "meteorite sword",
+        9 : "meteorite bow",
+        10 : "meteorite shield",
+        11 : "meteorite polearm",
+        12 : "meteorite axe",
+    },
+    "coins": {}, // when i roll coins, it must have some description: is it stamped with a ruler face? how does it look? etc.
+    "magic_consumable" : {
+        2 : "Firebombs",
+        3 : "Alluring Skull",
+        4 : "Holy Water",
+        5 : "Pine Resin (1-2 charcoal, 3-4 rotten, 5-6 gold)",
+        6 : "Prism Stone",
+        7 : "Homeward Bone (same as spell)",
+        8 : "Blossom (1-2 green, 3-4 purple moss, 5-6 blooming purple moss)",
+        9 : "Purging Stone",
+        10 : "Divine Blessing",
+        11 : "Transient Curse",
+        12 : "Lloyd Talisman",
+    },
+    "magic_shields" : {
+        2 : "Effigy Shield (Small)  Automatically passes Fa save vs ligthning",
+        3 : "Silver Knight Shield (Standard)    magic save +1 Fa, half damage from lightning",
+        4 : "Black Knight Shield (Standard) magic save +1 Fa, half damage from fire",
+        5 : "Pierce Shield (Standard)   Can be used as a thrust weapon, +1 F",
+        6 : "Crest Shield (Standard)    +2 on Fa against magic",
+        7 : "Grass Crest Shield (Standard)  In combat, you count as having an extra A for melee roll",
+        8 : "Spider Shield (Standard)   +2 on Fa against poison",
+        9 : "Bloodshield (Standard) +1 on Fa against non-physical non-magical attack (poison, curse, etc.)",
+        10 : "Icon Shield (Standard)    User naturally regenerate 1 W per day",
+        11 : "Black Iron Greatshield (Greatshield) +2 T instead of +1 from this shield",
+        12 : "Golden Greatshield If you pass your Fa vs magic spell, you return a light bolt at the target for damage",
+    },
+    "magic_rings" : {
+        2 : "Wolf Ring (can't be put prone; don't suffer from the Trapped condition in combat)",
+        3 : "Ring of Fog (wearer transparent)",
+        4 : "Flask Ring (1d6 charge per adventure, each charge heal one W)",
+        5 : "Ioun Stone (shine like a fire atop the user heard (as a torch), user always knows north, +1 Fa)",
+        6 : "Ring of Jumping and Striding (+1 Mv, Jump, Climb)",
+        7 : "Ring of Water Walking (can walk on water as if solid ground; if he falls on water, he will fall as if on solid ground)",
+        8 : "Leo's ring (if you win the melee roll, you make an extra attack)",
+        9 : "Slumbering Dragoncrest Ring (wearer makes no sound)",
+        10 : "Covetous Gold Serpent Ring (everything cost 10% less)",
+        11 : "Cloranthy Ring (+1 W)",
+        12 : "Rope of Climbing",
+    },
+    "magic_rare_rings" : {
+        2 : "Ring of Favor and Protection (+1W, +1A, +1Mv, can't be unequipped or it breaks)",
+        3 : "Speckled Stoneplate Ring (half damage from all magical and elemental source)",
+        4 : "Ring of Sacrifice (when you die, the ring breaks and you come back to life)",
+        5 : "Bellowing Dragoncrest Ring (+1 Wi to use spells)",
+        6 : "Ring of the Evil Eye (on a 6 for a wound, you regain a W)",
+        7 : "Dark Wood Grain Ring (+1 Fa vs physical attack each combat)",
+        8 : "Havel's Ring (ignore armor Mv penalty)",
+        9 : "Blue Tearstone Ring (if you are not at maximum W, you have +1 T)",
+        10 : "Red Tearstone Ring (if you are not at maximum W, you have +1A)",
+        11 : "Orange Charred Ring (can walk on fire or lava)",
+        12 : "Ring of Telekinesis (can lift object of 30 lbs or less and move them at a pace of 1 Feet per 2 sec; can't be used in combat)",
+    },
+
 }
 
-function getXd6(numberOfD6){
-    var sum = 0; 
-    for(let i = 0; i < numberOfD6; i++){
-        let dice = get1d6();
-        sum += dice; 
-    }
-    return sum; 
-}
+const data = Object.assign({}, 
+    generalities, 
+    underground_content_creation, 
+    underground_exploration, 
+    wilderness_content_creation, 
+    wilderness_exploration, 
+    npc,
+    downtime_and_domain,
+    shrine,
+    treasure)
 
-function get1d6(){
-    return Math.floor(Math.random() * 6) + 1;
-}
+
 
 /*
 TODO: 
-- Make a test method. 
-    Grab a an entry
-    If it's a dict with 11, roll 2d6 on it. Take note of the result in a variable. Recursion on the new answer. 
-    If it's a dict with something less, roll at random on it based on the length. Take note of the result in a variable. Recursion on the new answer. 
-    If it's not a dict, return. 
-- If the previous doesn't work, refactor data in multiple dict that makes sense and I can subdivide. If it does work, do the following and make it easier to navigate: 
-    - Refactor the data to make it clearer (i.e. by categories and put that category as a title in the html)
-        In game roll(general roll, reaction roll, camp roll, wandering encounter inside dungeons, etc.)
-        Dungeon   
-            megadungeon info 
-            Dungeon level (used for lairs) -> 5rd + some bonus rooms
-            Dungeon room
-            Dungeon stuff (traps, tricks, etc.)
-        NPC
-            lords
-            bbeg
-            courts
-            covenants
-        treasures
-            money
-            magic item
-            special sword stuff
-            shrine
-        Wilderness Encounter (takes a terrain type as input; else it generates a random one)
-        Hex keys (takes a terrain type as input; else it generates a random one)
-- Refactor the code to make it clearer/cleaner/better
-- Refactor the DM page accordingly and clearer
-- Shrines
-    - Create one shrine per level up. Each have their own access-point (object, touch, sleep, moment of the day, monster blood, mosnter heart, etc.)
-    - Divine them in categories
-    - When I roll, I can either roll a specific category or just any shrine
-    - You can only receive once the blessing from a particilar shrine
-    - See: https://lichvanwinkle.blogspot.com/2021/11/coins-in-d-and-found-advancement.html
-- Dungeon stuff: 
-    - Megadungeon info: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1835374211
-    - Generic dungeon room generator:
-        check this one first: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=0
-        https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=2126864139
-    - Room descriptor: https://docs.google.com/spreadsheets/d/1ZfupKrrQjUMwkoxNj1aDv9osXouG--REc6tgv6QyHkE/edit#gid=531653215
-    - PRIME TASK: Make a 5RD generator that scales (aka it creates a 5RD level composed of 5(ish) quarters each with their 5RD rooms for a total of 25 meaningful room + a bunch of generic room (some of them being empty))
-        - For quarters/overdungeon maps: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1257933702
-    - Dungeon oddities: https://docs.google.com/spreadsheets/d/1ZfupKrrQjUMwkoxNj1aDv9osXouG--REc6tgv6QyHkE/edit#gid=982051153
-    - Dungeon traps: https://docs.google.com/spreadsheets/d/1ZfupKrrQjUMwkoxNj1aDv9osXouG--REc6tgv6QyHkE/edit#gid=1297903876
-    - Dungeon tricks: https://docs.google.com/spreadsheets/d/1ZfupKrrQjUMwkoxNj1aDv9osXouG--REc6tgv6QyHkE/edit#gid=1981379202
-    - Challenge puzzle: https://docs.google.com/spreadsheets/d/1ZfupKrrQjUMwkoxNj1aDv9osXouG--REc6tgv6QyHkE/edit#gid=721793603
-    - Dungeon refurbish: https://docs.google.com/spreadsheets/d/1ZfupKrrQjUMwkoxNj1aDv9osXouG--REc6tgv6QyHkE/edit#gid=1120484264
-- Wilderness & outdoor stuff: 
-    - key generator with: 
-        - generating keys
-            - find a format and make sure output is there like: terrain, secret, special encounter, landmark, etc. 
-            - generate content for the key following below methods but also:
-                - run two different encounters from the wilderness encounters and create an "aftermath"
-                - 
-        
-        - Meeting other lords, wizards, etc. with their appropriate quests and stuff
-        - Lair unique landmarks: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1544695177
-        - AER lairs: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=800557242
-            - Make the lair generator a very good "unique lair generator". I need to have one giant spider(s) laid, one crypt, one minotaur, one maze, etc. each campaign. Staples and tropes. 
-        - Roads: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=52623965
-        - Ruins and landmarks: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1908528293
-        - Ruins: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1713713205
-    - hex and world generation: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1000516822
-    - Random event for hex encounters: 
-            https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=106840394
-            https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=318261942
-- Political & high level stuff: 
-    - Settlement generators: 
-        https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1966764013
-        Also find/use the Colville checklist
-    - Leader and NPCs: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=2015555476
-    - Courts: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1576217076
-    - Faction: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=941868129
-    - BBEG generator with lore stuff, lieutenants, etc.
-    - Covenant generator: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1557177057
-- Treasure: 
-    - Campaign items: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=979214676
-    - Treasure generator
-        https://docs.google.com/spreadsheets/d/1x5GffgPYIvmj58ROZzKevnX4m9P2zo3yTKnBVdML7-8/edit#gid=0
-        Remake it to include my own stuff with Dark Souls influence
-    - Magical items? https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=853960712
-    - when i roll coins, it must have some description: is it stamped with a ruler face? how does it look? etc. 
-- Monster
-    - Create monster tags. Make sure that it can automatically add them to monster entry in the generator?
-    - Generator unique monster type in this area: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=214513084
-    - Add monsters from:
-        - Middle Earth
-        - Warhammer 1st
-        - Classic D&D monsters
-- Go through the OSE books (basic, advanced, DM, etc.) to steal, adjust, add, correct
 - Rumours:
     - X (object, person, artefact, treasure) has been sigthed in Y (dungeon, lair, etc.)
+    - Find rumours system generator online (or just a rumour generator)
+
+        HOW TO
+            1) Feature: Make a list of 20 features (location, faction, magic item, npc, setting details, factions, etc.)
+            2) Type: Assign to each feature a type based on what it is: 
+                - Danger (warning)
+                - Reward (drawn towards)
+                - Mystery (drawn towards)
+                - Opportunity (drawn towards)
+                - Challenge warning)
+            It doesn't have to be 'about' the player (NPC danger could be that he's a danger to others, to the party, that HE's in danger, etc.)
+            3) Object: Something that affect the feature
+            4) Details: Write in some words the details of the rumour
+                Janus - threat - blacksmith (Janus debt to blacksmith, in hiding)
+
+
+
+
+- Go through the OSE books (basic, advanced, DM, etc.) to steal, adjust, add, correct
 - https://rolesrules.blogspot.com/2013/02/almost-encounters-sights-sounds-and.html
 - Repasser toutes mes sheets, mes D&D links, etc. pour être sur j'ai rien oublié
     https://drive.google.com/file/d/1n8_RldrDkewLHdvgYTT1TWumwi1R27y8/view
     https://drive.google.com/file/d/13fualfLEV_VaahBTaZtRggEUVtWIQXoc/view
 - NPC generator: add keyword (cynical, brave, fearful, etc.)
 - Check scenarios in MESBG, battle companies and gondor at war for more ideas on hexes, encounters, events, etc. 
+- Relisten to all universal history podcast episode and recheck all summary of LOS podcast episode (relisten to some if needed) on Apple Podcast (summary are there) and adjust my lore accordingly
+- If I want to go full solo, the best for mapping would be to make a deck of cards using threee "level" of geomorphs. 
+    First one is "always have an exit to another room". 
+    Second is "mostly have exits, rarely don't, sometimes they are secret", 
+    the third is "almost always doesn't have an exit.". 
+    That whay, you pick (for example) 10 cards of each, shuffled BY LEVEL and stack them to start with level 1. 
+    you need to make sure you have at LEAST one card to go down that you shuffle at random through the three levels.
+    to make sure you don't know which is which, maybe just mix them with unique rooms and so on. 
+    On the side, you just need another deck of randomly assigned room description
+    And then you roll to see the content as per normal room generation
+- Create "temple factions" aka the various organisations obeying god-kings and watchers. 
+- create lesser shrines that are set-up to honor saints, heroes, etc. have them be based on old testament figures but with a different name. for example "The Three Maiden who Withstood the Flames" (to represent the three teenagers of Daniel). the party can only have one active shrine at any point. as long as they follow the saints oath, they have a passive bonus. they can also use an active power, but then lose the active bonus until they go back to civilization to make some sorts of sacrifice/prayer. 
+    - figure generator (long list of names + title)
+    - shrine description (reuse the major srhine one)
+    - some 'mundane' association (aka patron saints of ...)
+    - oath (strict obedience to something): never ambush and always let people surrender; always heal disease and try to prevent them; give to the poor first before yourself; etc. 
+    - passive
+    - active
+    whenever a shrine is generated, take note of it as it is unique and cannot show up again in the campaign. 
+    when it appears, make sure there is an accompanying picture showing what the saints did (some sort of icon) and a clear depiction of what is the oath/requirement of the party. 
+    shrines can be desecrated and broken down. they need to be restored. new one can be constructed. 
+    source: https://espharel.blogspot.com/2019/12/osr-shrines-and-patron-saints.html
+- PIE ideas for quests, legends, items, locales, myths, etc.: 
+    http://falsemachine.blogspot.com/2022/05/gilding-shadow.html
+    http://falsemachine.blogspot.com/2022/06/murder-at-dawn-of-time.html
+    http://falsemachine.blogspot.com/2022/06/we-need-to-be-churning-more-oceans.html
+- Pursuit (p. 33 Castle in Tower)
+- Recheck everything in the OSE SRD to see if I missed something
+- PRIME TASK: Make a 5RD generator that scales (aka it creates a 5RD level composed of 5(ish) quarters each with their 5RD rooms for a total of 25 meaningful room + a bunch of generic room (some of them being empty))
+- For quarters/overdungeon maps: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1257933702
+- Extra stuff for kingdoms: https://www.d20pfsrd.com/gamemastering/other-rules/kingdom-building
+
+
+
+- Covenants
+    - Covenants are the demons way of having worship. Everyone is, by default, in God's covenant. 
+    - Covenants are therefore, for now, more of an NPC thing. 
+    - It's possible to be a Steward-Lord, aka you are a noble, but you don't have territory because you aren't in the covenant. 
+    - Entering a covenant is therefore more of a quest than anything. It requires sacrifices (animals and humans), it requires to bow to the demon, to worship him through specific acts based on the covenants, etc. Also, each demon/covenant is obsessed with one particular item (like DS covenants). 
+    - Covenants therefore need the basic info that I had normally (symbol, name, etc.) but also object, level-up (you gain powers), sacrifices & rites
+    - Covenants rituals/spells are: 
+        - You have a passive bonus
+        - You can use X number of time a spell (vancian-ish like DS1)
+        - When all usage are done, you lose both active and passive
+
+If you want to integrate any magical items, either from D&D, Dark Souls or your own imagination, it is highly suggested to thing about three mechanical factors:
+Prerequisite
+A upside for a downside
+Mechanical niche or lore
+Then, it is suggested to answer to those lore questions to integrate it properly:
+What do legends say of it ?
+What great deed was it part of ?
+When was it created ?
+Who created it ?
+Why was it created ?
+How was it lost by its maker or user ?
 
 NOTES/GENERAL TODO
 - Maybe put encounters per terrain type?
@@ -1357,7 +3416,34 @@ NOTES/GENERAL TODO
     Who is the local evil boss?
     What do they want?
     What will happen if they get it?
+    Mightiest wizard in the land
+    Greatest warrior in the land
+    Richest person in the land
+    Special or very talented blacksmith in the land
+    Special healer or magical healer
+    Magical school or guild
+    Alchemist shop
+    Sage guild
+    Mercenary guild
+    Important laws on weapon carrying, magic and so on
+    Swordmaster/Weapon master
+    Everyone in my world knows ...	
+    Very few people know ...	
+    No one knows ...	
+    Who are the local low-level monsters?				
+    A slightly futher off mid-level moster tribe:				
+    Who is the local Evil Boss?				
+    What do they want?						
+    What will happen if they get it?		
+    What is the name of the main road?	
+    What is the local river?	
+    A local forest?	
+    The nearby hills	
+    Two nearby villages	
+    A distant city			
+	
 - In the pre-game checklist:
+    - Make sure my unique list is up to date (remove what has been used and add back new stuff) such as unique room, riddles, etc.
     - Always have one treausre map ready
     - Always have one NPC ready
     - Always have one ruin ready
@@ -1366,10 +3452,24 @@ NOTES/GENERAL TODO
     - Always have one very cool event ready
     - Always have a table of 2d6 rumours
     - Check the various slides of campaign creator: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1151023139
+    - Have a checklist of what I want to have in terms of material:
+        - Note book
+        - My site
+        - Owlbear rodeo
+        - Discord
+        - DM 1st manual
 - Make the world anvil stuff
+- Dungeon idea: 
+    basilica cistern
+- Advancement = 
+    - Ember + meteorite sword = magic sword. Magic sword + gems = weapon level up. 
+    - Shrine + creature parts = character level up. 
 */
 
 const monsters = {
+    "monster_tags": {
+        0: "test", 
+    },
     "soldier": {
         "F": 3,
         "S": 3,
@@ -1383,12 +3483,116 @@ const monsters = {
         "Fa": 0,
         "Equip": "Spear",
         "Special": "Nil",
-        "Detail": "Nil"
+        "Detail": "Nil",
+        "Value": 0
     }
 }
+
+/*
+
+- Monster
+    - Add monsters from:
+        - Middle Earth
+        - Warhammer 1st
+        - Classic D&D monsters
+        cost them according to point cost. it's equal to:
+        - their SP cost for a single game
+        - their GP cost for a month (domain turn)
+        - their average SP treasure
+    - Create monster tags. Make sure that it can automatically add them to monster entry in the generator?
+    - Generator unique monster type in this area: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=214513084
+
+    - Texts to look:
+        - "The Wonders of the East" (anglo saxon book)
+        - Bestiary of the middle age
+    - Make a "classic monster" generator with stuff like werewolf, vampire (lesser), skeleton, etc. 
+    - remove the unique monsters from the random encounter chart (minotaur, medusa, etc.) and instead have one "classic unique monster" roll. we want to fight orcS, but also THE minotaur. much cooler. 
+
+*/
 
 function getMonsters(){
     return monsters; 
 }
 
+function getData() {
+    return data; 
+}
 
+function getCommands(searchFor){
+    let tempArray = []
+    for(let key in data){
+        if(key.includes(searchFor)){
+            tempArray.push(key)
+        }
+    }
+    return tempArray; 
+}
+
+function get2d6(){
+    return get1d6() + get1d6(); 
+}
+
+function get1d6(){
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+function isSpecialCase(input){
+    if(input == "monster_needs"){
+        return true;
+    }
+    return false; 
+}
+
+function getSpecialCase(input){
+    return getData()[input][Math.floor(Math.random() * 8)]
+}
+
+function getRandomArrayNumber(inputArray){
+    return 
+}
+
+function getContent(input){
+    if(input in getData()){
+        if(isSpecialCase(input)) {
+            return getSpecialCase(input)
+        }
+        return getContent(getData()[input][get2d6()])
+    }
+    return input
+}
+
+function getHook(){
+
+    return "In this village, a [NPC] is resting for now before [action]"
+
+    /*
+    
+In this village, a [NPC] is resting for now before [action]
+In this village, the local authority, a [NPC], is holding a criminal, [NPC], in their cells. This last one claims innocence. 
+You meet [monster] in [location] near the village, performing [action]. However, [NPC] is watching over it [oddities]
+In this village, the people are riled up about [subject/event] because [NPC] did [action]
+We haven't heard of [NPC] for a time now. He lives in [location] and had an important role in the village as a [role]. 
+
+    */
+}
+
+function requestContent(input){
+    switch(input){
+        case "reaction_roll":
+            return getContent("reaction_roll") + " [ " + getContent("monster_needs") + " ] "; 
+        case "shrine":
+            return getContent("shrine") + " | " + getContent("shrine_desc") + " | " + getContent("shrine_use")
+        case "distance":
+            return "Dungeon: " + get2d6() * 10 + " feet | Wilderness: " + get2d6() * 30 + " feet"
+        case "base_actions":
+            return getContent("general_roll")
+        case "hook":
+            getHook(); 
+        case "hex":
+            return "Name: {0} \nDescription: {1} \nHidden: {2} \nMonster: {3}".format(getHexName(), getHexDescription(), getHexHiddenFeature(), getHexMonster())
+        case "triple_oracle":
+            return "Yes/No = " + get1d6() + " \nHow much = " + get1d6() + " \nHow favorable = " + get1d6()
+        default:
+            return getContent(input)
+    }
+}
