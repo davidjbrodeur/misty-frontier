@@ -377,6 +377,9 @@ const wilderness_exploration =
         18 : "Go kill X creature",
         19 : "Go capture X creature",
     },
+    "simple_unique_encounter_ideas": {
+        0: "https://drive.google.com/file/d/13fualfLEV_VaahBTaZtRggEUVtWIQXoc/view"
+    }
 }
 
 const generalities = 
@@ -735,7 +738,13 @@ const generalities =
         11: "Magic.",
         12: "Religious."
     },
-    "triple_oracle": {}    
+    "triple_oracle": {},
+    "pregame_checklist": {
+        0: "Do:\r\n    Roll domain event (per game)\r\n    Roll region event (per month)\r\n    Roll world event (per six month)\r\n    If necessary, make a domain move\r\nRefresh:\r\n    Dungeon content lists (riddles, unique room, etc.)\r\n    Rumour table\r\n    Information on each player (name, goal, intent, levelup, details)\r\n    Information on the party (goals and intent)\r\n    Refresh domain based on last player activity\r\nReady: \r\n    The current party objective\r\n    Treasure map\r\n    Unique random interesting NPC\r\n    One ruin\/dungeon\r\n    The current megadungeon level\r\n    The next megadungeon level\r\n    One very cool unique outdoor event ready\r\nMaterial:\r\n    Notebook\r\n    Working website\r\n    Owlbear rodeo\r\n    Discord\r\n    Physical AD&D DMG"
+    },
+    "precampaign_checklist": {
+        0: "Meta-Information:\r\n    - Campaign concept in one sentence\r\n    - Campaign region:\r\n        - Terrain type predominance\r\n        - Regional hook\/uniqueness\r\n        - Oddity\/plot twist\r\n    - Region map\r\n    - Factions\r\n        - One evil faction, one criminal faction, the prime faction of the initial village\/town (covenant), one neutral or supportive faction and one extra faction\r\n        - [FACTION] want(s) [MOTIVATION], but [OBSTACLE]. Therefore, [PLAN OR METHOD OF SURMOUNTING OBSTACLE].\r\n        - Details for each:\r\n            - One enemy faction\r\n            - One ally faction\r\n            - Their reaction to adventurers (the party)\r\n            - One secret\r\n            - Something they are known for\r\n            - Resources (people, object, location, etc.)\r\nCrawford-method:\r\n    - Place population center (1 per region on a strategic location as the \'capital\' of the region).\r\n        - Court\r\n        - Leader(s)\r\n        - Origin, activity, obstacle\r\n        - Initial resources, building, etc. \r\n    - Place market towns or hammlets if necessary\r\n    - Place a bunch of ruins in strategic but abandonned locations. Possible to have them in water areas (sinked, pirate troves on sea caverns, etc.). Ancient and now forgotten\/destroyed settlements, temples, etc. These are 5-level dungeons. Put in them a shrine and a good treasure. \r\n    - Establish resources (including obstacles)\r\n    - Lairs. These are shrines protected by unique monsters (THE minotaur, THE hydra, THE medusa, etc.). If I don\'t have more ideas of unique monsters, either pimp up a normal one or use: https:\/\/docs.google.com\/spreadsheets\/d\/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM\/edit#gid=214513084\r\n    - Shortcuts, roads and blocked paths\r\n    - Hall of infamy\r\nStarting-town:\r\n    - Leader(s)\r\n    - Faction (if any)\r\n    - Goal(s)\r\n    - Origin, obstacle, activity\r\n    - Answer the following question: \r\n        What is the starting town called?\r\n        What is the name of the local inn? Who runs it?\r\n        Who do we meet in that inn?\r\n        What is the name of the main road?\r\n        What is the local river?\r\n        A local forest\r\n        The nearby hills\r\n        Two nearby villages\r\n        A distant city\r\n        Who rules the area?\r\n        Who are the town elders?\r\n        Who\'s the local expert on the Arcane?\r\n        Who\'s the local religious expert?\r\n        Who knows the most about the area\'s history?\r\n        Who knows the most about the local geography?\r\n        Who are the local low-level monster tribe?\r\n        A slightly farther off mid-level monster tribe\r\n        Who is the local evil boss?\r\n        What do they want?\r\n        What will happen if they get it?\r\n        Mightiest wizard in the land\r\n        Greatest warrior in the land\r\n        Richest person in the land\r\n        Special or very talented blacksmith in the land\r\n        Special healer or magical healer\r\n        Magical school or guild\r\n        Alchemist shop\r\n        Sage guild\r\n        Mercenary guild\r\n        Important laws on weapon carrying, magic and so on\r\n        Swordmaster\/Weapon master\r\n        Everyone in my world knows ...\t\r\n        Very few people know ...\t\r\n        No one knows ...\t\r\n        Who are the local low-level monsters?\t\t\t\t\r\n        A slightly futher off mid-level moster tribe:\t\t\t\t\r\n        Who is the local Evil Boss?\t\t\t\t\r\n        What do they want?\t\t\t\t\t\t\r\n        What will happen if they get it?\t\t\r\n        What is the name of the main road?\t\r\n        What is the local river?\t\r\n        A local forest?\t\r\n        The nearby hills\t\r\n        Two nearby villages\t\r\n        A distant city\t\r\nInitial-dungeon:\r\n    - Lore\r\n    - First level\r\n    - Second level idea\r\nLinks:\r\n    - Links between faction, ruins, megadungeon and BBEG\r\n    - Links between faction and faction\r\n    - Links between ruins, resources, towns, BBEG and megadungeon\r\nInfo:\r\n    - Hide secret and powers\r\n    - Put artefact somewhere with full lore\r\n    - Create rumour table\r\n    - Fictional map of the area for players + initial blurb"
+    },
 }
 
 const underground_exploration = 
@@ -1217,17 +1226,17 @@ const underground_content_creation =
         12: "laboratory"
     },
     "dungeon_lore_what" : {
-        2 : "Castle or tower",
-        3 : "Caves or cavern",
-        4 : "Abandonned mine",
-        5 : "Crypt or tomb",
-        6 : "Ancient temple",
-        7 : "Stronghold or town",
-        8 : "Castle or tower",
-        9 : "Caves or cavern",
-        10 : "Abandonned mine",
-        11 : "Crypt or tomb",
-        12 : "Ancient temple"
+        2 : "Settlement",
+        3 : "Subterranean delving",
+        4 : "Tower or fortification",
+        5 : "Temple",
+        6 : "Crypt or tomb complex",
+        7 : "Crypt or tomb complex",
+        8 : "Crypt or tomb complex",
+        9 : "Temple",
+        10 : "Subterranean delving",
+        11 : "Tower or fortification",
+        12 : "Natural caverns"
     },
     "dungeon_lore_where" : {
         2 : "Beneath a city",
@@ -2196,6 +2205,9 @@ const underground_content_creation =
         15 : "What breaks by naming it? [Silence.]",
         16 : "A flat stone wall stands in their path. On it is inscribed: I run smoother than most any rhyme; I love to fall but cannot climb. The wall cannot be destroyed by most attacks, but splashing water on it causes it to crumble into wet sand.",
         17 : "one dungeon corridor leads to a dead end. There's no traps in this dead end. It's just the wrong way, and the other way leads to where they need to go. But inscribed on the wall of this dead end, in giant letters, is 'OVERTHINKING'.",
+    },
+    "dungeon_level_checklist": {
+        0: "Things to gain: \r\n    - A shrine (at least one)\r\n    - Knowledge\r\n    - A treasure\r\nDanger: \r\n    - Something to be killed\r\n    - Something to kill the party (aka traps and tricks)\r\nLevel design: \r\n    - Shortcut to another level, or to the exit (can be a magic pool, a teleporter, an elevator, a gate, a door that\'s hidden from the other side, etc.)\r\n    - More than one entry\r\n    - 3D \/ elevation shift\r\n    - Loop\r\n    - A landmark (for navigation)\r\n    - Something atmospheric\r\nSomething to interact with \/ to experiment with\r\nSomeone to talk to (prisoner, ghost, machine, demon, statue\/painting, adventuring party, etc.)\r\nA secret that the players probably won\'t find\r\nA secret the players will probably find"
     }
 }
 
@@ -2215,6 +2227,8 @@ const npc =
         12: "wizard"
     }, 
     "npc_who_personality": { 
+        0: "cynical",
+        1: "simple minded",
         2: "transparent",
         3: "greedy",
         4: "caring",
@@ -2479,33 +2493,10 @@ const wilderness_content_creation = {
         18 : "Underwater",
         19 : "Volcanic",
     },
-    "hook": {},
-    "hook_actor": {
-        0: "Knight",
-        1: "Noble",
-        2: "Militia",
-        3: "Adventurer",
-        4: "Blacksmith"
-    },
-    "hook_action": {
-        0: "Settling",
-        1: "Sacrificing",
-        2: "Arresting",
-        3: "Bargaining"
-    },
-    "hook_event": {},
-    "hook_location": {},
-    "hook_salt": {
-        0: "Curse",
-        1: "Disease",
-        2: "Bandits",
-        3: "Dungeon",
-        4: "Magic",
-        5: "Lies"
-    },
     "overdungeon_map": {},
-    "crawford_method": "1. Placing population centers (1 per region on a strategic location) \n2. Place market towns or hammlets (if necessary). \n3. Place ruins (5) in strategic but abandonned locations. Possible to have them in water areas (sinked, pirate troves on sea caverns, etc.). Ancient and now forgotten/destroyed settlements, temples, etc. \n4. Establish resources. \n5. Lairs \n6. Shortcut, roads and blocked path \n7. Hall of infamy \n8. Create a fictional map of the area for players + the initial blurb",
-    "court": "https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1576217076",
+    "court": {
+        0: "https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1576217076"
+    },
     "leader_fame_fighter" : {
         2 : "Reroll, but at sea/coastal",
         3 : "Held up a collapsing structure (Bridge, Wall, Burning Hut, etc.) as civilians fled",
@@ -3035,18 +3026,18 @@ const shrine =
         8 : "require to be in a demonic covenant (any)",
         9 : "possession",
     },
-    "shrine": { // first time = free bonus, second time = you need to drop the monster part on the altar. if you do so first time, you get double level up. 
-        0: "S	Combat	red = Galnos, power (Shaddai, mountain)",
-        1: "T	Survival	brown = nmrotijos, immortal (El Olam, everlasting)",
-        2: "W	Survival	brown = ?, healer (Rapha, healer)",
-        3: "A	Combat	red = deksteros, right (tsidkenu, the righteousness)",
-        4: "C	Leadership	white = regh, king (El Elyon, majesty)",
-        5: "Mv Survival	brown = Ameika, friend (Raah, friend)",
-        6: "Mi	Combat	red = weikpotis, leader (Sabaoth, lord of armies)",
-        7: "Fa	Leadership	white = pags, peace (Shalom, peace)",
-        8: "Wi	Leadership	white = domiaghar, giver of fear (Elohim/Eloah, strong/fear)",
-        9: "shrine of saweljos (the sun), which require an item of chaos be broken/sacrified on it (heart of a dragon, eye of a lich, head of a troll, etc.) to receive +1 Mi and another random unique combat/physical power",
-        10: "the shrine of judges. on first use, you can take a vow (Defend the weak and the fatherless; uphold the cause of the poor and the oppressed. (Ps 82)) and you gain paladin powers as long as you follow it (spend Wi for healing touch, reroll Fa against spells and evil, spend Wi to sense chaos, spend Wi to imbue your sword and dispel magic on target). also gain +1 Wi on first use."
+    "shrine": { // first time = free bonus, second time = you need to drop the monster part on the altar. if you do so first time, you get double level up. the max is two level up. 
+        0: "S	Combat	red = Galnos, power (Shaddai, mountain). ",
+        1: "T	Survival	brown = nmrotijos, immortal (El Olam, everlasting).",
+        2: "W	Survival	brown = ?, healer (Rapha, healer). ",
+        3: "A	Combat	red = deksteros, right (tsidkenu, the righteousness). ",
+        4: "C	Leadership	white = regh, king (El Elyon, majesty).",
+        5: "Mv Survival	brown = Ameika, friend (Raah, friend).  ",
+        6: "Everyone gains Mi	Combat	red = weikpotis, leader (Sabaoth, lord of armies)",
+        7: "Everyone gains Fa	Leadership	white = pags, peace (Shalom, peace)",
+        8: "Everyone gains Wi	Leadership	white = domiaghar, giver of fear (Elohim/Eloah, strong/fear)",
+        9: "shrine of saweljos (the sun), everyone receives one random stats and one random heroic stat (1-3 mi, 4-5 wi, 6 fa).",
+        10: "the shrine of judges. on first use, you can take a vow (Defend the weak and the fatherless; uphold the cause of the poor and the oppressed. (Ps 82)) and you gain paladin powers as long as you follow it (spend Wi for healing touch, reroll Fa against spells and evil, spend Wi to sense chaos, spend Wi to imbue your sword and dispel magic on target). also gain +1 Wi on first use. and everyone receives a random other boost (reroll)"
     },
     "shrine_use" : {
         2 : "hammer and anvil: destroy something of chaos or sacrifice something of value",
@@ -3059,7 +3050,7 @@ const shrine =
         9 : "words written: recite",
         10 : "small hole: make a libation with wine",
         11 : "bird: sing a song or recite a poem",
-        12 : "mouth: make a vow"
+        12 : "pool: immerge yourself in it"
     },
     "shrine_desc" : {
         2 : "altough the altar is cleared, everything else in the room screams blasphemy (the altar couldn't be desecrated)",
@@ -3073,7 +3064,72 @@ const shrine =
         10 : "permanent incense and candles in the room",
         11 : "enclosed in a small dome",
         12 : "pristine, almost magical; no one seems to have been here ever"
-    }
+    },
+    "shrine_quote" : {
+        0: "https://capitalizemytitle.com/random-bible-verse-generator/book/Psalms"
+    },
+    "saints_shrine_rules": {
+        0: "the party can only have one active shrine at any point. as long as they follow the saints oath, they have a passive bonus. they can also use an active power, but then lose the active bonus until they go back to civilization to make some sorts of sacrifice/prayer. whenever a shrine is generated, take note of it as it is unique and cannot show up again in the campaign. when it appears, make sure there is an accompanying picture showing what the saints did (some sort of icon) and a clear depiction of what is the oath/requirement of the party. shrines can be desecrated and broken down. they need to be restored. new one can be constructed. source: https://espharel.blogspot.com/2019/12/osr-shrines-and-patron-saints.html"
+    },
+    "saints_shrine": {
+
+    },
+    /* 
+
+saint name + title
+
+Saints to use:
+- Abraham
+- Moses
+- David
+- Jacob
+- Joseph
+- Solomon
+- Elijah
+- Elisha
+- Adam & Eve
+- Noah
+- Isaac
+- Aaron
+- Joshua
+- Samson
+- Samuel
+- Esther
+- Job
+- Daniel
+- Maccabees
+- "The Three Maiden Who Withsthood the Flame"
+- Boaz
+- Caleb
+- Nathan
+- Deborah
+- Ezra
+- Nehemiah
+- Gideon
+- Haggai
+- Hezekiah
+- Hosea
+- Jeremiah
+- Joshua
+- Jonah
+- Joel
+- Lot
+- Melchizzedek
+- Malachi
+- Uriah
+    */
+    "saints_shrine_generator_restraints": {
+
+    },
+    "saints_shrine_generator_constraints": {
+        
+    },
+    "saints_shrine_generator_passive_power": {
+
+    },
+    "saints_shrine_generator_active_power": {
+
+    },
 }
 
 const treasure = 
@@ -3117,7 +3173,9 @@ const treasure =
         11 : "citrine",
         12 : "A died out ember (can be used to replace any gems for the purpose of upgrading embers). Looks like a pearl.",
     },
-    "money": {}, // 3d6 * level SP. Outdoor = lvl 1. If it's a great treasure, x10
+    "money": {
+        0: "3d6 * level SP. Outdoor = lvl 1. If it's a great treasure, x10"
+    }, 
     "generic_magic_item_cost" : {
         2 : "wi",
         3 : "fa",
@@ -3288,7 +3346,9 @@ const treasure =
         11 : "Orange Charred Ring (can walk on fire or lava)",
         12 : "Ring of Telekinesis (can lift object of 30 lbs or less and move them at a pace of 1 Feet per 2 sec; can't be used in combat)",
     },
-
+    "magic_item_checklist": {
+        0: "If you want to integrate any magical items, either from D&D, Dark Souls or your own imagination, it is highly suggested to thing about three mechanical factors:\r\nPrerequisite\r\nA upside for a downside\r\nMechanical niche or lore\r\nThen, it is suggested to answer to those lore questions to integrate it properly:\r\nWhat do legends say of it ?\r\nWhat great deed was it part of ?\r\nWhen was it created ?\r\nWho created it ?\r\nWhy was it created ?\r\nHow was it lost by its maker or user ?"
+    }
 }
 
 const data = Object.assign({}, 
@@ -3302,72 +3362,48 @@ const data = Object.assign({},
     shrine,
     treasure)
 
+const content = 
+{
+    "generalities": generalities,
+    "underground_content_creation": underground_content_creation,
+    "underground_exploration": underground_exploration,
+    "wilderness_content_creation": wilderness_content_creation,
+    "wilderness_exploration": wilderness_exploration,
+    "npc": npc,
+    "downtime_and_domain": downtime_and_domain,
+    "shrine": shrine,
+    "treasure": treasure
+}
 
 
 /*
 TODO: 
-- Rumours:
-    - X (object, person, artefact, treasure) has been sigthed in Y (dungeon, lair, etc.)
-    - Find rumours system generator online (or just a rumour generator)
 
-        HOW TO
-            1) Feature: Make a list of 20 features (location, faction, magic item, npc, setting details, factions, etc.)
-            2) Type: Assign to each feature a type based on what it is: 
-                - Danger (warning)
-                - Reward (drawn towards)
-                - Mystery (drawn towards)
-                - Opportunity (drawn towards)
-                - Challenge warning)
-            It doesn't have to be 'about' the player (NPC danger could be that he's a danger to others, to the party, that HE's in danger, etc.)
-            3) Object: Something that affect the feature
-            4) Details: Write in some words the details of the rumour
-                Janus - threat - blacksmith (Janus debt to blacksmith, in hiding)
+Campaign ideas:
+- Fog 
+- Have a set of 6 death knights obeying a forgotten god (the betrayer, the undying, the lord of shadow, the dark marshal, the dragon knight of [some dark location], the lord of blades). they are lieutenants desecrating the land to bring more fog about. for their stats see the "Armies of LOTR" ruleset in Mordor, the heroes
+- they each could have their own dungeon (two-level dungeon).
+- the boss would be locked inside the bottom of the megadungeon and he would have been re-awakened when the first adventurers/soldiers died inside the tomb. 
+- orcs and other monsters are warbands under the control of these lieutenants
+- questions:
+    Is he serving a god, is he a god, or is he trying to usurp a god?
+    What's the purpose of the fog in the plan?
 
 
 
-
-- Go through the OSE books (basic, advanced, DM, etc.) to steal, adjust, add, correct
-- https://rolesrules.blogspot.com/2013/02/almost-encounters-sights-sounds-and.html
-- Repasser toutes mes sheets, mes D&D links, etc. pour être sur j'ai rien oublié
-    https://drive.google.com/file/d/1n8_RldrDkewLHdvgYTT1TWumwi1R27y8/view
-    https://drive.google.com/file/d/13fualfLEV_VaahBTaZtRggEUVtWIQXoc/view
-- NPC generator: add keyword (cynical, brave, fearful, etc.)
-- Check scenarios in MESBG, battle companies and gondor at war for more ideas on hexes, encounters, events, etc. 
-- Relisten to all universal history podcast episode and recheck all summary of LOS podcast episode (relisten to some if needed) on Apple Podcast (summary are there) and adjust my lore accordingly
-- If I want to go full solo, the best for mapping would be to make a deck of cards using threee "level" of geomorphs. 
-    First one is "always have an exit to another room". 
-    Second is "mostly have exits, rarely don't, sometimes they are secret", 
-    the third is "almost always doesn't have an exit.". 
-    That whay, you pick (for example) 10 cards of each, shuffled BY LEVEL and stack them to start with level 1. 
-    you need to make sure you have at LEAST one card to go down that you shuffle at random through the three levels.
-    to make sure you don't know which is which, maybe just mix them with unique rooms and so on. 
-    On the side, you just need another deck of randomly assigned room description
-    And then you roll to see the content as per normal room generation
-- Create "temple factions" aka the various organisations obeying god-kings and watchers. 
-- create lesser shrines that are set-up to honor saints, heroes, etc. have them be based on old testament figures but with a different name. for example "The Three Maiden who Withstood the Flames" (to represent the three teenagers of Daniel). the party can only have one active shrine at any point. as long as they follow the saints oath, they have a passive bonus. they can also use an active power, but then lose the active bonus until they go back to civilization to make some sorts of sacrifice/prayer. 
-    - figure generator (long list of names + title)
-    - shrine description (reuse the major srhine one)
-    - some 'mundane' association (aka patron saints of ...)
-    - oath (strict obedience to something): never ambush and always let people surrender; always heal disease and try to prevent them; give to the poor first before yourself; etc. 
-    - passive
-    - active
-    whenever a shrine is generated, take note of it as it is unique and cannot show up again in the campaign. 
-    when it appears, make sure there is an accompanying picture showing what the saints did (some sort of icon) and a clear depiction of what is the oath/requirement of the party. 
-    shrines can be desecrated and broken down. they need to be restored. new one can be constructed. 
-    source: https://espharel.blogspot.com/2019/12/osr-shrines-and-patron-saints.html
 - PIE ideas for quests, legends, items, locales, myths, etc.: 
     http://falsemachine.blogspot.com/2022/05/gilding-shadow.html
     http://falsemachine.blogspot.com/2022/06/murder-at-dawn-of-time.html
     http://falsemachine.blogspot.com/2022/06/we-need-to-be-churning-more-oceans.html
-- Pursuit (p. 33 Castle in Tower)
-- Recheck everything in the OSE SRD to see if I missed something
+
 - PRIME TASK: Make a 5RD generator that scales (aka it creates a 5RD level composed of 5(ish) quarters each with their 5RD rooms for a total of 25 meaningful room + a bunch of generic room (some of them being empty))
 - For quarters/overdungeon maps: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1257933702
 - Extra stuff for kingdoms: https://www.d20pfsrd.com/gamemastering/other-rules/kingdom-building
 
+- Faire un truc pour chaque table avec sa règle associée afin d'avoir une "cheatsheet" d'inclus dans le generator. aussi juste mettre les règles de DM
+    - Pursuit (p. 33 Castle in Tower)
 
-
-- Covenants
+- Covenants ("temple factions" aka the various organisations obeying god-kings and watchers)
     - Covenants are the demons way of having worship. Everyone is, by default, in God's covenant. 
     - Covenants are therefore, for now, more of an NPC thing. 
     - It's possible to be a Steward-Lord, aka you are a noble, but you don't have territory because you aren't in the covenant. 
@@ -3378,137 +3414,1137 @@ TODO:
         - You can use X number of time a spell (vancian-ish like DS1)
         - When all usage are done, you lose both active and passive
 
-If you want to integrate any magical items, either from D&D, Dark Souls or your own imagination, it is highly suggested to thing about three mechanical factors:
-Prerequisite
-A upside for a downside
-Mechanical niche or lore
-Then, it is suggested to answer to those lore questions to integrate it properly:
-What do legends say of it ?
-What great deed was it part of ?
-When was it created ?
-Who created it ?
-Why was it created ?
-How was it lost by its maker or user ?
-
-NOTES/GENERAL TODO
-- Maybe put encounters per terrain type?
-- Link to this place from time to time: https://donjon.bin.sh/fantasy/random/
 - Add to my DM stuff disease and curse descriptions https://docs.google.com/spreadsheets/d/1ET8DTWlVJNWyjvRDrp_uvp8P25QUOQi5QbYnWOvIS4o/edit#gid=50706048
 - Put to DM stuff the progression and other hidden stuff (magic sword, etc.) https://docs.google.com/presentation/d/1JtIkJGe9YL0AwlxDpvmgOSQ9aWknJt2ShZAykJgjfCA/edit#slide=id.g13638b89f05_0_0
-- Make a pre-campaign checklist based on my "make a campaign in a couple of hours"
-    What is the starting town called?
-    What is the name of the local inn? Who runs it?
-    Who do we meet in that inn?
-    What is the name of the main road?
-    What is the local river?
-    A local forest
-    The nearby hills
-    Two nearby villages
-    A distant city
-    Who rules the area?
-    Who are the town elders?
-    Who's the local expert on the Arcane?
-    Who's the local religious expert?
-    Who knows the most about the area's history?
-    Who knows the most about the local geography?
-    Who are the local low-level monster tribe?
-    A slightly farther off mid-level monster tribe
-    Who is the local evil boss?
-    What do they want?
-    What will happen if they get it?
-    Mightiest wizard in the land
-    Greatest warrior in the land
-    Richest person in the land
-    Special or very talented blacksmith in the land
-    Special healer or magical healer
-    Magical school or guild
-    Alchemist shop
-    Sage guild
-    Mercenary guild
-    Important laws on weapon carrying, magic and so on
-    Swordmaster/Weapon master
-    Everyone in my world knows ...	
-    Very few people know ...	
-    No one knows ...	
-    Who are the local low-level monsters?				
-    A slightly futher off mid-level moster tribe:				
-    Who is the local Evil Boss?				
-    What do they want?						
-    What will happen if they get it?		
-    What is the name of the main road?	
-    What is the local river?	
-    A local forest?	
-    The nearby hills	
-    Two nearby villages	
-    A distant city			
-	
-- In the pre-game checklist:
-    - Make sure my unique list is up to date (remove what has been used and add back new stuff) such as unique room, riddles, etc.
-    - Always have one treausre map ready
-    - Always have one NPC ready
-    - Always have one ruin ready
-    - Always have one level of the megadungeon ready
-    - Always have one dungeon ready
-    - Always have one very cool event ready
-    - Always have a table of 2d6 rumours
-    - Check the various slides of campaign creator: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1151023139
-    - Have a checklist of what I want to have in terms of material:
-        - Note book
-        - My site
-        - Owlbear rodeo
-        - Discord
-        - DM 1st manual
+
 - Make the world anvil stuff
 - Dungeon idea: 
     basilica cistern
 - Advancement = 
     - Ember + meteorite sword = magic sword. Magic sword + gems = weapon level up. 
     - Shrine + creature parts = character level up. 
+
+- Rumours:
+    HOW TO
+        1) Feature: Make a list of 20 features (location, faction, magic item, npc, setting details, factions, etc.)
+        2) Type: Assign to each feature a type based on what it is: 
+            - Danger (warning)
+            - Reward (drawn towards)
+            - Mystery (drawn towards)
+            - Opportunity (drawn towards)
+            - Challenge warning)
+        It doesn't have to be 'about' the player (NPC danger could be that he's a danger to others, to the party, that HE's in danger, etc.)
+        3) Object: Something that affect the feature
+        4) Details: Write in some words the details of the rumour
+            Janus - threat - blacksmith (Janus debt to blacksmith, in hiding)
+Other format: 
+    I heard from [X] that [Y] did [Z] to [A].
+        X = hunter, ranger, guard, barkeeper, peasant, soldier, etc.
+        Y = anybody in the margin, monsters, etc. 
+        Z = destroyed, defiled, took, helped, etc.
+        A = location, object, person
+    X (object, person, artefact, treasure) has been sigthed in Y (dungeon, lair, etc.)
+
+In this village, a [NPC] is resting for now before [action]
+In this village, the local authority, a [NPC], is holding a criminal, [NPC], in their cells. This last one claims innocence. 
+You meet [monster] in [location] near the village, performing [action]. However, [NPC] is watching over it [oddities]
+In this village, the people are riled up about [subject/event] because [NPC] did [action]
+We haven't heard of [NPC] for a time now. He lives in [location] and had an important role in the village as a [role]. 
+
+- If I want to go full solo, the best for mapping would be to make a deck of cards using threee "level" of geomorphs. 
+    First one is "always have an exit to another room". 
+    Second is "mostly have exits, rarely don't, sometimes they are secret", 
+    the third is "almost always doesn't have an exit.". 
+    That whay, you pick (for example) 10 cards of each, shuffled BY LEVEL and stack them to start with level 1. 
+    you need to make sure you have at LEAST one card to go down that you shuffle at random through the three levels.
+    to make sure you don't know which is which, maybe just mix them with unique rooms and so on. 
+    On the side, you just need another deck of randomly assigned room description
+    And then you roll to see the content as per normal room generation
+
+Various magic item ideas:
+Banner ideas = reroll wounds, to hit, etc. based on conditions (such as 1s only, against particular monsters, etc.)
+
+Every time a friendly Arnor model within 6" of Mal beth suffers a Wound,
+roll a 06. On a 5+, the Wound has been prevented, exactly as if a point of
+Fate had been expended. Note that if this roll is failed, Hero models may
+still use Fate points as normal.
+
+Always being on the effect of a spell
+
+"Horse lord"
+
+terror
+
+causing wounds regain Mi/Fa/Wi
+
+smoke bomb: S1 attack; when hit, either you spend a Wi or you are "Transfix"
+
 */
 
-const monsters = {
-    "monster_tags": {
-        0: "test", 
+const monsters = 
+{
+    "stats_template": {
+        "F": "1 can't fight, 2 below average, 3 average fighter, 4 better fighter, 5 master, 6 legendary, 7+ godly",
+        "S": "1 children, 2 weak, 3 average fighter, 4 better fighter, 5 very strong, 6 monster or big animal, 7+ gigantic or godly",
+        "T": "1 children, 2 weak, 3 average fighter, 4 better fighter, 5 leather/thick skin/armor/etc., 6 great armor/scale, 7+ gigantic or godly, 10 is siege level (wall, door, siege weapon, ship, etc.)",
+        "Mv": "1 can barely move, 2 slow, 3 small, 4 below average, 5 average, 6 great average, 7 fast, 8 mounted, 9+ huge or godly",
+        "A": "HD 1-2 = 1, HD 3-4 = 2, HD 5-6 = 3, HD 7-8 = 4, HD 9+ = 5+",
+        "W": "HD 1-2 = 1, HD 3-4 = 2, HD 5-6 = 3, HD 7-8 = 4, HD 9+ = 5+",
+        "C": "1 = low average/normal, 3 = soldier, 5+ = heroic/legendary",
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
     },
-    "soldier": {
-        "F": 3,
+    "special_tags": {
+        0: "Spellcaster: Can expand Wi to cast spells. Each spell has an target number to work (for example, 2+). It's possible to throw multiple dice to cast the same spell, taking the best result. 1s are always refunded and 6s are always success.", 
+        1: "Horse Lord: Can use Fa to prevent wound on the mount the character is riding.",
+        2: "Fear: When in melee against a non-Fear non-Terror opponent, the opponent must make a morale check before the melee roll.",
+        3: "Terror: When in melee against a non-Terror opponent, the opponent must make a morale check before the melee roll.",
+        4: "Migthy Hero: May expand one Might point each combat without reducing their own store of Might",
+        5: "Bodyguard: As long as the model they are protecting is alive, the models with this rule will automatically pass Morale test.",
+        6: "Spectral Walk: Can use a move to pass through solid matter as if difficult terrain, can move over liquid (lava, water) as if it were solid ground.",
+        7: "Blades of the Dead: Wound against C instead of T",
+        8: "Expert Rider: Reroll Jump, Swim and Throw Rider tests. +1 T while mounted. ",
+        9: "Migthy Blow: Each wound dealt in melee is 2 W.",
+        10: "Master Swordsman/Archer: Reroll 1s to-hit. When slay a model, regain a lost Mi.",
+        11: "Woodland Creature: Ignore penalties of wood and forest difficult terrain",
+        12: "Monster: Is at least Fear if the model does not have better. Once per melee, instead of attack, it can use brutal power attacks. \na) Rend: make attack vs Strength instead of T; \nb) Hurl: before models back away, choose a target with less S than the monster: throw the target 1d6 Mv in the direction of choice (all target in the line suffer S3 hit and the target is put prone and suffer S6 if there is a hard stop); \nc) Barge: all models in melee back away 3 Mv instead of 1 Mv and then the monster can make another d6 move (including a charge and another fight phase)",
+        13: "Throw Stones: If the unit does not move, it can use a shoot attack as per the profile.",
+        14: "Disease Hit: If the unit inflict at least one wound to a target, it must make a T check at the end of combat to see if it starts developping a disease (at random).",
+        15: "Fearless: Is not affected by Fear, Terror or Morale check.",
+        16: "Fly: Can move up to 12 Mv, ignore terrain and control zone",
+        17: "Monstrous Charge: Get Cavalry charge effect (knock to the ground those with lower strength and throw cavalry auto to the ground and gain extra attack)",
+        18: "Survival Instinct: If this model suffers a W, make a courage test. if it's failed, it flees the battlefield.",
+        19: "Swift Movement: Can move on any surface (wall, ceiling, etc.) and ignore all difficult terrain or obstacles (except for gaps, water, etc.).",
+        20: "Venom: Reroll all failed To-Wound rolls.",
+        21: "Caught in a Web: Can choose to trade all attack for a single S7 attack that if suffered will Paralyse (see spell).",
+        22: "Lone Hunter: Won't fight as ally/etc. with other forces.",
+        23: "Hatred(X): Gains +1 To-Wound against X in melee",
+        24: "Cave Dweller: +1 to Jump and Climb, can fight in the dark without penalty",
+        25: "Feral: If the rider of this creature is slain or dismounts, the creature will flee the battlefield (fail morale check)",
+        26: "Ancient Evil(X): Opponents have -1 C within XMv.",
+        27: "Resistant to Magic: Always has an extra free Wi dice for resisting magic spells",
+        28: "Flame of Udun: Never unarmed. Anyone HIT by the Balrog must make a 2+ on a d6 or be Set Ablaze. The creature is immune to fire-based attack.",
+        29: "Creature of the Ancient World: Can spend freely one might per turn. Can't be instant-killed, it instead does half max W.",
+        30: "Set Ablaze: Suffer S9 hit and a 1 S5 hit every turn unless it a) go prone and crawl 1Mv b) move inside a water feature",
+        31: "Fire Breath: S10 in a straight line up to 12Mv long and 2Mv wide. Any model suffering a W is instantly slain.",
+        32: "Wyrmtongue: Can spend a free Wi dice each turn to cast either Transfix or Compel",
+        33: "Blinding Swarm: Melee roll in melee vs Bat Swarm is -1",
+        34: "Tentacles: D6 shooting attack r6 S3. Hit creatures are dragged to the user.",
+        35: "Water Dweller: Move value is doubled in the water. Charging in the water gains Monstrous Charge.",
+        36: "Dragged to the Depths: Brutal power attack. Can bring in the water and instantly slay a man-sized creature on a 3+. It then leave the battlefield. ",
+        37: "Many Parts: For each W lost, an A is also lost.",
+        38: "Murderous Power: If the user slays a target with Rend, it regains a single lost W.",
+        39: "Trample: When moving, it ignores the control zone of all models. All models that were in contact with the user when it moved suffer a hit equal to the user profile.",
+        40: "Pack Fighter: When outnumbering (or outsizing in single combat), +1 to F",
+        41: "Mindless Killers: If away from a leader more than 6Mv, the user must make a morale test at the beginning of the turn. If it fails, it must charge the nearest enemy. If none are present, it will charge friendly models. When under this effect, they have +1 To-Wound and ignore Terror/Fear for the turn.",
+        42: "Preternatural Agility: Cannot be Trapped.",
+        43: "Burly: Can fight with two-handed weapon without penalty. Can carry heavy objects without move penalty.",
+        44: "Devastating Charge: When charging, target suffers Prone effect on a 5+.",
+        45: "Berserk: Must always charge if able to. Can't control himself and use heroic actions that affect others.",
+        46: "Will of Evil: Can see ethereal creatures, invisible creatures and ghost-forms. Each turn it stays in melee, it loses one Will. When it has no more Will, it dies.",
+        47: "Ethereal: Can use Wi as Fa.",
+        48: "Drain Soul: All wounds by the user causes instant death in melee.",
+        49: "Phylactery: When the creature is dissipated or killed, it goes back to its phylactery and comes back in 3d6 days. If the phylactery is destroyed during that time or prior, then the user is completely destroyed and killed.",
+        50: "Necromancy: It can perform dark rituals to bring back undead servants or create new ones (skeletons, zombies) from fresh corpses. It can perform bigger rituals to create more advanced undeads (skeletal giants, ghouls, death knights).",
+        51: "Spider Webs: Can throw mv8 an attack. It causes Paralyse magical effect instead of W. ",
+        52: "Unstoppable Momentum: If the user charges and win the melee roll, all opponents are knocked prone. Then, if the user uses Barge, all models forced to back away suffer S9 hit.",
+        53: "Immovable Object: Cannot be knocked to the ground and never backs away. If the user opponents win the fight, the user suffers the blow but THEY back away.",
+        54: "Paralysis Strike: Each W suffered by the user is like the Paralysis spell.",
+        55: "Cavalry: ???",
+        56: "Siege Engine: Siege engine are moved by 3 models or 1 monster. Small engine only require 1 to shoot. Shoot to hit as per normal. If you hit infantry, roll a scatter dice (1 = miss; 2-5 = fire on the nearest other model within 6Mv; 6+ direct hit). Knock prone if hit, wether it wounds or not. Wound against infantry is insta kill. All model nearby a siege engine hit will suffer additional hit too based on the engine.",
+        57: "Energy Drain: Any W inflicted by the user lowers the maximum W of the target and the user gains back 1 W. This is considered a form of curse and needs to be treated as such to remove it. If a target dies because of this effect, it comes back as a ghoul under the control of the user.",
+        58: "Mundane Resistance: Non-elemental and non-magical effect/attack have -2 on their dice roll against the user.",
+        59: "Regeneration(X): At the end of each combat, this creature gains X W. ",
+        60: "Vulnerability(X): The creature must make a morale check against these or flee.",
+        61: "Destroying(X): These effect can instantly slay the creature if applied and not saved (when necessary).",
+        62: "Summoning(X): The user can compel creatures (of X type) to obey him. This means that it can use them as allies, mounts, bodyguards. It can summon them during fights through magic or physical means.",
+        63: "Absorb: Grab a target in melee and put it inside the cube. Powerful acid digest the target for 1W per turn.",
+        64: "Immunity(X): Completely immune to X",
+        65: "Weapon Specialist: Receives bonus based on their weapon. \nPolearms: Receive charges of cavalry at +1A if they didn't move and can attack in pike formation. \nSwords: +1F when dueling. \nTwo-Handed Axes/Swords: +1 S in To-Wound. \nShield: Can use shield formations.",
+        66: "Undead: Immune to effects that affect living creatures (e.g. poison). Immune to mind-affecting/reading spells. Make almost no noise (and if without equipment, no noise at all).",
+        67: "Rusting: Metal that touches the user (successful hit by the user or on the user) is instantly transformed into rust and becomes unusable.",
+        68: "Backstabbers: Receives +1 on the To-Wound vs trapped and prone targets.",
+        69: "Mutations: Roll 1d8. 1) Demon Soul: Can use one Fa per turn to block attacks. 2) Great Claw: +1A and S. 3) Cloven Hoofs: +2Mv and jump. 4) Tentacle: Reduce target A by 1. 5) Blackblood: When receiving a W, everyone in melee is dealt a S3 hit. 6) Spines: Everyone in melee with user receives a S1 hit every turn. 7) Scorpion Tail: Can make an extra S5 Venom attack per turn. 8) Extra Arm: Can use a weapon/shield and has +1A.",
+        70: "Poison(X): If the target is not immune to poison, the user can always To-Wound at LEAST on X+."
+    },  
+    "spells": {
+        0: "test"
+    },
+    "peasants": {
+        "Mv": 4,
+        "F": 2,
         "S": 3,
         "T": 3,
-        "Mv": 5,
         "A": 1,
         "W": 1,
         "C": 1,
         "Mi": 0,
         "Wi": 0,
         "Fa": 0,
-        "Equip": "Spear",
+        "Equip": "Improvised weapon",
         "Special": "Nil",
         "Detail": "Nil",
-        "Value": 0
-    }
+        "Value": 5
+    },
+    "wizard": {
+        "F": 5,
+        "S": 4,
+        "T": 5,
+        "Mv": 6,
+        "A": 2,
+        "W": 3,
+        "C": 7,
+        "Mi": 2,
+        "Wi": 8,
+        "Fa": 2,
+        "Equip": "Sacrificial blade (+1S on To-Wound), Magic Ring (reroll Fa), Wizardry Robe (+2 Wi, count as light armor)",
+        "Special": "Spellcaster (Blinding Light, Terrifying Aura, Immobolise, Command, Protection, Sorcerous Blast, Collapse Rocks)",
+        "Detail": "Nil",
+        "Value": 170
+    },
+    "lord": {
+        "F": 6,
+        "S": 4,
+        "T": 6,
+        "Mv": 6,
+        "A": 4,
+        "W": 4,
+        "C": 6,
+        "Mi": 3,
+        "Wi": 3,
+        "Fa": 3,
+        "Equip": "Meteorite Enhanced Blade (always wound on 4+ minimum), Horn of Terror (if he is outnumbered in a melee, blow the horn to force a morale test on opponents), Medium Armor, Warhorse",
+        "Special": "Horse Lord, Migthy Hero",
+        "Detail": "Nil",
+        "Value": 180
+    },
+    "elite_soldier": {
+        "F": 4,
+        "S": 4,
+        "T": 4,
+        "Mv": 6,
+        "A": 1,
+        "W": 1,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "(Dm choice))",
+        "Special": "Bodyguard",
+        "Detail": "Nil",
+        "Value": 8
+    },
+    "ghost_warrior": {
+        "F": 3,
+        "S": 3,
+        "T": 7,
+        "Mv": 6,
+        "A": 1,
+        "W": 1,
+        "C": 6,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Medium armor, axe or sword",
+        "Special": "Undead, Terror, Spectral Walk",
+        "Detail": "Nil",
+        "Value": 14
+    },
+    "treant": {
+        "F": 7,
+        "S": 8,
+        "T": 8,
+        "Mv": 6,
+        "A": 3,
+        "W": 4, 
+        "C": 6,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Terror, Woodland Creature, Throw Stones (r18, S10)",
+        "Detail": "Suffer two hit instead of one in the Set Ablaze rule",
+        "Value": 120
+    },
+    "zombie": {
+        "F": 2,
+        "S": 2,
+        "T": 2,
+        "Mv": 3,
+        "A": 1,
+        "W": 2,
+        "C": 1,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Fear, Fearless, Diseased Hit",
+        "Detail": "Nil",
+        "Value": 8
+    },
+    "skeleton": {
+        "F": 2,
+        "S": 3,
+        "T": 3,
+        "Mv": 4,
+        "A": 1,
+        "W": 1,
+        "C": 1,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Spear or Sword & Shield",
+        "Special": "Undead, Fear, Fearless",
+        "Detail": "Nil",
+        "Value": 8
+    },
+    "great_eagle": {
+        "F": 7,
+        "S": 6,
+        "T": 8,
+        "Mv": 3,
+        "A": 2,
+        "W": 3,
+        "C": 6,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Terror, Fly, Monstrous Charge",
+        "Detail": "Nil",
+        "Value": 8
+    },
+    "giant_venomous_spider": {
+        "F": 7,
+        "S": 7,
+        "T": 7,
+        "Mv": 10,
+        "A": 1,
+        "W": 6,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 6,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Terror, Monstrous Charge, Survival Instinct, Swift Movement, Venom, Caught in a Web, Lone Hunter",
+        "Detail": "Nil",
+        "Value": 90
+    },
+    "orc_warrior": {
+        "F": 2,
+        "S": 3,
+        "T": 4,
+        "Mv": 5,
+        "A": 1,
+        "W": 1,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Orc sword, armor, shield",
+        "Special": "Cave Dweller, Hatred(Man)",
+        "Detail": "Nil",
+        "Value": 5
+    },
+    "orc_champion": {
+        "F": 3,
+        "S": 3,
+        "T": 3,
+        "Mv": 6,
+        "A": 1,
+        "W": 1,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "(melee weapon with armor and/or shield)",
+        "Special": "Cave Dweller, Hatred(Man)",
+        "Detail": "Nil",
+        "Value": 8
+    },
+    "orc_drums": {
+        "F": 0,
+        "S": 0,
+        "T": 10,
+        "Mv": 0,
+        "A": 0,
+        "W": 3,
+        "C": 0,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "(Needs to be operated as equipment by two orcs)",
+        "Special": "Drums in the Deep: All hearing orcs have +1 C and enemy suffers -1 C. Within 18mv, orcs can reroll 1s to their melee roll.",
+        "Detail": "Nil",
+        "Value": 8
+    },
+    "elite_ogre": {
+        "F": 7,
+        "S": 7,
+        "T": 7,
+        "Mv": 6,
+        "A": 3,
+        "W": 3,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Metal armor, greater club/sword/hammer",
+        "Special": "Fear, Throw Stones (r12, S8)",
+        "Detail": "Nil",
+        "Value": 100
+    },
+    "ogre": {
+        "F": 6,
+        "S": 6,
+        "T": 6,
+        "Mv": 6,
+        "A": 3,
+        "W": 3,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Great Club, can use a chain to attack range 3Mv and S of 5",
+        "Special": "Monster, Fear, Throw Stones (r12, S8)",
+        "Detail": "Nil",
+        "Value": 100
+    },
+    "barrow_wight": {
+        "Mv": 6,
+        "F": 3,
+        "S": 3,
+        "T": 7,
+        "A": 1,
+        "W": 2,
+        "C": 6,
+        "Mi": 0,
+        "Wi": 5,
+        "Fa": 0,
+        "Equip": "Heavy armor and sword",
+        "Special": "Undead, Blades of the Dead, Terror, Spellcaster (Paralyse)",
+        "Detail": "Nil",
+        "Value": 50
+    },
+    "warg": {
+        "Mv": 10,
+        "F": 3,
+        "S": 4,
+        "T": 4,
+        "A": 1,
+        "W": 1,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Mount",
+        "Detail": "Nil",
+        "Value": 10
+    },
+    "wyvern": {
+        "Mv": 3,
+        "F": 5,
+        "S": 6,
+        "T": 6,
+        "A": 2,
+        "W": 3,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Fly, Monstrous Charge, Terror, Feral, Venom",
+        "Detail": "Ringwraith mounts",
+        "Value": 50
+    },
+    "balrog": {
+        "Mv": 6,
+        "F": 10,
+        "S": 9,
+        "T": 9,
+        "A": 5,
+        "W": 10,
+        "C": 7,
+        "Mi": 0,
+        "Wi": 10,
+        "Fa": 0,
+        "Equip": "Giant flaming sword, fiery lash (r8, S7 in the shooting phase; target that's hit is pulled to the balrog)",
+        "Special": "Monster, Ancient Evil(18), Fearless, Resistant to Magic, Terror, Flame of Udun, Creature of the Ancient World",
+        "Detail": "Nil",
+        "Value": 350
+    },
+    "minor_dragon": {
+        "Mv": 6,
+        "F": 7,
+        "S": 7,
+        "T": 7,
+        "A": 4,
+        "W": 7,
+        "C": 4,
+        "Mi": 3,
+        "Wi": 3,
+        "Fa": 3,
+        "Equip": "Nil",
+        "Special": "Fire Breath, Ancient Evil(12), Monster, Monstrous Charge, Resistant to Magic, Survival Instinct, Terror, Wyrmtongue, Fly, Spellcaster (Transfix, Compel)",
+        "Detail": "Nil",
+        "Value": 350
+    },
+    "ancient_dragon": {
+        "Mv": 6,
+        "F": 8,
+        "S": 9,
+        "T": 9,
+        "A": 6,
+        "W": 20,
+        "C": 6,
+        "Mi": 3,
+        "Wi": 6,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Ancient Evil(18), Fearless, Fly, Resistant to Magic, Terror, Fire Breath, Can spend one will per turn freely, Immovable Object, Unstoppable Momentum, Spellcaster(Transfix, Compel, Instill Fear, Sap Will)",
+        "Detail": "Nil",
+        "Value": 700
+    },
+    "kraken": {
+        "Mv": 4,
+        "F": 6,
+        "S": 6,
+        "T": 6,
+        "A": 6,
+        "W": 6,
+        "C": 3,
+        "Mi": 1,
+        "Wi": 5,
+        "Fa": 1,
+        "Equip": "Nil",
+        "Special": "Monster, Ancient Evil(12), Resistant to Magic, Terror, From the Deep, Tentacles, Water Dweller, Dragged to the Depths, Many Parts",
+        "Detail": "Nil",
+        "Value": 200
+    },
+    "bat_swarm": {
+        "Mv": 3,
+        "F": 1,
+        "S": 2,
+        "T": 3,
+        "A": 4,
+        "W": 4,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Fly, Many Parts, Blinding Swarm",
+        "Detail": "Nil",
+        "Value": 35
+    },
+    "dweller_in_the_dark": {
+        "Mv": 8,
+        "F": 7,
+        "S": 5,
+        "T": 5,
+        "A": 3,
+        "W": 3,
+        "C": 7,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Resistant to Magic, Terror, Murderous Power",
+        "Detail": "Demon",
+        "Value": 75
+    },
+    "war_giant_elephant": {
+        "Mv": 8,
+        "F": 4,
+        "S": 9,
+        "T": 7,
+        "A": 3,
+        "W": 10,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Capacity of 12 models if fortification are set on him (fortification are T9, W5)",
+        "Special": "Monster, Terror, Trample",
+        "Detail": "Nil",
+        "Value": 275
+    },
+    "bandit": {
+        "Mv": 6,
+        "F": 2,
+        "S": 3,
+        "T": 3,
+        "A": 1,
+        "W": 1,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Knife or Club",
+        "Special": "Pack Fighter",
+        "Detail": "Nil",
+        "Value": 5
+    },
+    "warhorse": {
+        "Mv": 8,
+        "F": 2,
+        "S": 4,
+        "T": 5,
+        "A": 1,
+        "W": 1,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Barding",
+        "Special": "Devastating Charge, Mount",
+        "Detail": "Can also be war goat and such creatures",
+        "Value": 20
+    },
+    "lycanthrope": {
+        "Mv": 6,
+        "F": 5,
+        "S": 5,
+        "T": 5,
+        "A": 3,
+        "W": 3,
+        "C": 5,
+        "Mi": 2,
+        "Wi": 2,
+        "Fa": 2,
+        "Equip": "Armor, two-handed axe/sword",
+        "Special": "Shapeshift(Werecreature)",
+        "Detail": "Nil",
+        "Value": 200
+    },
+    "werecreature": {
+        "Mv": 8,
+        "F": 8,
+        "S": 8,
+        "T": 8,
+        "A": 4,
+        "W": 4,
+        "C": 6,
+        "Mi": 3,
+        "Wi": 3,
+        "Fa": 3,
+        "Equip": "Nil",
+        "Special": "Monster, Burly, Fearless, Resistant to Magic, Terror, Woodland Creature, Berserk, Mundane Resistance",
+        "Detail": "Nil",
+        "Value": 200
+    },
+    "lich": {
+        "Mv": 6,
+        "F": 7,
+        "S": 6,
+        "T": 8,
+        "A": 2,
+        "W": 2,
+        "C": 6,
+        "Mi": 3,
+        "Wi": 25,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Undead, Ancient Evil(18), Terror, Will of Evil, Ethereal, Drain Soul, Phylactery, Spellcaster (Drain Courage, Transfix, Instill Fear, Shroud of Shadows, Chill Soul, Sap Will, Telekinesis, Paralysis, Finger of Death, Growth of Plants, Curse, Control Weather, Telepathy, Astral Projection), Necromancy, Summon(lesser demons, skeleton bats, zombies, skeletons)",
+        "Detail": "the necromancer of dol guldur",
+        "Value": 350
+    },
+    "giant_spider": {
+        "Mv": 10,
+        "F": 2,
+        "S": 5,
+        "T": 3,
+        "A": 2,
+        "W": 2,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Swift Movement, Fear, Survival Instinct, Spider Webs, Venom",
+        "Detail": "Nil",
+        "Value": 20
+    },
+    "ghouls": {
+        "Mv": 7,
+        "F": 3,
+        "S": 4,
+        "T": 3,
+        "A": 2,
+        "W": 2,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Undead, Paralysis Strike, Fear, Fearless",
+        "Detail": "Nil",
+        "Value": 25
+    },
+    "death_knights": {
+        "Mv": 6,
+        "F": 5,
+        "S": 4,
+        "T": 6,
+        "A": 2,
+        "W": 2,
+        "C": 6,
+        "Mi": 2,
+        "Wi": 15,
+        "Fa": 0,
+        "Equip": "Armor, magical weapon",
+        "Special": "Undead, Ancient Evil(12), Terror, Will of Evil, Spellcasting (Drain Courage, Transfix, Compel, Instill Fear, Sap Will)",
+        "Detail": "Nazguls",
+        "Value": 75
+    },
+    "giants": {
+        "Mv": 8,
+        "F": 6,
+        "S": 8,
+        "T": 8,
+        "A": 4,
+        "W": 6,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Giant club",
+        "Special": "Monster, Throw Stones (r18, S9), Terror, Monstrous Charge, Unstoppable Momentum",
+        "Detail": "Cyclops are giants +1 to A, W, C and throw further (24). However, they only have one eye and can be blinded.",
+        "Value": 200
+    },
+    "skeletal_giants": {
+        "Mv": 6,
+        "F": 5,
+        "S": 8,
+        "T": 7,
+        "A": 4,
+        "W": 6,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Giant axe",
+        "Special": "Undead, Monster, Throw Stones (r24, S9), Terror, Monstrous Charge, Fearless",
+        "Detail": "Nil",
+        "Value": 200
+    },
+    "trebuchet": {
+        "S": 10,
+        "D": 10,
+        "W": 3,
+        "Special": "Area effect = 2mv, S5 hit, knocked prone",
+    },
+    "bolt_thrower": {
+        "S": 7,
+        "D": 10,
+        "W": 3,
+        "Special": "Fire D6 shot, but no area of effect",
+    },
+    "ballista": {
+        "S": 9,
+        "D": 10,
+        "W": 3,
+        "Special": "pushed away d6Mv and if hit something, take a S6 hit; everyone prone",
+    },
+    "catapult": {
+        "S": 10,
+        "D": 10,
+        "W": 4,
+        "Special": "area effect 2Mv S5; to wound vs siege target = roll twice, take best",
+    },
+    "vampire": {
+        "Mv": 7,
+        "F": 6,
+        "S": 5,
+        "T": 5,
+        "A": 4,
+        "W": 4,
+        "C": 6,
+        "Mi": 2,
+        "Wi": 6,
+        "Fa": 0,
+        "Equip": "(any weapon and/or armor)",
+        "Special": "Undead, Shapeshifting(Bat), Shapreshifting(Gaseous Form), Fear, Spellcaster (Transfix, Compel*, Paralyse, Sap Will), Preternatural Agility, Energy Drain, Mundane Resistance, Regeneration(1), Vunerability(garlic, holy symbol, running/holy water, mirror), Destroying(sunlight, stake through the heart, immersion in running/holy water), Phylactery(a coffin), Summon (animals)",
+        "Detail": "Nil",
+        "Value": 200
+    },
+    "minotaur": {
+        "Mv": 6,
+        "F": 5,
+        "S": 6,
+        "T": 5,
+        "A": 3,
+        "W": 3,
+        "C": 5,
+        "Mi": 2,
+        "Wi": 1,
+        "Fa": 0,
+        "Equip": "Two-Handed Axe",
+        "Special": "Fear, Cave Dweller, Migthy Blow",
+        "Detail": "Nil",
+        "Value": 150
+    },
+    "medusa": {
+        "Mv": 6,
+        "F": 5,
+        "S": 4,
+        "T": 5,
+        "A": 2,
+        "W": 2,
+        "C": 5,
+        "Mi": 1,
+        "Wi": 3,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Spellcasting (Paralysis, Curse(Petrification))",
+        "Detail": "Nil",
+        "Value": 120
+    },
+    "unicorn": {
+        "Mv": 8,
+        "F": 3,
+        "S": 4,
+        "T": 5,
+        "A": 2,
+        "W": 2,
+        "C": 5,
+        "Mi": 1,
+        "Wi": 3,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Resistant to Magic, Fear, Lone Hunter, Woodland Creature",
+        "Detail": "Nil",
+        "Value": 80
+    },
+    "gargoyle": {
+        "Mv": 4,
+        "F": 3,
+        "S": 6,
+        "T": 8,
+        "A": 2,
+        "W": 2,
+        "C": 5,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Fly, Mundance Resistance, Fear, Fearless",
+        "Detail": "As long as it doesn't move, it looks exactly like stone.",
+        "Value": 80
+    },
+    "giant_animal": {
+        "Mv": 8,
+        "F": 4,
+        "S": 7,
+        "T": 6,
+        "A": 3,
+        "W": 3,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Woodland Creature",
+        "Detail": "Ape, wolf, bear, etc. Possible to add extra abilities based on the type (ape could have swift movement on trees, bear migthy blow, scorpion venom and paralysis, etc.), Survival Instinct",
+        "Value": 80
+    },
+    "gelatinous_cube": {
+        "Mv": 4,
+        "F": 3,
+        "S": 4,
+        "T": 6,
+        "A": 2,
+        "W": 4,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Cave Dweller, Brutal Attack(Absorb), Fearless",
+        "Detail": "Everything that's not magical is consumed within hours (flesh is consumed even faster). Metal can take some days.",
+        "Value": 80
+    },
+    "slime": {
+        "Mv": 2,
+        "F": 2,
+        "S": 3,
+        "T": 4,
+        "A": 1,
+        "W": 1,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Cave Dweller, Swift Movement, Fearless",
+        "Detail": "Nil",
+        "Value": 10
+    },
+    "giant_insect": {
+        "Mv": 7,
+        "F": 3,
+        "S": 5,
+        "T": 5,
+        "A": 2,
+        "W": 2,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Cave Dweller, Swift Movement, Venom",
+        "Detail": "Some (like Carrion Crawler) can have paralysis or disease hit instead of Venom",
+        "Value": 10
+    },
+    "centaur": {
+        "Mv": 7,
+        "F": 3,
+        "S": 4,
+        "T": 4,
+        "A": 1,
+        "W": 2,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Spear (or bow)",
+        "Special": "Devastating Charge",
+        "Detail": "Nil",
+        "Value": 20
+    },
+    "troll": {
+        "Mv": 6,
+        "F": 3,
+        "S": 5,
+        "T": 5,
+        "A": 2,
+        "W": 2,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Regeneration(1) (as long as it's not suffering fire or acid attack), Woodland Creature, Cave Dweller",
+        "Detail": "Nil",
+        "Value": 80
+    },
+    "djinn": {
+        "Mv": 6,
+        "F": 5,
+        "S": 5,
+        "T": 5,
+        "A": 3,
+        "W": 3,
+        "C": 3,
+        "Mi": 1,
+        "Wi": 1,
+        "Fa": 1,
+        "Equip": "Scimitar",
+        "Special": "Mundane Resistance, Fly, Shapeshifting(Gaseous Form, Whirlwind), Spellcaster(Invisibility, Conjure Objects, Illusion), Lone Hunter, Preternatural Agility",
+        "Detail": "Nil",
+        "Value": 100
+    },
+    "dryad": {
+        "Mv": 6,
+        "F": 3,
+        "S": 3,
+        "T": 3,
+        "A": 1,
+        "W": 1,
+        "C": 5,
+        "Mi": 0,
+        "Wi": 6,
+        "Fa": 1,
+        "Equip": "Nil",
+        "Special": "Resistant to Magic, Woodland Creature, Swift Movement, Spellcaster (Charm, Compel, Transfix)",
+        "Detail": "Can meld with trees. Is bound to a single tree that protect magical items. if the three dies she dies and vice-versa.",
+        "Value": 75
+    },
+    "elemental": {
+        "Mv": 6,
+        "F": 5,
+        "S": 6,
+        "T": 6,
+        "A": 2,
+        "W": 3,
+        "C": 5,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Fearless, Immunity(the elemental element type), Mundane Resistance. Fire: Set Ablaze Hit. Wind: Fly. Earth: Migthy Blow. Water: Water Dweller.",
+        "Detail": "Nil",
+        "Value": 100
+    },
+    "hydra": {
+        "Mv": 8,
+        "F": 6,
+        "S": 7,
+        "T": 7,
+        "A": 6,
+        "W": 6,
+        "C": 5,
+        "Mi": 1,
+        "Wi": 3,
+        "Fa": 1,
+        "Equip": "Nil",
+        "Special": "Monster, Terror, Regeneration(1)*, Water Dweller, Many Parts (it has 6 heads), Resistant to Magic",
+        "Detail": "Its regeneration brings back one head each time.",
+        "Value": 250
+    },
+    "griffon": {
+        "Mv": 6,
+        "F": 3,
+        "S": 5,
+        "T": 5,
+        "A": 2,
+        "W": 3,
+        "C": 6,
+        "Mi": 1,
+        "Wi": 1,
+        "Fa": 1,
+        "Equip": "Nil",
+        "Special": "Monster, Fly, Mount*",
+        "Detail": "Griffon are extremely loyal mount but very difficult to tame. They instinctively attack horses.",
+        "Value": 250
+    },
+    "mummy": {
+        "Mv": 4,
+        "F": 4,
+        "S": 4,
+        "T": 5,
+        "A": 2,
+        "W": 3,
+        "C": 6,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Undead, Spellcaster(Transfix, Paralysis, Sap Will), Terror, Disease Hit, Paralysis Hit, Weakness(Fire), Mundane Resistance",
+        "Detail": "Target has -1 to their roll for Disease Hit vs the Mummy",
+        "Value": 250
+    },
+    "wraith": {
+        "Mv": 5,
+        "F": 3,
+        "S": 3,
+        "T": 4,
+        "A": 2,
+        "W": 2,
+        "C": 5,
+        "Mi": 1,
+        "Wi": 8,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Undead, Terror, Energy Drain (regains Wi instead of W), Spectral Walk, Ethereal, Fearless, Will of Evil",
+        "Detail": "Nil",
+        "Value": 75
+    },
+    "rust_monster": {
+        "Mv": 7,
+        "F": 3,
+        "S": 4,
+        "T": 6,
+        "A": 2,
+        "W": 2,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Cave Dweller, Rusting",
+        "Detail": "Nil",
+        "Value": 50
+    },
+    "possessed": {
+        "Mv": 6,
+        "F": 4,
+        "S": 4,
+        "T": 4,
+        "A": 2,
+        "W": 2,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Berserking, Mutations, Fear",
+        "Detail": "Nil",
+        "Value": 15
+    },
+    "beastmen": {
+        "Mv": 6,
+        "F": 4,
+        "S": 3,
+        "T": 4,
+        "A": 1,
+        "W": 2,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Two-Handed Axe or Spear",
+        "Special": "Berserking, Backstabbing",
+        "Detail": "Nil",
+        "Value": 10
+    },
+    "assassin": {
+        "Mv": 7,
+        "F": 4,
+        "S": 4,
+        "T": 4,
+        "A": 2,
+        "W": 2,
+        "C": 5,
+        "Mi": 1,
+        "Wi": 1,
+        "Fa": 1,
+        "Equip": "Poisonned Blade, Light Armor, Throwing Dagger",
+        "Special": "Cave Dweller, Swift Movement, Backstabbing, Poison(5+)",
+        "Detail": "Nil",
+        "Value": 20
+    },
+    "chimera": {
+        "Mv": 6,
+        "F": 4,
+        "S": 7,
+        "T": 6,
+        "A": 5,
+        "W": 5,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Venom, Paralysis Strike (can be used at distance 12), Fly (only for a turn), Monster",
+        "Detail": "Nil",
+        "Value": 125
+    },
+    "harpies": {
+        "Mv": 4,
+        "F": 4,
+        "S": 4,
+        "T": 4,
+        "A": 1,
+        "W": 2,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Fly, Backstabbers",
+        "Detail": "Nil",
+        "Value": 20
+    },
 }
 
-/*
+function getContent(){
+    return content; 
+}
 
-- Monster
-    - Add monsters from:
-        - Middle Earth
-        - Warhammer 1st
-        - Classic D&D monsters
-        cost them according to point cost. it's equal to:
-        - their SP cost for a single game
-        - their GP cost for a month (domain turn)
-        - their average SP treasure
-    - Create monster tags. Make sure that it can automatically add them to monster entry in the generator?
-    - Generator unique monster type in this area: https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=214513084
-
-    - Texts to look:
-        - "The Wonders of the East" (anglo saxon book)
-        - Bestiary of the middle age
-    - Make a "classic monster" generator with stuff like werewolf, vampire (lesser), skeleton, etc. 
-    - remove the unique monsters from the random encounter chart (minotaur, medusa, etc.) and instead have one "classic unique monster" roll. we want to fight orcS, but also THE minotaur. much cooler. 
-
-*/
 
 function getMonsters(){
     return monsters; 
@@ -3551,29 +4587,27 @@ function getRandomArrayNumber(inputArray){
     return 
 }
 
+function getLengthOfList(list){
+    var length = 0; 
+    for (var [key, value] of Object.entries(list)) {
+        length += 1
+    }
+    return length
+}
+
 function getContent(input){
     if(input in getData()){
         if(isSpecialCase(input)) {
             return getSpecialCase(input)
         }
-        return getContent(getData()[input][get2d6()])
+        var length =  getLengthOfList(getData()[input])
+        if(length == 11) {
+            return getContent(getData()[input][get2d6()])
+        } else {
+            return getContent(getData()[input][Math.floor(Math.random() * length)])
+        }
     }
     return input
-}
-
-function getHook(){
-
-    return "In this village, a [NPC] is resting for now before [action]"
-
-    /*
-    
-In this village, a [NPC] is resting for now before [action]
-In this village, the local authority, a [NPC], is holding a criminal, [NPC], in their cells. This last one claims innocence. 
-You meet [monster] in [location] near the village, performing [action]. However, [NPC] is watching over it [oddities]
-In this village, the people are riled up about [subject/event] because [NPC] did [action]
-We haven't heard of [NPC] for a time now. He lives in [location] and had an important role in the village as a [role]. 
-
-    */
 }
 
 function requestContent(input){
@@ -3586,8 +4620,6 @@ function requestContent(input){
             return "Dungeon: " + get2d6() * 10 + " feet | Wilderness: " + get2d6() * 30 + " feet"
         case "base_actions":
             return getContent("general_roll")
-        case "hook":
-            getHook(); 
         case "hex":
             return "Name: {0} \nDescription: {1} \nHidden: {2} \nMonster: {3}".format(getHexName(), getHexDescription(), getHexHiddenFeature(), getHexMonster())
         case "triple_oracle":

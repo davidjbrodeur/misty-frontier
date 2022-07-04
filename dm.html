@@ -64,6 +64,12 @@
       <section class="content-roller" id="content-roller">
         <h2 class="title-dm">Content Roller</h2>
         <br />
+        <div>
+          <select
+            name="category-selector"
+            id="content-category-selector"
+          ></select>
+        </div>
         <div class="output">
           <textarea
             id="contentOuput"
@@ -218,6 +224,27 @@
     </main>
     <footer id="footer"></footer>
     <script type="text/javascript">
+      function getSelectBoxElements() {
+        var arrayOfElements = [];
+        for (var [key, value] of Object.entries(content)) {
+          arrayOfElements.push(key);
+        }
+        return arrayOfElements;
+      }
+
+      function fillSelectBox() {
+        var values = getSelectBoxElements();
+        var select = document.getElementById("content-category-selector");
+        for (const val of values) {
+          var option = document.createElement("option");
+          option.value = val;
+          option.text = val;
+          select.appendChild(option);
+        }
+      }
+
+      fillSelectBox();
+
       function rollDice() {
         var numDice = document.getElementById("diceNum").value;
         var container = document.getElementById("dieContainer");
@@ -248,18 +275,28 @@
 
       function getStringFromList(list, key) {
         let result = key.toUpperCase();
-        for (content in list[key]) {
-          result += "\n" + content + " : " + list[key][content];
+        for (var [key, value] of Object.entries(list[key])) {
+          result += "\n" + key + " : " + value;
         }
         return result;
       }
 
+      function deleteAllButtons() {}
+
       var createAllButtons = function () {
-        let allPossibleCommands = getCommands("");
-        for (command in allPossibleCommands) {
+        var selection = document.getElementById(
+          "content-category-selector"
+        ).value;
+
+        var arrayOfTables = [];
+        for (var [key, value] of Object.entries(content[selection])) {
+          arrayOfTables.push(key);
+        }
+
+        for (table in arrayOfTables) {
           var button = document.createElement("button");
-          button.innerHTML = allPossibleCommands[command];
-          button.setAttribute("id", allPossibleCommands[command]);
+          button.innerHTML = arrayOfTables[table];
+          button.setAttribute("id", arrayOfTables[table]);
           button.onclick = function () {
             document.getElementById("contentOuput").value = requestContent(
               document.getElementById(this.id).innerHTML
@@ -290,6 +327,16 @@
         }
       };
       createAllMonsters();
+
+      var select = document.querySelector("#content-category-selector"),
+        input = document.querySelector('input[type="button"]');
+      select.addEventListener("change", function () {
+        let allButtons = document.getElementById("input-container");
+        while (allButtons.firstChild) {
+          allButtons.removeChild(allButtons.firstChild);
+        }
+        createAllButtons();
+      });
     </script>
   </body>
 </html>
