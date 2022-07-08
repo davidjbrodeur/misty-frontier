@@ -3,6 +3,8 @@ let faction_catchphrase = " -> [FACTION] wants [MOTIVATION] but [OBSTACLE]. Ther
 
 let settlement_catchphrase = " -> The dungeon level is home (although not originally) to one species of monsters that uses it as a settlement area. They are more numerous, have places to perform all their things, etc. They use the dungeon layout to their advantage. They don't come from the dungeon, but rather from another settlement they had which connects from the inside to the dungeon (i.e. the level is double: one half is the dungeon proper, the other half is the settlement/cavern systems of the inhabitants of this level). "
 
+let demonic_shrine_effect_desc = "-> The user gets a Dark Corruption(+1). Roll a d6, on a 5+, the user also gets a random mutation (as per the curse)."
+
 const wilderness_exploration = 
 {
     "camp_event": {
@@ -474,17 +476,17 @@ const generalities =
         12: "Treasure abandonned by"
     },
     "disease":{
-        2: "Smallpox",
-        3: "Yellow Fever",
-        4: "Malaria",
-        5: "Cholera",
-        6: "Crud",
-        7: "Grippe",
-        8: "Spotted Fever",
-        9: "Dysentry",
-        10: "Turberculosis",
-        11: "Typhoid Fever",
-        12: "Leprosy"
+        2: "Smallpox: This disease is extremely infectious (2+ on a dice). It takes 12 months minus Toughness score to fully recover from it. Symptoms include intense rash and fever. The scars will lower Reaction and Courage permanently by 1. It is treatable with magical and natural health with a high survival rate amongst adventurers (2+ on a dice)",
+        3: "Yellow Fever: Generally more frequent in jungle and swamp areas, it is contracted by mosquitoes. There is a small chance (6+ on a dice) to spread it to others. Symptoms include intense fatigue and fever with a small (6+ on a dice) chance of lapsing into a coma for 1d6 days. Afterwards, the bearer is immune",
+        4: "Malaria: Generally more frequent in tropical area or temperate swamp and humid places. It causes intense pain, fatigue and fever. Rare herbs known as king’s herb can treat it with great efficiency. Otherwise, it will come back every once in a while to affect the host",
+        5: "Cholera: Generally transmitted through flies, food or water that has been infected. It is highly contagious and virulent. It will spread at an exponential rate in a group. Some type of activities or location will help the spreading: ship, cell, siege, garrison, inadequate water, and so on. Symptoms include vomiting, watery stools, fatigue, dehydration. If not treated rapidly, consider it as being a weak poison (death in 2d6 days)",
+        6: "Crud: Heat rash or jungle rot. Generation irritation and unpleasantness. 1/6 the character can't sleep at night and becomes fatigued (-1 to all rolls)",
+        7: "Grippe: Causes fever, fatigue and body ache. -1 to all rolls",
+        8: "Spotted Fever: A type of disease generally transmitted by ticks (2+ on a dice that it is carrying the disease). It causes severe fever (6+ on a dice that the fever will kill if untreated) and a chance of mentally affecting the character with a mild form of insanity (6+ on a dice), lowering Courage score by 1.",
+        9: "Dysentry: Generally caused by water and food being corrupted or stored in bad conditions. It causes vomiting, intestinal problem, fever, dehydration and fatigue. In very bad condition, it can become worst and cause coma or death",
+        10: "Turberculosis: This disease can be contracted in humid and damp places, including dungeons, but also in cities (6+ on a dice). It is a very intense disease that has a high rate of casualty (3+ without treatment, 5+ with treatment and rest). Even if survived, there is a 50% chance of losing 1 Toughness",
+        11: "Typhoid Fever: Generally contacted by parasites in unclean conditions such as cities, siege, food shortage and so on. It is a very intense fever and fatigue that can lead to death (3+ on a dice)",
+        12: "Leprosy: This disease affect skin and general immunity system. It has a high fatality rate (2+ on a dice after 3 days if not cured). Those who die from leprosy cannot be Raised Dead. Mummy have a high chance to give this disease on every contact (2+ on a dice)"
     },
     "curse_transformation" : {
         2: "New limb // new eye",
@@ -513,12 +515,6 @@ const generalities =
         12: "Cannibalism (can only eat flesh)"
     },
     "distance" : {
-
-    },
-    "base_actions" : {
-
-    },
-    "monster_ai":{
 
     },
     "oracle_subject" : {
@@ -743,9 +739,60 @@ const generalities =
         0: "Do:\r\n    Roll domain event (per game)\r\n    Roll region event (per month)\r\n    Roll world event (per six month)\r\n    If necessary, make a domain move\r\nRefresh:\r\n    Dungeon content lists (riddles, unique room, etc.)\r\n    Rumour table\r\n    Information on each player (name, goal, intent, levelup, details)\r\n    Information on the party (goals and intent)\r\n    Refresh domain based on last player activity\r\nReady: \r\n    The current party objective\r\n    Treasure map\r\n    Unique random interesting NPC\r\n    One ruin\/dungeon\r\n    The current megadungeon level\r\n    The next megadungeon level\r\n    One very cool unique outdoor event ready\r\nMaterial:\r\n    Notebook\r\n    Working website\r\n    Owlbear rodeo\r\n    Discord\r\n    Physical AD&D DMG"
     },
     "precampaign_checklist": {
-        0: "Meta-Information:\r\n    - Campaign concept in one sentence\r\n    - Campaign region:\r\n        - Terrain type predominance\r\n        - Regional hook\/uniqueness\r\n        - Oddity\/plot twist\r\n    - Region map\r\n    - Factions\r\n        - One evil faction, one criminal faction, the prime faction of the initial village\/town (covenant), one neutral or supportive faction and one extra faction\r\n        - [FACTION] want(s) [MOTIVATION], but [OBSTACLE]. Therefore, [PLAN OR METHOD OF SURMOUNTING OBSTACLE].\r\n        - Details for each:\r\n            - One enemy faction\r\n            - One ally faction\r\n            - Their reaction to adventurers (the party)\r\n            - One secret\r\n            - Something they are known for\r\n            - Resources (people, object, location, etc.)\r\nCrawford-method:\r\n    - Place population center (1 per region on a strategic location as the \'capital\' of the region).\r\n        - Court\r\n        - Leader(s)\r\n        - Origin, activity, obstacle\r\n        - Initial resources, building, etc. \r\n    - Place market towns or hammlets if necessary\r\n    - Place a bunch of ruins in strategic but abandonned locations. Possible to have them in water areas (sinked, pirate troves on sea caverns, etc.). Ancient and now forgotten\/destroyed settlements, temples, etc. These are 5-level dungeons. Put in them a shrine and a good treasure. \r\n    - Establish resources (including obstacles)\r\n    - Lairs. These are shrines protected by unique monsters (THE minotaur, THE hydra, THE medusa, etc.). If I don\'t have more ideas of unique monsters, either pimp up a normal one or use: https:\/\/docs.google.com\/spreadsheets\/d\/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM\/edit#gid=214513084\r\n    - Shortcuts, roads and blocked paths\r\n    - Hall of infamy\r\nStarting-town:\r\n    - Leader(s)\r\n    - Faction (if any)\r\n    - Goal(s)\r\n    - Origin, obstacle, activity\r\n    - Answer the following question: \r\n        What is the starting town called?\r\n        What is the name of the local inn? Who runs it?\r\n        Who do we meet in that inn?\r\n        What is the name of the main road?\r\n        What is the local river?\r\n        A local forest\r\n        The nearby hills\r\n        Two nearby villages\r\n        A distant city\r\n        Who rules the area?\r\n        Who are the town elders?\r\n        Who\'s the local expert on the Arcane?\r\n        Who\'s the local religious expert?\r\n        Who knows the most about the area\'s history?\r\n        Who knows the most about the local geography?\r\n        Who are the local low-level monster tribe?\r\n        A slightly farther off mid-level monster tribe\r\n        Who is the local evil boss?\r\n        What do they want?\r\n        What will happen if they get it?\r\n        Mightiest wizard in the land\r\n        Greatest warrior in the land\r\n        Richest person in the land\r\n        Special or very talented blacksmith in the land\r\n        Special healer or magical healer\r\n        Magical school or guild\r\n        Alchemist shop\r\n        Sage guild\r\n        Mercenary guild\r\n        Important laws on weapon carrying, magic and so on\r\n        Swordmaster\/Weapon master\r\n        Everyone in my world knows ...\t\r\n        Very few people know ...\t\r\n        No one knows ...\t\r\n        Who are the local low-level monsters?\t\t\t\t\r\n        A slightly futher off mid-level moster tribe:\t\t\t\t\r\n        Who is the local Evil Boss?\t\t\t\t\r\n        What do they want?\t\t\t\t\t\t\r\n        What will happen if they get it?\t\t\r\n        What is the name of the main road?\t\r\n        What is the local river?\t\r\n        A local forest?\t\r\n        The nearby hills\t\r\n        Two nearby villages\t\r\n        A distant city\t\r\nInitial-dungeon:\r\n    - Lore\r\n    - First level\r\n    - Second level idea\r\nLinks:\r\n    - Links between faction, ruins, megadungeon and BBEG\r\n    - Links between faction and faction\r\n    - Links between ruins, resources, towns, BBEG and megadungeon\r\nInfo:\r\n    - Hide secret and powers\r\n    - Put artefact somewhere with full lore\r\n    - Create rumour table\r\n    - Fictional map of the area for players + initial blurb"
+        0: "Meta-Information:\r\n    - Campaign concept in one sentence\r\n    - Campaign region:\r\n        - Terrain type predominance\r\n        - Regional hook\/uniqueness\r\n        - Oddity\/plot twist\r\n    - Region map\r\n    - Factions\r\n        - One evil faction, one criminal faction, the prime faction of the initial village\/town (covenant), one neutral or supportive faction and one extra faction\r\n        - [FACTION] want(s) [MOTIVATION], but [OBSTACLE]. Therefore, [PLAN OR METHOD OF SURMOUNTING OBSTACLE].\r\n        - Details for each:\r\n            - One enemy faction\r\n            - One ally faction\r\n            - Their reaction to adventurers (the party)\r\n            - One secret\r\n            - Something they are known for\r\n            - Resources (people, object, location, etc.)\r\nCrawford-method (try to put each element at least one day of march from one another):\r\n    - Place population center (1 per region on a strategic location as the \'capital\' of the region).\r\n        - Court\r\n        - Leader(s)\r\n        - Origin, activity, obstacle\r\n        - Initial resources, building, etc. \r\n    - Place market towns or hammlets if necessary\r\n    - Place a bunch of ruins in strategic but abandonned locations. Possible to have them in water areas (sinked, pirate troves on sea caverns, etc.). Ancient and now forgotten\/destroyed settlements, temples, etc. These are 5-level dungeons. Put in them a shrine and a good treasure. \r\n    - Establish resources (including obstacles)\r\n    - Lairs. These are shrines protected by unique monsters (THE minotaur, THE hydra, THE medusa, etc.). If I don\'t have more ideas of unique monsters, either pimp up a normal one or use: https:\/\/docs.google.com\/spreadsheets\/d\/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM\/edit#gid=214513084\r\n    - Shortcuts, roads and blocked paths\r\n    - Hall of infamy\r\nStarting-town:\r\n    - Leader(s)\r\n    - Faction (if any)\r\n    - Goal(s)\r\n    - Origin, obstacle, activity\r\n    - Answer the following question: \r\n        What is the starting town called?\r\n        What is the name of the local inn? Who runs it?\r\n        Who do we meet in that inn?\r\n        What is the name of the main road?\r\n        What is the local river?\r\n        A local forest\r\n        The nearby hills\r\n        Two nearby villages\r\n        A distant city\r\n        Who rules the area?\r\n        Who are the town elders?\r\n        Who\'s the local expert on the Arcane?\r\n        Who\'s the local religious expert?\r\n        Who knows the most about the area\'s history?\r\n        Who knows the most about the local geography?\r\n        Who are the local low-level monster tribe?\r\n        A slightly farther off mid-level monster tribe\r\n        Who is the local evil boss?\r\n        What do they want?\r\n        What will happen if they get it?\r\n        Mightiest wizard in the land\r\n        Greatest warrior in the land\r\n        Richest person in the land\r\n        Special or very talented blacksmith in the land\r\n        Special healer or magical healer\r\n        Magical school or guild\r\n        Alchemist shop\r\n        Sage guild\r\n        Mercenary guild\r\n        Important laws on weapon carrying, magic and so on\r\n        Swordmaster\/Weapon master\r\n        Everyone in my world knows ...\t\r\n        Very few people know ...\t\r\n        No one knows ...\t\r\n        Who are the local low-level monsters?\t\t\t\t\r\n        A slightly futher off mid-level moster tribe:\t\t\t\t\r\n        Who is the local Evil Boss?\t\t\t\t\r\n        What do they want?\t\t\t\t\t\t\r\n        What will happen if they get it?\t\t\r\n        What is the name of the main road?\t\r\n        What is the local river?\t\r\n        A local forest?\t\r\n        The nearby hills\t\r\n        Two nearby villages\t\r\n        A distant city\t\r\nInitial-dungeon:\r\n    - Lore\r\n    - First level\r\n    - Second level idea\r\nLinks:\r\n    - Links between faction, ruins, megadungeon and BBEG\r\n    - Links between faction and faction\r\n    - Links between ruins, resources, towns, BBEG and megadungeon\r\n    - Links around hexes with important locations (settlements, lairs, ruins): instead of having a wizard tower and then on the next hex a griffon lair and then on the next hex a group of bandits, have the griffon be the pet of the wizard and the bandits wanting the eggs of the griffon for a safe passage across the shortcut in the mountains. Create a living world with triggers and clues. \r\nInfo:\r\n    - Hide secret and powers\r\n    - Put artefact somewhere with full lore\r\n    - Create rumour table\r\n    - Fictional map of the area for players (make it interesting with names like \'The Forest of the Iron Wights\' instead of \'Green Forest\'; for this, use the dark souls overworld dungeon generator I have) + initial blurb\r\n    - List all important aspects (bbeg plans & location, lieutenants, megadungeon, lore, artefacts, hidden location of lair and ruins, etc.) as bullet points. For each, create 3 clues (3-clue-rule). Destroy a random number of them. Then put all of the rest into: rumours, lairs, ruins, megadungeon, npc, etc."
     },
+    "injury_roll": {
+        2: "Death",
+        3: "Important Arm Injury: -1 F, -1 S, can't carry anything in one of the two arm (no two-handed, no off-hand, no shield, no secondary torche)",
+        4: "Important Arm Injury: -1 F, -1 S, can't carry anything in one of the two arm (no two-handed, no off-hand, no shield, no secondary torche)",
+        5: "Important Leg Injury: -2 Mv, Jump and Climb, can't Charge or Rush",
+        6: "Important Leg Injury: -2 Mv, Jump and Climb, can't Charge or Rush",
+        7: "Minor Injury: Stays at 0 W until the next Rest (each hit is a new injury roll)",
+        8: "Minor Injury: Stays at 0 W until the next Rest (each hit is a new injury roll)",
+        9: "Minor Injury: Stays at 0 W until the next Rest (each hit is a new injury roll)",
+        10: "Minor Injury: Stays at 0 W until the next Rest (each hit is a new injury roll)",
+        11: "War Scar: The character is injured until the next night of sleep (see Minor Injury) and gets a certain reputation with any hirelings with the party",
+        12: "Protected by the Gods: No injury, gains back conscience after the fight and wins +1 Fa"
+    }
 }
+/*
+
+Add equipment list in there
+
+Really go with "crwaford method" for the overview.
+
+'Escaping the dungeon' roll: https://thealexandrian.net/wordpress/2149/roleplaying-games/escaping-the-dungeon
+
+Add to pre-game check that I need to run, once a month, the overall AER game turn
+
+World creation: https://beyondfomalhaut.blogspot.com/2016/09/blog-dirt-cheap-sandbox.html
+- Work by region (aka big hex) that contains smaller hex (normal traveling hex) that contains smaller hex (aka pointcrawl hex for DM use only)
+- Add villages (with obstacles), lairs, etc. that are all intertwined: one group of men must pay taxes to bandits from another hex; a group of wood creatures suffer raids from orcs, etc.
+- Make sure each power center (hammlet, city, lair, etc.) is controlled by a faction. Then add in obstacles and activities. Make sure each of these generate at least one rumour/possible plot. 
+- Big hexes should be mini-settings in themselves where the players will have opportunity to come back. Small hexes (lairs, ruins, etc.) should be small one-page dungeon. 
+- Make adventuring party, factions, cults, etc. 
+- Rumours, legends, etc. 
+- Transform basic plots ("the BBEG wants X") into situations ("Y is happening right now")
+- Based 1 city = 4 towns, 5 ruins, 4 resources, 4 lairs
+
+- Add a step at the beginning to creature the layers of history (3 or 4) in the region
+
+- All factions should require stuff from lairs, ruins and the megadungeon. Have AT LEAST one sub-objective in there
+
+For stocking important hexes (ruins,lairs, etc.), use the method of "throwing dice around" and make a pointcrawl out of the hex
+
+Should also make a brief underworld hexmap (or huge-ass souslike pointcrawl?)
+
+Other notes:
+- Maybe all hexes without adventure should be with roads/paths/etc. ("You find an old road that seems to go north. You follow them and your travel is quick and painless. After a few miles and hours of marching, it dies out". )
+- All hexes with "adventures" should have a "pointcrwal" structure within my notes. 
+- Add a step that you create wilderness encounters baised on lair, ruin, factions. 
+- Should make it clear that "exploring/searching an hex" takes a whole day of work AND it changes the scope of the game. If previously it was all about just "going through the hex in a somewhat straight line", now you decide to follow small paths, explore around, get a hold of higher hills to see better what's in the hex, etc. It should be clear to player that "searching the hex" changes the scope and is different than both dungeone xploration and hexcrwaling. 
+
+- Dice roll for entering an hex should be about: finding tracks of creatures living in it, seeing what's in the hex through a high vantage point, stumbling on secrets or roads, encounter creatures, getting lost, etc. So maybe just switch it up into bigger categories like 'danger', 'discovery', 'choice', 'context', etc. and roll in there afterwards. 
+- Each region should have a name and a wandering encounter table. Unique monsters in it (lair) should be unique. 
+- Always roll twice and see if both can be tackled together: if not, keep the first result. 
+*/
 
 const underground_exploration = 
 {
@@ -1014,6 +1061,19 @@ const downtime_and_domain =
         12 : "prophecy (Someone received visions from the gods. 50% true, 50% false 1: A virgin girl in the countryside (2+ true) 2: A Paladin (100% true) 3: A merchant or small noble (6+ true) 4: Someone officiating rituals (i.e. a leader; 4+) 5: An old man/elder (4+) 6: A poor man without house or family (3+ true))"
     }
 }
+/* 
+Add more events
+Put them on a normal scale (not 2d6)
+More ideas:
+- Great robbery
+- Desecration of a place
+- Graveyard turn-over
+- Prisoner's pardon
+- Procession of ghosts
+- Royal audience day
+- Wild boar hunt
+- 
+*/
 
 const underground_content_creation = 
 {
@@ -1075,8 +1135,8 @@ const underground_content_creation =
         4: "boss is a mastermind that got advantage over other monsters (mind control, hostage, environmental bonus, etc.)",
         5: "boss is not hostile. It's mostly just a figurehead of the level where all other monster and factions interact with (e.g. Daughter of Chaos in Dark Souls). Sometimes have a personal bodyguard boss (e.g. Demons Souls)",
         6: "two bosses that each want to kill the other, see factions",
-        7: "boss and retinue have invaded from below",
-        8: "boss and retinue have invaded from outside",
+        7: "boss has a sidekick/pet/companion that complements him",
+        8: "boss and retinue have invaded from outside or below",
         9: "boss is a prisoner of the level, might even be against other monsters",
         10: "boss is an inventor/wizard and trap oriented",
         11: "boss is fake, it's just a group of smaller creatures playing tricks", 
@@ -2326,6 +2386,152 @@ const npc =
         11 : "A special chariot or boat (as per climate and location)",
         12 : "A small piece of land",
     },
+    "court": {
+        0: "https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1576217076"
+    },
+    "leader_fame_fighter" : {
+        2 : "Reroll, but at sea/coastal",
+        3 : "Held up a collapsing structure (Bridge, Wall, Burning Hut, etc.) as civilians fled",
+        4 : "Helped hunt and slew a dangerous creature (dragon, giant, purple wurm)",
+        5 : "Slew a Gigantic (normal animal: Crab, Boar, etc.) to feed a starving oppressed village",
+        6 : "Rescued a Maiden trapped in a (Tower, Cave, Dungeon, Block of Ice, etc.)",
+        7 : "Fought in the front of a past and bloody conflict against (orcs, ogres, giants)",
+        8 : "Held off (number) men from pursuing a retreating army.",
+        9 : "Entered a burning building to rescue (an important treasure, childrens)",
+        10 : "Wrestled a (minotaur, giant bear, werebear)",
+        11 : "Oversaw the building and protection of bridges and/or homes and was a much efficient ruler",
+        12 : "It is said that he never has been bested in (duel, mounted joust, bow contest, etc.)",
+    },
+    "leader_fame_cleric" : {
+        2 : "Found and used an ancient relic of the gods to slay a demon",
+        3 : "Protected an Abbey from Raiders",
+        4 : "Received visions from the gods.",
+        5 : "Accomplished any amazing feat at a very young age (like before teens). Reroll in the fighter list and downplay it a bit.",
+        6 : "Built a church",
+        7 : "Cured diseases",
+        8 : "Drove away undead",
+        9 : "Killed an evil necromancer",
+        10 : "Rescued and healed a drowning person",
+        11 : "Went on a quest to find some rare item or herb that helped a village through a plague",
+        12 : "Brought down corrupt nobles",
+    },
+    "leader_fame_mage" : {
+        2 : "Found a huge amount of treasure and gave it all away",
+        3 : "Beat an evil wizard in an epic magic duel",
+        4 : "Stepped in front of a innocent bystander to take the impact from a powerful magical spell",
+        5 : "Tricked a group of (Orcs, Bandits, Gnolls, etc.) into going a different direction, thereby saving a town from being razed",
+        6 : "Created a magical barrier that kept out an onslaught of (devils, elementals, demons, [outsiders])",
+        7 : "Banished a demon",
+        8 : "Fought off elementals that attacked a settlement",
+        9 : "Torched a orcish camp to the ground to liberate people",
+        10 : "Discovered long lost knowledge in a dungeon",
+        11 : "One of his creation (golem, living armor, homonculus) saved someone (or a village) from creatures (or a fire)",
+        12 : "Summoned a demon",
+    },
+    "leader_goal_fighter" : {
+        2 : "Occult",
+        3 : "Power",
+        4 : "Social Position",
+        5 : "Family/Tribe",
+        6 : "Riches",
+        7 : "Glory",
+        8 : "Land",
+        9 : "Vengeance",
+        10 : "Duty",
+        11 : "Necessity",
+        12 : "Gods",
+    },
+    "leader_goal_cleric" : {
+        2 : "Riches",
+        3 : "Vengeance",
+        4 : "Social Position",
+        5 : "Occult",
+        6 : "Knowledge",
+        7 : "Gods",
+        8 : "Duty",
+        9 : "Necessity",
+        10 : "Land",
+        11 : "Power",
+        12 : "Family/Tribe",
+    },
+    "leader_goal_mage" : {
+        2 : "Family/Tribe",
+        3 : "Social Position",
+        4 : "Vengeance",
+        5 : "Land",
+        6 : "Occult",
+        7 : "Knowledge",
+        8 : "Power",
+        9 : "Riches",
+        10 : "Glory",
+        11 : "Necessity",
+        12 : "Duty",
+    },
+    "leader_oddities_fighter" : {
+        2 : "Have a flying mount: pegasi if Law, griffon if Neutral or Chaos",
+        3 : "Armour made of a special monster scales (basilisk, dragon, etc.)",
+        4 : "Burnt by a dragon (face and arm)",
+        5 : "Abnormally tall and strong",
+        6 : "Possess a very exotic and strange weapon (1-2 it's mithril or silver, 3-5 it's magical, 6 it's artefact/sentient)",
+        7 : "Unique bloodline with heroes/gods in it",
+        8 : "Possess something (tattoo, banner, throne with skulls, etc.) to note each X he killed (dragons, orcs, humans, etc.) ",
+        9 : "Have a pet animal: 1-2: Lion 3-4: Great Eagle 5-6: Pair of wolves",
+        10 : "Criminal branding on the neck",
+        11 : "Extremely old but still firm",
+        12 : "Head of a big dragon in his throne room",
+    },
+    "leader_oddities_clericmage" : {
+        2 : "Made weird experimentation on flesh, including on oneself, which changed their body composition",
+        3 : "Cursed and physically weak, always coughing, etc.",
+        4 : "Burnt by a magical explosion (acid) on the face",
+        5 : "One eye is a magical jewel",
+        6 : "Classical wizard look (color as per the school, huge cloak, huge hat, etc.)",
+        7 : "Have a pet familiar: Quasit, Owl, Weasel, Pseudo Dragon",
+        8 : "Covered with scars",
+        9 : "Body covered with ceremonial/magical tattoo (see the Mummy)",
+        10 : "Fought with a vampire and still has the mark of the vampire on his neck",
+        11 : "Wears a huge special trinket with a chain on his neck",
+        12 : "Has a cane with the skull of a lich he fought on it",
+    },
+    "leader_bodyguard_fighter" : {
+        2 : "A group of Ogre with an Ogre-Magi captain on great beast (thundertusk)",
+        3 : "A pack of trusted orcish warg-riders",
+        4 : "A handful of giants",
+        5 : "A group of lansquenets",
+        6 : "A group of berserkers",
+        7 : "Elite Trained Knight all with the same special armour that doesn't show their face. That armour has one special feature (resistance to something, made out of a rare metal/animal hide, etc.)",
+        8 : "A group of dedicated elite archer rangers with a special enchanted cloak",
+        9 : "Questing Knights (warhammer)",
+        10 : "A small band of Griffon Riders",
+        11 : "Conan, Guts, etc. (i.e. one very badass bodyguard)",
+        12 : "Reroll on the Cleric table",
+    },
+    "leader_bodyguard_cleric" : {
+        2 : "Roll on the Mage table",
+        3 : "Fanatical cultists with a leader",
+        4 : "A group of death cleric that deal with ancient rituals and maintenance of the dead",
+        5 : "A giant eagle",
+        6 : "Papal swiss guard with polearms",
+        7 : "A group of paladins that survived at least one encounter with a greater demon. They are immune to charm and evil taint. ",
+        8 : "A single powerful paladin with a holy avenger",
+        9 : "A group of gish/elves with an oriental monk attitude (i.e. elvish jedi)",
+        10 : "A small band of Pegasi Riders",
+        11 : "A group of flagellant-type that worship relics",
+        12 : "A unicorn mount",
+    },
+    "leader_bodyguard_mage" : {
+        2 : "An undead death knight",
+        3 : "Two hellhounds",
+        4 : "Ogre-magi twins",
+        5 : "A pack of gargoyles-rider goblins",
+        6 : "A group of eyeball homunculus with small magical laser as a weapon",
+        7 : "A group of enuch nomadic warriors",
+        8 : "A golem",
+        9 : "Group of crazy alchemist that manipulate metal and stuff",
+        10 : "An eldricht knight",
+        11 : "A doppleganger that take the same apperance",
+        12 : "An arcane trickster assassin",
+    },
 }
 
 const wilderness_content_creation = {
@@ -2494,152 +2700,6 @@ const wilderness_content_creation = {
         19 : "Volcanic",
     },
     "overdungeon_map": {},
-    "court": {
-        0: "https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=1576217076"
-    },
-    "leader_fame_fighter" : {
-        2 : "Reroll, but at sea/coastal",
-        3 : "Held up a collapsing structure (Bridge, Wall, Burning Hut, etc.) as civilians fled",
-        4 : "Helped hunt and slew a dangerous creature (dragon, giant, purple wurm)",
-        5 : "Slew a Gigantic (normal animal: Crab, Boar, etc.) to feed a starving oppressed village",
-        6 : "Rescued a Maiden trapped in a (Tower, Cave, Dungeon, Block of Ice, etc.)",
-        7 : "Fought in the front of a past and bloody conflict against (orcs, ogres, giants)",
-        8 : "Held off (number) men from pursuing a retreating army.",
-        9 : "Entered a burning building to rescue (an important treasure, childrens)",
-        10 : "Wrestled a (minotaur, giant bear, werebear)",
-        11 : "Oversaw the building and protection of bridges and/or homes and was a much efficient ruler",
-        12 : "It is said that he never has been bested in (duel, mounted joust, bow contest, etc.)",
-    },
-    "leader_fame_cleric" : {
-        2 : "Found and used an ancient relic of the gods to slay a demon",
-        3 : "Protected an Abbey from Raiders",
-        4 : "Received visions from the gods.",
-        5 : "Accomplished any amazing feat at a very young age (like before teens). Reroll in the fighter list and downplay it a bit.",
-        6 : "Built a church",
-        7 : "Cured diseases",
-        8 : "Drove away undead",
-        9 : "Killed an evil necromancer",
-        10 : "Rescued and healed a drowning person",
-        11 : "Went on a quest to find some rare item or herb that helped a village through a plague",
-        12 : "Brought down corrupt nobles",
-    },
-    "leader_fame_mage" : {
-        2 : "Found a huge amount of treasure and gave it all away",
-        3 : "Beat an evil wizard in an epic magic duel",
-        4 : "Stepped in front of a innocent bystander to take the impact from a powerful magical spell",
-        5 : "Tricked a group of (Orcs, Bandits, Gnolls, etc.) into going a different direction, thereby saving a town from being razed",
-        6 : "Created a magical barrier that kept out an onslaught of (devils, elementals, demons, [outsiders])",
-        7 : "Banished a demon",
-        8 : "Fought off elementals that attacked a settlement",
-        9 : "Torched a orcish camp to the ground to liberate people",
-        10 : "Discovered long lost knowledge in a dungeon",
-        11 : "One of his creation (golem, living armor, homonculus) saved someone (or a village) from creatures (or a fire)",
-        12 : "Summoned a demon",
-    },
-    "leader_goal_fighter" : {
-        2 : "Occult",
-        3 : "Power",
-        4 : "Social Position",
-        5 : "Family/Tribe",
-        6 : "Riches",
-        7 : "Glory",
-        8 : "Land",
-        9 : "Vengeance",
-        10 : "Duty",
-        11 : "Necessity",
-        12 : "Gods",
-    },
-    "leader_goal_cleric" : {
-        2 : "Riches",
-        3 : "Vengeance",
-        4 : "Social Position",
-        5 : "Occult",
-        6 : "Knowledge",
-        7 : "Gods",
-        8 : "Duty",
-        9 : "Necessity",
-        10 : "Land",
-        11 : "Power",
-        12 : "Family/Tribe",
-    },
-    "leader_goal_mage" : {
-        2 : "Family/Tribe",
-        3 : "Social Position",
-        4 : "Vengeance",
-        5 : "Land",
-        6 : "Occult",
-        7 : "Knowledge",
-        8 : "Power",
-        9 : "Riches",
-        10 : "Glory",
-        11 : "Necessity",
-        12 : "Duty",
-    },
-    "leader_oddities_fighter" : {
-        2 : "Have a flying mount: pegasi if Law, griffon if Neutral or Chaos",
-        3 : "Armour made of a special monster scales (basilisk, dragon, etc.)",
-        4 : "Burnt by a dragon (face and arm)",
-        5 : "Abnormally tall and strong",
-        6 : "Possess a very exotic and strange weapon (1-2 it's mithril or silver, 3-5 it's magical, 6 it's artefact/sentient)",
-        7 : "Unique bloodline with heroes/gods in it",
-        8 : "Possess something (tattoo, banner, throne with skulls, etc.) to note each X he killed (dragons, orcs, humans, etc.) ",
-        9 : "Have a pet animal: 1-2: Lion 3-4: Great Eagle 5-6: Pair of wolves",
-        10 : "Criminal branding on the neck",
-        11 : "Extremely old but still firm",
-        12 : "Head of a big dragon in his throne room",
-    },
-    "leader_oddities_clericmage" : {
-        2 : "Made weird experimentation on flesh, including on oneself, which changed their body composition",
-        3 : "Cursed and physically weak, always coughing, etc.",
-        4 : "Burnt by a magical explosion (acid) on the face",
-        5 : "One eye is a magical jewel",
-        6 : "Classical wizard look (color as per the school, huge cloak, huge hat, etc.)",
-        7 : "Have a pet familiar: Quasit, Owl, Weasel, Pseudo Dragon",
-        8 : "Covered with scars",
-        9 : "Body covered with ceremonial/magical tattoo (see the Mummy)",
-        10 : "Fought with a vampire and still has the mark of the vampire on his neck",
-        11 : "Wears a huge special trinket with a chain on his neck",
-        12 : "Has a cane with the skull of a lich he fought on it",
-    },
-    "leader_bodyguard_fighter" : {
-        2 : "A group of Ogre with an Ogre-Magi captain on great beast (thundertusk)",
-        3 : "A pack of trusted orcish warg-riders",
-        4 : "A handful of giants",
-        5 : "A group of lansquenets",
-        6 : "A group of berserkers",
-        7 : "Elite Trained Knight all with the same special armour that doesn't show their face. That armour has one special feature (resistance to something, made out of a rare metal/animal hide, etc.)",
-        8 : "A group of dedicated elite archer rangers with a special enchanted cloak",
-        9 : "Questing Knights (warhammer)",
-        10 : "A small band of Griffon Riders",
-        11 : "Conan, Guts, etc. (i.e. one very badass bodyguard)",
-        12 : "Reroll on the Cleric table",
-    },
-    "leader_bodyguard_cleric" : {
-        2 : "Roll on the Mage table",
-        3 : "Fanatical cultists with a leader",
-        4 : "A group of death cleric that deal with ancient rituals and maintenance of the dead",
-        5 : "A giant eagle",
-        6 : "Papal swiss guard with polearms",
-        7 : "A group of paladins that survived at least one encounter with a greater demon. They are immune to charm and evil taint. ",
-        8 : "A single powerful paladin with a holy avenger",
-        9 : "A group of gish/elves with an oriental monk attitude (i.e. elvish jedi)",
-        10 : "A small band of Pegasi Riders",
-        11 : "A group of flagellant-type that worship relics",
-        12 : "A unicorn mount",
-    },
-    "leader_bodyguard_mage" : {
-        2 : "An undead death knight",
-        3 : "Two hellhounds",
-        4 : "Ogre-magi twins",
-        5 : "A pack of gargoyles-rider goblins",
-        6 : "A group of eyeball homunculus with small magical laser as a weapon",
-        7 : "A group of enuch nomadic warriors",
-        8 : "A golem",
-        9 : "Group of crazy alchemist that manipulate metal and stuff",
-        10 : "An eldricht knight",
-        11 : "A doppleganger that take the same apperance",
-        12 : "An arcane trickster assassin",
-    },
     "city_origin" : {
         2 : "Ancestral Land",
         3 : "Ancient Industry",
@@ -2688,7 +2748,8 @@ const wilderness_content_creation = {
         18 : "Cult",
         19 : "Xenophobia",
     },
-    "city_guilds": "https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=516116775",
+    "city_guilds": {
+        0: "https://docs.google.com/spreadsheets/d/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM/edit#gid=516116775"},
     "resources_obstacles" : {
         2 : "Cursed",
         3 : "Contaminated Land",
@@ -2991,7 +3052,10 @@ const wilderness_content_creation = {
         12 : "Demons",
     },
 }
-
+/* 
+https://docs.google.com/spreadsheets/d/192BEizypviHx1unUksej7NWUpw0XnGpuxfxLhHGKYiI/edit#gid=337082836
+Add landmarks that gives location of other lairs, ruins, bosses, shortcuts, etc. and some that have telescope/clairvoyance on other area for more info
+*/
 const shrine = 
 {
     "shrine_type": {
@@ -3003,17 +3067,16 @@ const shrine =
         5: "shrine"
     },
     "demonic_shrine_effect" : {
-        0 : "S +2",
-        1 : "T +2",
-        2 : "W +2",
-        3 : "A +2",
-        4 : "C +2",
-        5 : "Mv +2",
-        6 : "weapon boost",
-        7 : "magic item",
-        8 : "roll twice",
-        9 : "unique power",
-        },
+        0 : "S +2" + demonic_shrine_effect_desc,
+        1 : "T +2" + demonic_shrine_effect_desc,
+        2 : "W +2" + demonic_shrine_effect_desc,
+        3 : "A +2" + demonic_shrine_effect_desc,
+        4 : "roll on the special traits table of chargen" + demonic_shrine_effect_desc,
+        5 : "Mv +2" + demonic_shrine_effect_desc,
+        6 : "weapon boost" + demonic_shrine_effect_desc,
+        7 : "magic item" + demonic_shrine_effect_desc,
+        8 : "roll twice" + demonic_shrine_effect_desc,
+    },
     "demonic_shrine_req" : {
         0 : "pride",
         1 : "covetousness/greed",
@@ -3026,7 +3089,7 @@ const shrine =
         8 : "require to be in a demonic covenant (any)",
         9 : "possession",
     },
-    "shrine": { // first time = free bonus, second time = you need to drop the monster part on the altar. if you do so first time, you get double level up. the max is two level up. 
+    "shrine": { // first time = free bonus, second time = you need to drop the monster part on the altar. if you do so first time, you get double level up. the max is two level up. Can't be used if the target has Dark Corruption or is possessed
         0: "S	Combat	red = Galnos, power (Shaddai, mountain). ",
         1: "T	Survival	brown = nmrotijos, immortal (El Olam, everlasting).",
         2: "W	Survival	brown = ?, healer (Rapha, healer). ",
@@ -3037,7 +3100,8 @@ const shrine =
         7: "Everyone gains Fa	Leadership	white = pags, peace (Shalom, peace)",
         8: "Everyone gains Wi	Leadership	white = domiaghar, giver of fear (Elohim/Eloah, strong/fear)",
         9: "shrine of saweljos (the sun), everyone receives one random stats and one random heroic stat (1-3 mi, 4-5 wi, 6 fa).",
-        10: "the shrine of judges. on first use, you can take a vow (Defend the weak and the fatherless; uphold the cause of the poor and the oppressed. (Ps 82)) and you gain paladin powers as long as you follow it (spend Wi for healing touch, reroll Fa against spells and evil, spend Wi to sense chaos, spend Wi to imbue your sword and dispel magic on target). also gain +1 Wi on first use. and everyone receives a random other boost (reroll)"
+        10: "the shrine of judges. on first use, you can take a vow (Defend the weak and the fatherless; uphold the cause of the poor and the oppressed. (Ps 82)) and you gain paladin powers as long as you follow it (spend Wi for healing touch, reroll Fa against spells and evil, spend Wi to sense chaos, spend Wi to imbue your sword and dispel magic on target). also gain +1 Wi on first use. and everyone receives a random other boost (reroll)",
+        11: "the shrine of judgment. if you have demonc shrine or wield demonic power, you get a curse. otherwise, you gain a random +1. everyone in the room is affected."
     },
     "shrine_use" : {
         2 : "hammer and anvil: destroy something of chaos or sacrifice something of value",
@@ -3350,136 +3414,46 @@ const treasure =
         0: "If you want to integrate any magical items, either from D&D, Dark Souls or your own imagination, it is highly suggested to thing about three mechanical factors:\r\nPrerequisite\r\nA upside for a downside\r\nMechanical niche or lore\r\nThen, it is suggested to answer to those lore questions to integrate it properly:\r\nWhat do legends say of it ?\r\nWhat great deed was it part of ?\r\nWhen was it created ?\r\nWho created it ?\r\nWhy was it created ?\r\nHow was it lost by its maker or user ?"
     }
 }
-
-const data = Object.assign({}, 
-    generalities, 
-    underground_content_creation, 
-    underground_exploration, 
-    wilderness_content_creation, 
-    wilderness_exploration, 
-    npc,
-    downtime_and_domain,
-    shrine,
-    treasure)
-
-const content = 
-{
-    "generalities": generalities,
-    "underground_content_creation": underground_content_creation,
-    "underground_exploration": underground_exploration,
-    "wilderness_content_creation": wilderness_content_creation,
-    "wilderness_exploration": wilderness_exploration,
-    "npc": npc,
-    "downtime_and_domain": downtime_and_domain,
-    "shrine": shrine,
-    "treasure": treasure
-}
-
-
 /*
-TODO: 
-
-Campaign ideas:
-- Fog 
-- Have a set of 6 death knights obeying a forgotten god (the betrayer, the undying, the lord of shadow, the dark marshal, the dragon knight of [some dark location], the lord of blades). they are lieutenants desecrating the land to bring more fog about. for their stats see the "Armies of LOTR" ruleset in Mordor, the heroes
-- they each could have their own dungeon (two-level dungeon).
-- the boss would be locked inside the bottom of the megadungeon and he would have been re-awakened when the first adventurers/soldiers died inside the tomb. 
-- orcs and other monsters are warbands under the control of these lieutenants
-- questions:
-    Is he serving a god, is he a god, or is he trying to usurp a god?
-    What's the purpose of the fog in the plan?
+MUST DO:
+- Add a system of descriptions for treasure (where it is, the 'chest', the overall mundane item with the real loot, etc.)
+    The chest is important, it can be inscribed, it can be a special locker, it can be broken down and pre-looted, etc. 
+- Switch up the money one for instead a description of items: in dungeons, you don't find GP or SP, you find objects (crowns, jewels, etc.) WITH AN HISTORY
+    Jewels
+    Special weapon/armor (aka engraved, with decoration, etc.)
+    Gold coins with a special face on it
 
 
+    Add more potions/bombs based on spells (charm = love potion, sleep = sleep gas potion)
 
-- PIE ideas for quests, legends, items, locales, myths, etc.: 
-    http://falsemachine.blogspot.com/2022/05/gilding-shadow.html
-    http://falsemachine.blogspot.com/2022/06/murder-at-dawn-of-time.html
-    http://falsemachine.blogspot.com/2022/06/we-need-to-be-churning-more-oceans.html
+    "Surtling core" to activate magical gates like in Valheim
 
-- PRIME TASK: Make a 5RD generator that scales (aka it creates a 5RD level composed of 5(ish) quarters each with their 5RD rooms for a total of 25 meaningful room + a bunch of generic room (some of them being empty))
-- For quarters/overdungeon maps: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1257933702
-- Extra stuff for kingdoms: https://www.d20pfsrd.com/gamemastering/other-rules/kingdom-building
 
-- Faire un truc pour chaque table avec sa règle associée afin d'avoir une "cheatsheet" d'inclus dans le generator. aussi juste mettre les règles de DM
-    - Pursuit (p. 33 Castle in Tower)
+Moonlight greatsword
+Embers effect and paths
 
-- Covenants ("temple factions" aka the various organisations obeying god-kings and watchers)
-    - Covenants are the demons way of having worship. Everyone is, by default, in God's covenant. 
-    - Covenants are therefore, for now, more of an NPC thing. 
-    - It's possible to be a Steward-Lord, aka you are a noble, but you don't have territory because you aren't in the covenant. 
-    - Entering a covenant is therefore more of a quest than anything. It requires sacrifices (animals and humans), it requires to bow to the demon, to worship him through specific acts based on the covenants, etc. Also, each demon/covenant is obsessed with one particular item (like DS covenants). 
-    - Covenants therefore need the basic info that I had normally (symbol, name, etc.) but also object, level-up (you gain powers), sacrifices & rites
-    - Covenants rituals/spells are: 
-        - You have a passive bonus
-        - You can use X number of time a spell (vancian-ish like DS1)
-        - When all usage are done, you lose both active and passive
+BOWS AND ARROWS
 
-- Add to my DM stuff disease and curse descriptions https://docs.google.com/spreadsheets/d/1ET8DTWlVJNWyjvRDrp_uvp8P25QUOQi5QbYnWOvIS4o/edit#gid=50706048
-- Put to DM stuff the progression and other hidden stuff (magic sword, etc.) https://docs.google.com/presentation/d/1JtIkJGe9YL0AwlxDpvmgOSQ9aWknJt2ShZAykJgjfCA/edit#slide=id.g13638b89f05_0_0
+Magic golem books (requires brute matter, book, magic gem, ember)
 
-- Make the world anvil stuff
-- Dungeon idea: 
-    basilica cistern
-- Advancement = 
-    - Ember + meteorite sword = magic sword. Magic sword + gems = weapon level up. 
-    - Shrine + creature parts = character level up. 
+Add some magical spears, axes, swords, etc. from Elden Ring and DS1 with cursed effects added (and marked them as cursed weapons) including their fluff and all
 
-- Rumours:
-    HOW TO
-        1) Feature: Make a list of 20 features (location, faction, magic item, npc, setting details, factions, etc.)
-        2) Type: Assign to each feature a type based on what it is: 
-            - Danger (warning)
-            - Reward (drawn towards)
-            - Mystery (drawn towards)
-            - Opportunity (drawn towards)
-            - Challenge warning)
-        It doesn't have to be 'about' the player (NPC danger could be that he's a danger to others, to the party, that HE's in danger, etc.)
-        3) Object: Something that affect the feature
-        4) Details: Write in some words the details of the rumour
-            Janus - threat - blacksmith (Janus debt to blacksmith, in hiding)
-Other format: 
-    I heard from [X] that [Y] did [Z] to [A].
-        X = hunter, ranger, guard, barkeeper, peasant, soldier, etc.
-        Y = anybody in the margin, monsters, etc. 
-        Z = destroyed, defiled, took, helped, etc.
-        A = location, object, person
-    X (object, person, artefact, treasure) has been sigthed in Y (dungeon, lair, etc.)
-
-In this village, a [NPC] is resting for now before [action]
-In this village, the local authority, a [NPC], is holding a criminal, [NPC], in their cells. This last one claims innocence. 
-You meet [monster] in [location] near the village, performing [action]. However, [NPC] is watching over it [oddities]
-In this village, the people are riled up about [subject/event] because [NPC] did [action]
-We haven't heard of [NPC] for a time now. He lives in [location] and had an important role in the village as a [role]. 
-
-- If I want to go full solo, the best for mapping would be to make a deck of cards using threee "level" of geomorphs. 
-    First one is "always have an exit to another room". 
-    Second is "mostly have exits, rarely don't, sometimes they are secret", 
-    the third is "almost always doesn't have an exit.". 
-    That whay, you pick (for example) 10 cards of each, shuffled BY LEVEL and stack them to start with level 1. 
-    you need to make sure you have at LEAST one card to go down that you shuffle at random through the three levels.
-    to make sure you don't know which is which, maybe just mix them with unique rooms and so on. 
-    On the side, you just need another deck of randomly assigned room description
-    And then you roll to see the content as per normal room generation
-
-Various magic item ideas:
-Banner ideas = reroll wounds, to hit, etc. based on conditions (such as 1s only, against particular monsters, etc.)
-
-Every time a friendly Arnor model within 6" of Mal beth suffers a Wound,
-roll a 06. On a 5+, the Wound has been prevented, exactly as if a point of
-Fate had been expended. Note that if this roll is failed, Hero models may
-still use Fate points as normal.
-
-Always being on the effect of a spell
-
-"Horse lord"
-
-terror
-
-causing wounds regain Mi/Fa/Wi
-
-smoke bomb: S1 attack; when hit, either you spend a Wi or you are "Transfix"
+https://www.reddit.com/r/BehindTheTables/comments/43wsio/books_of_all_sorts/
 
 */
+
+const spells = 
+{
+
+}
+/* 
+All LOTR spells
+Check out the spells I added to some monsters like the lich for D&D spells extra
+Souslike spells
+Phantasmal Force
+Hold Portal
+*/
+
 
 const monsters = 
 {
@@ -3519,7 +3493,7 @@ const monsters =
         20: "Venom: Reroll all failed To-Wound rolls.",
         21: "Caught in a Web: Can choose to trade all attack for a single S7 attack that if suffered will Paralyse (see spell).",
         22: "Lone Hunter: Won't fight as ally/etc. with other forces.",
-        23: "Hatred(X): Gains +1 To-Wound against X in melee",
+        23: "Hatred(X): Gains +1 To-Wound against X in melee. They also have -2 to reaction roll when dealing with X.",
         24: "Cave Dweller: +1 to Jump and Climb, can fight in the dark without penalty",
         25: "Feral: If the rider of this creature is slain or dismounts, the creature will flee the battlefield (fail morale check)",
         26: "Ancient Evil(X): Opponents have -1 C within XMv.",
@@ -3566,15 +3540,16 @@ const monsters =
         67: "Rusting: Metal that touches the user (successful hit by the user or on the user) is instantly transformed into rust and becomes unusable.",
         68: "Backstabbers: Receives +1 on the To-Wound vs trapped and prone targets.",
         69: "Mutations: Roll 1d8. 1) Demon Soul: Can use one Fa per turn to block attacks. 2) Great Claw: +1A and S. 3) Cloven Hoofs: +2Mv and jump. 4) Tentacle: Reduce target A by 1. 5) Blackblood: When receiving a W, everyone in melee is dealt a S3 hit. 6) Spines: Everyone in melee with user receives a S1 hit every turn. 7) Scorpion Tail: Can make an extra S5 Venom attack per turn. 8) Extra Arm: Can use a weapon/shield and has +1A.",
-        70: "Poison(X): If the target is not immune to poison, the user can always To-Wound at LEAST on X+."
+        70: "Poison(X): If the target is not immune to poison, the user can always To-Wound at LEAST on X+.",
+        71: "Critical Strike: On a roll of 6 on the To-Wound, scores 2W instead of 1. If there is a (X), than the X means that it can only happen in this particular case/against this particular type of enemy.",
     },  
     "spells": {
         0: "test"
     },
     "peasants": {
-        "Mv": 4,
+        "Mv": 5,
         "F": 2,
-        "S": 3,
+        "S": 2,
         "T": 3,
         "A": 1,
         "W": 1,
@@ -3630,7 +3605,7 @@ const monsters =
         "Mi": 0,
         "Wi": 0,
         "Fa": 0,
-        "Equip": "(Dm choice))",
+        "Equip": "Weapons of choice, Light Armor",
         "Special": "Bodyguard",
         "Detail": "Nil",
         "Value": 8
@@ -3754,7 +3729,7 @@ const monsters =
         "Mv": 6,
         "A": 1,
         "W": 1,
-        "C": 2,
+        "C": 3,
         "Mi": 0,
         "Wi": 0,
         "Fa": 0,
@@ -4539,7 +4514,303 @@ const monsters =
         "Detail": "Nil",
         "Value": 20
     },
+    "giant_rats": {
+        "Mv": 4,
+        "F": 2,
+        "S": 4,
+        "T": 4,
+        "A": 1,
+        "W": 1,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Disease Strike, Survival Instinct",
+        "Detail": "Nil",
+        "Value": 20
+    }
 }
+
+/*
+
+Monsters to add: 
+- Primitive /w blowdart, spears and T4
+- Make all TP classes (maybe in a separate category of "humans")
+    Humans
+        Monk (spells)
+        Flagellant (the more you receive hit, the more you are resistant and hit strong)
+        Cleric
+        Inquisitor
+        Priest
+        High Priest
+
+        Mage
+        Amber Mage
+        Ruby Mage
+        Amethyst Mage
+        Celestial Mage
+
+        Soldier
+        Barbarian
+        Cold Barbarian
+        Knight
+        Imperial Guard
+        Blood Company
+
+        Troubadour
+        Bard
+        Taleteller
+        Rogue
+        Thief
+
+    Undeads
+        Noble
+        Necromancer
+        Lich
+        Damned
+        Vampire
+
+        Ghost (can become invisible)
+        Revenant (ignore armor)
+        Invisible Stalker (ignore armor; invisibility)
+        Specter
+        Banshee
+        Reaper
+
+        Skeleton
+        Wight
+        Blood Blade (more kill = stronger; heal on crit)
+        Lord of Darkness
+
+        Necrophage
+        Mummy
+        Nightmare
+        
+    Drows
+        Spearman
+        Sewer Runner
+        Assassin
+        Master of Arms
+        Cold One
+
+        Arbalest
+        Heavy Arbalest
+        Arachnid Master
+        Scorpion Cavalry
+        Black Hand Arbalest
+
+        Stormtrooper
+        Master of War
+        Black Hand Cavalry
+        Black Guard of Naggaroth
+
+        Prophet
+        Grey Sorcerer
+        Black Sorcerer
+        Plague Monk
+        Plague Encensor
+
+    Elves
+        Mage
+        High Mage
+        Priest of Illuvatar
+        Druid
+        Disciple of Gaia
+
+        Spearman
+        High Spearman
+        Royal Guard
+        Cavalier
+        Dragon Cavalier
+
+        Swordsmen
+        Master Swordsman
+        Illuvatar's Swordsman
+        Dark Warrior
+        White Lion
+        Phoenix Guard
+
+        Archer
+        Sharpshooter
+        Illuvatar's Archer
+        Redemption Archer
+        Woods Traveler
+        Assassin
+        Ranger
+
+    Dwarves (just the cool classes)
+        Canoneer
+        Thunder Hammerer
+        Sanguinaire
+        Monster Killer
+
+- Check out Demon Souls, Dark Souls (1-2-3) and Elden Ring monsters and bosses
+    Living Armor (blue eye knight, red eye knight)
+    Spy
+    Fat Official
+    Rock Worm (mini purple worm)
+    Fire Lizard
+    Mind Flayer
+    Man Centipede
+    Phosphorescent Giant Slug
+
+    Hollows (crazy human almost undeads)
+    Undead Attack Dogs
+    Necromancer (bound to its creation: if he dies, they die; otherwise he can rez them)
+    Black Knights
+    Taurus Demon
+    
+    Curse-Rotted Greatwood aka Gulthias Tree
+
+    
+
+Bosses idea:
+    Looking Glass Knight
+    Flexible Sentinel
+    Make a "boss generator" that creates a condition upon which you can fight a much more dangerous creature as a boss (blind, bound/chained, missing an important figthing limb, having allies that helps you, etc.)
+
+Will o Wisp
+
+
+
+*/
+
+const chargen = 
+{
+    "base_career": {
+        2: "Gravedigger: +1 C, +1 Fa",
+        3: "Ermit: +1 Wi, can survive without rations in the wilderness",
+        4: "Messenger/Herald: +1 Fa, +1 starting language",
+        5: "Hunter: +1 F, can recognize tracks in the wilderness",
+        6: "Highwayman Bandit: +1 Mv, +1 A",
+        7: "Mercenary: +1 F, +1 reaction roll with mercenary and hireling requests",
+        8: "Craftsman: +1 S, discount of 10% on buying basic equipment",
+        9: "Soldier: +1 A, +1 Mi",
+        10: "Sailor: +1 Mv, can navigate (basically) a ship",
+        11: "Scholar/apothecarist: +1 Wi, gets an extra rumour at start and knows if it's true or not",
+        12: "Spy: +1 Fa, +1 when trying to hide or listen at doors"
+    },
+    "special_traits": {
+        0 : "Wraith Touched: Can sense undead bodily (pain sensation). Can sometimes see ghosts & ethereal undead.  -1 save against undead. Undead effect (such as paralysis, life-steal, etc.) has more effect. Automatically fail save against transformation in wright etc. The wound cannot heal through normal means. ",
+        1 : "Luck curse (by a dryad, nymph, etc.): -1 to all Fa roll as long as you don't befriend and help a nymph/dryad",
+        2 : "Demon's Blood: -1 to all saves vs Demons and Demons have +1 vs user. More easily corrupted. -1 C. All fire attack have -1 vs the user. ",
+        3 : "Divine Banishment: Can't enter a covenant. Shunned by all temples and Watchers. ",
+        4 : "Hideous: -1 all reaction roll",
+        5 : "Old/weak: +3d6+15 age, -1 S, +1 F",
+        6 : "Illiterate: Can't read or write.",
+        7 : "Born of a Witch: Can sense magic, can be sensed by magic. -1 to all Fa towards magic.",
+        8 : "Iron will: +Wi.",
+        9 : "Eagle Eye: Can see further in the daylight and darkness. Can shoot further than others with missile weapons. +1 to-hit with missile attack when action Hold.",
+        10 : "Favor: Someone nearby owes you a big favor. ",
+        11 : "Military Veteran: +1 C. The user's henchmen have +1 on their courage roll.",
+        12 : "Extraordinary Strength: +1 S, +1 to all might dice usage for strength purposes",
+        13 : "Lucky: +1 to all Fa roll, start with 1 Fa",
+        14 : "Blessed: +1 to all heroic dice",
+        15 : "Family Heirloom: Starts with a magic object",
+        16 : "Inherited Watcher's Favor: An unnamed and forgotten Watcher has given a favor through a Covenant with the character’s ancestor. They can still use it (once in a lifetime) during a time of crisis. For the referee: determine the Covenant at random. Bonus of reaction towards this Covenant. ",
+        17: "Diseased: -1 T",
+        18: "Limp-Legged: -1 Mv",
+        19: "Mutant: Roll a mutation from the curse list of mutations.",
+        20: "Horse Lord (as per tag)",
+        21: "Animal Friend: +2 reaction with animals; recognize most animals",
+        22: "Undead Slayer: + to Fa against undead; recognize most undeads",
+        23: "Berserker: At the beginning of each combat, roll d6. On a 6+, the user enters a berserking state: he gains +1 F, +1 A, fearless and the berserktag.",
+        24: "Very Large: +1 Mv, +1 T, +1 S. However, people will mistrust him and thinks he is an ogre.",
+        25: "Signature Weapon: Choose one weapon. Gain proficiency in it.",
+        26: "Cat Grace: Always lose -1 W when falling. +1 to jump and climb.",
+        27: "Locksmith: +2 to all use of thieve's tool and finding/desactivating traps.",
+        28: "Bad Eyesight: -1 to all missile attack, see less far away.",
+        29: "Anemic: -2 to all T roll for disease and poison related.",
+        30: "One Arm: Missing one arm (as per the injury).",
+        31: "Graverobber: You get a desecration curse at random (1d6 from 5 to 10), but you also get an extra free heirloom (random magic item).",
+        32: "Dark Corruption (X): You dabble in the dark arts, helped dark forces, used dark artefacts or was corrupted by an agent of the dark. Your being has been corrupted by this. You have -X on all C or Fa roll vs commands, spellcasting, etc. from a dark/evil source. X starts at 1 and can go up throughout the game.",
+        33: "Language Fluency: +1 starting language",
+    },
+    "fame": {
+        0 : "Helped people escape a local fire/collpasing structure (bridge, wall, house, etc.)",
+        1 : "Helped in a famous regional hunt against a dangerous creature",
+        2 : "Help slew a giant animal that threathened a village (giant crab, giant boar, giant bear, etc.)",
+        3 : "Rescued a maiden trapped in a tower/cave/dungeon",
+        4 : "Fought on the front of a bloody conflict and stood his ground",
+        5 : "Was part of a small group that held off a number of men from pursuing a retreating army (rearguard)",
+        6 : "Is said to be extremely good in dueling/mounted joust/bow contest, etc.",
+        7 : "Protected a temple from raiders",
+        8 : "Helped many people from an incurable disease in a local hospital",
+        9 : "Helped the local priest drive away undeads",
+        10 : "Tricked some creatures (undead, orcs, etc.) from going in the wrong direction thereby saving a village",
+        11 : "Helped a migthy hero kill a big creature",
+    },
+    "criminal_background": {
+        2: "Framed for a crime",
+        3: "Highwayman bandit",
+        4: "Crime against possessions (burned down some place, broke something of a rich man/priest, etc.)",
+        5: "Helped a criminal do something and got caught",
+        6: "Robber/thief",
+        7: "Fought on the wrong side of a conflict/soldier of another covenant",
+        8: "Wanted to help a friend/family but got caught up in crime",
+        9: "Stole for food",
+        10: "Assaulted someone out of anger/self defence",
+        11: "Extortion and money crime",
+        12: "killed by accident",
+    },
+    "initial_goals": {
+        0 : "research & knowledge",
+        1 : "divine calling",
+        2 : "freedom",
+        3 : "fame & glory",
+        4 : "social movement",
+        5 : "do something that has never been done & see something that has never been seen",
+        6 : "vengeance",
+        7 : "looking for magic relics",
+        8 : "money & luxury",
+        9 : "seek to enter the service of a powerful patrol",
+        10 : "exploration & risk",
+        11 : "searching for friends or family (or ancestors)",
+    },
+    "languages": {
+        2: "Nbhudhnom: language of the abyss, sorcery and dragons",
+        3: "Merwos: language of the dead",
+        4: "Crotsos: the language of ogres and giants",
+        5: "Taiknes: the language of omen and ancient creatures (minotaur, centaur, medusa, etc.)",
+        6: "Skelos, The Black Tongue: orcs & co",
+        7: "No other language than common.",
+        8: "Dherghos: the local dialect (tocharian)",
+        9: "Ausghos: the easterner language (aka the language around this particular part of the continent, chinese/japanese)",
+        10: "Emporos: the language of the seafaring people (greeks)",
+        11: "Spekjo: the divine language",
+        12: "Dherbho, The Primordial Tongue: ancient common language",
+    },
+}
+
+const data = Object.assign({}, 
+    generalities, 
+    underground_content_creation, 
+    underground_exploration, 
+    wilderness_content_creation, 
+    wilderness_exploration, 
+    npc,
+    downtime_and_domain,
+    shrine,
+    treasure,
+    spells,
+    chargen)
+
+const content = 
+{
+    "generalities": generalities,
+    "underground_content_creation": underground_content_creation,
+    "underground_exploration": underground_exploration,
+    "wilderness_content_creation": wilderness_content_creation,
+    "wilderness_exploration": wilderness_exploration,
+    "npc": npc,
+    "downtime_and_domain": downtime_and_domain,
+    "shrine": shrine,
+    "treasure": treasure,
+    "spells": spells,
+    "chargen": chargen
+}
+
 
 function getContent(){
     return content; 
@@ -4628,3 +4899,233 @@ function requestContent(input){
             return getContent(input)
     }
 }
+
+/* 
+
+TODO: 
+- Add to random encounter that you can spot old towers and high hills to get a good look at the terrain all around. Shift weather effects maybe to weather itself. Try to minimize at best as I can the resource management aspect of hexcrawling to make it more about DISCOVERY than TRAVEL.
+- Add in discovering roads in the "finding secrets" of the hex. 
+- IF I do hexcrawl, I should have a "players map" that represents what the player can actually 'see' on an hex grid (so full of empty hexes but at least some good points), a "fictional map" aka a drawned map, and a DM's map with hexes and locations
+- Maybe do a hex map where the first level of hexes represents element within an hex and the second level are my hexes, and the third level is the regional hex (aka granularity in visual representation)
+- Add to random encounter that you can meet with an old ally needing help for something
+- Add to encounters caravans
+
+
+Evil artefact prevents the use of Fa. 
+
+
+Solo:
+TSR 9067 - Msolo1 - Blizzard Pass
+TSR 9060 - Msolo2 - Maze of the Riddling Minotaur
+T&T Solo 1 - Buffalo Castle
+T&T Solo 2 - Deathtrap Equalizer
+T&T Solo 3 - Labyrinth
+T&T Solo 5 - Dargon's Dungeon
+D&D Endless Quest 01 - Dungeon of Dread
+D&D Endless Quest 02 - Mountain of Mirrors
+Middle Earth Quest #01 - Night of the Nazgûl
+Middle Earth Quest #03 - Rescue in Mirkwood
+Fabled Lands - Cities of Gold and Glory
+Lone Wolf - Flight From the Dark
+Fighting Fantasy - The Warlock of the Firetop Mountain
+TSR 9096 - BSOLO - Ghost of Lion Castle
+TSR 9082 - XSOLO - Lathan's Gold
+TSR 9157 - XSOLO 2 - Thunderdelve Mountain (definitely the best one IMHO).
+
+
+REDO:
+- Hexploration
+    One hex per day (+- 24 km)
+        Long diagonal is 24 km
+        Radius is 12 km to point
+        Radius is 10 km to line (apothem)
+        Sides are 12 km
+    Each hex biome type has a different % for: finding secrets, getting lost, encounters, getting slowed, etc.
+    E.g.
+        Plains: easy to find secrets, easy to encounter, difficult to get lost or slowed, etc.
+    Make a list of generic minor landmark or finding in cases a 'empty hex' (hex without a major feature) turns up a "find secret success"
+    Most if not all hexes should have something: lairs, villages, landmark, vantage points, ruins, shortcuts, etc.
+    Shortcuts (roads, river, passage) enables free travel on the hex where you can skip most result (except encounters)
+    Shortcut encounters 9basically road encounters) should be specific and not dependant on he xbiome type
+
+
+
+
+Campaign ideas:
+- Fog 
+- Have a set of 6 death knights obeying a forgotten god (the betrayer, the undying, the lord of shadow, the dark marshal, the dragon knight of [some dark location], the lord of blades). they are lieutenants desecrating the land to bring more fog about. for their stats see the "Armies of LOTR" ruleset in Mordor, the heroes
+- they each could have their own dungeon (two-level dungeon).
+- the boss would be locked inside the bottom of the megadungeon and he would have been re-awakened when the first adventurers/soldiers died inside the tomb. 
+- orcs and other monsters are warbands under the control of these lieutenants
+- the new covenant (from which the players are prisoners) took over an older one through fight. therefore, there is still guerilla/villages/remanants of that older covenant. it's therefore a triangle relation: the lich, the conquered, the conquerer
+- questions:
+    Is he serving a god, is he a god, or is he trying to usurp a god?
+    What's the purpose of the fog in the plan?
+- Maybe have all of this be a foreshadowing of the 'real' deal, which is basically "accross the mountain", this is where the fogs come from. That region accross the mountain = demon's souls. So the lich would be an agent of the fog (of the watcher coming back to life), but he's trying to use it for his own power. If the party really wants to get rid of the fog, they need to traverse the mountains and basically do demon's souls. 
+- Each month, the lich will kill a big NPC (leader of villages, ex-adventurers, etc. -> require to have believable and strong cool NPCs)
+
+- Hexes:
+    https://docs.google.com/spreadsheets/d/15N4beAStRAkS1nqKJ7Dt3owjo1vT_MZXVveh5muYgbc/edit#gid=1446881270
+    https://docs.google.com/spreadsheets/d/15meMo2Q3eBAzSycioIaSrkumWqzshj_zimcpQAbZf0U/edit#gid=257857313
+
+- PIE ideas for quests, legends, items, locales, myths, etc.: 
+    http://falsemachine.blogspot.com/2022/05/gilding-shadow.html
+    http://falsemachine.blogspot.com/2022/06/murder-at-dawn-of-time.html
+    http://falsemachine.blogspot.com/2022/06/we-need-to-be-churning-more-oceans.html
+
+- PRIME TASK: Make a 5RD generator that scales (aka it creates a 5RD level composed of 5(ish) quarters each with their 5RD rooms for a total of 25 meaningful room + a bunch of generic room (some of them being empty))
+- For quarters/overdungeon maps: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1257933702
+- Extra stuff for kingdoms: https://www.d20pfsrd.com/gamemastering/other-rules/kingdom-building
+
+- Faire un truc pour chaque table avec sa règle associée afin d'avoir une "cheatsheet" d'inclus dans le generator. aussi juste mettre les règles de DM
+    - Pursuit (p. 33 Castle in Tower)
+
+- Covenants ("temple factions" aka the various organisations obeying god-kings and watchers)
+    - Covenants are the demons way of having worship. Everyone is, by default, in God's covenant. 
+    - Covenants are therefore, for now, more of an NPC thing. 
+    - It's possible to be a Steward-Lord, aka you are a noble, but you don't have territory because you aren't in the covenant. 
+    - Entering a covenant is therefore more of a quest than anything. It requires sacrifices (animals and humans), it requires to bow to the demon, to worship him through specific acts based on the covenants, etc. Also, each demon/covenant is obsessed with one particular item (like DS covenants). 
+    - Covenants therefore need the basic info that I had normally (symbol, name, etc.) but also object, level-up (you gain powers), sacrifices & rites
+    - Covenants rituals/spells are: 
+        - You have a passive bonus
+        - You can use X number of time a spell (vancian-ish like DS1)
+        - When all usage are done, you lose both active and passive
+    
+- Covenant/faction generator
+    What kind of 'god' (dragon, balrog, spirit, etc.)
+    https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=1557177057
+        Name
+        Commandments
+        Sin
+        Symbol
+        Symbol type
+        Gift
+        Altar type
+        Offering type
+        What secret information people knows from the outset, and what secret informations they will never know
+        Officiality
+        (powers?)
+
+- Add to my DM stuff disease and curse descriptions https://docs.google.com/spreadsheets/d/1ET8DTWlVJNWyjvRDrp_uvp8P25QUOQi5QbYnWOvIS4o/edit#gid=50706048
+- Put to DM stuff the progression and other hidden stuff (magic sword, etc.) https://docs.google.com/presentation/d/1JtIkJGe9YL0AwlxDpvmgOSQ9aWknJt2ShZAykJgjfCA/edit#slide=id.g13638b89f05_0_0
+
+- Make the world anvil stuff
+- Dungeon idea: 
+    basilica cistern
+- Advancement = 
+    - Ember + meteorite sword = magic sword. Magic sword + gems = weapon level up. 
+    - Shrine + creature parts = character level up. 
+
+- Rumours:
+    HOW TO
+        1) Feature: Make a list of 20 features (location, faction, magic item, npc, setting details, factions, etc.)
+        2) Type: Assign to each feature a type based on what it is: 
+            - Danger (warning)
+            - Reward (drawn towards)
+            - Mystery (drawn towards)
+            - Opportunity (drawn towards)
+            - Challenge warning)
+        It doesn't have to be 'about' the player (NPC danger could be that he's a danger to others, to the party, that HE's in danger, etc.)
+        3) Object: Something that affect the feature
+        4) Details: Write in some words the details of the rumour
+            Janus - threat - blacksmith (Janus debt to blacksmith, in hiding)
+Other format: 
+    I heard from [X] that [Y] did [Z] to [A].
+        X = hunter, ranger, guard, barkeeper, peasant, soldier, etc.
+        Y = anybody in the margin, monsters, etc. 
+        Z = destroyed, defiled, took, helped, etc.
+        A = location, object, person
+    X (object, person, artefact, treasure) has been sigthed in Y (dungeon, lair, etc.)
+
+In this village, a [NPC] is resting for now before [action]
+In this village, the local authority, a [NPC], is holding a criminal, [NPC], in their cells. This last one claims innocence. 
+You meet [monster] in [location] near the village, performing [action]. However, [NPC] is watching over it [oddities]
+In this village, the people are riled up about [subject/event] because [NPC] did [action]
+We haven't heard of [NPC] for a time now. He lives in [location] and had an important role in the village as a [role]. 
+
+- If I want to go full solo, the best for mapping would be to make a deck of cards using threee "level" of geomorphs. 
+    First one is "always have an exit to another room". 
+    Second is "mostly have exits, rarely don't, sometimes they are secret", 
+    the third is "almost always doesn't have an exit.". 
+    That whay, you pick (for example) 10 cards of each, shuffled BY LEVEL and stack them to start with level 1. 
+    you need to make sure you have at LEAST one card to go down that you shuffle at random through the three levels.
+    to make sure you don't know which is which, maybe just mix them with unique rooms and so on. 
+    On the side, you just need another deck of randomly assigned room description
+    And then you roll to see the content as per normal room generation
+
+Various magic item ideas:
+Banner ideas = reroll wounds, to hit, etc. based on conditions (such as 1s only, against particular monsters, etc.)
+
+Every time a friendly Arnor model within 6" of Mal beth suffers a Wound,
+roll a 06. On a 5+, the Wound has been prevented, exactly as if a point of
+Fate had been expended. Note that if this roll is failed, Hero models may
+still use Fate points as normal.
+
+Always being on the effect of a spell
+
+"Horse lord"
+
+terror
+
+causing wounds regain Mi/Fa/Wi
+
+smoke bomb: S1 attack; when hit, either you spend a Wi or you are "Transfix"
+
+
+
+
+
+
+Categories for sections in obsidian main campaign:
+
+GAME
+    Rules cheatsheet (this is what I put on the discord based on the following)
+    Rules
+        Character
+        Equipment
+        Exploration
+        Combat
+        Downtime
+    Logistics
+        Tools
+        Sandbox
+        Open Table
+WORLD
+    World Map (real + symbolic, including continent scale)
+    Locations (continents and region, also include who is ruling what)
+    Covenants (include all info, including potential leaders)
+    Timeline & Events (including world events)
+    Races & Monsters
+    Nations*
+    Languages
+    Lore & Religion (two parts. first part: make three categories: what everyone know, what only a few know, what nobody knows. second part: the full DM-side blurb)
+(X REGION)/CAMPAIGN
+    Regional Overview (nation, language, covenants, etc. aka links with the world)
+    Domain (court, leader, hall of infamy, etc.)
+    Organisation (covenants, guilds, etc.)
+    Maps (symbolic + real + hex)
+    Timeline & Events (history of the region, recent domain events)
+    Locations (cities, villages, lairs, ruins)
+    Adventurers Codex (session recaps)
+    Tavern (rumours)
+    Items (magical items with their location/distribution)
+    Festivals & Calendar
+
+*
+Ecological influence
+Living conditions
+Family demographics
+Courts, jails, pilgrimage sites, temples
+Religious & civil leadership
+Informal (& tribal) leadership
+Means of communication
+Perceptions (of Watchers, governement, neibghours, adventurers, etc.)
+    "How do we view ourselves... them..." and "How do they view us... themselves..."
+    Who, in their narrative, is their villain, their victim and their hero? Why?
+ASCOPE/PMESII: 
+    Areas, Structure, Capabilities, Organisation, People, Events
+    vs
+    Political, Military, Economic, Social, Information, Infrastructure
+What language do they speak? Who speaks it (5Ws)?
+
+*/
