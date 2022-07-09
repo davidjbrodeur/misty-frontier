@@ -10,4 +10,5 @@ $(document).ready(function () {
     $("#wilderness-travel-table").load("pages/wilderness_travel_table.html");
     $("#combat-action-table").load("pages/combat_action_table.html");
     $("#to-wound").load("pages/to_wound.html");
+    $("#heroic-attributes-table").load("pages/heroic_attributes.html");
 });

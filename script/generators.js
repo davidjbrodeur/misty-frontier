@@ -3440,6 +3440,11 @@ Add some magical spears, axes, swords, etc. from Elden Ring and DS1 with cursed 
 
 https://www.reddit.com/r/BehindTheTables/comments/43wsio/books_of_all_sorts/
 
+
+Magic items can give heroic actions. See below:
+- 
+
+
 */
 
 const spells = 
@@ -3528,12 +3533,12 @@ const monsters =
         55: "Cavalry: ???",
         56: "Siege Engine: Siege engine are moved by 3 models or 1 monster. Small engine only require 1 to shoot. Shoot to hit as per normal. If you hit infantry, roll a scatter dice (1 = miss; 2-5 = fire on the nearest other model within 6Mv; 6+ direct hit). Knock prone if hit, wether it wounds or not. Wound against infantry is insta kill. All model nearby a siege engine hit will suffer additional hit too based on the engine.",
         57: "Energy Drain: Any W inflicted by the user lowers the maximum W of the target and the user gains back 1 W. This is considered a form of curse and needs to be treated as such to remove it. If a target dies because of this effect, it comes back as a ghoul under the control of the user.",
-        58: "Mundane Resistance: Non-elemental and non-magical effect/attack have -2 on their dice roll against the user.",
+        58: "Mundane Resistance: Non-elemental and non-magical effect/attack have -2 on their to-wound dice roll against the user.",
         59: "Regeneration(X): At the end of each combat, this creature gains X W. ",
         60: "Vulnerability(X): The creature must make a morale check against these or flee.",
         61: "Destroying(X): These effect can instantly slay the creature if applied and not saved (when necessary).",
         62: "Summoning(X): The user can compel creatures (of X type) to obey him. This means that it can use them as allies, mounts, bodyguards. It can summon them during fights through magic or physical means.",
-        63: "Absorb: Grab a target in melee and put it inside the cube. Powerful acid digest the target for 1W per turn.",
+        63: "Absorb: Grab a target in melee and put it inside the user. Powerful acid digest the target for 1W per turn.",
         64: "Immunity(X): Completely immune to X",
         65: "Weapon Specialist: Receives bonus based on their weapon. \nPolearms: Receive charges of cavalry at +1A if they didn't move and can attack in pike formation. \nSwords: +1F when dueling. \nTwo-Handed Axes/Swords: +1 S in To-Wound. \nShield: Can use shield formations.",
         66: "Undead: Immune to effects that affect living creatures (e.g. poison). Immune to mind-affecting/reading spells. Make almost no noise (and if without equipment, no noise at all).",
@@ -3542,6 +3547,8 @@ const monsters =
         69: "Mutations: Roll 1d8. 1) Demon Soul: Can use one Fa per turn to block attacks. 2) Great Claw: +1A and S. 3) Cloven Hoofs: +2Mv and jump. 4) Tentacle: Reduce target A by 1. 5) Blackblood: When receiving a W, everyone in melee is dealt a S3 hit. 6) Spines: Everyone in melee with user receives a S1 hit every turn. 7) Scorpion Tail: Can make an extra S5 Venom attack per turn. 8) Extra Arm: Can use a weapon/shield and has +1A.",
         70: "Poison(X): If the target is not immune to poison, the user can always To-Wound at LEAST on X+.",
         71: "Critical Strike: On a roll of 6 on the To-Wound, scores 2W instead of 1. If there is a (X), than the X means that it can only happen in this particular case/against this particular type of enemy.",
+        72: "Weakness(X): +1 to wound with this kind of element vs the user.",
+        73: "Dangerous Body(X): When the user is wounded in melee by a target, the target suffers a S3 hit of X type.",
     },  
     "spells": {
         0: "test"
@@ -4529,7 +4536,39 @@ const monsters =
         "Special": "Disease Strike, Survival Instinct",
         "Detail": "Nil",
         "Value": 20
-    }
+    },
+    "twig_blight": {
+        "Mv": 4,
+        "F": 2,
+        "S": 2,
+        "T": 3,
+        "A": 1,
+        "W": 1,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Woodland Creature",
+        "Detail": "Suffer two hit instead of one in the Set Ablaze rule",
+        "Value": 5
+    },
+    "fire_snake": {
+        "Mv": 6,
+        "F": 2,
+        "S": 3,
+        "T": 4,
+        "A": 2,
+        "W": 2,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Weakness(Cold), Mundane Resistance, Immunity(Fire), Dangerous Body(Fire), Preternatural Agility",
+        "Detail": "Nil",
+        "Value": 25
+    },
 }
 
 /*
@@ -4912,6 +4951,9 @@ TODO:
 
 
 Evil artefact prevents the use of Fa. 
+
+
+Add range to range weapons
 
 
 Solo:
