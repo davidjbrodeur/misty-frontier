@@ -753,6 +753,19 @@ const generalities =
         10: "Minor Injury: Stays at 0 W until the next Rest (each hit is a new injury roll)",
         11: "War Scar: The character is injured until the next night of sleep (see Minor Injury) and gets a certain reputation with any hirelings with the party",
         12: "Protected by the Gods: No injury, gains back conscience after the fight and wins +1 Fa"
+    },
+    "boss_injury_for_bigger_monsters": {
+        2: "Undead, but less intelligent and strong",
+        3: "Missing a leg (less Mv, C, F)",
+        4: "Missing an arm (less A, F, S)",
+        5: "Already figthing another creatures",
+        6: "Already injured (only 1 W, lower courage)",
+        7: "Blinded (F1, -1A)",
+        8: "Deaf (-1F, can't hear)",
+        9: "A weapon or trap is used nearby",
+        10: "The monster is in a disadvantageous position (caged, chained, etc.)",
+        11: "A deformed, smaller version (-1 everywhere)",
+        12: "Roll twice"
     }
 }
 /*
@@ -792,6 +805,42 @@ Other notes:
 - Dice roll for entering an hex should be about: finding tracks of creatures living in it, seeing what's in the hex through a high vantage point, stumbling on secrets or roads, encounter creatures, getting lost, etc. So maybe just switch it up into bigger categories like 'danger', 'discovery', 'choice', 'context', etc. and roll in there afterwards. 
 - Each region should have a name and a wandering encounter table. Unique monsters in it (lair) should be unique. 
 - Always roll twice and see if both can be tackled together: if not, keep the first result. 
+
+
+Need to give enough debt to this whole region (through multiple layers, fight between gods, etc.) so that it can be self-sufficient. Also, make sure to make it clear that "in the past, this place was the center and pinnacle of the whole land (aka the capitals were here, etc. which explains why there are so many ruins and stuff)"
+
+Lay out the information about the underworld too. 
+    Take some tips from the Bible in the ash plains
+    Lake of rot from Elden Ring
+    Watcher's prisons like Pandemonium
+    Cities of ancient humans
+    Cavern-like maze with monsters and primitives
+    etc.
+
+Detail a bit the previous eras of the world to see what happened and how it can influence the location, the world, the monsters, etc. See how Elden Ring does it with having dragon cities that sank (creating ruins), the previous wars creating the faction, etc.
+
+Ideas from Elden Ring/DS:
+    Areas
+        - Great lift of Dectus
+        - Precipice that brings to a higher region
+        - Huge waterfall that can lead further down or high
+        - Colloseum
+        - Hugeass skeleton to express that previously beings were bigger, stronger, etc. (including giants) and now it's all long defeat
+        - Hermits in small stone fort/house/tower that's crumbled that can sell treasure map, sometimes jewel, tips on the region, etc. but they only barter, they don't take cash (food, animal, tools, etc.)
+    Events
+        Night Cavalry
+        Caravan (all undead, just keeping to their mission)
+    Other
+        Technology comes from the watchers, but also the nephilim (such as the giants)
+
+
+Generate stuff for each type of terrain.
+    - Swamp
+        Bog or mire is a wetland that is acidic
+        A fen is a wetland that is alkaline
+        A swamp is a wetland whose dominant vegetation is trees and woody plants
+        A mrash is a wetland with other forms of vegetation dominant
+
 */
 
 const underground_exploration = 
@@ -1077,6 +1126,9 @@ More ideas:
 
 const underground_content_creation = 
 {
+    "dungeon_entrance_description": {
+        0: "https://www.fantasynamegenerators.com/dungeon-descriptions.php",
+    },
     "level_theme" : {
         2: "environmental_theme",
         3: "environmental_theme",
@@ -3058,50 +3110,24 @@ Add landmarks that gives location of other lairs, ruins, bosses, shortcuts, etc.
 */
 const shrine = 
 {
-    "shrine_type": {
-        0: "demonic_shrine (too much demonic shrine will result in not being able to use normal shrine)",
-        1: "demonic_shrine (too much demonic shrine will result in not being able to use normal shrine)",
-        2: "broken",
-        3: "shrine",
-        4: "shrine",
-        5: "shrine"
+    "shrine_rules": {
+        0: "Saints Shrine Rules: the party can only have one active shrine at any point. as long as they follow the saints oath, they have a passive bonus. they can also use an active power, but then lose the active bonus until they go back to civilization to make some sorts of sacrifice/prayer. whenever a shrine is generated, take note of it as it is unique and cannot show up again in the campaign. when it appears, make sure there is an accompanying picture showing what the saints did (some sort of icon) and a clear depiction of what is the oath/requirement of the party. shrines can be desecrated and broken down. they need to be restored. new one can be constructed. source: https://espharel.blogspot.com/2019/12/osr-shrines-and-patron-saints.html",
+        1: "Covenant of Elohim: To enter the covenant, you must make a vow: Defend the weak and the fatherless; uphold the cause of the poor and the oppressed (Ps 82). Then, you gain paladin powers as long as you follow it: +2 Wi, Healing Touch, Unveil Evil, Divine Blade spells, Hatred(Demons & Undead), +1 to Resist and Courage vs evil.",
+        2: "Shrines: When a character uses a shrine, all party members in the vicinity regain all lost W. The user then benefit from the Shrine powers. A user can only benefit once from each type of shrine (cannot reuse it, but still regains lost W when others does). The Black Shrine is only available once you have obtained all the other shrine. All other benefits are gained through magical items. When a shrine is used, it is depleted.",
+        4: "Depleted Shrine: To refresh a shrine, the heart of a chaotic creature needs to be brought and offered up. To see if it's a chaotic creature, the heart will become black when put into the sun. List of creatures: trolls, giants, dragons (the only thing that's left of them when you kill them, the rest goes away like demons), hydras, sea serpents, minotaurs, etc. If the user is chaotic or evil (cursed, using cursed items, in a demonic pact, etc.), it may not work (reaction roll).",
     },
-    "demonic_shrine_effect" : {
-        0 : "S +2" + demonic_shrine_effect_desc,
-        1 : "T +2" + demonic_shrine_effect_desc,
-        2 : "W +2" + demonic_shrine_effect_desc,
-        3 : "A +2" + demonic_shrine_effect_desc,
-        4 : "roll on the special traits table of chargen" + demonic_shrine_effect_desc,
-        5 : "Mv +2" + demonic_shrine_effect_desc,
-        6 : "weapon boost" + demonic_shrine_effect_desc,
-        7 : "magic item" + demonic_shrine_effect_desc,
-        8 : "roll twice" + demonic_shrine_effect_desc,
-    },
-    "demonic_shrine_req" : {
-        0 : "pride",
-        1 : "covetousness/greed",
-        2 : "lust",
-        3 : "anger",
-        4 : "gluttony",
-        5 : "envy",
-        6 : "sloth",
-        7 : "false worship",
-        8 : "require to be in a demonic covenant (any)",
-        9 : "possession",
-    },
-    "shrine": { // first time = free bonus, second time = you need to drop the monster part on the altar. if you do so first time, you get double level up. the max is two level up. Can't be used if the target has Dark Corruption or is possessed
-        0: "S	Combat	red = Galnos, power (Shaddai, mountain). ",
-        1: "T	Survival	brown = nmrotijos, immortal (El Olam, everlasting).",
-        2: "W	Survival	brown = ?, healer (Rapha, healer). ",
-        3: "A	Combat	red = deksteros, right (tsidkenu, the righteousness). ",
-        4: "C	Leadership	white = regh, king (El Elyon, majesty).",
-        5: "Mv Survival	brown = Ameika, friend (Raah, friend).  ",
-        6: "Everyone gains Mi	Combat	red = weikpotis, leader (Sabaoth, lord of armies)",
-        7: "Everyone gains Fa	Leadership	white = pags, peace (Shalom, peace)",
-        8: "Everyone gains Wi	Leadership	white = domiaghar, giver of fear (Elohim/Eloah, strong/fear)",
-        9: "shrine of saweljos (the sun), everyone receives one random stats and one random heroic stat (1-3 mi, 4-5 wi, 6 fa).",
-        10: "the shrine of judges. on first use, you can take a vow (Defend the weak and the fatherless; uphold the cause of the poor and the oppressed. (Ps 82)) and you gain paladin powers as long as you follow it (spend Wi for healing touch, reroll Fa against spells and evil, spend Wi to sense chaos, spend Wi to imbue your sword and dispel magic on target). also gain +1 Wi on first use. and everyone receives a random other boost (reroll)",
-        11: "the shrine of judgment. if you have demonc shrine or wield demonic power, you get a curse. otherwise, you gain a random +1. everyone in the room is affected."
+    "shrine": { 
+        0: "Galnos, the Red Shrine of the Mountain of Power (El Shaddai): +1 S",
+        1: "Mrotijos, the Green Shrine of the Immortal and Everlasting (El Olam): +1 T",
+        2: "Cikitsos, the Blue Shrine of Healing (Rapha): +1 W",
+        3: "Diksteros, the Orange Shrine of Right (Tsidkenu): +1 F",
+        4: "Reghos, the Violet Shrine of Majesty (El Elyon): +1 Wi",
+        5: "Ameikos, the Teal Shrine of Friendship (Raah): +1 Mv",
+        6: "Weikpotos, the White Shrine of Armies (Sabaoth): +1 C",
+        7: "Saweljos, the Yellow Shrine of the Sun: +1 Mi",
+        8: "Domiagharos, the Red Shrine of Terror: +1 A",
+        9: "Pagsos, the Grey Shrine of Peace: +1 Fa",
+        10: "Jewesdoks, The Black Shrine of Judges and Judgement: When someone approaches this shrine, all the previous 10 shrine stone color are upon it. For each that the character has found, the corresponding stone shines. If the character has all of them, he gains +1 to everyting (S, T, F, W, A, C, Mv, Mi, Wi, Fa). If instead he has Curse/Demonic Pact/Corruption, the whole stone turns black and pushes him backward 1d6 Mv. Can only appear once per region/continent. Also serves at the covenant stone for Elohim.",
     },
     "shrine_use" : {
         2 : "hammer and anvil: destroy something of chaos or sacrifice something of value",
@@ -3132,11 +3158,9 @@ const shrine =
     "shrine_quote" : {
         0: "https://capitalizemytitle.com/random-bible-verse-generator/book/Psalms"
     },
-    "saints_shrine_rules": {
-        0: "the party can only have one active shrine at any point. as long as they follow the saints oath, they have a passive bonus. they can also use an active power, but then lose the active bonus until they go back to civilization to make some sorts of sacrifice/prayer. whenever a shrine is generated, take note of it as it is unique and cannot show up again in the campaign. when it appears, make sure there is an accompanying picture showing what the saints did (some sort of icon) and a clear depiction of what is the oath/requirement of the party. shrines can be desecrated and broken down. they need to be restored. new one can be constructed. source: https://espharel.blogspot.com/2019/12/osr-shrines-and-patron-saints.html"
-    },
     "saints_shrine": {
-
+        0: "The Three Maidens Who Withsthood the Flame (The Three Youths of Daniel) | Oath: Shall never lie, Shall never worship the Autarch | Passive: All fire damage roll (either spells or physical fire) is dealt at -1 | Active: The party can walk through living flames for as long as they sing (fire attack will still affect them).",
+        1: "The Seven Warriors of Eterdom (Maccabees) | Oath: Shall never back down from battle, Shall break any Autarch idols/statue seen | Passive: +1 F, +1 A when charging | Active: When defending something (location, position, person), the party can make a unique charge where they double their Mv and receives an extra +2 A on the charge",
     },
     /* 
 
@@ -3161,8 +3185,6 @@ Saints to use:
 - Esther
 - Job
 - Daniel
-- Maccabees
-- "The Three Maiden Who Withsthood the Flame"
 - Boaz
 - Caleb
 - Nathan
@@ -3198,62 +3220,342 @@ Saints to use:
 
 const treasure = 
 {
-    "treasure_roll" : { // always come with money, 3d6SP * level of dungeon (exterior = 1, non-megadungeon = 2). double = gems. 
-        2 : "magic_rare_rings",
-        3 : "magic_rings",
-        4 : "map",
-        5 : "ember_type",
-        6 : "meteorite_equipment",
-        7 : "magic_potions",
-        8 : "generic magic item",
-        9 : "magical_heirlooms",
-        10 : "magic_consumable",
-        11 : "fake/curse item (reroll and make it fake/cursed)",
-        12 : "magic_relics",
+    "magic_item_checklist_and_rules": {
+        0: "CHECKLIST: If you want to integrate any magical items, either from D&D, Dark Souls or your own imagination, it is highly suggested to thing about three mechanical factors:\r\nPrerequisite\r\nA upside for a downside\r\nMechanical niche or lore\r\nThen, it is suggested to answer to those lore questions to integrate it properly:\r\nWhat do legends say of it ?\r\nWhat great deed was it part of ?\r\nWhen was it created ?\r\nWho created it ?\r\nWhy was it created ?\r\nHow was it lost by its maker or user ?",
+        1: "METEORITE RULES: All magic weapons in an ember path and/or as a meteorite weapon gains their respective weapon special melee skill, irrespective of the path. \n Shields: You can declare that you are shielding and double the number of A for the melee roll. However, if you win, you may not strike the opponent. \n Lance: +1 To Wound when Charging. \n Polearms: Can fight from outside the control zone of the target as long as another character is already figthing the target. Gains +1 A for the melee roll vs mounted charging targets. \n Ancient Blade (Elven Blade): +1 to melee roll. \n Bash (Hammers, Maces, Mauls): If Duel is won by Bashing Side, both sides add D6 to Strength (Two Handed grants +1) and if the Bashing model's number is equal to or highter the opponent is knocked Prone. \n Feint (Daggers & Swords): Fight value is reduced by D3, if Feinting side wins, re-roll Wound rolls of 1. Requires equal to or higher F value that the target. \n Piercing Strike (Axes and Picks): If side wins increase Str by D3, but if loses subtract D3 from Defense. \n Whirl (Flails, Scourges, and Whips) - Reduce Fight value by 1 and if melee roll is won, make a single strike against every model in fight.",
+        2: "CURSED ITEM RULES: If the user uses it once, he cannot get it off and will not want to depart from it. The user can, if convinced forcefully, try to get it off with a Courage test at -1. When the user uses it, he also starts getting afflicted by the curse itself. This curse will break if the item is broken or removed magically from the user. ",
+        3: "EMBER PATH RULES: \n Except for the sword, not all ember are compatible with all types of weapons. \n When a meteorite weapon is enchanted with an ember (with the help of 1 of the corresponding type of gems), the user can then benefit from it's 'base power' (passive special bonus). \n Then, it's possible to upgrade it with 5 of the same gem type to give make it either (cumulative) sharper (+1S), more balanced (+1F) or quicker (+1A). \n When a weapon is fully upgraded in its path, then it gains the Ember-Type power (active).",
+        4: "EMBER RELIC: If you combine all the good ember type and put it inside a single sword, it becames a Holy Avenger (if two-handed) or Sun Blade (if one-handed). If you do it with the bad ember type, it becomes Moonlight Greatsword (if two-handed) or Vorpal Blade (if one-handed)",
+        5: "DEMONIC ITEM RULES: The item initially feels evil. You can still use it, but you'll have 1 Corruption Point (CP) and you'll be a bit more of one of the sin.  At the next adventure, during sleep, the demon will speak to the user and give him a new power in exchange for more CP/sin/'a small token of sacrifice' that seals the sin (ex: greed = steal something, anger = completely destroy a creature, etc.). Then it will do so again 1 month later and 3 month later. After that, look for an opportune moment for the 5th and final CP and then it will try to get away. Cannot be destroyed through normal means. Tries to get away naturally from its user after it corrupted it to corrupt something else. When the item is discarded/the user attempts to destroy it, it reverts back into a creature based on the object iself. Then, when the creature dies, it reverts back into the object. (The reverse can be true to generate monsters that drops a loot)",
     },
-    "ember_type" : {
+    "money_roll": {
+        0: "A single gold coin in a case that's depicting a sun.",
+        1: "3d6SP with the face of the local Watcher.",
+        2: "3d6 * 10 SP with a broken/defaced/polished face.",
+        3: "A 3d6 * 5 SP small silver ring inscribed with (something personal)",
+        4: "A 3d6 * 5 SP small silver ring inscribed with (something religious)",
+        5: "A 3d6 * 5 SP small silver ring inscribed with (something mysterious)",
+        6: "A jewel crown worth 1d6 GP. The crown is decorated with (1-2 suns and stars; 3-4 nothing and unnaturally clean; 5-6 small magical gems",
+        7: "A crown of a previous king worth 3d6 GP.",
+        8: "An amulet of protection worth 3d6 * 10 SP.",
+        9: "A random piece of weapon in silver lining from a previous history layer worth (base price) * 2",
+        10: "A random piece of armor in silver lining from a previous history layer worth (base price) * 2",
+        11: "Small sacrificial dagger with (1-3) SP lining (75SP) or (4-6) gold lining (2GP)",
+        12: "Gems powder worth 1d6 GP",
+        13: "Unknown non-magical gems worth 2d6 GP",
+        14: "A book/map with engraved gold, silver lining, some gemstones, etc. worth 1d6 GP. Then roll a random book for content: https://www.reddit.com/r/BehindTheTables/comments/43wsio/books_of_all_sorts/"
+    }, 
+    "tier_a_roll" : { 
+        2 : "curse_item",
+        3 : "curse_item",
+        4 : "demonic_item",
+        5 : "demonic_item",
+        6 : "map (5+ it's fake) & books: https://www.reddit.com/r/BehindTheTables/comments/43wsio/books_of_all_sorts/",
+        7 : "base_weapon",
+        8 : "magic_consumable",
+        9 : "magical_heirlooms",
+        10 : "meteorite_equipment",
+        11 : "gems",
+        12 : "tier_b_roll",
+    },
+    "tier_b_roll" : {  
+        2 : "curse_item",
+        3 : "demonic_item",
+        4 : "demonic_item",
+        5 : "demonic_item",
+        6 : "magic_consumable",
+        7 : "magic_potion",
+        8 : "magical_heirlooms",
+        9 : "meteorite_equipment",
+        10 : "gems",
+        11 : "ember",
+        12 : "tier_c_roll",
+    },
+    "tier_c_roll" : { 
+        2 : "demonic_items",
+        3 : "demonic_item",
+        4 : "magic_consumable",
+        5 : "magical_heirlooms",
+        6 : "gems",
+        7 : "ember",
+        8 : "meteorite_equipment",
+        9 : "gems",
+        10 : "ember",
+        11 : "meteorite_equipment",
+        12 : "reroll twice in tier_c_roll",
+    },
+    "ember" : {
+        0 : "Hollow Ember (poison/rot) -> amethyst",
+        1 : "Profaned Ember (abyss, water) -> onyx ",
         2 : "Divine Ember (lawful, blood) -> diamond",
         3 : "Dark Ember (occult, darkness) -> dark opal",
         4 : "Enchanted Ember (magic) -> turquoise",
         5 : "Crystal Ember (ice) -> blue sapphire",
-        6 : "Flame Ember (fire) -> fire opal",
-        7 : "Chaos Ember (chaotic) -> ruby",
-        8 : "Profaned Ember (abyss, water) -> onyx ",
-        9 : "Giant's Ember (physical and lightning) -> garnet ",
-        10 : "Hollow Ember (undead) -> amethyst",
-        11 : "Rotten ember (poison/rot) -> citrine",
-        12 : "A died out ember (can be used to replace any gems for the purpose of upgrading embers). Looks like a pearl.",
+        6 : "Flame Ember (fire) -> ruby",
+        7 : "Giant's Ember (physical and lightning) -> garnet ",
+        8 : "A died out ember (can be used to replace any gems for the purpose of upgrading embers). Looks like a pearl.",
+        9 : "ember core (for portals)",
+        10 : "memory stone of a random spell (spellcasting +1Wi); it's a mix of many gems weaved together by magic",
+        11 : "roll again + give gems"
     },
     "gems" : {
+        0: "ember core",
+        1 : "A died out ember (can be used to replace any gems for the purpose of upgrading embers). Looks like a pearl.",
         2 : "diamond",
         3 : "dark opal",
         4 : "turquoise",
         5 : "blue sapphire",
-        6 : "fire opal",
-        7 : "ruby",
-        8 : "onyx ",
-        9 : "garnet ",
-        10 : "amethyst",
-        11 : "citrine",
-        12 : "A died out ember (can be used to replace any gems for the purpose of upgrading embers). Looks like a pearl.",
+        6 : "ruby",
+        7 : "onyx ",
+        8 : "garnet ",
+        9 : "amethyst",
+        10 : "memory stone of a random spell (spellcasting +1Wi); it's a mix of many gems weaved together by magic",
+        11 : "roll twice"
     },
-    "money": {
-        0: "3d6 * level SP. Outdoor = lvl 1. If it's a great treasure, x10"
-    }, 
-    "generic_magic_item_cost" : {
+    "magical_heirlooms" : { // more ideas to refill: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=853960712
+        0 : "Ancient Stars Cloak: If partially concelead, the user is considered fully concealed. If the user is immobile, he takes the form of what is around him (becoming 'invisible')",
+        1 : "banner of ancient stars: The bearer has -1 to melee roll. A dice within the melee can be rerolled to a friendly model within 6 mv. ",
+        2 : "banner of glorious charge: +2 to A within 12 of this if charge",
+        3 : "banner of the steadfast ox: if no move (or in melee no move), +1 T everyone within 12",
+        4 : "banner of beacon: can produce light, can fight as a spear, in huge battle can transmit message and tactics through signs in the air",
+        5 : "banner of fear: -1C to enemy; if you charge, they automatically must do a morale check",
+        6 : "glory banner: +1C to anyone that sees it; +1A to anyone within 6 Mv",
+        7 : "ring of X protection",
+        8 : "ring of the ambassador: can understand any language (can't speak it), +1 reaction roll",
+        9 : "heroic ring: choose one of the three heroic stats for a game, you have +1",
+        10 : "ring of chance: can reroll Fa",
+        11 : "ring of freefall",
+        12 : "ring of sustenance",
+        13 : "War Horn: All models within earsight has +1 C.",
+        14 : "Terror Horn: When outnumbered, can use the horn to force a courage check. If failed, the target(s) has -1 to all roll during the melee this turn.",
+        15 : "Rope of Climbing",
+        16 : "mithril armor: heavy armor, count as light",
+        17 : "ring of invisibility",
+        18 : "robe of the archmagi: +1 Wi just for spellcasting",
+        19 : "immovable rod",
+        20 : "staff of the magi: +1 Wi just for spellcasting",
+        21 : "Grass Crest Shield (Standard)  In combat, you count as having an extra A for melee roll",
+        22 : "Crest Shield: A kite shield with an old knigthly crest etched on it in gold lining. | +2 on Fa against magic.",
+    },
+    "magic_potions" : {
+        2 : "Animal/Undead Control",
+        3 : "Clairaudience",
+        4 : "Diminution",
+        5 : "Climbing", 
+        6 : "Healing",
+        7 : "X resistance",
+        8 : "Healing (full heal)",
+        9 : "Giant strength",
+        10 : "Heroism (+1 to all heroic stats until used; +1 C for a day)",
+        11 : "Invisibility",
+        12 : "X-ray",
+    },
+    "meteorite_equipment" : {
+        0 : "meteorite polearm",
+        1 : "meteorite axe",
+        2 : "meteorite dagger/small/thrown",
+        3 : "meteorite blunt",
+        4 : "meteorite bow",
+        5 : "meteorite armor (1-3 light, 4-5 medium, 6 heavy) -> one less Mv malus",
+        6 : "meteorite sword",
+        7 : "meteorite sword",
+        8 : "meteorite sword",
+        9 : "meteorite sword",
+        10 : "meteorite shield",
+        11 : "meteorite ingot (to be crafted in any weapon type)",
+        12 : "meteorite polearm (lance, haleberd, spear)",
+        13 : "meteorite staff (can cast spells, +1 Will, bonus spell based on the ember type)"
+    },
+    "magic_consumable" : {
+        0 : "Flashbang",
+        1 : "Smoke Bomb",
+        2 : "Firebombs",
+        3 : "Alluring Skull",
+        4 : "Holy Water",
+        5 : "Pine Resin (1-2 charcoal, 3-4 rotten, 5-6 gold)",
+        6 : "Prism Stone",
+        7 : "Homeward Bone (same as spell)",
+        8 : "Blossom (1-2 green, 3-4 purple moss, 5-6 blooming purple moss)",
+        9 : "Purging Stone",
+        10 : "Divine Blessing",
+        11 : "Transient Curse",
+        12 : "Lloyd Talisman",
+        13 : "Love Potion (charm spell)",
+        14 : "Sleep Gas Bomb (sleep spell)",
+        15 : "Fire Arrows (3d6)",
+        16 : "Smoke Arrows (3d6)",
+        17 : "Dark Arrows (3d6)",
+        18 : "Enchanted Star Arrows (3d6)",
+        19 : "Moonchild Dust (use to make bodies and object invisible in a 3 by 3 radius)",
+        20 : "Sanctified Fiery Opal: User can 'drink' the opal and regain 1 W.",
+        21 : "Ioun Red Stone: For 24h, a small fiery stone shines atop the head of the user (act as a torch), the user always knows north and has +1 Fa."
+    },
+    "demonic_items": { // current last = 57, // ideas for replenishing this: https://docs.google.com/spreadsheets/d/1x5GffgPYIvmj58ROZzKevnX4m9P2zo3yTKnBVdML7-8/edit#gid=2102794289
+// Armors
+        3: "Bloodsoaked Armor: Armor made of bandage containing the blood of many innocent. | Light armor. Causes Fear to opponents. Reaction roll malus -1 with all humanoids. Attracts undead. Fa is set to 0.",
+        4: "Errant Sorcerer Armor: Weird and enchanted armor made of many layer of clothes with a human-faced helmet made of thick stones and gemstones eyes. | Light armor. Count as having an helmet. User is blind (and still stays blind for 1 hour after taking off the helmet). Gives +1 to all spellcasting roll, count as a memory stone (roll a spell at random). -1 to resisting magic.",
+        5: "Fire Knight Armor: A profaned flame related ritual armor with heavy and restrictive pieces. | Heavy armor. As long as the fire is lit on the head, the bearer has +1S. However, on a strike roll of 6 against the user, he suffers an extra 1W (fire). ",
+        6: "Watcherskin Armor:  An armor made of the flesh or skin of ancient forgotten and now dead Watchers. | Light armor. +1W. Causes Terror to opponents. Anyone following, defending or being in service to Watchers will have a -2 to their Reaction roll. Watchers related guardians (such as griffons) will become Berserk upon seeing this armor. Fa is set to 0.",
+        7: "Dragon Armor: An armor made of scales taken from living and tortured dragon. | Heavy armor, count as medium armor. Cannot be killed by fire. Every time a treasure, gift, etc. is mentionned, the user must make a Courage test or be forced to try and get it (e.g. a treasure is protected by strong creatures, he will try to get that treasure no matter what). Fa is set to 0.",
+        8: "Darkwraith Armor: A gold-lined bone and metal armor of unknown origin with a skull-faced mask. | Medium armor. Memory Stone (Finger of Death). The left hand can be used to either act as a red-glowing force-shield (normal shield) or a weapon (off-hand weapon). When using the weapon, on a strike of 6, any humanoid target is instantly slain. Fa is set to 0.",
+        54 : "Rock Armor: An ancient now forgotten stone was used to make this extremely heavy armor. | Heavy Armor. Requires 5S and 4T to wear. +1T. Causes Hatred(Dragon) and must make a Courage test not to engage any Dragon or dragon-related creatures (entering a berserk state).",
+        55 : "Thorns Armor: A black fire-scorched armor wielded with hundreds of spikes all over it. | Medium Armor. Each successful strikes the user receives, it can strike back at the target with a S2 hit. Fa is set to 0.",
+        56 : "Shadow Armor: Ancient enchanted fabric of long-forgotten assassins was used to weave this armor. | Light Armor. No movement penalty. Count as Ancient Stars Cloak. The user cannot speak nor sleep.",
+        52 : "Antiquated Dress: An ancient dress given by watchers to faithful maiden-sorceresses. | +1 Will each combat just for spells, -1 to resisting magic, cannot resist compel/transfix/command.",
+// Weapons
+        9: "Scorpion's Stinger: A curved dagger made of the sting of many ancient giant scorpions. | On a strike roll of 6, the target suffers paralysis. On a strike roll of 1, the user suffers paralysis.",
+        10: "Occult Sacrificial Dagger: A dagger created for dark purposes outside of the watchers reach. | Strikes against courage instead of T vs humanoids; doesn't work vs monsters. The user have -1 Courage. Fa is set to 0.",
+        11: "Aivuder, the Blood Knife: A blade made from an ancient forgotten creature's bone. It seems to drink any blood put on it. | On a strike roll of 6, it deals 2W instead of one. The user must drink blood every day. The user loses more blood (at the end of each combat where the user receive at least 1 W of damage, roll a d6; on a 5+, the user loses another W).",
+        12: "Rotten Crystal Sword: An unholy mix between different energies and embers that created a sword drawn from the earth but noxious to it. | +1S, poison 4+. The user is always diseased (when he treats one, a new one takes over).",
+        13: "Sword of Fire & Ice: A balance of ancient energies bound together in a tense relationship that creates the ire of the very pillars of the Heavens. | The user can spend a Wi to create a beam of R12 S4 as a range attack for as long as it wishes. It hits with both fire and ice energies. The user is wounded on a +1 vs both Fire and Ice and can't resist (Fate) fire and ice spells.",
+        14: "(someone's) Executioner Blade: A rusted yet sharp and broken executioner's sword with iron briars all over it. | The blade automatically causes 2W on a prone target. The user can use a S5 R6 range weapon where he throws the blade towards the target and it spins in the target. The user can't sleep because of the souls trapped inside the sword on a 6+. He also attracts uncorporeal undeads.",
+        15: "Blasphemous Blade: A black blade full of rotten and desecrated flesh giving it a blood-red hue. | Two-Handed fire blade. At the end of a combat, if the user has slain an enemy, the user regain 1 W. The user can use the blade as a range attack R12 S4 beam with a 2 Mv wide that has the set ablaze rule. The blade has countless heroes remains upon its surface, making it impossible to use Might and the user has -1 C. Fa is set to 0.",
+        16: "Godslaying Great Blade: An ancient blade of unknown material and origin that radiates with an angered and devious feeling. | +2 S, +1W damage and Hatred vs Watchers priests, followers, creatures, etc. The user cannot enter temples, cannot use Autarchs related convenants/objects and cannot drink potions/consumables related to Autarchs.",
+        17: "Magma Scimitar: A weird tooth-like curved blade with a lava-coating. | +1 S fire, on a 6+, all characters within 2 Mv receives a S3 fire hit. The user is slow and clumsy (-1 Mv, -1 Jump, Climb, etc.).",
+        18: "Black Marsh Rapier: A weird black rapier reeking of ancient atrocities and evil. | Venom, Disease Strike, can't be diseased. Fa set to 0.",
+        19: "Winged Greataxe: A great axe with red iron wings as the axe blades. | The user can jumped further and higher at +2. The user can make jump-attacks with gives him a +2 bonus to S. The user cannot attack creatures with feather or birds unless Courage test.",
+        20: "Flamemace of (someone, probably a watcher): ??? | ???",
+        21: "Voidstars Flail: A strange flail made with stars-like flail heads. | +1A. Flail that serves as a memory stone and a +1 Wi. Fa set to 0, cannot resist magic.",
+        22: "Devourer's Morning Star: ??? | ???",
+        23: "Death Ritual Spear: A long spear made of black metal and bones that's twirled and twisted. | The user can call upon the various souls killed by the spear. The more it kills, the bigger the attack. it starts as a S1d3 with a zone of 1d3 by 1d3. The user cannot see ethreal spirits and attack undeads at -1. Fa set to 0.",
+        24: "Great Standard of (some watcher):  A great standard with gold and silver lining depicting a fierce but horrendous lion. | Act as both a banner and a magical halberd. User has +1 C. The user always wants to charge first in battle and lead from the front. He also cannot runs away.",
+        25: "Thorned Whip: A whip full of various thorns of unknown plant origin that never seems to die and move on their own. | On a strike roll of 6, the target suffers an extra S2 hit (constriction) and if humanoid or smaller can be moved 1 Mv in any direction. The user cannot attack plant related monsters unless Courage test.",
+        26: "Serpent Bow: A bow made of green and brown twisted stone serpents. | A S3 bow that shoots Poison(4+) arrows. The user has now poison in his veins: the user is always wounded as if the opponent had Poison(4+).",
+// Shield
+        27 : "Golden Greatshield: A great golden shield made of vines and golden lining. | If you pass your Fa vs magic spell, you return a light bolt at the target for damage (S4). The user cannot use Fa vs physical effect and has -1 to Fa rolls.",
+        28 : "Black Iron Greatshield: A huge black shield with a strange and ancient white sigil on it. | +2 T instead of +1 from this shield. The user has -1 Mv. The user must wear heavy armor at all time and must use a sword and helmet.",
+        29 : "Bloodshield: A red crimson shield with metal weird spirals and shapes. | +2 on Fa against non-physical non-magical attack (poison, curse, etc.). The shield must be fed blood every couple of days (either the user W or other creatures).",
+        31 : "Spider Shield: A round orange shield with a huge spider etched on it. | User can't be affected by poison and venom. User has -1 T.",
+        53 : "Black Knight Shield (NOT DEMONIC): The great shield of black errant knights of unknown origin. | +2 to all Fa vs fire, grant the same hatred (fluffwise and mechanically) than them. +1 to all Fa save. Sometimes might hallucinate things related to the original bearer. Each adventure, 1/6 chance of becoming wraith-touched.",
+        2: "Silver Knight Shield (NOT DEMONIC): The great shield of black errant knights of unknown origin. | +2 to all Fa vs lightning, grant the same hatred (fluffwise and mechanically) than them. +1 to all Fa save. Sometimes might hallucinate things related to the original bearer. Each adventure, 1/6 chance of becoming wraith-touched.",
+// Rings
+        30 : "Ring of Wishes: ??? | ??? ",
+        33 : "Wolf Ring: ??? | The user cannot be involuntarily be put Prone or suffer the Trapped condition.",
+        34 : "Ring of Fog: ??? | When wearing this, the user is transparent and like he's wearing an Ancient Stars Cloak. Also, he gains the Ethereal and Wraith-Touched special rule.",
+        35 : "Fiery Opal Ring: A ring with 3 fire opal that shines and hue like liquid. | The user can 'drink' an opal to regain 1W. All next strike roll vs him will be at +1.",
+        36 : "Ring of Favor and Protection: A golden-coppery ring magnificient in its etching representing the best beauty of the Autarch. | +1W, +1A, +1Mv, can't be unequipped or it breaks. The user cannot resist the Compel, Transfix or Command spell.",
+        37 : "Ring of Water Walking: A blue ring with many pearls on it with no inscriptions. | The user can walk on water as if solid ground; if he falls on water, he will fall as if on solid ground. The user is afraid of fire (Courage test).",
+        38 : "Leo's Ring: A ring of the knights of Leo, said to be fierce duelist and treacherous killers. | If you win the melee roll, you make an extra attack. When outnumbered, you have -1A.",
+        39 : "Slumbering Dragoncrest Ring: A small sleeping drake is intertwined with himself forming a ring. | The user makes no sound and cannot speak.",
+        40 : "Ring of Telekinesis: A clean dark ring with a small black aura around it. | Act as a memory stone for the Telekinesis spell. If the user rolls a 1 with the ring spell, he suffers a S4 hit.",
+        41 : "Cloranthy Ring: A ring showcasing a beautiful silver flower on top of it. | +1 W, -1F.",
+        42 : "Ring of Jumping and Striding: A ring depicting many feathers of various colours. | +1 Mv, Jump, Climb. -1T.",
+        43 : "Speckled Stoneplate Ring: A massive ring finely decorated with a huge gem of various origins in the center. Stoneplates are an ancient symbols of knights. | +2 Fa save to all magical and elemental damage (not effects).",
+        44 : "Ring of Sacrifice: A rare ring gifted to the truest adherant of Covenants. | When the user dies, the ring breaks and the user comes back to life with a curse.",
+        45 : "Bellowing Dragoncrest Ring: ??? | +1 to all spell casting rolls. -1 to all resisting spells roll.",
+        46 : "Ring of the Evil Eye: A dark and grey ring with a black eyed gem in the center. According to legends, this ring contains the spirit of the evil eye, a dark beast which fought against Autarchs long ago. | When the user slays a creature, the user regains a W. When a creature is slain within 3 Mv of the user, it suffers a S2 hit.",
+        47 : "Dark Wood Grain Ring: A fine ring of dark wood that grants agility to the user. | When figthing one on one, the user cannot be trapped and has +1T. The user must accept all duels and must try to issue Heroic Challenge if able.",
+        48 : "Havel's Ring: A weird and unknown stone transformed into a ring. | Ignore all armor Mv penalty. The user must try and fight every dragon or drake-like creatures it sees.",
+        49 : "Blue Tearstone Ring: A ring with a blue gem said to be the tear of an unknown Autarch. | As long as the user is not at maximum W, it has +1T.",
+        50 : "Red Tearstone Ring: A ring with a blue gem said to be the tear of an unknown Autarch. | As long as the user is not at maximum W, it has +1A.",
+        51 : "Orange Charred Ring: A dark ring with a beautiful orange gem ressembling the hue of fire or lava. | The user can walk on fire and lava. For each turn in water, the user suffers a S2 hit.",
+// Others
+        0: "Magic Golem Book (1-3 clay, 4-5 stone, 6 iron): Requires human sacrifice to power up. Require a certain quantity of the brute matter. Requires Hollow Ember.",
+        1: "Deck of Magical Tarot: Each card is a random effect: https://dungeons.fandom.com/wiki/SRD:Deck_of_Many_Things.",
+        32 : "Belt of Giant Strength: Said to have been sown from the faces of many giants and powered by the heart and blood. | The user S is set at 8 (cannot be modified further). The user has -1 C, -1 to all reaction rolls and -1F.",
+    },
+    "demonic_pact_effect" : {
+        0 : "S +2" + demonic_shrine_effect_desc,
+        1 : "T +2" + demonic_shrine_effect_desc,
+        2 : "W +2" + demonic_shrine_effect_desc,
+        3 : "A +2" + demonic_shrine_effect_desc,
+        4 : "roll on the special traits table of chargen" + demonic_shrine_effect_desc,
+        5 : "Mv +2" + demonic_shrine_effect_desc,
+        6 : "weapon boost (new ability linked with the initial ability/weapon)" + demonic_shrine_effect_desc,
+        7 : "spell abilities on the weapon itself (some passive sorcery/pyromancy based on the demonic item type)" + demonic_shrine_effect_desc,
+        8 : "spellcasting abilities (+1 Wi, serves as a memory stone for a spell)" + demonic_shrine_effect_desc,
+        9 : "roll twice" + demonic_shrine_effect_desc,
+    },
+    "demonic_pact_req" : {
+        0 : "pride",
+        1 : "covetousness/greed",
+        2 : "lust",
+        3 : "anger",
+        4 : "gluttony",
+        5 : "envy",
+        6 : "sloth",
+        7 : "false worship",
+        8 : "require to be in a demonic covenant (any)",
+        9 : "possession",
+    },
+    "chest_description": { 
+        0: "A chest inscribed with many layers of scripts in an ancient language.",
+        1: "A broken chest made of unknown wood that's been looted in the past and refilled.",
+        2: "A hidden small chest behind bags and casks.",
+        3: "A metal decorated chest with Watchers protection inscribed on it.",
+        4: "A decorated jar with scenes of an ancient battle between forces of nature and the watchers, depicting those as vanquisher.",
+        5: "A huge chest filled with mundane items and clothes.",
+        6: "An urn filled with ashes.",
+        7: "Decorated barrels",
+        8: "A stack of drapes, clothings and furniture arranged in a basket of sorts",
+        9: "A leather-bound chest made of a monster skin.",
+        10: "A leather-bound chest made of human skin.",
+        11: "A chest made of polished stones.",
+        12: "Loose items on the floor, as if discarded",
+        13: "A wall wooden or metal rack"
+    },
+    "base_equipments": {
+        0 : "torch   1SP",
+        1 : "lantern 25SP",
+        2 : "oil 2SP",
+        3 : "ration  1SP",
+        4 : "rope    1SP",
+        5 : "grapple 5SP",
+        6 : "shackles    15SP",
+        7 : "hunting trap    15SP",
+        8 : "bag of salt/chalk   1SP",
+        9 : "writing equipment and papers    10SP",
+        10 : "crowbar    5SP",
+        11 : "hammer and iron (or wooden) spikes 5SP",
+        12 : "pickaxe    5SP",
+        13 : "chains (20 f)  10SP",
+        14 : "huge lock  10SP",
+        15 : "flask casing with flasks   15SP",
+        16 : "telescope  75SP",
+        17 : "bone whistle   2SP",
+        18 : "engraving tools    5SP",
+        19 : "hand drill 5SP",
+        20 : "hourglass (1 min or 1 hour)    20SP",
+        21 : "bag of tools (small hammer, small scissor, small locksmithing tools, etc.) 10SP",
+        22 : "censer 10SP",
+        23 : "navigation tools (compass and so on)   15SP",
+        24 : "paint (black)  5SP",
+        25: "beeswax    1SP"
+    },
+    "base_armor": {
+        0: "Shield: 50SP, +1T",
+        1: "Light Armor: 50 SP | +1T, -1 Mv | Gambeson, Leather, Special leather armor",
+        2: "Medium Armor: 2 GP | +2T, -2 Mv | Chainmail, Scalemail",
+        3: "Heavy Armor: 2.5 GP | +3T, -2Mv | Chainmail + Shield",
+        4: "Heavy Armor: 10 GP | +3T, -3Mv | Plate Armor",
+        5: "Helmet: 1 GP | When character makes a injury roll, reroll a result of 2 (death), keep the second result (even if it's death). The helmet breaks. "
+    },
+    "base_weapon" : {
+        0: "Improvised weapons: 1 SP | Scythe, Club, etc.",
+        1: "Thrown Weapon: 15 SP | Javelin, Thrown Hatchet, etc.",
+        2: "Crossbow: 75 SP | S4, one shot per turn, R24",
+        3: "Bow: 40 SP | S2, R24",
+        4: "Blowpipe: 10 SP | S2, R12, one shot per turn",
+        5: "One-Handed Martial Weapon: 50 SP | Waraxe, Mace, Sword, etc.",
+        6: "Two-Handed Martial Weapon: 75 SP | Claymore, Pique, Lance, Halberd, etc.",
+    },
+    "curse_item_cost" : {
+        0 : "ritual/time",
+        1 : "many user at the same time",
         2 : "wi",
         3 : "fa",
         4 : "mi",
         5 : "once per game",
         6 : "w",
-        7 : "as long as you wear it (comes with a curse)",
+        7 : "as long as you wear it",
         8 : "busywork (ex: hold in both hand, require concentration or chanting)",
         9 : "blood",
         10 : "water",
-        11 : "ritual",
-        12 : "many user at the same time",
+        11 : "gold"
     },
-    "generic_magic_item_effect" : {
+    "curse_item_effect" : {
+        0 : "chance/discovery",
+        1 : "evasion",
         2 : "invisible",
         3 : "stronger",
         4 : "courage",
@@ -3263,10 +3565,11 @@ const treasure =
         8 : "elemental",
         9 : "magic",
         10 : "knowledge/understanding",
-        11 : "chance/discovery",
-        12 : "evasion",
+        11 : "destroy/break/push (physical)"
     },
-    "generic_magic_item_salt" : {
+    "curse_item_salt" : {
+        0 : "fire",
+        1 : "ice",
         2 : "nature",
         3 : "darkness",
         4 : "light",
@@ -3276,23 +3579,54 @@ const treasure =
         8 : "backlash",
         9 : "humanity",
         10 : "team",
-        11 : "fire",
-        12 : "ice",
+        11 : "fast",
+        12 : "slow"
     },
-    "generic_magic_item_curse" : {
+    "curse_item_curse" : {
+        0: "deals damage to self on a 6",
+        1: "heals damage on the target on 6",
         2 : "eat more (require triple rations)",
         3 : "attract monster (sound, smell, magic)",
         4 : "slowly gives user a real curse",
         5 : "blindness",
         6 : "creates desire (ex: take revenge on the weapons creator enemies)",
-        7 : "draining",
+        7 : "draining (eat up W)",
         8 : "berserker",
         9 : "can't take it off (or extreme damage if you do)",
         10 : "backbiting",
         11 : "summon (darkness, monsters, etc.)",
         12 : "require to replace a limb (magic hand, magic eye, etc.)",
+        13 : "problem within sunlight (-1 to all rolls, feels weak, can't look at it, etc.)",
+        14 : "-1 to all roll vs 1d3 type of creatures"
     },
-    "generic_magic_item_object" : {
+    "curse_item_destroy": {
+        0: "melted in a fiery furnace",
+        1: "melted in a volcano",
+        2: "melted in the fiery heavens",
+        3: "drop it in the abyss",
+        4: "drop it in the pillars of the earth",
+        5: "bury it in the Mountain of Power",
+        6: "bury it inside the skull of a red drake",
+        7: "devoured by cerberus",
+        8: "devoured by an hydra",
+        9: "devoured by a titan",
+        10: "devoured by a dragon",
+        11: "devoured by an Autarch",
+        12: "broken against the gates of the underworld",
+        13: "sliced by Excalibur",
+        14: "smash against the pillars of heaven",
+        15: "smash by the juggernaut of the endless labyrinth",
+        16: "expose it to the sun for 24h while covered in blood",
+        17: "expose it to the truth",
+        18: "sprinkle it with the blood of a dragon",
+        19: "seared by a prime demon (balrog)",
+        20: "sprinkle it with the river styx",
+        21: "sprinkle it with the river of flame",
+        22: "sprinkle it with the primordial waters",
+        23: "sprinkle it with water from the ocean",
+        24: "sprinkle it with blood of leviathan"
+    },
+    "magic_base_item" : {
         2 : "ring",
         3 : "boots",
         4 : "cloaks",
@@ -3305,160 +3639,132 @@ const treasure =
         11 : "banner",
         12 : "gem/stone",
     },
-    "magical_heirlooms" : { // more ideas to refill: https://docs.google.com/spreadsheets/d/18jzyOcctDytnv4V_lZ6fCNzyh0xkEVhIzrYU4zE2pfA/edit#gid=853960712
-        2 : "banner of glorious charge: +2 to A within 12 of this if charge",
-        3 : "banner of the steadfast ox: if no move (or in melee no move), +1 T everyone within 12",
-        4 : "banner of beacon: can produce light, can fight as a spear, in huge battle can transmit message and tactics through signs in the air",
-        5 : "banner of fear: -1C to enemy; if you charge, they automatically must do a morale check",
-        6 : "glory banner: +1C to anyone that sees it; +1A to anyone within 6 Mv",
-        7 : "ring of X protection",
-        8 : "ring of the ambassador: can understand any language (can't speak it), +1 reaction roll",
-        9 : "heroic ring: choose one of the three heroic stats for a game, you have +1",
-        10 : "ring of chance: can reroll Fa",
-        11 : "ring of freefall",
-        12 : "ring of sustenance",
+    "magic_item_lore": {
+        0: "item_lore_legends", // what do legends say of it?
+        1: "item_lore_great_deed", // what great deed was it part of?
+        2: "item_lore_when", // when was it created?
+        3: "item_lore_where", // where was it created?
+        4: "item_lore_why", // why was it created?
+        5: "item_lore_how", // how was it lost by its maker or user?
     },
-    "magic_relics" : { // ideas for replenishing this: https://docs.google.com/spreadsheets/d/1x5GffgPYIvmj58ROZzKevnX4m9P2zo3yTKnBVdML7-8/edit#gid=2102794289
-        2 : "holy avenger",
-        3 : "sun blade",
-        4 : "staff of the magi",
-        5 : "robe of the archmagi",
-        6 : "belt of giant strength",
-        7 : "ring of invisibility",
-        8 : "adamantine armor",
-        9 : "immovable rod",
-        10 : "ring of wishes",
-        11 : "vorpal blade",
-        12 : "deck of tarot",
+    "item_lore_legends": { // what do legends say of it?
+        0: "",
     },
-    "magic_potions" : {
-        2 : "Animal Control",
-        3 : "Clairaudience",
-        4 : "Climbing",
-        5 : "Diminution",
-        6 : "Healing",
-        7 : "X resistance",
-        8 : "Healing",
-        9 : "Giant strength",
-        10 : "Heroism (+1 to all heroic stats until used)",
-        11 : "Invisibility",
-        12 : "X-ray",
+    "item_lore_great_deed" : { // what great deed was it part of?
+
     },
-    "meteorite_equipment" : {
-        2 : "meteorite dagger/small/thrown",
-        3 : "meteorite blunt",
-        4 : "meteorite bow",
-        5 : "meteorite chainmail",
-        6 : "meteorite sword",
-        7 : "meteorite sword",
-        8 : "meteorite sword",
-        9 : "meteorite bow",
-        10 : "meteorite shield",
-        11 : "meteorite polearm",
-        12 : "meteorite axe",
+    "item_lore_when" : { // when was it created?
+
     },
-    "coins": {}, // when i roll coins, it must have some description: is it stamped with a ruler face? how does it look? etc.
-    "magic_consumable" : {
-        2 : "Firebombs",
-        3 : "Alluring Skull",
-        4 : "Holy Water",
-        5 : "Pine Resin (1-2 charcoal, 3-4 rotten, 5-6 gold)",
-        6 : "Prism Stone",
-        7 : "Homeward Bone (same as spell)",
-        8 : "Blossom (1-2 green, 3-4 purple moss, 5-6 blooming purple moss)",
-        9 : "Purging Stone",
-        10 : "Divine Blessing",
-        11 : "Transient Curse",
-        12 : "Lloyd Talisman",
+    "item_lore_where": { // where was it created?
+ 
     },
-    "magic_shields" : {
-        2 : "Effigy Shield (Small)  Automatically passes Fa save vs ligthning",
-        3 : "Silver Knight Shield (Standard)    magic save +1 Fa, half damage from lightning",
-        4 : "Black Knight Shield (Standard) magic save +1 Fa, half damage from fire",
-        5 : "Pierce Shield (Standard)   Can be used as a thrust weapon, +1 F",
-        6 : "Crest Shield (Standard)    +2 on Fa against magic",
-        7 : "Grass Crest Shield (Standard)  In combat, you count as having an extra A for melee roll",
-        8 : "Spider Shield (Standard)   +2 on Fa against poison",
-        9 : "Bloodshield (Standard) +1 on Fa against non-physical non-magical attack (poison, curse, etc.)",
-        10 : "Icon Shield (Standard)    User naturally regenerate 1 W per day",
-        11 : "Black Iron Greatshield (Greatshield) +2 T instead of +1 from this shield",
-        12 : "Golden Greatshield If you pass your Fa vs magic spell, you return a light bolt at the target for damage",
+    "item_lore_why": { // why was it created?
+
     },
-    "magic_rings" : {
-        2 : "Wolf Ring (can't be put prone; don't suffer from the Trapped condition in combat)",
-        3 : "Ring of Fog (wearer transparent)",
-        4 : "Flask Ring (1d6 charge per adventure, each charge heal one W)",
-        5 : "Ioun Stone (shine like a fire atop the user heard (as a torch), user always knows north, +1 Fa)",
-        6 : "Ring of Jumping and Striding (+1 Mv, Jump, Climb)",
-        7 : "Ring of Water Walking (can walk on water as if solid ground; if he falls on water, he will fall as if on solid ground)",
-        8 : "Leo's ring (if you win the melee roll, you make an extra attack)",
-        9 : "Slumbering Dragoncrest Ring (wearer makes no sound)",
-        10 : "Covetous Gold Serpent Ring (everything cost 10% less)",
-        11 : "Cloranthy Ring (+1 W)",
-        12 : "Rope of Climbing",
-    },
-    "magic_rare_rings" : {
-        2 : "Ring of Favor and Protection (+1W, +1A, +1Mv, can't be unequipped or it breaks)",
-        3 : "Speckled Stoneplate Ring (half damage from all magical and elemental source)",
-        4 : "Ring of Sacrifice (when you die, the ring breaks and you come back to life)",
-        5 : "Bellowing Dragoncrest Ring (+1 Wi to use spells)",
-        6 : "Ring of the Evil Eye (on a 6 for a wound, you regain a W)",
-        7 : "Dark Wood Grain Ring (+1 Fa vs physical attack each combat)",
-        8 : "Havel's Ring (ignore armor Mv penalty)",
-        9 : "Blue Tearstone Ring (if you are not at maximum W, you have +1 T)",
-        10 : "Red Tearstone Ring (if you are not at maximum W, you have +1A)",
-        11 : "Orange Charred Ring (can walk on fire or lava)",
-        12 : "Ring of Telekinesis (can lift object of 30 lbs or less and move them at a pace of 1 Feet per 2 sec; can't be used in combat)",
-    },
-    "magic_item_checklist": {
-        0: "If you want to integrate any magical items, either from D&D, Dark Souls or your own imagination, it is highly suggested to thing about three mechanical factors:\r\nPrerequisite\r\nA upside for a downside\r\nMechanical niche or lore\r\nThen, it is suggested to answer to those lore questions to integrate it properly:\r\nWhat do legends say of it ?\r\nWhat great deed was it part of ?\r\nWhen was it created ?\r\nWho created it ?\r\nWhy was it created ?\r\nHow was it lost by its maker or user ?"
+    "item_lore_how": { // how was it lost by its maker or user?
+
     }
 }
+
 /*
-MUST DO:
-- Add a system of descriptions for treasure (where it is, the 'chest', the overall mundane item with the real loot, etc.)
-    The chest is important, it can be inscribed, it can be a special locker, it can be broken down and pre-looted, etc. 
-- Switch up the money one for instead a description of items: in dungeons, you don't find GP or SP, you find objects (crowns, jewels, etc.) WITH AN HISTORY
-    Jewels
-    Special weapon/armor (aka engraved, with decoration, etc.)
-    Gold coins with a special face on it
-
-
-    Add more potions/bombs based on spells (charm = love potion, sleep = sleep gas potion)
-
-    "Surtling core" to activate magical gates like in Valheim
-
-
-Moonlight greatsword
-Embers effect and paths
-
-BOWS AND ARROWS
-
-Magic golem books (requires brute matter, book, magic gem, ember)
-
-Add some magical spears, axes, swords, etc. from Elden Ring and DS1 with cursed effects added (and marked them as cursed weapons) including their fluff and all
-
-https://www.reddit.com/r/BehindTheTables/comments/43wsio/books_of_all_sorts/
-
-
-Magic items can give heroic actions. See below:
-- 
-
+TODO:
+- Add history generator for heirlooms (so that two heirlooms of the same type still appear different)
+- Finalise ember paths
 
 */
 
 const spells = 
 {
-
+    "rules_and_varia": {
+        0: "Resisting a spell: For each Will spent, roll a D6. The result must beat the spell dice result.",
+        1: "Casting a spell: Spend as many Wi as you want. Roll as many dice as you spent Wi. If you have at least one dice that's equal or above the casting cost of the spell, the spell is casted. If a result of the dice is 6, you cannot cast this spell again until you get a Downtime. It's only possible to have one concentration spell working at once. Unless noted otherwise, the target must be visible to the user.",
+        2: "Spells template: 'Spell Name ([target number to cast]+ | duration): Description | Channelled effect description",
+        3: "Spells category: Light are spells of the ancient humans, given to them as part of ancient hymns and pratices from Elohim. Sorcery is the dragon magic given to man by them as part of their pact with Autarchs. Pyromancy is the primordial control of energy associated with the first living creatures and the various spirits.",
+        4: "Knowing spells: Spells are generally known through items. Some stronger and unique items like magic staves will have many spells ingraved in them. Most generally, it will be with Memeory Stones each containing one spell."
+    },
+    "light": {
+        0: "Light (2+ | Concentration): Illuminates 12 Mv around the caster. | Any target shooting within 6 Mv of the user can only hit on a 6+.",
+        1: "Healing Healing (2+ | Instant): The hands of the user can be used to heal a single W or remove a single disease from a target. When doing so, the user loses its Will point for the adventure. | Also brings back the target to consciousness.",
+        2: "Unveil Evil (2+ | Concentration): Create a red orb (alike to the sun) that flies towards the location of the nearest evil, demonic or cursed object/person. | Nil ",
+        3: "Sunlight Blade (4+ | Instant): For a single turn, the blade of the user is imbued with sunlight. Creates light 6 Mv around the target. The blade is considered magical, dispels magical protection on any successful strikes, and successful strikes inflicts +1W on evil and chaotic creatures. | The blade always wound on at least a 4+.",
+        4: "Banishment (4+ | Instant): Target spirit or undead suffers a wound. | Target suffers D3 wounds.",
+        5: "Fortify Spirit (3+ | Concentration): Target rolls an extra dice for resisting magic. | Target adds +1 to his highest dice rolled for resisting magic.",
+        6: "Refreshing Song (2+ | Instant): Target recovers one Might, Will or Fate points. | Target recovers D3 instead of one. ",
+        7: "Hold Portal (2+ | Concentration): Target door (including magical doors and portals) is kept in its current position (closed or open). It's possible for other spellcasters to resist this spell 'on behalf' of the target door. | Nil. ",
+        8: "Protection (3+ | Concentration): The target gains +1 Toughness. | +D3.",
+        9: "Tears of Denial (6+ | Concentration): The target, when falling to 0W, gets back 1 W instead of getting injured. | 2 W instead of 1",
+        10: "Magic Shield (4+ | Concentration): The target with a shield can use Shielding at +1. | The target with a shield has +1 T. ",
+        11: "Soul Appeasement (2+ | Instant): The target D3 non-hero undead are destroyed. | 1d6 + 1",
+        12: "Replenishment: (2+ | Concentration): The target heal 1W every 8 hours. | Nil",
+        13: "Magic Barrier (3+ | Concentration): The target has an extra d6 for resisting spells. | The target and all allies within 3 Mv of the target. ",
+        14: "Seek Guidance (2+ | Concentration): The user can see ghosts of previous people, emotions, thoughts, message graven now dispersed. | Nil.",
+        15: "Homeward (2+ | Concentration): The user always know the direction to home, and you travel seemingly faster and with less hurdle when going home. | Nil.",
+        16: "Vow of Silence (4+ | Concentration) : No sound or spell within 6 Mv of the user | 12 Mv", 
+        17: "Atonement (3+ | Concentration): All creatures within 12 Mv of the user must make a Courage test when deciding to shoot or attack in melee. If they fail, they must target the user. Intelligent creatures have +1 to that roll. | The creatures attacking the user that are affected have -1 to their rolls.",
+        18: "Light Veil (3+ | Concentration): The target has +1 to all rolls against disease, curse, poison. | +2",
+        19: "Briars of Sin (2+ | Instant): The user must sacrifice a certain number of a W. All creatures around 6 Mv suffers a number of S4 equal to the number of W sacrified that way. | S5 instead.",
+        20: "Bloodflame Blade (2+ | Concentration): The user must sacrifice a certain number of a W. For each W sacrificed that way, the user's weapon grants him +1A, +1F and +1S. | On a hit of 6, the user regain 1 W with the weapon.",
+    },
+    "sorcery": {
+        0: "Black Dart (3+ | Instant): Target takes a S9 hit. | Wounding hits causes D3 wounds.",
+        1: "Chill Soul (4+ | Instant): Target suffers a wound. | All models with 6 Mv of the target take a S5 hit.",
+        2: "Command/Compel (3+ | Instant): The target move up to half its maximum move distance in a direction and is then immobilised for the turn. | Target reduces Fight and Attack value by 1.",
+        3: "Curse (5+ | Instant): The target loses a Fate point. If it has none, it suffers a curse. | The target suffers a curse.",
+        4: "Drain Courage (4+ | Instant): The target has -1 Courage for the rest of the battle. | The target have -D3 courage for the rest of the battle.",
+        5: "Immobolise/Transfix (3+ | Concentration): The target cannot move, shoot or make strikes. Also, halves Fight and Attack values. | Fight and Attack values are reduced to 1.",
+        6: "Panick Steed (2+ | Instant): The target mount runs away (removed from play) and the target is thrown. | All characters within 3 Mv of the target are affected.",
+        7: "Sap Will (3+ | Instant): Target loses D3 Will points. | Target loses 2D3 Will points. ",
+        8: "Paralyse (4+ | Concentration): The target is knocked prone and cannot do anything as per immobilise. | At the end of each turn, the target suffers a S5 hit.",
+        9: "Shroud of Shadow (3+ | Concentration): The target is considered invisible (can't be targetted by spells, shoot). Can't be charged unless a Courage test is passed. | In melee, the characters figthing the user halves their Fight value.",
+        10: "Wither (2+ | Concentration): The target has -1 S. | The target has -1 S and -1 T.",
+        11: "Instill Fear (5+ | Concentration): The target must make a Courage test as per the Terror effect. | The target and all opponents within 3 Mv.",
+        12: "Telekinesis (5+ | Concentration): A target object of 30 (for each Will dice success) pounds or less can be moved around at 3 Mv per turn (10 sec). | Possible to do it with living creatures.",
+        13: "Finger of Death (4+ | Concentration): A target within 3 Mv is paralysed, lifted in the air (about 6 feet) and loses 1 W each turn. | The target suffers 2 W each turn.",
+        14: "Astral Projection (2+ | Concentration): The user falls into a state of coma. He can then travel his mind and soul (but not body) to great distances to see and hear what is happening. The precision of the travel and what is being heard depends on the information known on that location, the distance, and the number of dice sucess. | Nil ",
+        15: "Telepathy (2+ | Concentration): The user can speak directly in the mind of the target. | The user can use spells mentally against the target without seeing him.",
+        16: "Magical Sigil (2+ | Instant): For an hour, a 2 by 2 Mv sigil is written on the ground and grants +1 to all casting rolls. | Nil. ",
+        17: "Death Cloud (4+ | Concentration): A fog of 3 by 3 Mv rise up. Anyone in it suffers a S5 hit each turn. | 6 by 6 Mv. ",
+        18: "Hidden Soul (2+ | Concentration): The user cannot be seen by magical means, cannot be the target of mental spells, etc. | Receives a +1 to Resist ",
+        19: "Control Undead (4+ | Concentration): Target non-hero undead becomes under the control of the user. | D3+1 target undeads. ",
+        20: "Soul Sword (3+ | Instant): Has to be used in the Fight phase. The user creates a magical soul blade and perform a melee attack with it. The sword attack with the following profile: S5, F5, A3.",
+        21: "Eternal Darkness (5+ | Concentration): The user creates a 3 by 3 Mv void within 12 mv of the user that absorbs all passing spells. | 6 by 6 Mv.",
+        22: "Focus Soul (3+ | Concentration): The user projects a beam of 1 mv wide 12 mv long that deals a S4 hit every turn on everyone it touches. | S6",
+        23: "Magic Weapon (4+ | Concentration): Imbue the weapon with magic. Can be used as a projectile to throw magic disk (S3) or hit in melee with +1 magic S.",
+        24: "Dark Weapon (3+ | Concentration): Imbue the weapon with darkness. Deals 2 W.",
+        25: "Dead Again (5+ | Instant): All corpses within a 6 by 6 Mv zone combust violently into dark flames, dealing a S5 black flame hit to targets within 3 Mv of the corpses. | 4 by 4 Mv explosion, S6 hit.",
+        26: "Whispers of Despair (3+ | Concentration): A slow moving skulls float around the user and lower T of all targets within 3 Mv.",
+        27: "Numbness (2+ | Concentration) : The user has +2 T and +1 to Resist magic, but is deaf and blind. | The user ignores the first W he receives per combat turn.",
+        28: "Scraps of Life (5+ | Instant): The target suffers a SX hit, where X is the number of corpses in a zone 6 mv around it. | 12 mv.",
+    },
+    "pyromancy": {
+        0: "Fury (3+ | Concentration): The target automatically pass any Courage tests they are required to make. | Each time a target suffers a W, it can freely roll a Fate that works on 6+.",
+        1: "Wrath (4+ | Instant): A small explosion around the user (6 Mv) knocks prone everyone. | All targets suffer a S2 hit.",
+        2: "Bladeswrath (4+ | Instant): For one Fight phase, the target melee attacks are resolved at S6. | Attacks are resolved at S6 + D3. ",
+        3: "Call Winds (3+ | Instant): A strong wind pushes forward. The target is pushed back D6 Mv away. | The target is blown 2D6 away.",
+        4: "Flameburst (4+ | Instant): Target suffers a S6 hit. | Target is also affected by Set Ablaze.",
+        5: "Shatter (4+ | Instant): Choose a single object or piece of non-magical equipment a character has and that is visible. This object is broken. | The target suffers an extra S6 hit.",
+        6: "Growth of Plants (2+ | Concentration): Plants and vines in an area of 12 by 12 Mv becomes bigger and stronger and obeys the user. The zone is considered dangerous terrain. | The plants can attack with a profile of F2, S4, A3. They can only use 'Rend' as per the monster brutal attack rules. ",
+        7: "Control Weather (6+ | Instant): The local (some miles) weather can be changed by the user. | Nil ",
+        8: "Sleeping Fog (4+ | Concentration): A fog of 3 by 3 Mv rise up. Anyone in it with 3 or less unmodified toughness falls asleep. This becomes more difficult with each turn in the fog. | 6 by 6 Mv. ",
+        9: "Familiar's Prank (2+ | Instant): The targetted zone receives false sounds and/or light, distracting people. | Any creatures within 3 Mv of the sound has -1 to their F for the next Fight phase. ",
+        10: "Water Veil (2+ | Concentration) : The user is covered in a small layer water. The user can survive longer in water and fire. It cannot be affected by Set Ablaze. | The user always ignore the first W per turn of fire damage. ",
+        11: "Hush: No sound is made",
+        12: "Fall Control: No damage from falling",
+        13: "Flame's Strength (boost S)",
+        14: "Combustion: Fire damage in melee ",
+        15: "Iron Flesh: Set mv to 1, add T to 1d6 + 1",
+        16: "Power Within: Set 1 to W, gets bonus to S and A",
+        17: "Firestorm: deals massive fire damage all around, 6+ to cast",
+        18: "Chaos Fireball: deals fire damage in a small zone, and then some fire/lava leftover makes it dangerous terrain",
+        19: "Flame Weapon: flame weapon (put sets ablaze)",
+        20: "Cold Weapon: cold weapon (slow mv of the target to 1 the turn after it gets hit)",
+        21: "Lightning Weapon (+2 A and F for melee roll)", 
+        22: "Lightning Arrow (summon bow and arrow of lightning with S5)",
+        23: "Gravity Comet (projectiles that pull towards the caster)",
+        24: "Poison Cloud"
+    },
 }
-/* 
-All LOTR spells
-Check out the spells I added to some monsters like the lich for D&D spells extra
-Souslike spells
-Phantasmal Force
-Hold Portal
-*/
-
 
 const monsters = 
 {
@@ -3477,19 +3783,19 @@ const monsters =
     "special_tags": {
         0: "Spellcaster: Can expand Wi to cast spells. Each spell has an target number to work (for example, 2+). It's possible to throw multiple dice to cast the same spell, taking the best result. 1s are always refunded and 6s are always success.", 
         1: "Horse Lord: Can use Fa to prevent wound on the mount the character is riding.",
-        2: "Fear: When in melee against a non-Fear non-Terror opponent, the opponent must make a morale check before the melee roll.",
-        3: "Terror: When in melee against a non-Terror opponent, the opponent must make a morale check before the melee roll.",
+        2: "Fear: When a target wants to charge the user, it must pass a Courage test. If it fails, it cannot charge the user. When a user charges a target, the target must make a Courage test. If it fails, it has -1 to all roll. Works only on non-fear and non-terror targets.",
+        3: "Terror: When a target wants to charge the user, it must pass a Courage test. If it fails, it cannot charge the user. When a user charges a target, the target must make a Courage test. If it fails, it has -1 to all roll. Works only on non-terror targets.",
         4: "Migthy Hero: May expand one Might point each combat without reducing their own store of Might",
         5: "Bodyguard: As long as the model they are protecting is alive, the models with this rule will automatically pass Morale test.",
         6: "Spectral Walk: Can use a move to pass through solid matter as if difficult terrain, can move over liquid (lava, water) as if it were solid ground.",
         7: "Blades of the Dead: Wound against C instead of T",
         8: "Expert Rider: Reroll Jump, Swim and Throw Rider tests. +1 T while mounted. ",
         9: "Migthy Blow: Each wound dealt in melee is 2 W.",
-        10: "Master Swordsman/Archer: Reroll 1s to-hit. When slay a model, regain a lost Mi.",
+        10: "Master Swordsman/Archer: Reroll 1s melee roll. When slay a model, regain a lost Mi.",
         11: "Woodland Creature: Ignore penalties of wood and forest difficult terrain",
         12: "Monster: Is at least Fear if the model does not have better. Once per melee, instead of attack, it can use brutal power attacks. \na) Rend: make attack vs Strength instead of T; \nb) Hurl: before models back away, choose a target with less S than the monster: throw the target 1d6 Mv in the direction of choice (all target in the line suffer S3 hit and the target is put prone and suffer S6 if there is a hard stop); \nc) Barge: all models in melee back away 3 Mv instead of 1 Mv and then the monster can make another d6 move (including a charge and another fight phase)",
         13: "Throw Stones: If the unit does not move, it can use a shoot attack as per the profile.",
-        14: "Disease Hit: If the unit inflict at least one wound to a target, it must make a T check at the end of combat to see if it starts developping a disease (at random).",
+        14: "Disease Hit: If the unit inflict at least one wound to a target, it must make a T check at the end of combat to see if it starts developping a disease. Roll a d6, on a 6+ it's a real disease, on a 5-, it's just a random exhaustion (-1 to all stats until healed/downtime).",
         15: "Fearless: Is not affected by Fear, Terror or Morale check.",
         16: "Fly: Can move up to 12 Mv, ignore terrain and control zone",
         17: "Monstrous Charge: Get Cavalry charge effect (knock to the ground those with lower strength and throw cavalry auto to the ground and gain extra attack)",
@@ -3520,7 +3826,7 @@ const monsters =
         42: "Preternatural Agility: Cannot be Trapped.",
         43: "Burly: Can fight with two-handed weapon without penalty. Can carry heavy objects without move penalty.",
         44: "Devastating Charge: When charging, target suffers Prone effect on a 5+.",
-        45: "Berserk: Must always charge if able to. Can't control himself and use heroic actions that affect others.",
+        45: "Berserk: Each turn the user must make a Courage test. If he fails, he must always charge if able to, can't control himself and use heroic actions that affect others.",
         46: "Will of Evil: Can see ethereal creatures, invisible creatures and ghost-forms. Each turn it stays in melee, it loses one Will. When it has no more Will, it dies.",
         47: "Ethereal: Can use Wi as Fa.",
         48: "Drain Soul: All wounds by the user causes instant death in melee.",
@@ -3543,15 +3849,29 @@ const monsters =
         65: "Weapon Specialist: Receives bonus based on their weapon. \nPolearms: Receive charges of cavalry at +1A if they didn't move and can attack in pike formation. \nSwords: +1F when dueling. \nTwo-Handed Axes/Swords: +1 S in To-Wound. \nShield: Can use shield formations.",
         66: "Undead: Immune to effects that affect living creatures (e.g. poison). Immune to mind-affecting/reading spells. Make almost no noise (and if without equipment, no noise at all).",
         67: "Rusting: Metal that touches the user (successful hit by the user or on the user) is instantly transformed into rust and becomes unusable.",
-        68: "Backstabbers: Receives +1 on the To-Wound vs trapped and prone targets.",
+        68: "Opportunist: Receives +1 on the To-Wound vs trapped and prone targets.",
         69: "Mutations: Roll 1d8. 1) Demon Soul: Can use one Fa per turn to block attacks. 2) Great Claw: +1A and S. 3) Cloven Hoofs: +2Mv and jump. 4) Tentacle: Reduce target A by 1. 5) Blackblood: When receiving a W, everyone in melee is dealt a S3 hit. 6) Spines: Everyone in melee with user receives a S1 hit every turn. 7) Scorpion Tail: Can make an extra S5 Venom attack per turn. 8) Extra Arm: Can use a weapon/shield and has +1A.",
         70: "Poison(X): If the target is not immune to poison, the user can always To-Wound at LEAST on X+.",
         71: "Critical Strike: On a roll of 6 on the To-Wound, scores 2W instead of 1. If there is a (X), than the X means that it can only happen in this particular case/against this particular type of enemy.",
         72: "Weakness(X): +1 to wound with this kind of element vs the user.",
         73: "Dangerous Body(X): When the user is wounded in melee by a target, the target suffers a S3 hit of X type.",
+        74: "Heroic Actions: After Priority and before the move has been done, a character can spend a Might point and perform an heroic action. Both sides can do so, but the priority side will decide who starts.",
+        75: "Burrowing: Like fly, but in the ground.",
+        76: "Rage: For each W missing, the user gains +1 A.",
     },  
-    "spells": {
-        0: "test"
+    "heroic_actions": {
+        0: "Heroic Move: The character may move before all other character, including before the Priority side moves. It can then move normally as per the turn order.",
+        1: "With Me!: This heroic action must be made in addition to Heroic Move. When doing so, any allies within 6 Mv can also move with the Hero.",
+        2: "Heroic Shoot: Shoot before all other character moves, including before the Priority side moves. It can then move normally as per the turn order.",
+        3: "Heroic Combat (Fight Phase): The character declares his own melee as the priority melee before all others. If it wins (all other model are slain or run away), then it (and its allies character in the same fight) can charge elsewhere and fight again.",
+        4: "Heroic Resolve: For this turn, all models within 6Mv (including the user) receives one free dice for any resist (magic or courage) effect.",
+        5: "Heroic Channeling: The character uses a Channelled version of a spell they want to use this turn.",
+        6: "Heroic Accuracy (Shoot Phase): The character ignores cover and may reroll one To-Hit roll.",
+        7: "Take Aim!: When using Heroic Accuracy, all other characters within 6 Mv that shoots will ignore cover.",
+        8: "Heroic Strike (Fight Phase): The character adds D6 to their Fight value for the duration of the Fight phase.",
+        9: "Heroic Defence (Fight Phase): The character can only suffer Wounds on a natural roll of 6 for the duration of the Fight phase.",
+        10: "Heroic Strength (Fight Phase): The character adds D3 to their Strength value for the duration of the Fight phase.",
+        11: "Heroic Challenge (Fight Phase): The user and the target takes part of a duel. Only they can intervene, add their Fight value, etc. They must attack and charge each other if able until the duel is finished. Whoever wins the duel gains D3 Might, which can go above the initial Might pool.",
     },
     "peasants": {
         "Mv": 5,
@@ -3581,15 +3901,15 @@ const monsters =
         "Wi": 8,
         "Fa": 2,
         "Equip": "Sacrificial blade (+1S on To-Wound), Magic Ring (reroll Fa), Wizardry Robe (+2 Wi, count as light armor)",
-        "Special": "Spellcaster (Blinding Light, Terrifying Aura, Immobolise, Command, Protection, Sorcerous Blast, Collapse Rocks)",
+        "Special": "Spellcaster (Light, Immobolise, Command, Protection, Sorcerous Blast)",
         "Detail": "Nil",
         "Value": 170
     },
     "lord": {
+        "Mv": 6,
         "F": 6,
         "S": 4,
         "T": 6,
-        "Mv": 6,
         "A": 4,
         "W": 4,
         "C": 6,
@@ -3597,7 +3917,7 @@ const monsters =
         "Wi": 3,
         "Fa": 3,
         "Equip": "Meteorite Enhanced Blade (always wound on 4+ minimum), Horn of Terror (if he is outnumbered in a melee, blow the horn to force a morale test on opponents), Medium Armor, Warhorse",
-        "Special": "Horse Lord, Migthy Hero",
+        "Special": "Horse Lord, Migthy Hero, Master Swordsman",
         "Detail": "Nil",
         "Value": 180
     },
@@ -4070,8 +4390,8 @@ const monsters =
         "F": 5,
         "S": 4,
         "T": 6,
-        "A": 2,
-        "W": 2,
+        "A": 3,
+        "W": 3,
         "C": 6,
         "Mi": 2,
         "Wi": 15,
@@ -4517,7 +4837,7 @@ const monsters =
         "Wi": 0,
         "Fa": 0,
         "Equip": "Nil",
-        "Special": "Fly, Backstabbers",
+        "Special": "Fly, Opportunist",
         "Detail": "Nil",
         "Value": 20
     },
@@ -4569,150 +4889,521 @@ const monsters =
         "Detail": "Nil",
         "Value": 25
     },
+    "primitive": {
+        "Mv": 6,
+        "F": 3,
+        "S": 3,
+        "T": 4,
+        "A": 1,
+        "W": 1,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Blowdart, Spear",
+        "Special": "Cave Dweller",
+        "Detail": "Nil",
+        "Value": 10
+    },
+    "primitive_shaman": {
+        "Mv": 6,
+        "F": 3,
+        "S": 3,
+        "T": 3,
+        "A": 1,
+        "W": 1,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 2,
+        "Fa": 0,
+        "Equip": "Blowdart (poison)",
+        "Special": "Cave Dweller, Spellcaster(Shroud of Shadows, Sap Will, Black Dart)",
+        "Detail": "Nil",
+        "Value": 25
+    },
+    "living_armor": {
+        "Mv": 4,
+        "F": 4,
+        "S": 5,
+        "T": 6,
+        "A": 1,
+        "W": 1,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Heavy armor, two-handed sword",
+        "Special": "Fearless",
+        "Detail": "Red Eyed (+1 A) or Blue Eyed",
+        "Value": 25
+    },
+    "rock_worm": {
+        "Mv": 3,
+        "F": 3,
+        "S": 6,
+        "T": 7,
+        "A": 2,
+        "W": 2,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Cave Dweller, Burrowing",
+        "Detail": "Nil",
+        "Value": 70
+    },
+    "mindflayer": {
+        "Mv": 5,
+        "F": 4,
+        "S": 3,
+        "T": 3,
+        "A": 2,
+        "W": 2,
+        "C": 4,
+        "Mi": 1,
+        "Wi": 6,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Spellcaster (Paralysis), Drain Soul",
+        "Detail": "Nil",
+        "Value": 70
+    },
+    "man_centipede": {
+        "Mv": 6,
+        "F": 3,
+        "S": 5,
+        "T": 5,
+        "A": 3,
+        "W": 3,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Fear, Fearless, Poison (Tail), Many Parts (first W takes the mandibule or the tail, then half the body, then it dies)",
+        "Detail": "Nil",
+        "Value": 30
+    },
+    "phosphorescent_giant_slug":{
+        "Mv": 2,
+        "F": 2,
+        "S": 3,
+        "T": 5,
+        "A": 1,
+        "W": 1,
+        "C": 2,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Poison, Venom",
+        "Detail": "Creates light around it (6 Mv). It's blood does the same thing too.",
+        "Value": 10
+    },
+    "hollows": {
+        "Mv": 0,
+        "F": 0,
+        "S": 0,
+        "T": 0,
+        "A": 0,
+        "W": 0,
+        "C": 0,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Just use a normal human stats with Fearless, Berserking and with no intelligence or willpower.",
+        "Detail": "Nil",
+        "Value": 0
+    },
+    "undead_attack_dogs":{
+        "Mv": 7,
+        "F": 2,
+        "S": 4,
+        "T": 3,
+        "A": 1,
+        "W": 1,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Fearless, Disease Strike, Pack Fighter",
+        "Detail": "Nil",
+        "Value": 10
+    },
+    "necromancer":{
+        "Mv": 5,
+        "F": 2,
+        "S": 3,
+        "T": 4,
+        "A": 1,
+        "W": 1,
+        "C": 3,
+        "Mi": 1,
+        "Wi": 6,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Fear, Spellcaster (Chill Soul, Drain Courage, Instill Fear), Summon (skeletons)*, Necromancy",
+        "Detail": "If the necromancer dies, all its summons/creations also dies. Otherwise, they can always get up on a 6+ each minute.",
+        "Value": 50
+    },
+    "black_knight": {
+        "Mv": 6,
+        "F": 6,
+        "S": 6,
+        "T": 7,
+        "A": 3,
+        "W": 3,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Black Knight Sword (sword +1, considered a two-handed sword), Black Knight Shield (shield with resist to fire), Black Knight Armor (heavy armor, +1 courage)",
+        "Special": "Fearless, Resistant to Magic, Burly, Mundane Resistance, Hatred(Demon, Dragon), Migthy Blow",
+        "Detail": "Hollowed knight errant",
+        "Value": 125
+    },
+    "black_knight": {
+        "Mv": 6,
+        "F": 6,
+        "S": 6,
+        "T": 7,
+        "A": 3,
+        "W": 3,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Silver Knight Spear (count as a two-handed spear, spear +1 lightning), Silver Knight Shield (shield with resist to lightning), Silver Knight Armor (heavy armor, +1 courage)",
+        "Special": "Fearless, Resistant to Magic, Burly, Mundane Resistance, Hatred(Dragon), Migthy Blow",
+        "Detail": "Silenced knight errant",
+        "Value": 125
+    },
+    "taurus_demon": {
+        "Mv": 7,
+        "F": 4,
+        "S": 7,
+        "T": 6,
+        "A": 3,
+        "W": 4,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Giant Demon Axe (require S5 to wield)",
+        "Special": "Monster, Terror, Immovable Object",
+        "Detail": "Nil",
+        "Value": 150
+    },
+    "rotted_greattree":{
+        "Mv": 6,
+        "F": 6,
+        "S": 7,
+        "T": 7,
+        "A": 3,
+        "W": 4, 
+        "C": 6,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Monster, Undead, Terror, Disease Strike, Poison, Throw Stone (poison globes, S7 R12 poisonned), Venom, Fearless",
+        "Detail": "Suffer two hit instead of one in the Set Ablaze rule",
+        "Value": 150
+    },
+    "looking_glass_knight": {
+        "Mv": 6,
+        "F": 6,
+        "S": 6,
+        "T": 7,
+        "A": 3,
+        "W": 3,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Greatsword, Great Glass Shield, Heavy Armor",
+        "Special": "Fearless, Resistant to Magic, Burly, Mundane Resistance, Summon(1-3 Hollow Soldier, 4-6 Hollow Knight)",
+        "Detail": "Boss",
+        "Value": 150
+    },
+    "knight": {
+        "Mv": 6,
+        "F": 4,
+        "S": 4,
+        "T": 6,
+        "A": 2,
+        "W": 2,
+        "C": 5,
+        "Mi": 1,
+        "Wi": 1,
+        "Fa": 1,
+        "Equip": "Longsword, Shield, Heavy Armor",
+        "Special": "Horse Lord, Migthy Hero",
+        "Detail": "Nil",
+        "Value": 50
+    },
+    "flexible_sentinel": {
+        "Mv": 6,
+        "F": 5,
+        "S": 5,
+        "T": 6,
+        "A": 3,
+        "W": 6,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Two long scimitars per side, light armor",
+        "Special": "Perternatural Agility, can attack both sides independantly",
+        "Detail": "Nil",
+        "Value": 100
+    },
+    "will_o_wisp": {
+        "Mv": 7,
+        "F": 2,
+        "S": 2,
+        "T": 3,
+        "A": 1,
+        "W": 1,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 3,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Mundane Resistance, Undead, Perternatural Agility, Fly, Spellcaster (Shroud of Shadows, Light, Paralysis, Compel, Sap Will), Immunity(Lightning, Poison), Ethereal, Blade of the Dead, Energy Drain",
+        "Detail": "Nil",
+        "Value": 35
+    },
+    "human_paladin": {
+        "Mv": 5,
+        "F": 4,
+        "S": 4,
+        "T": 5,
+        "A": 2,
+        "W": 2,
+        "C": 5,
+        "Mi": 2,
+        "Wi": 4,
+        "Fa": 2,
+        "Equip": "Longsword, Shield, Heavy Armor",
+        "Special": "Immunity(Disease), Spellcaster(Light, Divine Blade, Sense Evil, Healing Hand)",
+        "Detail": "Nil",
+        "Value": 50
+    },
+    "human_flagellant": {
+        "Mv": 5,
+        "F": 3,
+        "S": 4,
+        "T": 4,
+        "A": 1,
+        "W": 2,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Flail, Whip, Light Armor",
+        "Special": "Berserking, Fearless, Hatred(Evil), Rage",
+        "Detail": "Nil",
+        "Value": 20
+    },
+    "human_inquisitor": {
+        "Mv": 5,
+        "F": 3,
+        "S": 4,
+        "T": 4,
+        "A": 2,
+        "W": 2,
+        "C": 4,
+        "Mi": 2,
+        "Wi": 2,
+        "Fa": 2,
+        "Equip": "Morning Star, Shield, Medium Armor",
+        "Special": "Hatred(Spellcaster), Resistant to Magic, Spellcaster(Light, Sense Evil)",
+        "Detail": "Nil",
+        "Value": 35
+    },
+    "human_blood_company": {
+        "Mv": 5,
+        "F": 5,
+        "S": 4,
+        "T": 5,
+        "A": 3,
+        "W": 2,
+        "C": 5,
+        "Mi": 2,
+        "Wi": 2,
+        "Fa": 2,
+        "Equip": "Blood Blade, Medium Armor, Shield",
+        "Special": "Horse Lord, Critical Strike(heal W on success), Opportunist",
+        "Detail": "Nil",
+        "Value": 35
+    },
+    "bard": {
+        "Mv": 5,
+        "F": 4,
+        "S": 3,
+        "T": 4,
+        "A": 2,
+        "W": 2,
+        "C": 4,
+        "Mi": 1,
+        "Wi": 3,
+        "Fa": 1,
+        "Equip": "Scimitar, Light Armor",
+        "Special": "Spellcaster(Light, Compel, Healing Touch), Preternatural Agility",
+        "Detail": "Nil",
+        "Value": 35
+    },
+    "banshee": {
+        "Mv": 5,
+        "F": 3,
+        "S": 3,
+        "T": 4,
+        "A": 2,
+        "W": 2,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 5,
+        "Fa": 0,
+        "Equip": "Scimitar, Light Armor",
+        "Special": "Undead, Ethereal, Spectral Walk, Fear, Fearless, Spellcaster(Chill Soul, always casted as channeled and centered on self) Permanently has the effect of the spell Whispers of Despair on self",
+        "Detail": "Nil",
+        "Value": 55
+    },
+    "necrophage":{
+        "Mv": 6,
+        "F": 3,
+        "S": 5,
+        "T": 5,
+        "A": 2,
+        "W": 2,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Nil",
+        "Special": "Undead, Fear, Fearless, Energy Drain (only on last W), Berserking",
+        "Detail": "Nil",
+        "Value": 55
+    },
+    "orc_sewer_runner": {
+        "Mv": 6,
+        "F": 4,
+        "S": 4,
+        "T": 5,
+        "A": 1,
+        "W": 1,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Poisonned Blade, Light Armor",
+        "Special": "Cave Dweller, Poison(5+), Hatred(Man)",
+        "Detail": "Nil",
+        "Value": 15
+    },
+    "orc_warg_cavalry": {
+        "Mv": 5,
+        "F": 4,
+        "S": 4,
+        "T": 5,
+        "A": 1,
+        "W": 1,
+        "C": 3,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Warg mount, Javelin, Sword, Light Armor (some instead have poison arrow and bow)",
+        "Special": "Cave Dweller, Hatred(Man)",
+        "Detail": "Nil",
+        "Value": 25
+    },
+    "orc_black_guard": {
+        "Mv": 5,
+        "F": 5,
+        "S": 5,
+        "T": 6,
+        "A": 1,
+        "W": 1,
+        "C": 5,
+        "Mi": 1,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Heavy Armor, Black Stone Halberd",
+        "Special": "Cave Dweller, Hatred(Man), Master Swordsman",
+        "Detail": "Nil",
+        "Value": 35
+    },
+    "orc_plague_monk": {
+        "Mv": 5,
+        "F": 4,
+        "S": 4,
+        "T": 5,
+        "A": 1,
+        "W": 1,
+        "C": 4,
+        "Mi": 0,
+        "Wi": 0,
+        "Fa": 0,
+        "Equip": "Flail (poisonned), Light Armor",
+        "Special": "Cave Dweller, Hatred(Man), Spellcaster(Sleeping Fog, Poison Cloud, Death Cloud)",
+        "Detail": "Nil",
+        "Value": 35
+    },
+    "dragon_cavalier": {
+        "Mv": 6,
+        "F": 5,
+        "S": 4,
+        "T": 6,
+        "A": 2,
+        "W": 2,
+        "C": 5,
+        "Mi": 2,
+        "Wi": 2,
+        "Fa": 2,
+        "Equip": "Lance, Shield, Longsword, Red Scale Armor (immune to fire, heavy armor, count as medium armor), warhorse mount",
+        "Special": "Horse Lord, Migthy Hero, Hatred(Dragon), Fearless, Mighty Blow (vs monsters)",
+        "Detail": "Nil",
+        "Value": 75
+    },
+    "pheonix_swordman": {
+        "Mv": 6,
+        "F": 6,
+        "S": 4,
+        "T": 5,
+        "A": 2,
+        "W": 2,
+        "C": 5,
+        "Mi": 2,
+        "Wi": 2,
+        "Fa": 2,
+        "Equip": "Dual fire longsword (reroll 1s), medium armor",
+        "Special": "Migthy Hero, Hatred(Dragon), Master Swordsman; when this creatures dies, once per year, it comes back alive in a fiery explosion (S4, set ablaze, 3 by 3 Mv)",
+        "Detail": "Nil",
+        "Value": 75
+    },
+    "ranger": {
+        "Mv": 6,
+        "F": 4,
+        "S": 4,
+        "T": 5,
+        "A": 1,
+        "W": 1,
+        "C": 4,
+        "Mi": 1,
+        "Wi": 1,
+        "Fa": 1,
+        "Equip": "Longsword, light armor, longbow",
+        "Special": "Woodland creature, Master bowman",
+        "Detail": "Nil",
+        "Value": 30
+    },
 }
-
-/*
-
-Monsters to add: 
-- Primitive /w blowdart, spears and T4
-- Make all TP classes (maybe in a separate category of "humans")
-    Humans
-        Monk (spells)
-        Flagellant (the more you receive hit, the more you are resistant and hit strong)
-        Cleric
-        Inquisitor
-        Priest
-        High Priest
-
-        Mage
-        Amber Mage
-        Ruby Mage
-        Amethyst Mage
-        Celestial Mage
-
-        Soldier
-        Barbarian
-        Cold Barbarian
-        Knight
-        Imperial Guard
-        Blood Company
-
-        Troubadour
-        Bard
-        Taleteller
-        Rogue
-        Thief
-
-    Undeads
-        Noble
-        Necromancer
-        Lich
-        Damned
-        Vampire
-
-        Ghost (can become invisible)
-        Revenant (ignore armor)
-        Invisible Stalker (ignore armor; invisibility)
-        Specter
-        Banshee
-        Reaper
-
-        Skeleton
-        Wight
-        Blood Blade (more kill = stronger; heal on crit)
-        Lord of Darkness
-
-        Necrophage
-        Mummy
-        Nightmare
-        
-    Drows
-        Spearman
-        Sewer Runner
-        Assassin
-        Master of Arms
-        Cold One
-
-        Arbalest
-        Heavy Arbalest
-        Arachnid Master
-        Scorpion Cavalry
-        Black Hand Arbalest
-
-        Stormtrooper
-        Master of War
-        Black Hand Cavalry
-        Black Guard of Naggaroth
-
-        Prophet
-        Grey Sorcerer
-        Black Sorcerer
-        Plague Monk
-        Plague Encensor
-
-    Elves
-        Mage
-        High Mage
-        Priest of Illuvatar
-        Druid
-        Disciple of Gaia
-
-        Spearman
-        High Spearman
-        Royal Guard
-        Cavalier
-        Dragon Cavalier
-
-        Swordsmen
-        Master Swordsman
-        Illuvatar's Swordsman
-        Dark Warrior
-        White Lion
-        Phoenix Guard
-
-        Archer
-        Sharpshooter
-        Illuvatar's Archer
-        Redemption Archer
-        Woods Traveler
-        Assassin
-        Ranger
-
-    Dwarves (just the cool classes)
-        Canoneer
-        Thunder Hammerer
-        Sanguinaire
-        Monster Killer
-
-- Check out Demon Souls, Dark Souls (1-2-3) and Elden Ring monsters and bosses
-    Living Armor (blue eye knight, red eye knight)
-    Spy
-    Fat Official
-    Rock Worm (mini purple worm)
-    Fire Lizard
-    Mind Flayer
-    Man Centipede
-    Phosphorescent Giant Slug
-
-    Hollows (crazy human almost undeads)
-    Undead Attack Dogs
-    Necromancer (bound to its creation: if he dies, they die; otherwise he can rez them)
-    Black Knights
-    Taurus Demon
-    
-    Curse-Rotted Greatwood aka Gulthias Tree
-
-    
-
-Bosses idea:
-    Looking Glass Knight
-    Flexible Sentinel
-    Make a "boss generator" that creates a condition upon which you can fight a much more dangerous creature as a boss (blind, bound/chained, missing an important figthing limb, having allies that helps you, etc.)
-
-Will o Wisp
-
-
-
+/* 
+Add a "SPECIAL REACTION" to some monsters. That is, if confronted with X, they will do Y. This is made to showcase the lore of the game with real mechanics. For example, a certain type of golems made with Z could react by breaking down if confronted by X, to showcase its origin etc.
 */
 
 const chargen = 
@@ -4821,6 +5512,10 @@ const chargen =
         12: "Dherbho, The Primordial Tongue: ancient common language",
     },
 }
+/* 
+Modify the initial goals with relationship to the world. Like:
+- Find (X) because (Y) + salt (Z) -> Find 'the ruby sword' because 'it's relation to your family' + salt 'revenge'. 
+*/
 
 const data = Object.assign({}, 
     generalities, 
@@ -4925,7 +5620,7 @@ function requestContent(input){
         case "reaction_roll":
             return getContent("reaction_roll") + " [ " + getContent("monster_needs") + " ] "; 
         case "shrine":
-            return getContent("shrine") + " | " + getContent("shrine_desc") + " | " + getContent("shrine_use")
+            return getContent("shrine") + "[ " + getContent("heroic_actions") + " ]" + " | " + getContent("shrine_desc") + " | " + getContent("shrine_use")
         case "distance":
             return "Dungeon: " + get2d6() * 10 + " feet | Wilderness: " + get2d6() * 30 + " feet"
         case "base_actions":
@@ -4934,6 +5629,8 @@ function requestContent(input){
             return "Name: {0} \nDescription: {1} \nHidden: {2} \nMonster: {3}".format(getHexName(), getHexDescription(), getHexHiddenFeature(), getHexMonster())
         case "triple_oracle":
             return "Yes/No = " + get1d6() + " \nHow much = " + get1d6() + " \nHow favorable = " + get1d6()
+        case "curse_item": 
+            return getContent("curse_item_cost") + " | " + getContent("curse_item_effect") + " | " + getContent("curse_item_salt") + " | " + getContent("curse_item_curse") + " and -1 C | " + getContent("curse_item_destroy")
         default:
             return getContent(input)
     }
@@ -4948,9 +5645,6 @@ TODO:
 - Maybe do a hex map where the first level of hexes represents element within an hex and the second level are my hexes, and the third level is the regional hex (aka granularity in visual representation)
 - Add to random encounter that you can meet with an old ally needing help for something
 - Add to encounters caravans
-
-
-Evil artefact prevents the use of Fa. 
 
 
 Add range to range weapons
@@ -5005,6 +5699,11 @@ Campaign ideas:
     What's the purpose of the fog in the plan?
 - Maybe have all of this be a foreshadowing of the 'real' deal, which is basically "accross the mountain", this is where the fogs come from. That region accross the mountain = demon's souls. So the lich would be an agent of the fog (of the watcher coming back to life), but he's trying to use it for his own power. If the party really wants to get rid of the fog, they need to traverse the mountains and basically do demon's souls. 
 - Each month, the lich will kill a big NPC (leader of villages, ex-adventurers, etc. -> require to have believable and strong cool NPCs)
+- Could have a subplot of a very cursed weapon that the lich uses to drain souls. The blade forces the user to build up power, anger, etc. and then kill someone else for a sin (greed, jealousy, etc.). Then, the weapon forces the owner to takes its own life. The blade is then picked up by a nazgul and brought back to the lich to feed some kind of machine/object/plot. The reason that is so, is because the blade is forged by the lich for the lich and he can cast spells/control the user through it. 
+- Also, the nazgul and/or the lich should leave a specific mark on the place they raid, kill, etc. so that with research/comparison the players can learn about something in the far past. (probably an ermit historian of the previous people running the area)
+
+
+
 
 - Hexes:
     https://docs.google.com/spreadsheets/d/15N4beAStRAkS1nqKJ7Dt3owjo1vT_MZXVveh5muYgbc/edit#gid=1446881270
