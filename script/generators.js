@@ -7,6 +7,9 @@ let demonic_shrine_effect_desc = "-> The user gets a Dark Corruption(+1). Roll a
 
 const wilderness_exploration = 
 {
+    "wilderness_exploration_rules": {
+        0: ""
+    },
     "camp_event": {
         2: "A monster approaches the camp because of the fire/noise.",
         3: "Infighting/conflict (someone stole true or false, someone is pissing others off, etc.)",
@@ -383,6 +386,53 @@ const wilderness_exploration =
         0: "https://drive.google.com/file/d/13fualfLEV_VaahBTaZtRggEUVtWIQXoc/view"
     }
 }
+/*
+Mood beats generator: small tidbits I can add to generate more immersion like "you hear X", "you smell Y", etc. Try to always have 2 senses and at least 1 pertinent info (time of day, regional monsters, etc.)
+
+Wilderness = level 4 of the dungeon (+-)
+
+- Should make it clear that "exploring/searching an hex" takes a whole day of work AND it changes the scope of the game. If previously it was all about just "going through the hex in a somewhat straight line", now you decide to follow small paths, explore around, get a hold of higher hills to see better what's in the hex, etc. It should be clear to player that "searching the hex" changes the scope and is different than both dungeone xploration and hexcrwaling. 
+
+- Dice roll for entering an hex should be about: finding tracks of creatures living in it, seeing what's in the hex through a high vantage point, stumbling on secrets or roads, encounter creatures, getting lost, etc. So maybe just switch it up into bigger categories like 'danger', 'discovery', 'choice', 'context', etc. and roll in there afterwards. 
+- Each region should have a name and a wandering encounter table. Unique monsters in it (lair) should be unique. 
+- Always roll twice and see if both can be tackled together: if not, keep the first result. 
+
+
+Need to give enough debt to this whole region (through multiple layers, fight between gods, etc.) so that it can be self-sufficient. Also, make sure to make it clear that "in the past, this place was the center and pinnacle of the whole land (aka the capitals were here, etc. which explains why there are so many ruins and stuff)"
+
+Lay out the information about the underworld too. 
+    Take some tips from the Bible in the ash plains
+    Lake of rot from Elden Ring
+    Watcher's prisons like Pandemonium
+    Cities of ancient humans
+    Cavern-like maze with monsters and primitives
+    etc.
+
+Ideas from Elden Ring/DS:
+    Areas
+        - Great lift of Dectus
+        - Precipice that brings to a higher region
+        - Huge waterfall that can lead further down or high
+        - Colloseum
+        - Hugeass skeleton to express that previously beings were bigger, stronger, etc. (including giants) and now it's all long defeat
+        - Hermits in small stone fort/house/tower that's crumbled that can sell treasure map, sometimes jewel, tips on the region, etc. but they only barter, they don't take cash (food, animal, tools, etc.)
+    Events
+        Night Cavalry
+        Caravan (all undead, just keeping to their mission)
+    Other
+        Technology comes from the watchers, but also the nephilim (such as the giants)
+
+
+Generate stuff for each type of terrain.
+    - Swamp
+        Bog or mire is a wetland that is acidic
+        A fen is a wetland that is alkaline
+        A swamp is a wetland whose dominant vegetation is trees and woody plants
+        A mrash is a wetland with other forms of vegetation dominant
+
+
+
+*/
 
 const generalities = 
 {
@@ -509,7 +559,7 @@ const generalities =
         6: "Permanent hunger",
         7: "Face rot (-2 reaction)",
         8: "Impossible to enter temples",
-        9: "Arrows fly towards victim",
+        9: "curse_foretold_death",
         10: "Almost perpetual sleep",
         11: "Petrification",
         12: "Cannibalism (can only eat flesh)"
@@ -736,10 +786,13 @@ const generalities =
     },
     "triple_oracle": {},
     "pregame_checklist": {
-        0: "Do:\r\n    Roll domain event (per game)\r\n    Roll region event (per month)\r\n    Roll world event (per six month)\r\n    If necessary, make a domain move\r\nRefresh:\r\n    Dungeon content lists (riddles, unique room, etc.)\r\n    Rumour table\r\n    Information on each player (name, goal, intent, levelup, details)\r\n    Information on the party (goals and intent)\r\n    Refresh domain based on last player activity\r\nReady: \r\n    The current party objective\r\n    Treasure map\r\n    Unique random interesting NPC\r\n    One ruin\/dungeon\r\n    The current megadungeon level\r\n    The next megadungeon level\r\n    One very cool unique outdoor event ready\r\nMaterial:\r\n    Notebook\r\n    Working website\r\n    Owlbear rodeo\r\n    Discord\r\n    Physical AD&D DMG"
+        0: "Do:\r\n    Once per month, make a domain turn. Once per game, a domain event. \r\n    Roll region event (per month)\r\n    Roll world event (per six month)\r\n    If necessary, make a domain move\r\nRefresh:\r\n    Dungeon content lists (riddles, unique room, etc.)\r\n    Rumour table\r\n    Refresh domain based on last player activity\r\nReady: \r\n    The current party objective\r\n    Treasure map\r\n    Unique random interesting NPC\r\n    One ruin\/dungeon\r\n    The current megadungeon level\r\n    The next megadungeon level\r\n    One very cool unique outdoor event ready\r\nMaterial:\r\n    Notebook\r\n    Working website\r\n    Owlbear rodeo\r\n    Discord\r\n    Physical AD&D DMG"
     },
-    "precampaign_checklist": {
-        0: "Meta-Information:\r\n    - Campaign concept in one sentence\r\n    - Campaign region:\r\n        - Terrain type predominance\r\n        - Regional hook\/uniqueness\r\n        - Oddity\/plot twist\r\n    - Region map\r\n    - Factions\r\n        - One evil faction, one criminal faction, the prime faction of the initial village\/town (covenant), one neutral or supportive faction and one extra faction\r\n        - [FACTION] want(s) [MOTIVATION], but [OBSTACLE]. Therefore, [PLAN OR METHOD OF SURMOUNTING OBSTACLE].\r\n        - Details for each:\r\n            - One enemy faction\r\n            - One ally faction\r\n            - Their reaction to adventurers (the party)\r\n            - One secret\r\n            - Something they are known for\r\n            - Resources (people, object, location, etc.)\r\nCrawford-method (try to put each element at least one day of march from one another):\r\n    - Place population center (1 per region on a strategic location as the \'capital\' of the region).\r\n        - Court\r\n        - Leader(s)\r\n        - Origin, activity, obstacle\r\n        - Initial resources, building, etc. \r\n    - Place market towns or hammlets if necessary\r\n    - Place a bunch of ruins in strategic but abandonned locations. Possible to have them in water areas (sinked, pirate troves on sea caverns, etc.). Ancient and now forgotten\/destroyed settlements, temples, etc. These are 5-level dungeons. Put in them a shrine and a good treasure. \r\n    - Establish resources (including obstacles)\r\n    - Lairs. These are shrines protected by unique monsters (THE minotaur, THE hydra, THE medusa, etc.). If I don\'t have more ideas of unique monsters, either pimp up a normal one or use: https:\/\/docs.google.com\/spreadsheets\/d\/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM\/edit#gid=214513084\r\n    - Shortcuts, roads and blocked paths\r\n    - Hall of infamy\r\nStarting-town:\r\n    - Leader(s)\r\n    - Faction (if any)\r\n    - Goal(s)\r\n    - Origin, obstacle, activity\r\n    - Answer the following question: \r\n        What is the starting town called?\r\n        What is the name of the local inn? Who runs it?\r\n        Who do we meet in that inn?\r\n        What is the name of the main road?\r\n        What is the local river?\r\n        A local forest\r\n        The nearby hills\r\n        Two nearby villages\r\n        A distant city\r\n        Who rules the area?\r\n        Who are the town elders?\r\n        Who\'s the local expert on the Arcane?\r\n        Who\'s the local religious expert?\r\n        Who knows the most about the area\'s history?\r\n        Who knows the most about the local geography?\r\n        Who are the local low-level monster tribe?\r\n        A slightly farther off mid-level monster tribe\r\n        Who is the local evil boss?\r\n        What do they want?\r\n        What will happen if they get it?\r\n        Mightiest wizard in the land\r\n        Greatest warrior in the land\r\n        Richest person in the land\r\n        Special or very talented blacksmith in the land\r\n        Special healer or magical healer\r\n        Magical school or guild\r\n        Alchemist shop\r\n        Sage guild\r\n        Mercenary guild\r\n        Important laws on weapon carrying, magic and so on\r\n        Swordmaster\/Weapon master\r\n        Everyone in my world knows ...\t\r\n        Very few people know ...\t\r\n        No one knows ...\t\r\n        Who are the local low-level monsters?\t\t\t\t\r\n        A slightly futher off mid-level moster tribe:\t\t\t\t\r\n        Who is the local Evil Boss?\t\t\t\t\r\n        What do they want?\t\t\t\t\t\t\r\n        What will happen if they get it?\t\t\r\n        What is the name of the main road?\t\r\n        What is the local river?\t\r\n        A local forest?\t\r\n        The nearby hills\t\r\n        Two nearby villages\t\r\n        A distant city\t\r\nInitial-dungeon:\r\n    - Lore\r\n    - First level\r\n    - Second level idea\r\nLinks:\r\n    - Links between faction, ruins, megadungeon and BBEG\r\n    - Links between faction and faction\r\n    - Links between ruins, resources, towns, BBEG and megadungeon\r\n    - Links around hexes with important locations (settlements, lairs, ruins): instead of having a wizard tower and then on the next hex a griffon lair and then on the next hex a group of bandits, have the griffon be the pet of the wizard and the bandits wanting the eggs of the griffon for a safe passage across the shortcut in the mountains. Create a living world with triggers and clues. \r\nInfo:\r\n    - Hide secret and powers\r\n    - Put artefact somewhere with full lore\r\n    - Create rumour table\r\n    - Fictional map of the area for players (make it interesting with names like \'The Forest of the Iron Wights\' instead of \'Green Forest\'; for this, use the dark souls overworld dungeon generator I have) + initial blurb\r\n    - List all important aspects (bbeg plans & location, lieutenants, megadungeon, lore, artefacts, hidden location of lair and ruins, etc.) as bullet points. For each, create 3 clues (3-clue-rule). Destroy a random number of them. Then put all of the rest into: rumours, lairs, ruins, megadungeon, npc, etc."
+    "postgame_checklist": {
+        0: "What did the player find in terms of clues, what clues did they miss for nodes that I should refurbish with new clues elsewhere, etc. Update it. \n\nConfirm to the players who is doing the recap \n\nConfirm what the players used in terms of random content generation that I should fix again in the pregame checklist \n\nRefresh information on each player (name, goal, intent, levelup, details) and the party (goals and intent)"
+    },
+    "campaign_creation": {
+        0: "0) Initial planning\r\n    Develop a 3-7 bullet point description of the campaign and setting\r\n    Inspiration\r\n        Themes\r\n        Structure\r\n        History\r\n        Fictional Works (any media)\r\n    Assemble a mood board\r\n1) Prep the general situation\r\n    Campaign concept in one sentence\r\n    Campaign region\r\n        Terrain type predominance\r\n        One major terrain feature covering multiple hexes\r\n        Regional hook\/uniqueness\/oddity\r\n        Regional map\r\n    Layers of history (3 or 4) + spiritual warfare\r\n        Roll up some region culture \r\n        Roll up some world\/regional event \r\n        Make associations between both to create events\r\n        Link those events with locations, events, calendars\r\n        Answer some questions: \r\n            How unique monsters might have had bigger influence in the region previously\r\n            How previous wars might have created current factions\r\n            How and which previous temples, gods, pantheons had hegemony\r\n            Which civilisation fell down and what ruins they left behind (and if they were re-used by further layers)\r\n2) Prep the region\r\n    Crawford method\r\n        Place population centers\r\n            City, located on a strategic position\r\n                Court\r\n                Leader(s)\r\n                Origin, activity, obstacle\r\n                No initial resources, buildings, etc. since it\'s newly built, newly conquered, etc.\r\n            Towns (1d3+2) \/w origin, activity, obstacle\r\n        Place ruins (1d6 + number of towns) in strategic but abandonned locations. Possible to have them in water areas (sinked, pirate troves on sea caverns, etc.). Ancient and now forgotten\/destroyed settlements, temples, etc. These are 5-level dungeons. Put in them a shrine and a good treasure. \r\n        Place resources \/w obstacles\r\n        Place \'lairs\' (not exactly like the crawford lairs)\r\n            Determine a shrine\r\n            Determine a unique monster guarding it https:\/\/docs.google.com\/spreadsheets\/d\/1d-NAi8Mf1W1Q71_fxzIJoqcdXtsjIla3vAAY_5tywaM\/edit#gid=214513084\r\n            Determine one uniqueness to it (it\'s a maze, it\'s a pyramid, it\'s a etc.)\r\n    Factions\r\n        One evil faction, one criminal faction, the prime faction of the initial village\/town (covenant), one neutral or supportive faction and one extra faction\r\n        [FACTION] want(s) [MOTIVATION], but [OBSTACLE]. Therefore, [PLAN OR METHOD OF SURMOUNTING OBSTACLE]\r\n        Main location (ruins or towns)\r\n    Place shortcuts (5Ws)\r\n    Prepare hall of infamy\r\n        Villain (5Ws, where he comes from, where he wants to be, trajectory)\r\n        Main organisation\r\n        Sub-orgs\/allies\r\n        Actions\/situations created by him or that will be created by him (raided X, stole Y, etc.)\r\n    Current statu quo situation (politically, etc.)\r\n3) Prep the nodes\r\n    Devise a final node based on the region situation and the hall of infamy (still keep an opening for more if the campaign continues)\r\n    Create the various nodes of the scenario starting from the final node and going down to the adventurer\'s level\r\n        Node number\r\n        Node one liner\/intent\r\n        Node current status (starts as \"unknown to the party\", but then as game go by, it changes based on the party\'s action)\r\n        Node solve\r\n            Concept solve (what is happening in the situation) -> less of them\r\n            Scenario solve (what needs to be done\/could be done by the party) -> more of them\r\n        Node hierarchy aka in which tier it is located (never have more than 5 nodes per tier, otherwise nest them under meta-nodes) https:\/\/thealexandrian.net\/wordpress\/37903\/roleplaying-games\/5-node-mystery\r\n            Tier A: Adventurer level\r\n            Tier B: Local level\r\n            Tier C: Regional level\r\n            Tier D: Main arc level\r\n        Node type\r\n            Locations\r\n            People\r\n            Organisations (group of location and people)\r\n            Activity (raids, magic ritual, etc.)\r\n            Events (one-time events)\r\n        Node position within the clue list (list of all clues and where to find them) and the revelation list (conclusions the players can make aka nodes and which clues to get them), aka organise them with tags\/mind map\/etc. \r\n    Help players navigate nodes\r\n        Three clue rule (list them, they\'ll be used later in the locations)\r\n        Create pull (treasure, reasons for player to want to investigate it by themselves) or push (outside\/external forces asking the player to do something) for each node\r\n        Triggers (temporal, event-based trigger, alarm-meter (aka when players do X, the meter goes up, at Y value, node Z will activate), etc.)\r\n        Randomly distributed\r\n            Wandering monsters\r\n            Wilderness encounters\/events (some can be story beats)\r\n            Carousing tables and rumours\r\n4) Prep the locations (as modular pseudo-adventures)\r\n    Add in general information about locations (ruins, lairs, towns) with the starting information taken from the crawford method:\r\n        Intent\r\n        Clues output (and in what format: people, place, object, event?) -> the more important the clue, the more difficult the area\r\n        Constraints\/Restrictions\r\n        One special thing\/oddity\r\n        One extra specificities about the lore\/region\r\n        Make sure inhabited places (with obstacles), lairs, etc. are all intertwined: one group of men must pay taxes to bandits from another hex; a group of wood creatures suffer raids from orcs, etc.\r\n        For smaller locations\/events\/etc., use the 5RD or the 5 Node Mystery: https:\/\/thealexandrian.net\/wordpress\/37903\/roleplaying-games\/5-node-mystery\r\n    Fill hexes based on interesting content and extra clues to give\r\n        Non-node hexes\r\n            Check for landmarks, content, secrets, etc. and put it in. For random hexes, focus on roads, landmarks\/observation points, shortcuts, secrets. \r\n            Add at least one very secret\/exotic\/mysterious site to explore on the map\r\n            Create links between not-Node hexes: instead of having a wizard tower and then on the next hex a griffon lair and then on the next hex a group of bandits, have the griffon be the pet of the wizard and the bandits wanting the eggs of the griffon for a safe passage across the shortcut in the mountains. Create a living world with triggers and clues\r\n            Add clues to them\r\n            Add some triggers to some of them so that later on they can become more interesting (a new bandit camp gets installed, etc.) -> random encounter fuel and vice-versa\r\n        Node hexes\r\n            For stocking important hexes (ruins,lairs, etc.), use the method of \"throwing dice around\" and make a pointcrawl out of the hex\r\n            Make sure they are interesting enough that players might come back to them to reuse content\r\n    Prepare areas\r\n        Give names to areas (various hex together) and a small blurb of information -> this will be useful later when crafting rumours (\"I heard there is a dungeon near the Gaping Mouth waterfall near the Narrow Gap\")\r\n        Random encounters per terrain type\/areas\r\n            Make their content come from ruins, lairs, etc.\r\n        List of recurring NPCs inside the random encounters\r\n            DNA\r\n            One secret\r\n            One link with a node\r\n    Sketch out the underworld\r\n        At least one small paragraph to detail what\'s in the underworld of this section of the world\r\n        At least one entrance (and where it leads to)\r\n        At least one node\r\n        At least one rumour\r\n        At least a general map (hexcrawl or pointcrawl)\r\n5) Party facing stuff\r\n    Initial town details\r\n        Leader\r\n        Goal\r\n        Map\r\n        Interests\r\n            A political faction and its rival\r\n            A place where the characters can lose their money\r\n            A place where people gather to hear news or speak their minds\r\n            A great place to obtain a hot meal and a clean bed\r\n            A religious center and the gods to which it is devoted\r\n            A feature unique to this town (view of a natural wonder, a strange obelisk, a healing spring, etc.)\r\n        5 NPCs DNA\r\n            D - Distinguishing trait or feature\r\n            N - What hey need most\r\n            A - Agenda\r\n        5 hirelings already present in town\r\n    First megadungeon level\r\n        One line concept & theme\r\n        Dungeon entrance blurb to the party\r\n        Create alternative entrance to be discovered later, create alternative ways to go downstairs for later\r\n        Node-based design\r\n            Create a major node leading downstairs\r\n            Create 5 nodes leading to it, each with three clue\r\n            Create Some dead-end as content (give external clues, give treasures, etc.)\r\n            Create the clues and subnodes of each of these\r\n            Use the dungeon checklist\r\n        Create the map (including jacquaying contents, see dungeon checklist)\r\n        Key the rooms accordingly with monsters, traps, treasures, etc.\r\n        Create the random encounter table\r\n        Have at least 3 magic item and 1 shrine in the level\r\n        Create the entrance of the second level, the one line concept & theme and if possible the map itself\r\n        Go through the dungeon checklist\r\n    Party blurb\r\n    Party logistics (discord, etc.)\r\n    Starting node (aka scenario hook)\r\n6) Detail the world\r\n    Calendar\r\n    Higher level NPC that are roaming the region with their respective DNA\r\n    Relics & magical items\r\n        Generate the relics & magic items\r\n        Include clues in them towards other nodes or inside other nodes towards them\r\n        Have the lore be detailed in three formats:\r\n            Stuff written on it and the weapon description itself (always have a \'quote\' poetry-style on items, like the Ring from LOTR)\r\n            What the character feels\/sees when he grabs the item (small flashback)\r\n            What can be gathered from research\/hermits\/etc.\r\n        Place them in the world (dungeon, ruins, etc.) but leave some untouched (future adventures, deeper megadungeon level, etc.)\r\n    Rival company of adventurers\r\n7) Sanity check\r\n    Finish prepping organisation\/groups\/etc.\r\n        Leaders\r\n        Goals\r\n        Symbols\r\n        Secret\r\n        Alert-meter and their trigger (if any)\r\n        One enemy faction\r\n        One ally faction\r\n        Their reaction to adventurers (the party)\r\n        One secret\r\n        Something they are known for\r\n        Resources (people, object, location, etc.)\r\n        One thing they need from another important node (megadungeon, artefact, relic, lair, ruin, etc.)\r\n        Faction membership\/allyship benefit (better prices, mercenaries, hirelings, purchase rumours, special item, access to shortcuts, etc.)\r\n    Prepare one extra dungeon, NPC, monsters, encounters, etc.\r\n    Campaign checklist\r\n        What is the starting town called?\r\n        What is the name of the local inn? Who runs it?\r\n        Who do we meet in that inn?\r\n        What is the name of the main road?\r\n        What is the local river?\r\n        A local forest\r\n        The nearby hills\r\n        Two nearby villages\r\n        A distant city\r\n        Who rules the area?\r\n        Who are the town elders?\r\n        Who\'s the local expert on the Arcane?\r\n        Who\'s the local religious expert?\r\n        Who knows the most about the area\'s history?\r\n        Who knows the most about the local geography?\r\n        Who are the local low-level monster tribe?\r\n        A slightly farther off mid-level monster tribe\r\n        Who is the local evil boss?\r\n        What do they want?\r\n        What will happen if they get it?\r\n        Mightiest wizard in the land\r\n        Greatest warrior in the land\r\n        Richest person in the land\r\n        Special or very talented blacksmith in the land\r\n        Special healer or magical healer\r\n        Magical school or guild\r\n        Alchemist shop\r\n        Sage guild\r\n        Mercenary guild\r\n        Important laws on weapon carrying, magic and so on\r\n        Swordmaster\/Weapon master\r\n        Everyone in my world knows ...\t\r\n        Very few people know ...\t\r\n        No one knows ...\t\r\n        Who are the local low-level monsters?\t\t\t\t\r\n        A slightly futher off mid-level moster tribe:\t\t\t\t\r\n        Who is the local Evil Boss?\t\t\t\t\r\n        What do they want?\t\t\t\t\t\t\r\n        What will happen if they get it?\t\t\r\n        What is the name of the main road?\t\r\n        What is the local river?\t\r\n        A local forest?\t\r\n        The nearby hills\t\r\n        Two nearby villages\t\r\n        A distant city\t\r\n8) Create rumours and rumour generator\r\n9) Create or adapt the pregame and postgame checklist and any other tools (including house rules)"
     },
     "injury_roll": {
         2: "Death",
@@ -766,82 +819,34 @@ const generalities =
         10: "The monster is in a disadvantageous position (caged, chained, etc.)",
         11: "A deformed, smaller version (-1 everywhere)",
         12: "Roll twice"
-    }
+    },
+    "escape_check": {
+        2: "You have died. Roll the escape percentile again to see if your comrades were able to retrieve your body. (Instead of retrieving your body, your comrades may choose to loot it and/or leave it.) If they did not, roll a general roll to see what happens with it (on a great failure, it's destroyed).",
+        3: "Lost in the fog (can be retrived by other adventurers, but can't be played for now)",
+        4: "Cursed by the fog",
+        5: "Injury",
+        6: "Lost a random piece of equipment",
+        7: "Permanently altered by the fog (mutation)",
+        8: "Escape unharmed",
+        9: "Escape unharmed",
+        10: "Escape unharmed",
+        11: "Escape unharmed",
+        12: "Escape unharmed",
+    },
+    "escape_check_rules": {
+        0: "Wilderness: If the party is lost, -1. If the party is not lost, +1. If the party is not lost and has a clear and direct way of going back (shortcuts, roads, etc.) or is protected, +3.",
+        1: "Dungeon: If the party is lost or has no more light source, -3. To determine if a party is lost, ask them to provide the map with the solution to exit. If the party has not clear way of exiting (danger is in between), -1. If the party has a clear way of exiting, +1. If the party has magical means to exit the dungeon or have a shortcut to first level, +3. Then reroll for Wilderness."
+    },
+    "curse_foretold_death": {
+        0: "By Fangs (Hostile Beasts will only attacks others once you are slain)",
+        1: "By Weapons (Each weapon strikes are made at +1 against you)",
+        2: "By Waters (swim as if in 1 stage heavier armor and perish if shipwrecked)",
+        3: "By Poison (fail all saves vs deadly and paralytic toxins, take more damage vs poison)",
+        4: "By Flame (all fire deals +1W)",
+        5: "By Missile (always get shot in melee, most creatures will try to shoot at you, you can't get cover)"
+    },
 }
-/*
 
-Add equipment list in there
-
-Really go with "crwaford method" for the overview.
-
-'Escaping the dungeon' roll: https://thealexandrian.net/wordpress/2149/roleplaying-games/escaping-the-dungeon
-
-Add to pre-game check that I need to run, once a month, the overall AER game turn
-
-World creation: https://beyondfomalhaut.blogspot.com/2016/09/blog-dirt-cheap-sandbox.html
-- Work by region (aka big hex) that contains smaller hex (normal traveling hex) that contains smaller hex (aka pointcrawl hex for DM use only)
-- Add villages (with obstacles), lairs, etc. that are all intertwined: one group of men must pay taxes to bandits from another hex; a group of wood creatures suffer raids from orcs, etc.
-- Make sure each power center (hammlet, city, lair, etc.) is controlled by a faction. Then add in obstacles and activities. Make sure each of these generate at least one rumour/possible plot. 
-- Big hexes should be mini-settings in themselves where the players will have opportunity to come back. Small hexes (lairs, ruins, etc.) should be small one-page dungeon. 
-- Make adventuring party, factions, cults, etc. 
-- Rumours, legends, etc. 
-- Transform basic plots ("the BBEG wants X") into situations ("Y is happening right now")
-- Based 1 city = 4 towns, 5 ruins, 4 resources, 4 lairs
-
-- Add a step at the beginning to creature the layers of history (3 or 4) in the region
-
-- All factions should require stuff from lairs, ruins and the megadungeon. Have AT LEAST one sub-objective in there
-
-For stocking important hexes (ruins,lairs, etc.), use the method of "throwing dice around" and make a pointcrawl out of the hex
-
-Should also make a brief underworld hexmap (or huge-ass souslike pointcrawl?)
-
-Other notes:
-- Maybe all hexes without adventure should be with roads/paths/etc. ("You find an old road that seems to go north. You follow them and your travel is quick and painless. After a few miles and hours of marching, it dies out". )
-- All hexes with "adventures" should have a "pointcrwal" structure within my notes. 
-- Add a step that you create wilderness encounters baised on lair, ruin, factions. 
-- Should make it clear that "exploring/searching an hex" takes a whole day of work AND it changes the scope of the game. If previously it was all about just "going through the hex in a somewhat straight line", now you decide to follow small paths, explore around, get a hold of higher hills to see better what's in the hex, etc. It should be clear to player that "searching the hex" changes the scope and is different than both dungeone xploration and hexcrwaling. 
-
-- Dice roll for entering an hex should be about: finding tracks of creatures living in it, seeing what's in the hex through a high vantage point, stumbling on secrets or roads, encounter creatures, getting lost, etc. So maybe just switch it up into bigger categories like 'danger', 'discovery', 'choice', 'context', etc. and roll in there afterwards. 
-- Each region should have a name and a wandering encounter table. Unique monsters in it (lair) should be unique. 
-- Always roll twice and see if both can be tackled together: if not, keep the first result. 
-
-
-Need to give enough debt to this whole region (through multiple layers, fight between gods, etc.) so that it can be self-sufficient. Also, make sure to make it clear that "in the past, this place was the center and pinnacle of the whole land (aka the capitals were here, etc. which explains why there are so many ruins and stuff)"
-
-Lay out the information about the underworld too. 
-    Take some tips from the Bible in the ash plains
-    Lake of rot from Elden Ring
-    Watcher's prisons like Pandemonium
-    Cities of ancient humans
-    Cavern-like maze with monsters and primitives
-    etc.
-
-Detail a bit the previous eras of the world to see what happened and how it can influence the location, the world, the monsters, etc. See how Elden Ring does it with having dragon cities that sank (creating ruins), the previous wars creating the faction, etc.
-
-Ideas from Elden Ring/DS:
-    Areas
-        - Great lift of Dectus
-        - Precipice that brings to a higher region
-        - Huge waterfall that can lead further down or high
-        - Colloseum
-        - Hugeass skeleton to express that previously beings were bigger, stronger, etc. (including giants) and now it's all long defeat
-        - Hermits in small stone fort/house/tower that's crumbled that can sell treasure map, sometimes jewel, tips on the region, etc. but they only barter, they don't take cash (food, animal, tools, etc.)
-    Events
-        Night Cavalry
-        Caravan (all undead, just keeping to their mission)
-    Other
-        Technology comes from the watchers, but also the nephilim (such as the giants)
-
-
-Generate stuff for each type of terrain.
-    - Swamp
-        Bog or mire is a wetland that is acidic
-        A fen is a wetland that is alkaline
-        A swamp is a wetland whose dominant vegetation is trees and woody plants
-        A mrash is a wetland with other forms of vegetation dominant
-
-*/
 
 const underground_exploration = 
 {
@@ -1121,11 +1126,19 @@ More ideas:
 - Procession of ghosts
 - Royal audience day
 - Wild boar hunt
-- 
 */
 
 const underground_content_creation = 
 {
+    "dungeon_creation": {
+        0: "Theme\r\n    => DUNGEON_LORE\r\n    => level_theme\r\nEntrance\r\n    => Dungeon entrance description\r\n    => Dungeon 5RD entrance\r\nContent creation\r\n    => dungeon_node_method OR just generate a random dungeon entirely (either a full dungeon or a small lair with the 5RD)\r\n    Fill extra rooms with \'dungeon_room_type\' and \'generic_room_dressing\'\r\nLink to primary adventure nodes as per node planning"
+    },
+    "dungeon_node_method": {
+        0: "1) Create 5 nodes\r\n    One main treasure\r\n    One shrine\r\n    One difficult monster\/boss\/group of monster\r\n    One secret (revealing a secondary treasure and\/or a secondary way down)\r\n    One challenge\/experimentation\r\n2) Create 3 clue rule for each\r\n    Each clue is a single room\r\n    Stock those room with basic stuff:\r\n        1 - Smaller treasure\r\n        2 - Monster\r\n        3 - Trap\r\n        4+ Empty\r\n3) All the nodes point to the way downstairs\r\n    Where it\'s located\r\n    How to \'activate\' it (keys, etc.)\r\n    What is beyond\r\n    etc.\r\nIn total, you should have:\r\n- 5 main rooms\r\n    Two treasures (one item, one shrine)\r\n    One monster\r\n    One secret\r\n    One challenge\/experimentation\r\n- 15 secondary rooms\r\n    7 \'empty\'\r\n    3 smaller treasure\r\n    3 monster\r\n    3 traps & tricks (including blockers)\r\n- 1 room leading downstairs\r\n- 1 room leading upstairs\r\nFor a total of 22 rooms + corridors + other for taste\r\n    5 treasures\r\n    4 monsters\r\n    4 traps & tricks\r\n    9 \'empty\'"
+    },
+    "DUNGEON_LORE": {
+
+    },
     "dungeon_entrance_description": {
         0: "https://www.fantasynamegenerators.com/dungeon-descriptions.php",
     },
@@ -1253,7 +1266,7 @@ const underground_content_creation =
         5: "permanent npc (ghost, golem, wandering spirit) that can offer help if you help them (set them to rest, restore them, repair them, give them something, etc.)",
         6: "impermanent npc (villain, adventurer, etc.) that has 4+ of betraying",
         7: "tricks",
-        8: "a prisoner/rebel of the dungeon willing to help",
+        8: "a prisoner/rebel of the dungeon willing to help (could be a hollowing merchant wanting to sell stuff, etc.)",
         9: "known npc/figure ally to dungeon",
         10: "puzzle/challenge to stop an alarm/reinforcement",
         11: "a neutral powerful monster",
@@ -1285,7 +1298,7 @@ const underground_content_creation =
         11: "pet boss",
         12: "duel boss (or another unusual settling, such as a wager)"
     },
-    "5rd_reward and revelation": {
+    "5rd_reward_and_revelation": {
         2: "a rival comes in for treasure",
         3: "misunderstanding (enemies and party could have been allies)",
         4: "minions try to peace out with treasures",
@@ -2322,6 +2335,9 @@ const underground_content_creation =
         0: "Things to gain: \r\n    - A shrine (at least one)\r\n    - Knowledge\r\n    - A treasure\r\nDanger: \r\n    - Something to be killed\r\n    - Something to kill the party (aka traps and tricks)\r\nLevel design: \r\n    - Shortcut to another level, or to the exit (can be a magic pool, a teleporter, an elevator, a gate, a door that\'s hidden from the other side, etc.)\r\n    - More than one entry\r\n    - 3D \/ elevation shift\r\n    - Loop\r\n    - A landmark (for navigation)\r\n    - Something atmospheric\r\nSomething to interact with \/ to experiment with\r\nSomeone to talk to (prisoner, ghost, machine, demon, statue\/painting, adventuring party, etc.)\r\nA secret that the players probably won\'t find\r\nA secret the players will probably find"
     }
 }
+/* 
+Repasser pour enlever le fait que c'est 2d6 partout. Si c'est vrmt sensé être random, mettre 1d10 à la place
+*/
 
 const npc = 
 {
@@ -2584,7 +2600,11 @@ const npc =
         11 : "A doppleganger that take the same apperance",
         12 : "An arcane trickster assassin",
     },
+    "NPC_FULL": {},
 }
+/* 
+DNA generator (see campaign creation)
+*/
 
 const wilderness_content_creation = {
     "region_settling": {
@@ -3113,7 +3133,7 @@ const shrine =
     "shrine_rules": {
         0: "Saints Shrine Rules: the party can only have one active shrine at any point. as long as they follow the saints oath, they have a passive bonus. they can also use an active power, but then lose the active bonus until they go back to civilization to make some sorts of sacrifice/prayer. whenever a shrine is generated, take note of it as it is unique and cannot show up again in the campaign. when it appears, make sure there is an accompanying picture showing what the saints did (some sort of icon) and a clear depiction of what is the oath/requirement of the party. shrines can be desecrated and broken down. they need to be restored. new one can be constructed. source: https://espharel.blogspot.com/2019/12/osr-shrines-and-patron-saints.html",
         1: "Covenant of Elohim: To enter the covenant, you must make a vow: Defend the weak and the fatherless; uphold the cause of the poor and the oppressed (Ps 82). Then, you gain paladin powers as long as you follow it: +2 Wi, Healing Touch, Unveil Evil, Divine Blade spells, Hatred(Demons & Undead), +1 to Resist and Courage vs evil.",
-        2: "Shrines: When a character uses a shrine, all party members in the vicinity regain all lost W. The user then benefit from the Shrine powers. A user can only benefit once from each type of shrine (cannot reuse it, but still regains lost W when others does). The Black Shrine is only available once you have obtained all the other shrine. All other benefits are gained through magical items. When a shrine is used, it is depleted.",
+        2: "Shrines: When a character uses a shrine, all party members in the vicinity regain all lost W. The user then benefit from the Shrine powers. A user can only benefit once from each type of shrine. If a user reuse a shrine, they will still regain the W, but won't get the stats. Instead, they will gain a random Heroic Action. The Black Shrine is only available once you have obtained all the other shrine. All other benefits are gained through magical items. When a shrine is used, it is depleted.",
         4: "Depleted Shrine: To refresh a shrine, the heart of a chaotic creature needs to be brought and offered up. To see if it's a chaotic creature, the heart will become black when put into the sun. List of creatures: trolls, giants, dragons (the only thing that's left of them when you kill them, the rest goes away like demons), hydras, sea serpents, minotaurs, etc. If the user is chaotic or evil (cursed, using cursed items, in a demonic pact, etc.), it may not work (reaction roll).",
     },
     "shrine": { 
@@ -3226,7 +3246,7 @@ const treasure =
         2: "CURSED ITEM RULES: If the user uses it once, he cannot get it off and will not want to depart from it. The user can, if convinced forcefully, try to get it off with a Courage test at -1. When the user uses it, he also starts getting afflicted by the curse itself. This curse will break if the item is broken or removed magically from the user. ",
         3: "EMBER PATH RULES: \n Except for the sword, not all ember are compatible with all types of weapons. \n When a meteorite weapon is enchanted with an ember (with the help of 1 of the corresponding type of gems), the user can then benefit from it's 'base power' (passive special bonus). \n Then, it's possible to upgrade it with 5 of the same gem type to give make it either (cumulative) sharper (+1S), more balanced (+1F) or quicker (+1A). \n When a weapon is fully upgraded in its path, then it gains the Ember-Type power (active).",
         4: "EMBER RELIC: If you combine all the good ember type and put it inside a single sword, it becames a Holy Avenger (if two-handed) or Sun Blade (if one-handed). If you do it with the bad ember type, it becomes Moonlight Greatsword (if two-handed) or Vorpal Blade (if one-handed)",
-        5: "DEMONIC ITEM RULES: The item initially feels evil. You can still use it, but you'll have 1 Corruption Point (CP) and you'll be a bit more of one of the sin.  At the next adventure, during sleep, the demon will speak to the user and give him a new power in exchange for more CP/sin/'a small token of sacrifice' that seals the sin (ex: greed = steal something, anger = completely destroy a creature, etc.). Then it will do so again 1 month later and 3 month later. After that, look for an opportune moment for the 5th and final CP and then it will try to get away. Cannot be destroyed through normal means. Tries to get away naturally from its user after it corrupted it to corrupt something else. When the item is discarded/the user attempts to destroy it, it reverts back into a creature based on the object iself. Then, when the creature dies, it reverts back into the object. (The reverse can be true to generate monsters that drops a loot)",
+        5: "DEMONIC ITEM RULES: The item initially feels evil. You can still use it, but you'll have 1 Corruption Point (CP) and you'll be a bit more of one of the sin.  At the next adventure, during sleep, the demon will speak to the user and give him a new power in exchange for more CP/sin/'a small token of sacrifice' that seals the sin (ex: greed = steal something, anger = completely destroy a creature, etc.). Then it will do so again 1 month later and 3 month later. After that, look for an opportune moment for the 5th and final CP and then it will try to get away. Cannot be destroyed through normal means. Tries to get away naturally from its user after it corrupted it to corrupt something else. When the item is discarded/the user attempts to destroy it, it reverts back into a creature based on the object iself. Then, when the creature dies, it reverts back into the object. (The reverse can be true to generate monsters that drops a loot). Getting higher in dark corruption makes you bigger physically (you grow in height).",
     },
     "money_roll": {
         0: "A single gold coin in a case that's depicting a sun.",
@@ -3235,7 +3255,7 @@ const treasure =
         3: "A 3d6 * 5 SP small silver ring inscribed with (something personal)",
         4: "A 3d6 * 5 SP small silver ring inscribed with (something religious)",
         5: "A 3d6 * 5 SP small silver ring inscribed with (something mysterious)",
-        6: "A jewel crown worth 1d6 GP. The crown is decorated with (1-2 suns and stars; 3-4 nothing and unnaturally clean; 5-6 small magical gems",
+        6: "A jewel crown worth 1d6 GP. The crown is decorated with (1-2 suns and stars; 3-4 nothing and unnaturally clean; 5-6 small magical gems)",
         7: "A crown of a previous king worth 3d6 GP.",
         8: "An amulet of protection worth 3d6 * 10 SP.",
         9: "A random piece of weapon in silver lining from a previous history layer worth (base price) * 2",
@@ -3248,21 +3268,21 @@ const treasure =
     "tier_a_roll" : { 
         2 : "curse_item",
         3 : "curse_item",
-        4 : "demonic_item",
-        5 : "demonic_item",
-        6 : "map (5+ it's fake) & books: https://www.reddit.com/r/BehindTheTables/comments/43wsio/books_of_all_sorts/",
+        4 : "demonic_items",
+        5 : "demonic_items",
+        6 : "magic_potion",
         7 : "base_weapon",
         8 : "magic_consumable",
-        9 : "magical_heirlooms",
+        9 : "map (5+ it's fake) & books: https://www.reddit.com/r/BehindTheTables/comments/43wsio/books_of_all_sorts/",
         10 : "meteorite_equipment",
         11 : "gems",
         12 : "tier_b_roll",
     },
     "tier_b_roll" : {  
         2 : "curse_item",
-        3 : "demonic_item",
-        4 : "demonic_item",
-        5 : "demonic_item",
+        3 : "demonic_items",
+        4 : "demonic_items",
+        5 : "map (6+ it's fake) & books: https://www.reddit.com/r/BehindTheTables/comments/43wsio/books_of_all_sorts/",
         6 : "magic_consumable",
         7 : "magic_potion",
         8 : "magical_heirlooms",
@@ -3273,15 +3293,15 @@ const treasure =
     },
     "tier_c_roll" : { 
         2 : "demonic_items",
-        3 : "demonic_item",
+        3 : "map (always true) & books: https://www.reddit.com/r/BehindTheTables/comments/43wsio/books_of_all_sorts/",
         4 : "magic_consumable",
-        5 : "magical_heirlooms",
+        5 : "ember",
         6 : "gems",
-        7 : "ember",
-        8 : "meteorite_equipment",
+        7 : "meteorite_equipment",
+        8 : "ember",
         9 : "gems",
-        10 : "ember",
-        11 : "meteorite_equipment",
+        10 : "magical_heirlooms",
+        11 : "magic_potion",
         12 : "reroll twice in tier_c_roll",
     },
     "ember" : {
@@ -3367,19 +3387,19 @@ const treasure =
         13 : "meteorite staff (can cast spells, +1 Will, bonus spell based on the ember type)"
     },
     "magic_consumable" : {
-        0 : "Flashbang",
-        1 : "Smoke Bomb",
-        2 : "Firebombs",
-        3 : "Alluring Skull",
-        4 : "Holy Water",
-        5 : "Pine Resin (1-2 charcoal, 3-4 rotten, 5-6 gold)",
+        0 : "Flashbang: S1, R6, causes blindness for a turn",
+        1 : "Smoke Bomb: creates cover for a turn",
+        2 : "Firebombs: S3, R6",
+        3 : "Alluring Skull: Non-intelligent monsters (especially undeads) are attracted to it",
+        4 : "Holy Water: Can be used vs undead for S5 R6",
+        5 : "Pine Resin (1-3 charcoal, 4-5 gold, 6 rotten)",
         6 : "Prism Stone",
         7 : "Homeward Bone (same as spell)",
-        8 : "Blossom (1-2 green, 3-4 purple moss, 5-6 blooming purple moss)",
-        9 : "Purging Stone",
-        10 : "Divine Blessing",
-        11 : "Transient Curse",
-        12 : "Lloyd Talisman",
+        8 : "Blossom (1-2 green +1 W for an hour, 3-4 purple moss cure poison, 5-6 blooming purple moss cure disease)",
+        9 : "Purging Stone: cure curse",
+        10 : "Divine Blessing: Cure all disease, poison, etc. and full heal. Only one per party can be carried otherwise they will interact between themselves and empty themselves out.",
+        11 : "Transient Curse: Becomes Wrait-Touched and Ethereal for an hour.",
+        12 : "Lloyd Talisman: Prevent undead from passing a zone marked with the sigil.",
         13 : "Love Potion (charm spell)",
         14 : "Sleep Gas Bomb (sleep spell)",
         15 : "Fire Arrows (3d6)",
@@ -3640,45 +3660,254 @@ const treasure =
         12 : "gem/stone",
     },
     "magic_item_lore": {
-        0: "item_lore_legends", // what do legends say of it?
-        1: "item_lore_great_deed", // what great deed was it part of?
+        0: "item_lore_who_name", 
+        1: "item_lore_legends", // what great deed was it part of?
         2: "item_lore_when", // when was it created?
         3: "item_lore_where", // where was it created?
         4: "item_lore_why", // why was it created?
-        5: "item_lore_how", // how was it lost by its maker or user?
+        5: "item_lore_how_lost", // how was it lost by its maker or user?
+        5: "item_lore_who_surname",
     },
-    "item_lore_legends": { // what do legends say of it?
-        0: "",
+    "item_lore_who_surname": { // how was it lost by its maker or user? 'Duro, the Orc-Slayer'
+        0: ", the (creature)-Slayer",
+        1: ", the Giant",
+        2: ", the Wrathful",
+        3: ", the Glorious",
+        4: ", the Firstborn",
+        5: ", the Mammoth",
+        6: ", the Quaint",
+        7: ", the Migthy",
+        8: ", the Adored",
+        9: ", the Thoughtful",
+        10: ", the Lion",
+        11: ", the Vengeful",
+        12: ", the Grave",
+        13: ", the Oaf",
+        14: ", the Hermit",
+        15: ", the Earnest",
+        16: ", the Massive",
+        17: ", the Commander of the West",
+        18: ", the Deaf",
+        19: ", the Fearless",
+        20: ", the Equalizer",
+        21: ", the Feisty",
+        22: ", the Eternal Hunger",
+        23: ", the Powerful",
+        24: ", the Immortal",
+        25: ", the Eagle Eyes",
+        26: ", the Edge",
+        27: ", the White",
+        28: ", the Forgiving",
+        29: ", the Stalker", 
+        30: ", the Sage",
+        31: ", the Necromancer",
+        32: ", the Minstrel",
+        33: ", the Artist",
+        34: ", the Runecrafter",
+        35: ", the Master",
+        36: ", the Delver",
+        37: ", the Brave",
+        38: ", the Bandit",
+        39: ", the Gladiator",
+        40: ", the Ranger",
+        41: ", the Duelist",
+        42: ", the Blacksmith",
+        43: ", the Crafstman",
+        44: ", the Smith of the North",
+        45: ", the Weaponsmith of the East",
+        46: ", the Blademaster",
+        47: ", the Lord of Beggars",
+        48: ", the Lord of Horses",
     },
-    "item_lore_great_deed" : { // what great deed was it part of?
-
+    "item_lore_who_name": {
+        0: "Duro",
+        1: "Tipula",
+        2: "Anupiya",
+        3: "Einian",
+        4: "Llyr",
+        5: "Robat",
+        6: "Gwayne",
+        7: "Caradog",
+        8: "Tudor",
+        9: "Astri",
+        10: "Audar",
+        11: "Vath",
+        12: "Shpel",
+        13: "Ymeri",
+        14: "Nerseh",
+        15: "Khigar",
+        16: "Azad",
+        17: "Atanas",
+        18: "Melkon",
+        19: "Paramaz",
+        20: "Yezras",
+        21: "Isabel",
+        22: "Arda",
+        23: "Hera",
+        24: "Sylva",
+        25: "Armanoush",
+        26: "Larth",
+        27: "Venza",
+        28: "Venel",
+        29: "Euric",
+        30: "Duda",
+        31: "Ermanaric",
+        32: "Eriulf",
+        33: "Melisanda",
+        34: "Emelia",
+        35: "Amalasontha",
+        36: "Theodoric",
+        37: "Woeten",
+        38: "Kechok",
+        39: "Choden",
+        40: "Buthi",
+        41: "Kalsang",
+        42: "Seldon",
+        43: "Sonam",
+        44: "Tashi",
+        45: "Tauras",
+        46: "Joakimas",
+        47: "Hubertas",
+        48: "Merkelis",
+        49: "Louis",
+        50: "Asrat",
+        51: "Albreid",
+        52: "Cénéric",
+        53: "Almire",
+        54: "Rainald",
+        55: "Osbert",
+        56: "Rollon",
+        57: "Guillaume",
+        58: "Léane",
+        59: "Mélonie",
+        60: "Adelize",
     },
-    "item_lore_when" : { // when was it created?
-
+    "item_lore_legends" : { // what great deed was it part of? what do legends say of it? (it is said that) '... a dragon was slain using this weapon.' It needs to be linked to another item, location, festival, etc.
+        0: "a dragon was slain using this weapon by a knight named {name}. Because of that, a huge statue of a dragon with the sword planted in its head is built {in a village in the current region or the next}",
+        1: "a great host of orcs was slain by an adventuring party led by a proud warrior named {name} using this item. He even singlehandedly saved a farm family from a raid and lost his life in the process. Because of this, that region has a holiday in that warrior's name on the date of that event in {village in the region}.",
+        2: "the item was found in a river that dried up with blood. Every year now the village where it happened makes a special prayer and procession to prevent it from happening again.",
+        3: "the item brings about strange weather. (Snowstorm, tornadoes, etc.). Because of that, the villagers prevented adventurers with it to enter their town, it's now a tradition to check for it in newcomers.",
+        4: "the item was used to slay a great monster which gave great treasures. These treasures were freely given by an anonymous female adventurer to everyone in a city. This started a tradition for women to create a handmade gift for their significant other once they're a certain age. It's supposed to be a symbol of compassion and kindness and it's usually part of a larger ceremonial performance that can last for a day.",
+        5: "the item was used to fend off bandits that had amassed quite the sum from stealing. The hero then gave one gold coin to each baby in a town, which started a new tradition to give a new born baby a silver coin. It's supposed to create and strengthen a bond.", 
+        6: "X slew Y atop (mountain, bridge, etc.)",
+        7: "the item compels its bearer to protect X location.",
+        8: "the item compels its bearer to find a missing artefacts from the Elder Days",
+        9: "the item compels its bearer to protect X type of people",
+        10: "it once belonged to the illustrious warrior X who (protected a god, killed a god, etc.)",
+        11: "the item is imbued with the spirits of the previous warriors who wielded it",
+        12: "the item compels its bearer to slay X, the legendary Y",
+        13: "the item will bring wealth and glory to its bearer",
+        14: "the item was rejected by the great hero X",
+        15: "the item was the ruin of the great dragon X",
+        16: "the item, many times, ended up in the hoard of red dragons",
+        17: "the warrior X was the bearer of the item both as a human and a vampire, on two separate occasions",
+        18: "the item had its origin, before its current form, as the weapon of an Autarch",
+        19: "a great hero wielded the item and hide from its enemy in a mountaintop village. Because of this, it is tradition for men to isolate themselves for a period of time and meditate on the winter solstice. It's supposed to be a symbol of creativity and independence and it's usually part of a coming of age ritual or festivity that can last for almost a week.",
+        20: "this item was once disputed by two friendly adventurers. To settle the matter, they dueled for it in the middle of a village. It then became a tradition for men to perform in a ceremonial duel once they become adults. It's supposed to be a symbol of respect and trust and it's usually part of a larger life ceremony that can last for half a week.",
+        21: "an hero was once bequested by a king to perform a great deed in exchange for a secret request. That hero was never seen again.",
+        22: "the item became the fascination of a wizards of old and it was kept in his tower for many years.",
+        23: "the item once was left in a cemetary and the dead themselves brought it back to civilization in X village.",
+        24: "the item is linked with the return of the (X ancient creature)",
+        25: "the item is attracting ravens and shadows at night",
+        26: "the item was linked to the old epic of the Twin Sisters of Dawn, although the details are lost to time"
     },
-    "item_lore_where": { // where was it created?
- 
+    "item_lore_when" : { // when was it created? e.g. (when) '... the dragons were still in command in X kingdom.'
+        0: "dragons were still flying high over the northern kingdoms",
+        1: "the Leviathan was still deep under the sea",
+        2: "the Behemoth was chained to the Black Mountain",
+        3: "the Tower of Woe was still standing/had just been felled",
+        4: "the Blessed Island was still accessible/had just been closed to the world",
+        5: "the world was young/old",
+        6: "the Great Invasions had yet to be felt in the world/had just happened",
+        7: "the Long Winter hit the world",
+        8: "the Great War was on the verge of collapsing the ancient world",
+        9: "an unknown time in the mystery of history",
     },
-    "item_lore_why": { // why was it created?
-
+    "item_lore_where": { // where was it created? (created) '... in a volcano.'
+        0: "inside a volcano",
+        1: "atop an icy m ountain",
+        2: "in the depths of a mountain",
+        3: "at the gates of the underworld",
+        4: "deep inside an Autarch temple",
+        5: "on the footstep of an Autarch's throne",
+        6: "deep within a dark and brooding forest of the west",
+        7: "far within a desert in the east",
+        8: "on a icy lake in the north",
+        9: "in a small village blacksmith",
+        10: "in a dark fortress now forgotten",
+        11: "on top of a great tower",
+        12: "in an abandonned outpost",
+        13: "in the First Castles",
+        14: "in a tower within the Deridan Wastes",
+        15: "within Akoum, the Undercrypt",
+        16: "within the Arch of an Autarch",
+        17: "within an occult lighthouse",
+        18: "inside an abandonned arena",
+        19: "within the Cave of Eternity",
+        20: "within the Armory of the Gods",
+        21: "within a now sunken ruin",
+        22: "outside of the Black Dragon Gates",
+        23: "inside a bottomless vault",
+        24: "in his own stronghold",
+        25: "inside an ancient stoneforge",
+        26: "in the vault of Champions",
+        27: "on a volcanic island",
+        28: "in a recluded wasteland",
+        29: "in a watery grave",
+        30: "in a woodland lodge",
+        31: "inside the Restless Tomb",
+        32: "inside an abandonned mine",
+        33: "in a tarnished citadel",
     },
-    "item_lore_how": { // how was it lost by its maker or user?
-
-    }
+    "item_lore_why": { // why was it created? (because) '... he wanted to avenge his family'
+        0: "he/she wanted to avenge a family member dear to him",
+        1: "the item was commissionned by {npc}",
+        2: "an accident shook his creation through the meddling of demons (or gods, or magic)",
+        3: "a magical event revealed it",
+        4: "an autarch guided/built it",
+        5: "a whole community needed it and worked on it",
+        6: "he/she wanted to destroy a specific creature",
+        7: "he/she wanted to push back an invasion",
+        8: "he/she wanted to uncover a deep mystery",
+        9: "he/she wanted to obtain power and glory",
+        10: "he/she wanted to prevent a catastrophe",
+    },
+    "item_lore_how_lost": { // how was it lost by its maker or user? (during) 'during a skirmish'
+        0: "during a skirmish in a {regional} marsh, falling deep into uneasy waters",
+        1: "it was stolen during a heist and not seen again for a long time",
+        2: "an assassination attempt specifically to obtain the object",
+        3: "a heroic struggle against a powerful demon/dragon",
+        4: "the funeral procession where it was deposited on the corpse of the owner",
+        5: "a strange event where the owner decided to hide it from the mortal realm",
+        6: "a great battle between kingdoms",
+        7: "a delve in the bowel of the earth",
+        8: "a cataclysmic natural/magical event",
+        9: "an earthquake",
+        10: "an invasion",
+        11: "a famous raid that destroyed the house of the owner",
+    },
+    "item_lore_dark_past": {
+        0: "In the anals, it is said that this weapon was used to kill a friend by a hero possessing it in a tragic tale.",
+        1: "Long ago, foul play with regards to the item ownership led to betrayal and strife, making it a dark memory in the region.",
+        2: "",
+    },
+    "TIER_A": {},
+    "TIER_B": {},
+    "TIER_C": {},
+    "MAGIC_ITEM_LORE": {},
 }
 
 /*
 TODO:
 - Add history generator for heirlooms (so that two heirlooms of the same type still appear different)
 - Finalise ember paths
-
 */
 
 const spells = 
 {
     "rules_and_varia": {
         0: "Resisting a spell: For each Will spent, roll a D6. The result must beat the spell dice result.",
-        1: "Casting a spell: Spend as many Wi as you want. Roll as many dice as you spent Wi. If you have at least one dice that's equal or above the casting cost of the spell, the spell is casted. If a result of the dice is 6, you cannot cast this spell again until you get a Downtime. It's only possible to have one concentration spell working at once. Unless noted otherwise, the target must be visible to the user.",
+        1: "Casting a spell: Spend as many Wi as you want. Roll as many dice as you spent Wi. If you have at least one dice that's equal or above the casting cost of the spell, the spell is casted. On a result of 1, you do not regain that Will points at the end of the scene/combat.",
         2: "Spells template: 'Spell Name ([target number to cast]+ | duration): Description | Channelled effect description",
         3: "Spells category: Light are spells of the ancient humans, given to them as part of ancient hymns and pratices from Elohim. Sorcery is the dragon magic given to man by them as part of their pact with Autarchs. Pyromancy is the primordial control of energy associated with the first living creatures and the various spirits.",
         4: "Knowing spells: Spells are generally known through items. Some stronger and unique items like magic staves will have many spells ingraved in them. Most generally, it will be with Memeory Stones each containing one spell."
@@ -3793,7 +4022,7 @@ const monsters =
         9: "Migthy Blow: Each wound dealt in melee is 2 W.",
         10: "Master Swordsman/Archer: Reroll 1s melee roll. When slay a model, regain a lost Mi.",
         11: "Woodland Creature: Ignore penalties of wood and forest difficult terrain",
-        12: "Monster: Is at least Fear if the model does not have better. Once per melee, instead of attack, it can use brutal power attacks. \na) Rend: make attack vs Strength instead of T; \nb) Hurl: before models back away, choose a target with less S than the monster: throw the target 1d6 Mv in the direction of choice (all target in the line suffer S3 hit and the target is put prone and suffer S6 if there is a hard stop); \nc) Barge: all models in melee back away 3 Mv instead of 1 Mv and then the monster can make another d6 move (including a charge and another fight phase)",
+        12: "Monster: Is at least Fear if the model does not have better. Whoever in melee that cannot harm it cannot participate in the melee roll. They are always shot at +1 because of their size and can be shot in melee (although with cover). Because of their size, characters in melee cannot use abilities that require them to outnumber their opponent (monsters cannot be 'outnumbered'). Once per melee, instead of attack, it can use brutal power attacks. \na) Rend: make attack vs Strength instead of T; \nb) Hurl: before models back away, choose a target with less S than the monster: throw the target 1d6 Mv in the direction of choice (all target in the line suffer S3 hit and the target is put prone and suffer S6 if there is a hard stop); \nc) Barge: all models in melee back away 3 Mv instead of 1 Mv and then the monster can make another d6 move (including a charge and another fight phase)",
         13: "Throw Stones: If the unit does not move, it can use a shoot attack as per the profile.",
         14: "Disease Hit: If the unit inflict at least one wound to a target, it must make a T check at the end of combat to see if it starts developping a disease. Roll a d6, on a 6+ it's a real disease, on a 5-, it's just a random exhaustion (-1 to all stats until healed/downtime).",
         15: "Fearless: Is not affected by Fear, Terror or Morale check.",
@@ -5065,7 +5294,7 @@ const monsters =
         "Detail": "Hollowed knight errant",
         "Value": 125
     },
-    "black_knight": {
+    "silver_knight": {
         "Mv": 6,
         "F": 6,
         "S": 6,
@@ -5403,7 +5632,17 @@ const monsters =
     },
 }
 /* 
+
+Other monsters idea:
+- Alukah ('horse-leech', huge leech/tiq monsters)
+
 Add a "SPECIAL REACTION" to some monsters. That is, if confronted with X, they will do Y. This is made to showcase the lore of the game with real mechanics. For example, a certain type of golems made with Z could react by breaking down if confronted by X, to showcase its origin etc.
+
+Boss idea = 
+    the red cape monster from Conan the Destroyer (aka a monster that you can't kill directly but you need to break other objects that represents its W)
+    https://www.kassoon.com/dnd/boss-fight-ideas/
+    https://coinsandscrolls.blogspot.com/2018/06/osr-boss-fight-wolf-of-rhen.html
+
 */
 
 const chargen = 
@@ -5631,6 +5870,18 @@ function requestContent(input){
             return "Yes/No = " + get1d6() + " \nHow much = " + get1d6() + " \nHow favorable = " + get1d6()
         case "curse_item": 
             return getContent("curse_item_cost") + " | " + getContent("curse_item_effect") + " | " + getContent("curse_item_salt") + " | " + getContent("curse_item_curse") + " and -1 C | " + getContent("curse_item_destroy")
+        case "TIER_A":
+            return requestContent("tier_a_roll") + " | " + getContent("money_roll")
+        case "TIER_B":
+            return requestContent("tier_a_roll") + " | " + getContent("money_roll") + "\n" + requestContent("tier_b_roll") + " | " + getContent("money_roll") + " | " + getContent("money_roll")
+        case "TIER_C":
+            return requestContent("tier_a_roll") + " | " + getContent("money_roll") + "\n" + requestContent("tier_b_roll") + " | " + getContent("money_roll") + "\n" + requestContent("tier_c_roll") + " | " + getContent("money_roll") + " | " + getContent("money_roll")
+        case "MAGIC_ITEM_LORE": 
+            return getContent('item_lore_who_name') + getContent('item_lore_who_surname') + " created the item because " + getContent('item_lore_why') + ". It was created " + getContent('item_lore_where') + " when " + getContent('item_lore_when') + ". It was lost by its first owner " + getContent('item_lore_how_lost') + ". It is said that ages ago, " + getContent('item_lore_legends') + " " + getContent("item_lore_dark_past") + " It is rumored that the last owner was ===>>> " + requestContent("NPC_FULL"); 
+        case "NPC_FULL":
+            return getContent("npc_who_role") + " | " + getContent("leader_fame_fighter") + " | " + getContent("people_values") + " | (name and surname)"
+        case "DUNGEON_LORE":
+            return getContent("dungeon_lore_what") + " | " + getContent("dungeon_lore_where") + " | " + getContent("dungeon_lore_location") + " | " + getContent("dungeon_lore_purpose") + " | " + getContent("dungeon_lore_importance") + " | " + getContent("dungeon_lore_hook")
         default:
             return getContent(input)
     }
@@ -5639,6 +5890,9 @@ function requestContent(input){
 /* 
 
 TODO: 
+- Rumour generator: who (merchant, soldier, hunter, etc.) heard (what) around (where). 
+- Add to random encounter the local "special" blacksmith, a clearing shrine that can heal curses and disease, etc.
+- Add a 'side job' generator with retrieving artefacts from ruins, saving people, killing creatures, etc. All have them give good treasure, info, influence or hints/secrets
 - Add to random encounter that you can spot old towers and high hills to get a good look at the terrain all around. Shift weather effects maybe to weather itself. Try to minimize at best as I can the resource management aspect of hexcrawling to make it more about DISCOVERY than TRAVEL.
 - Add in discovering roads in the "finding secrets" of the hex. 
 - IF I do hexcrawl, I should have a "players map" that represents what the player can actually 'see' on an hex grid (so full of empty hexes but at least some good points), a "fictional map" aka a drawned map, and a DM's map with hexes and locations
@@ -5701,8 +5955,34 @@ Campaign ideas:
 - Each month, the lich will kill a big NPC (leader of villages, ex-adventurers, etc. -> require to have believable and strong cool NPCs)
 - Could have a subplot of a very cursed weapon that the lich uses to drain souls. The blade forces the user to build up power, anger, etc. and then kill someone else for a sin (greed, jealousy, etc.). Then, the weapon forces the owner to takes its own life. The blade is then picked up by a nazgul and brought back to the lich to feed some kind of machine/object/plot. The reason that is so, is because the blade is forged by the lich for the lich and he can cast spells/control the user through it. 
 - Also, the nazgul and/or the lich should leave a specific mark on the place they raid, kill, etc. so that with research/comparison the players can learn about something in the far past. (probably an ermit historian of the previous people running the area)
+=> CRAFT THE SCENARIO WITH NODE-BASED SCENARIOS LIKE THIS: https://thealexandrian.net/wordpress/7985/roleplaying-games/node-based-scenario-design-part-3-inverting-the-three-clue-rule
+    - For this to work, I need each "node" to be an adventure/location. So I need to have an expected "output" for each of these. I shouldn't prep yet 'what' the adventure is, but at least what the output 'should' be. If I have the list of nodes with their outputs, then it's easier to just prep it one week in advance. 
+    - Check out the 'layer cake' format: https://thealexandrian.net/wordpress/8015/roleplaying-games/node-based-scenario-design-part-6-alternative-node-design
+    - This require also a bunch of clues that I want to give and then lay them out in a hierarchy:
+        - Final goal would be to find and kill the lich to stop his plan with the fog (and/or stop the fog, but that's higher level node -> something that I keep open for further campaign material if need be)
+        - Tier A, aka the big adventure clues/nodes that can potentially end it
+            Who the lich is
+            Where is the lich
+            What does he wants
+            How to kill him
+        - Tier B nested underneath the others that represents small arcs within themselves
+            Info about nazguls
+            Info about fog
+            Info about various dungeons, ruins and what was their previous use, etc.
+        - Tier C clues are what leads to those, generally surface clues
+    - Use the mind map tools of obsidian and create a node vault just for that (I think I can use tags and groups)
+
+- Because the initial town was just captured recently because of the war, many buildings are destroyed, not all shops are open, etc. New people are coming in and so many more things will open as times goes by
+- Need to have the multiple layers of history with a distinct architecture. Why not also have them have their distinct Autarch
 
 
+==========
+DUNGEON CREATION
+
+- Each barrier the party faces (aka each room, door, trap, encounter between the entrance and what they are here to do) should be worthwile to the players. It should give them information about the dungeon, about areas, about secrets, about traps, etc. Carefully navigating the dungeon should be rewarding.
+- For this, create a node-based dungeon
+
+==========
 
 
 - Hexes:
@@ -5817,9 +6097,9 @@ smoke bomb: S1 attack; when hit, either you spend a Wi or you are "Transfix"
 
 
 
-Categories for sections in obsidian main campaign:
-
-GAME
+==================
+    ---OBSIDIAN---
+GAME (what I need to run the game)
     Rules cheatsheet (this is what I put on the discord based on the following)
     Rules
         Character
@@ -5831,7 +6111,8 @@ GAME
         Tools
         Sandbox
         Open Table
-WORLD
+    Link to my generator
+WORLD (what I need for linking campaign and providing context)
     World Map (real + symbolic, including continent scale)
     Locations (continents and region, also include who is ruling what)
     Covenants (include all info, including potential leaders)
@@ -5840,7 +6121,7 @@ WORLD
     Nations*
     Languages
     Lore & Religion (two parts. first part: make three categories: what everyone know, what only a few know, what nobody knows. second part: the full DM-side blurb)
-(X REGION)/CAMPAIGN
+REGION (what I need to prep the campaign)
     Regional Overview (nation, language, covenants, etc. aka links with the world)
     Domain (court, leader, hall of infamy, etc.)
     Organisation (covenants, guilds, etc.)
@@ -5849,8 +6130,21 @@ WORLD
     Locations (cities, villages, lairs, ruins)
     Adventurers Codex (session recaps)
     Tavern (rumours)
-    Items (magical items with their location/distribution)
     Festivals & Calendar
+    Hall of Infamy
+    Initial Campaign 'setting' (so that I can reuse it if I want) including the blurb, the last event before campaign start, the hook, the initial scenario hook/adventure, etc.
+SCENARIO (what I need to prep the game)
+    Nodes
+    Revelation List
+    Clues List
+    Hexes List
+    Items (magical items with their location/distribution)
+    Campaign Status Document
+        Timeline (regional, domain)
+        Events
+        Notes
+    Organisation & NPC List/Status
+    Research (additional information on node content that could be of use if the players dig more, if they are interested, etc. basically brainstorming)
 
 *
 Ecological influence
