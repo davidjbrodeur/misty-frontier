@@ -6,70 +6,367 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/main.css" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript" src="script\main.js"></script>
+    <script type="text/javascript" src="script\generators.js"></script>
+    <script type="text/javascript" src="script\login.js"></script>
     <title>Les Frontières Brumeuses</title>
   </head>
   <body>
     <header id="header"></header>
-    <main class="landing-page">
-      <h1>Les Frontières Brumeuses</h1>
-      <div class="index">
-        <section class="intro-lore">
-          <h2>Une aventure fascinante et dangereuse vous attent...</h2>
-          <p>Lore dump global</p>
-          <p>Lore dump hook</p>
-        </section>
-        <section class="intro-logistics">
-          <h2>Bienvenue!</h2>
-          <h3>Site web explicatif pour la campagne</h3>
-          <p>
-            Une campagne de jeu de rôle en ligne entre amis qui utilise une
-            version simplifiée du système Middle-Earth Battle Companies. La
-            campagne se déroule par l'utilisation du site
-            <a href="https://roll20.net">Roll20</a>, un outils gratuit pour
-            gérer des campagnes, des personnages, lancer des dés, etc.
-          </p>
-          <ul>
-            <li>
-              Le site est conçu comme un "aide-mémoire" pour le déroulement de
-              la partie et des règles. Il n'est pas important de l'apprendre par
-              coeur car il est disponible en ligne en tout temps.
-            </li>
-            <li>
-              La seule section importante à lire dès maintenant est
-              <a href="introduction.html">Introduction</a> qui permet de mieux
-              comprendre la campagne et comment jouer.
-            </li>
-            <li>
-              La section <a href="character.html">Personnage</a> permet de mieux
-              comprendre le personnage que vous contrôlez en tant qu'avatar pour
-              agir dans le monde fictif du jeu.
-            </li>
-            <li>
-              La section <a href="equipment.html">Équipement</a> vous informe de
-              ce que votre personnage peut transporter et utiliser.
-            </li>
-            <li>
-              La section
-              <a href="adventuring.html">Aventure et exploration</a> permet de
-              comprendre comment votre groupe va se déplacer dans le monde.
-            </li>
-            <li>
-              La section <a href="combat.html">Combat</a> explique comment les
-              combats se déroulent et se résoudent.
-            </li>
-            <li>
-              La section <a href="downtime.html">La ville de Catarina</a> est
-              une section "fictive" dans le sens où elle montre des éléments du
-              monde du jeu comme la taverne avec les nouvelles du royaume ainsi
-              que les accomplissements des personnages.
-            </li>
-          </ul>
-          <p>Pour toutes questions, contacter le maitre de jeu!</p>
-        </section>
-      </div>
+    <br />
+    <main class="content-page" id="dm-page">
+      <br />
+      <menu>
+        <h3>Menu</h3>
+        <a href="#generators">Generators</a>
+        <a href="#dice-roller">Dice roller</a>
+        <a href="#content-roller">Content roller</a>
+        <a href="#monster-shower">Monster</a>
+        <a href="#procedures">Procedures</a>
+        <a href="#solo">Solo</a>
+      </menu>
+      <br />
+      <section id="generators">
+        <h2>Extra Generators</h2>
+        <ul>
+          <li>
+            <a href="https://donjon.bin.sh/d20/dungeon/">Donjon</a>
+          </li>
+          <li>
+            <a
+              href="https://donjon.bin.sh/fantasy/random/#type=secret_door_detai"
+              >Quests, secret doors, etc.
+            </a>
+          </li>
+          <li>
+            <a href="https://hirelings.hexed.press/">Hirelings generator</a>
+          </li>
+          <li>
+            <a href="https://www.fantasynamegenerators.com/">Name generator</a>
+          </li>
+          <li>
+            <a href="https://inkwellideas.com/free-tools/rumor-generator/"
+              >Rumour generator</a
+            >
+          </li>
+          <li>
+            <a href="http://www.ringbell.co.uk/info/hdist.htm"
+              >Tool to calculate how far away in miles the party can see based
+              on their height position</a
+            >
+          </li>
+          <li>
+            <a href="https://indo-european.info/dictionary-translator/"
+              >Indo-European translator</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.fantasynamegenerators.com/epithet-generator.php"
+              >Character epithet-generator</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <br />
+      <section id="dice-roller">
+        <h2>Dice Roller</h2>
+        <input id="diceNum" type="text" value="3" />
+        <button id="diceButton" onclick="rollDice();">Roll Dice</button>
+        <div id="dieContainer" class="dice"></div>
+        <br />
+      </section>
+
+      <section class="content-roller" id="content-roller">
+        <h2 class="title-dm">Content Roller</h2>
+        <br />
+        <div>
+          <select
+            name="category-selector"
+            id="content-category-selector"
+          ></select>
+        </div>
+        <div class="output">
+          <textarea
+            id="contentOuput"
+            type="text"
+            value="underground_turn"
+            style="width: 25vw; height: 25vh"
+          >
+              general
+          </textarea>
+          <textarea
+            id="tableContentOuput"
+            type="text"
+            value="underground_turn"
+            style="width: 25vw; height: 25vh"
+          >
+            general
+        </textarea
+          >
+          <br />
+          <label for="args">Args</label>
+          <input type="text" id="args" value="" />
+        </div>
+        <div class="input" id="input-container">
+          <div id="contentContainer" class="content-container"></div>
+        </div>
+      </section>
+
+      <section class="content-roller" id="monster-shower">
+        <h2 class="title-dm">Monster Shower</h2>
+        <br />
+        <div class="output">
+          <textarea
+            id="monsterOuput"
+            type="text"
+            value="underground_turn"
+            style="width: 25vw; height: 25vh"
+          >
+              general
+          </textarea>
+          <br />
+        </div>
+        <div class="input" id="input-container-monster">
+          <div id="monsterContainer" class="content-container"></div>
+        </div>
+      </section>
+
+      <section id="procedures">
+        <h2>Procedures</h2>
+        <ul>
+          <li>
+            <strong>Hexcrawling</strong>
+            <ul>
+              <li>
+                Roll <strong>"hex-encounter"</strong> when entering first hex of
+                the day and when searching
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Rumour generator</strong>
+            <ul>
+              <li>
+                1) Feature: Make a list of 20 features (location, faction, magic
+                item, npc, setting details, factions, etc.)
+              </li>
+              <li>
+                2) Type: Assign to each feature a type based on what it is:
+                <ul>
+                  <li>Danger (warning)</li>
+                  <li>Challenge (warning)</li>
+                  <li>Reward (drawn towards)</li>
+                  <li>Mystery (drawn towards)</li>
+                  <li>Opportunity (drawn towards)</li>
+                </ul>
+                It doesn't have to be 'about' the party (NPC danger could be
+                that he's a danger to others, to the party, that HE's in danger,
+                etc.)
+              </li>
+              <li>3) Object: Something that affect the feature</li>
+              <li>
+                4) Details: Write in some words the details of the rumour Janus
+                - threat - blacksmith (Janus debt to blacksmith, in hiding)
+              </li>
+              <li>5) Determine veracity (or twist some for falsity)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section id="solo">
+        <h2 class="subtitle">Solo play</h2>
+        <h3 class="subtitle">Info</h3>
+        <ul>
+          <li>
+            <dfn title="Something that generates generic content."
+              >Generative resource</dfn
+            >
+            : This site + AD&D 1st. If needed, the d100 series that I have.
+          </li>
+          <li>
+            <dfn
+              title="Something that is not rules and not as generic as generative resources. Serves to orient the content."
+              >Suggestive resources</dfn
+            >
+            : Worldographer, MTG cards
+          </li>
+          <li>
+            <dfn title="Ruleset">A rubric</dfn> : This site. Otherwise, MESBG
+          </li>
+          <li>
+            <dfn title="Something that restrict the decisions and outcome."
+              >Restrictive resources</dfn
+            >
+            : Reaction rolls, General Rolls, AI Rolls. Just modify them with
+            likely, unlikely in the current situation (+2, -2).
+          </li>
+          <li>Track time, torches, decisions. Note everything on paper.</li>
+        </ul>
+        <h3 class="subtitle">Procedure</h3>
+        <ul>
+          <li>Ask a question</li>
+          <li>Find an answer (oracle or table)</li>
+          <li>Play it out logically</li>
+          <li>Recap the scene</li>
+          <li>
+            Write down the thread (goal/intent of the character on a subject) of
+            the adventure
+          </li>
+          <li>Play a new scene under that thread</li>
+        </ul>
+        <p>
+          During downtimes, between scenes, etc., flesh out the character
+          (flashback with oracles) or the world/area/location.
+        </p>
+        <h3 class="subtitle">Combat AI/Procedure</h3>
+        <ul>
+          <li>
+            Based on reaction roll, note down one objective of the monster going
+            into the combat (if you can't find any or the reaction roll doesn't
+            provide a reason, than the monster will flee)
+          </li>
+          <li>Fight tactically as per the monster</li>
+          <li>Roll morale for both players and monsters</li>
+          <li>Roll reaction to see how loss of morale affect them</li>
+          <li>
+            Use oracle to determine paths to take to escape, etc. if needed
+          </li>
+        </ul>
+      </section>
+      <br />
       <br />
     </main>
     <footer id="footer"></footer>
-    <script src="script\main.js"></script>
+    <script type="text/javascript">
+      function getSelectBoxElements() {
+        var arrayOfElements = [];
+        for (var [key, value] of Object.entries(content)) {
+          arrayOfElements.push(key);
+        }
+        return arrayOfElements;
+      }
+
+      function fillSelectBox() {
+        var values = getSelectBoxElements();
+        var select = document.getElementById("content-category-selector");
+        for (const val of values) {
+          var option = document.createElement("option");
+          option.value = val;
+          option.text = val;
+          select.appendChild(option);
+        }
+      }
+
+      fillSelectBox();
+
+      function rollDice() {
+        var numDice = document.getElementById("diceNum").value;
+        var container = document.getElementById("dieContainer");
+        container.innerHTML = "";
+        var sum = 0;
+        for (var i = 0; i < numDice; i++) {
+          var diceRoll = Math.floor(Math.random() * 6) + 1;
+          sum += diceRoll;
+          container.innerHTML += '<div class="dice">' + diceRoll + "</div>";
+        }
+        document.getElementById("diceButton").innerHTML = sum;
+      }
+
+      function generateContent(isUndergroundTurn) {
+        if (isUndergroundTurn) {
+          var contentType = "underground_turn";
+        } else {
+          var contentType = document.getElementById("contentType").value;
+        }
+        contentGenerated = getGeneratedContent(contentType);
+        document.getElementById("contentOuput").value = contentGenerated;
+      }
+
+      function getTableAsString(tableToSearch) {
+        let allTable = getData();
+        return getStringFromList(allTable, tableToSearch);
+      }
+
+      function getStringFromList(list, key) {
+        let result = key.toUpperCase();
+        for (var [key, value] of Object.entries(list[key])) {
+          result += "\n" + key + " : " + value;
+        }
+        return result;
+      }
+
+      function deleteAllButtons() {}
+
+      var createAllButtons = function () {
+        var selection = document.getElementById(
+          "content-category-selector"
+        ).value;
+
+        var arrayOfTables = [];
+        for (var [key, value] of Object.entries(content[selection])) {
+          arrayOfTables.push(key);
+        }
+
+        if (
+          selection != "generalities" &&
+          selection != "generate_treasure" &&
+          selection != "generate_shrine" &&
+          selection != "running_spells" &&
+          selection != "chargen"
+        ) {
+          for (var [key, value] of Object.entries(content["generalities"])) {
+            arrayOfTables.push(key);
+          }
+        }
+
+        for (table in arrayOfTables) {
+          var button = document.createElement("button");
+          button.innerHTML = arrayOfTables[table];
+          button.setAttribute("id", arrayOfTables[table]);
+          button.onclick = function () {
+            document.getElementById("contentOuput").value = requestContent(
+              document.getElementById(this.id).innerHTML
+            );
+            document.getElementById("tableContentOuput").value =
+              getTableAsString(document.getElementById(this.id).innerHTML);
+          };
+          document.getElementById("input-container").appendChild(button);
+        }
+      };
+      createAllButtons();
+
+      var createAllMonsters = function () {
+        var allMonsters = getMonsters();
+
+        for (monsterName in allMonsters) {
+          var button = document.createElement("button");
+          button.innerHTML = monsterName;
+          button.setAttribute("id", monsterName);
+          button.onclick = function () {
+            document.getElementById("monsterOuput").value = getStringFromList(
+              getMonsters(),
+              document.getElementById(this.id).innerHTML
+            );
+          };
+          document
+            .getElementById("input-container-monster")
+            .appendChild(button);
+        }
+      };
+      createAllMonsters();
+
+      var select = document.querySelector("#content-category-selector"),
+        input = document.querySelector('input[type="button"]');
+      select.addEventListener("change", function () {
+        let allButtons = document.getElementById("input-container");
+        while (allButtons.firstChild) {
+          allButtons.removeChild(allButtons.firstChild);
+        }
+        createAllButtons();
+      });
+    </script>
   </body>
 </html>
