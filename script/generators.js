@@ -371,6 +371,28 @@ const running_wilderness =
     "wilderness_roll_hard": {
 
     },
+    "wilderness_encounter": {
+        2: "unique_hex_encounters",
+        3: "hextype encounter double trouble",
+        4: "hextype encounter",
+        5: "hextype encounter",
+        6: "nearest_location_encounter",
+        7: "nearest_location_encounter",
+        8: "nearest_location_encounter",
+        9: "hextype encounter",
+        10: "hextype encounter",
+        11: "faction_encounter",
+        12: "faction_encounter"
+    },
+    "nearest_location_encounter": {
+        0: "Check the nearest location (ruins, lairs, towns, etc.) and take their associated random encounter"
+    },
+    "recurring_npc_encounter": {
+        0: "(No recurring for now)"
+    },
+    "faction_encounter": {
+        0: "(No faction encounters for now)"
+    },
     "wilderness_lost_roll": {
         0: "party_loss",
         1: "party_stuck",
@@ -382,14 +404,14 @@ const running_wilderness =
         7: "party is on the right direction",
     },
     "wilderness_encounter_roll": {
-        0: "unique_hex_encounters",
-        1: "hextype encounter",
-        2: "hextype encounter double trouble",
+        0: "wilderness_encounter",
+        1: "wilderness_encounter",
+        2: "wilderness_encounter_omen",
         3: "wilderness_encounter_omen",
         4: "the party has no encounter",
         5: "the party has no encounter",
-        6: "npc_encounter",
-        7: "recurring npc encounter",
+        6: "recurring_npc_encounter",
+        7: "npc_encounter",
     },
     "wilderness_find_roll": {
         0: "party does not find feature",
@@ -1597,13 +1619,10 @@ const generate_campaign =
 const generate_dungeon = 
 {
     "dungeon_level_checklist": {
-        0: "Things to gain: \r\n    - A shrine (at least one)\r\n    - Knowledge\r\n    - A treasure\r\nDanger: \r\n    - Something to be killed\r\n    - Something to kill the party (aka traps and tricks)\r\nLevel design: \r\n    - Shortcut to another level, or to the exit (can be a magic pool, a teleporter, an elevator, a gate, a door that\'s hidden from the other side, etc.)\r\n    - More than one entry\r\n    - 3D \/ elevation shift\r\n    - Loop\r\n    - A landmark (for navigation)\r\n    - Something atmospheric\r\nSomething to interact with \/ to experiment with\r\nSomeone to talk to (prisoner, ghost, machine, demon, statue\/painting, adventuring party, etc.)\r\nA secret that the players probably won\'t find\r\nA secret the players will probably find \n Make an adversary roster with monsters and where they are in the level to reference it quickly (include small details about them such as prerolled reaction and their trigger/alarms; also include groups (for example, all 'orcs' will respond to orc drum alarm); make them per quarters/sections of the dungeon to make it easy and maneagable (separate those with a definite mark such as a locked big door, a chasm, a drop of 20 feets, etc.)) \nIf there are puzzles/challenges, do they fit the current node/region/narrative/dungeons/etc.? Are the puzzles information placed in other nodes to have a way for players to get what they need to solves them? \nDoes the dungeon layout enhance or maintain exploration, player decision making (both context AND consequences), uncovering hidden areas/secrets and maintaining a good pace of action (map flow). The dungeon must have different 'region'/quadrants that loops back in themselves with a common general objective through nodes. It could be to go activate X number of lever to get inside the room where the stairs to go down are; it could be to go kill someone preventing the access to the next level through various means (factions, assassination, all out dungeon clearing, etc.); etc. Or have a good number of small quadrants that are independant yet interconnected (both by hidden paths and by nodes).\nBig hidden areas or hidden subsections should be nodes for something else with clues assigned so that it wasn't created for nothing (same with locked areas). \nAre there areas of worth (reward and information) that are hidden behind danger/impediment have multiple ways of being reached? Alternate paths, monsters on one side or traps on the other, going down to come back up, etc. \nDoes interesting part of the dungeon (or dangerous one) have legends, rumours, fragments of maps, dungeon NPCs, etc. that exists to share info and make it easier to know what can be done to progress. \nIs the dungeon an interesting place to explore, just like the wilderness is? \nIf there are long or very arduous path, is there a way to bypass them through the use of alternate entrance, shortcuts (that needs to be opened), secret paths, etc.? \nAre there many ways (stealth, combat, puzzle, this or that shortcut/path, etc.) to get to interesting places aka loops? \nDoes the level of the dungeon (if multi-leveled) starts out small (still with a 'complex' structure) and becomes bigger and bigger so that players can get a 'feel' for it and learn their player skill (mapping and such)? \nIf the dungeon is just a 'lair'-type location, is it clear enough in purpose and structure (aka 5RD, 5-node, etc. few sprawling around, etc.) \nFor important doors, such as going down, are there interesting features related to them, such as multi-path approach, 'boss keys', alternatives, etc. \nDoes the paths, loops, etc. make sense from a logical standpoints? Aka old locked/stucked door, sinkholes, ceiling collapsed, etc. that blocks a path that would normally makes sense. \nIs there at least one combat where tactical options are different than normally (multi-approach fight, environmental damage, players must do something while figthing, harassment by ranged weapons, etc.)"
+        0: "Things to gain: \r\n\tA shrine (at least one)\r\n\tKnowledge (external node)\r\n\tA treasure\r\nDanger: \r\n\tSomething to be killed\r\n\tSomething to kill the party (aka traps and tricks)\r\n\tAt least one combat where tactical options are different than normally (multi-approach fight, environmental damage, players must do something while figthing, harassment by ranged weapons, etc.)\r\nLevel design: \r\n\tShortcut to another level, or to the exit (can be a magic pool, a teleporter, an elevator, a gate, a door that\'s hidden from the other side, etc.)\r\n\tMore than one entry\r\n\t3D \/ elevation shift\r\n\tLoop\r\n\tA landmark (for navigation)\r\n\tSomething atmospheric\r\nInteraction\r\n\tSomething to interact with \/ to experiment with\r\n\tSomeone to talk to (prisoner, ghost, machine, demon, statue\/painting, adventuring party, etc.)\r\nSecrets\r\n\tA secret that the players probably won\'t find\r\n\tA secret the players will probably find \r\n\tBig hidden areas or hidden subsections should be nodes for something else with clues assigned so that it wasn\'t created for nothing (same with locked areas). \r\nSanity Checks\r\n\tIf there are puzzles\/challenges, do they fit the current node\/region\/narrative\/dungeons\/etc.? Are the puzzles information placed in other nodes to have a way for players to get what they need to solves them? \r\n\tDoes the dungeon layout enhance or maintain exploration, player decision making (both context AND consequences), uncovering hidden areas\/secrets and maintaining a good pace of action (map flow). The dungeon must have different \'region\'\/quadrants that loops back in themselves with a common general objective through nodes. It could be to go activate X number of lever to get inside the room where the stairs to go down are; it could be to go kill someone preventing the access to the next level through various means (factions, assassination, all out dungeon clearing, etc.); etc. Or have a good number of small quadrants that are independant yet interconnected (both by hidden paths and by nodes).\r\n\tAre there areas of worth (reward and information) that are hidden behind danger\/impediment have multiple ways of being reached? Alternate paths, monsters on one side or traps on the other, going down to come back up, etc. \r\n\tDoes interesting part of the dungeon (or dangerous one) have legends, rumours, fragments of maps, dungeon NPCs, etc. that exists to share info and make it easier to know what can be done to progress. \r\n\tIs the dungeon an interesting place to explore, just like the wilderness is? \r\n\tIf there are long or very arduous path, is there a way to bypass them through the use of alternate entrance, shortcuts (that needs to be opened), secret paths, etc.? \r\n\tAre there many ways (stealth, combat, puzzle, this or that shortcut\/path, etc.) to get to interesting places aka loops? \r\n\tDoes the level of the dungeon (if multi-leveled) starts out small (still with a \'complex\' structure) and becomes bigger and bigger so that players can get a \'feel\' for it and learn their player skill (mapping and such)? \r\n\tIf the dungeon is just a \'lair\'-type location, is it clear enough in purpose and structure (aka 5RD, 5-node, etc. few sprawling around, etc.) \r\n\tFor important doors, such as going down, are there interesting features related to them, such as multi-path approach, \'boss keys\', alternatives, etc. \r\n\tDoes the paths, loops, etc. make sense from a logical standpoints? Aka old locked\/stucked door, sinkholes, ceiling collapsed, etc. that blocks a path that would normally makes sense. "
     },
     "dungeon_creation": {
-        0: "Theme\r\n    => DUNGEON_LORE\r\n    => level_theme\r\nEntrance\r\n    - Make sure there are at least two layers for the entrance or first part of the dungeon. For example, you go in a cave only to find small glimpses of architecture and then you go down a hole in an ancient grand ruins with rivers and shit. Or you enter a ruined village only to find their ancient mines that go down into a cavern full of unknown beasts. \r\n    => Dungeon entrance description\r\n    => Dungeon 5RD entrance\r\nContent creation\r\n    => dungeon_node_method OR just generate a random dungeon entirely (either a full dungeon or a small lair with the 5RD), it doesn't have to be complete or all mapped out, just lay out encounter, nodes, etc. for now\r\n    - Fill a couple of extra rooms with \'dungeon_room_type\' and \'generic_room_dressing\'\r\nLink to primary adventure nodes as per node planning \r\nMake sure there is a 'center' or 'hub' area from which you can plug stuff and starts creating the pointcrawl structure of the dungeon \r\nThen review everything witht he dungeon level checklist and adjust to taste while creating the real physical map where you put down things you created earlier"
-    },
-    "dungeon_node_method": {
-        0: "1) Create 5 nodes\r\n    One main treasure\r\n    One shrine\r\n    One difficult monster\/boss\/group of monster that requires foreshadowing\r\n    One secret (revealing a secondary treasure and\/or a secondary way down)\r\n    One challenge\/experimentation\r\n2) Create 3 clue rule for each\r\n    Each clue is a single room\r\n    Stock those room with basic stuff:\r\n        1 - Smaller treasure\r\n        2 - Monster\r\n        3 - Trap\r\n        4+ Empty\r\n3) All the nodes point to the way downstairs\r\n    Where it\'s located\r\n    How to \'activate\' it (keys, etc.)\r\n    What is beyond\r\n    etc.\r\nIn total, you should have:\r\n- 5 main rooms\r\n    Two treasures (one item, one shrine)\r\n    One monster\r\n    One secret\r\n    One challenge\/experimentation\r\n- 15 secondary rooms\r\n    7 \'empty\'\r\n    3 smaller treasure\r\n    3 monster\r\n    3 traps & tricks (including blockers)\r\n- 1 room leading downstairs\r\n- 1 room leading upstairs\r\nFor a total of 22 rooms + corridors + other for taste\r\n    5 treasures\r\n    4 monsters\r\n    4 traps & tricks\r\n    9 \'empty\'"
+        0: "I. OVERALL DUNGEON CREATION\t\r\n\tConcept\r\n\t    => DUNGEON_LORE\r\n\t    => level_theme\r\n\t    - Link it with adventure nodes\r\n\tEntrance\r\n\t    - Make sure there are at least two layers for the entrance or first part of the dungeon. For example, you go in a cave only to find small glimpses of architecture and then you go down a hole in an ancient grand ruins with rivers and shit. Or you enter a ruined village only to find their ancient mines that go down into a cavern full of unknown beasts. \r\n\t    - Make sure there are at least two entrance (although the others can be secret or unlocked from the inside)\r\n\t    => Dungeon entrance description\r\n\t    => Dungeon 5RD entrance to make them more interesting\r\nII. DUNGEON LEVEL CONTENT CREATION (ONE LEVEL)\r\n\t1) Create 5 nodes\r\n\t    One main treasure\r\n\t    One shrine\r\n\t    One difficult monster\/boss\/group of monster that requires foreshadowing\r\n\t    One secret (revealing a secondary treasure and\/or a secondary way down)\r\n\t    One challenge\/experimentation\r\n\t2) Create 3 clue rule for each\r\n\t    Each clue is a single room\r\n\t    Stock those room with basic stuff:\r\n\t\t1 - Smaller treasure\r\n\t\t2 - Monster\r\n\t\t3 - Trap\r\n\t\t4+ Empty\r\n\t3) All the nodes point to the way downstairs\r\n\t    Where it\'s located\r\n\t    How to \'activate\' it (keys, etc.)\r\n\t    What is beyond\r\n\t    etc.\r\n\tIn total, for one average level, you should have:\r\n\t\t- 5 main rooms\r\n\t\t    Two treasures (one item, one shrine)\r\n\t\t    One monster\r\n\t\t    One secret\r\n\t\t    One challenge\/experimentation\r\n\t\t- 15 secondary rooms\r\n\t\t    7 \'empty\'\r\n\t\t    3 smaller treasure\r\n\t\t    3 monster\r\n\t\t    3 traps & tricks (including blockers)\r\n\t\t- 1 room leading downstairs\r\n\t\t- 1 room leading upstairs\r\n\t\tFor a total of 22 rooms + corridors + other for taste\r\n\t\t    5 treasures\r\n\t\t    4 monsters\r\n\t\t    4 traps & tricks\r\n\t\t    9 \'empty\'\r\n    \tEmpty rooms should still have fluff, information, good place to rest, omens, etc. and also have a \'generic_room_dressing\'\r\n\t4) Add in some extra side rooms for deadends and such based on the \'dungeon_room_type\' and \'generic_room_dressing\' rolls\r\nIII. CREATING THE MAP\r\n\t5) Plot as a pointcrawl the dungeon level, including a (or many) hub area\r\n\t6) Draw the map using non-linear mapping based on geomorphs\r\nIV. FINISH\r\n\t7) Make an adversary roster with monsters and where they are in the level to reference it quickly (include small details about them such as prerolled reaction and their trigger\/alarms; also include groups (for example, all \'orcs\' will respond to orc drum alarm); make them per quarters\/sections of the dungeon to make it easy and maneagable (separate those with a definite mark such as a locked big door, a chasm, a drop of 20 feets, etc.)) \r\n\t8) Make a list of all the treasures and make sure you track magic items etc. \r\n\t9) Review checklist and adjust to taste"
     },
     "DUNGEON_LORE": {
 
@@ -2804,6 +2823,10 @@ const generate_dungeon =
 }
 /* 
 Repasser pour enlever le fait que c'est 2d6 partout. Si c'est vrmt sensé être random, mettre 1d10 à la place
+Add to dungeon level checklist:
+- A memorable entrance (5RD entrance)
+- A roleplaying challenge (5RD roleplay)
+- An important/useful/extraordinary revelation
 */
 
 const generate_wilderness = 
@@ -6140,6 +6163,10 @@ TODO:
 - Add to encounters caravans
 
 
+
+Faction play: each faction has a set of activity they do from 1 to 24 (1-3 = raid; 4-6 = X, etc.). They also have a 'regional power' which is equal to a number of d6. Each "turn" (aka each month), you roll their d6 and determine what is their primary activity for the month. Then roll the 'general roll' to determine how well they do. If they do really well or the players help them, then they up their regional power.  
+
+
 Downtime options should have something where you can "invest" in a dungeon/place/shortcut to make it easier on your next run. Like building a camp/caravan to the dungeon etc. 
 
 
@@ -6266,5 +6293,8 @@ causing wounds regain Mi/Fa/Wi
 smoke bomb: S1 attack; when hit, either you spend a Wi or you are "Transfix"
  
 
+
+Make a rule array:
+- All hero attributes are: 'you roll, on a 1 you lose it for the day'
 
 */
